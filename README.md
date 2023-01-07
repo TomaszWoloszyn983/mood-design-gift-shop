@@ -84,12 +84,12 @@ Nothing here yet
 
 ```python
 class Product(models.Model):
-    category = models.ForeignKey(
-        "Category", null=True, blank=True, on_delete=models.SET_NULL)
+    # category = models.ForeignKey(
+    #     "Category", null=True, blank=True, on_delete=models.SET_NULL)
     sku = models.CharField(max_length=254, null=True, blank=True)
     name = models.CharField(max_length=254)
     description = models.TextField()
-    has_sizes = models.BooleanField(default=False, null=True, blank=True)
+    # has_sizes = models.BooleanField(default=False, null=True, blank=True)
     price = models.DecimalField(max_digits=6, decimal_places=2)
     rating = models.DecimalField(
         max_digits=6, decimal_places=2, null=True, blank=True)
@@ -102,11 +102,11 @@ class Product(models.Model):
 
 Consider adding a basic screenshot of your Projects Board.
 
-![screenshot](documentation/gh-projects.png)
 
 ## **7. GitHub Issues**
 
-[GitHub Issues](https://github.com/TomaszWoloszyn983/boutique-ado-walkthrough-project/issues) served as an another Agile tool.
+![Project Board](documentation/images/project_board_01.jpg)
+
 There, I used my own **User Story Template** to manage user stories.
 
 It also helped with milestone iterations on a weekly basis.
@@ -125,6 +125,8 @@ Consider adding a screenshot of your Open and Closed Issues.
 
 I've decomposed my Epics into stories prior to prioritizing and implementing them.
 Using this approach, I was able to apply the MoSCow prioritization and labels to my user stories within the Issues tab.
+
+![moscov prioritization](documentation/images/moscow_prioritization.jpg)
 
 - **Must Have**: guaranteed to be delivered (*max 60% of stories*)
 - **Should Have**: adds significant value, but not vital (*the rest ~20% of stories*)
