@@ -1,10 +1,136 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# The Mood Desing Gift Shop
 
-Welcome USER_NAME,
+## 1. Overview.
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+Portfolio Project 4.
+The subject of the project is the web shopping list application. 
+This is a very simple and easy to use application that offers users a few basic functionalities, such as creating multiple shopping lists managing those lists and adding items to the lists, updating them or deleting them from the lists. 
+It also allows the user to register his own account what gives him an access to application functionalities.
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+
+## Contents:
+1. [Project Overview](#1-overview)
+2. [User Stories](#2-user-stories)
+5. [Technologies Used](#5-technologies-used)
+6. [Database Design](#6-database-design)
+7. [Github Issues](#7-github-issues)
+<!-- 3. [Features](#3-features)
+    * [Home Page](#home-page)
+    * [List Page](#lists-page)
+    * [Shopping List View](#shopping-list-page)
+    * [Add Item](#add-item)
+    * [Edit Item](#edit-item)
+    * [Register, Login/logout](#register-loginlogout-pages)
+    * [List class](#list-class)
+    * [Item Class](#item-class)
+4. [Future Features](#4-future-features)
+6. [Testing](#6-testing)
+7. [Deployment](#8-deployment)
+8. [References and Credits](#9-references-and-credits) -->
+
+
+## **2. User Stories:**
+
+### New Site Users
+
+- As a new site user, I would like to  see a userfriendly home page, so that I can easily find interesting content and sections in the Page.
+- As a new site user, I would like to Create an account where i can store my personal data so that I don't have to fill up the personal data forms each time I buy something..
+- As a new site user, I would like to see contact details so that I can find more information about the shop owners.
+- As a new site user, I would like to add items to a shopping Basket, so that I can reserve an item and continue shopping.
+- As a new site user, I would like to Delete products from my shopping basket.
+- As a new site user, I would like to display the shopping basket so that I can see all reserved items.
+- As a new site user, I would like to display single item detail page so that I can get more information about the product.
+- As a new site user, I would like to display the Page on mobile devices so I can buy items on a mobile phone.
+- As a new site user, I would like to use mobile side bar, so that I can use the application on small size devices.
+- As a new site user, I would like to, after adding all items to the shopping basket, to be redirected to the Payment Page so I can finalize the shopping and make a payment.
+- As a new site user, I would like to save my personal details neede for making payments, so that I can use them during my next shoppings.
+### Returning Site Users
+
+- As a returning site user, I would like to log in/out so that I can use the sites personalized functionalities as well as store and protect my personal data.
+- As a returning site user, I would like to sign up to a newsletter to keep up to date with deals and events
+- As a returning site user, I would like to Edit my account details so that my profile is up to date.
+- As a returning site user, I would like to delete my account so that I can remove my account if I no longer use it.
+- As a returning site user, I would like to see if I am logged in or not.
+- As a returning site user, I would like to informed by email about actions taken place in the page, so that my account is better secured.
+- As a returning site user, I would like to publish my feedback in the page, so that I can share my experience with other users
+- As a returning site user, I would like to  Log in with Social media so that I can use my already existing account.
+- As a returning site user, I would like to see my previous orders list and payment history .
+
+### Site Admin
+
+- As a site administrator, I should be able to create a superuser account so that I can get access to function only available for sellers.
+- As a site administrator, I should be able to add new items to the database, so that I can add new items for sale and save then in the database
+- As a site administrator, I should be able to Edit itemsfor sale and save changes to the database
+- As a site administrator, I should be able to Delete items from the database, so that They can not be available on sale any more.
+
+
+## **5. Technologies used:**
+
+* Python - an interpreted, object-oriented, high-level programming language https://www.python.org/.
+* Django - Framework facilitating building full stack web application https://www.djangoproject.com/.
+* Django allauth - an authentication module that allows account authentication, registration and management https://django-allauth.readthedocs.io/en/latest/.
+* Bootstrap - Powerful, extensible, and feature-packed frontend framework that allows buiding fast and responsive websites: https://getbootstrap.com/.
+* Javascript - High-level programming language https://www.javascript.com/.
+* HTML5 - Markup language used to make webpages https://html.com/html5/.
+* CSS3 - A language used to style HTML and XHTML documents presentations in web development.
+* Gitpod - Online integrated development environment https://www.gitpod.io/.
+* GitHub - Version control service used for storing and sharing development projects https://github.com/.
+* Heroku - a container-based cloud platform where developers can deploy their projects https://www.heroku.com/.
+
+
+## **6. Database Design**
+
+Nothing here yet
+
+```python
+class Product(models.Model):
+    category = models.ForeignKey(
+        "Category", null=True, blank=True, on_delete=models.SET_NULL)
+    sku = models.CharField(max_length=254, null=True, blank=True)
+    name = models.CharField(max_length=254)
+    description = models.TextField()
+    has_sizes = models.BooleanField(default=False, null=True, blank=True)
+    price = models.DecimalField(max_digits=6, decimal_places=2)
+    rating = models.DecimalField(
+        max_digits=6, decimal_places=2, null=True, blank=True)
+    image_url = models.URLField(max_length=1024, null=True, blank=True)
+    image = models.ImageField(null=True, blank=True)
+
+    def __str__(self):
+        return self.name
+```
+
+Consider adding a basic screenshot of your Projects Board.
+
+![screenshot](documentation/gh-projects.png)
+
+## **7. GitHub Issues**
+
+[GitHub Issues](https://github.com/TomaszWoloszyn983/boutique-ado-walkthrough-project/issues) served as an another Agile tool.
+There, I used my own **User Story Template** to manage user stories.
+
+It also helped with milestone iterations on a weekly basis.
+
+Consider adding a screenshot of your Open and Closed Issues.
+
+- [Open Issues](https://github.com/TomaszWoloszyn983/boutique-ado-walkthrough-project/issues)
+
+    ![screenshot](documentation/gh-issues-open.png)
+
+- [Closed Issues](https://github.com/TomaszWoloszyn983/boutique-ado-walkthrough-project/issues?q=is%3Aissue+is%3Aclosed)
+
+    ![screenshot](documentation/gh-issues-closed.png)
+
+### MoSCoW Prioritization
+
+I've decomposed my Epics into stories prior to prioritizing and implementing them.
+Using this approach, I was able to apply the MoSCow prioritization and labels to my user stories within the Issues tab.
+
+- **Must Have**: guaranteed to be delivered (*max 60% of stories*)
+- **Should Have**: adds significant value, but not vital (*the rest ~20% of stories*)
+- **Could Have**: has small impact if left out (*20% of stories*)
+- **Won't Have**: not a priority for this iteration
+
 
 ## Gitpod Reminders
 
@@ -36,73 +162,3 @@ You can now use the `heroku` CLI program - try running `heroku apps` to confirm 
 
 ------
 
-## Release History
-
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
-
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
-
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
-
-**July 2 2021:** Remove extensions that are not available in Open VSX.
-
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
-
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
-
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
-
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
-
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
-
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
-
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
-
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
-
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
-
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
-------
-
-## FAQ about the uptime script
-
-**Why have you added this script?**
-
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
-
-**How will this affect me?**
-
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
-
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
-
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
-
-**So….?**
-
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
-
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
-
----
-
-Happy coding!
