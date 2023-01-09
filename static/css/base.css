@@ -2,6 +2,33 @@ html {
     height: 100%;
 }
 
+.parallax-header {
+    color: red;
+    background-color: red;
+    background: url('/media/bg_image.webp');
+    background-attachment: fixed;
+    background-position: conter;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.header-content {
+    padding: 100px, 0, 150px, 0;
+}
+
+.content {
+    margin-top: -10px;
+    box-shadow: 0 0 20px -6px rgba(0, 0, 0, 0.2)
+}
+
+.content .left {
+    padding-top: 20px;
+}
+.content .right {
+    padding: 0;
+    background: url('/media/images/green_shamrock.jpg') no-repeat center center fixed;;
+}
+
 @media (min-width: 992px) {
     .fixed-top-desktop-only {
         position: fixed;
