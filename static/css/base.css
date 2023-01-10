@@ -3,18 +3,18 @@ html {
 }
 
 .parallax-header {
-    color: red;
-    background-color: red;
+    color: black;
     background: url('/media/bg_image.webp');
     background-attachment: fixed;
     background-position: conter;
     background-repeat: no-repeat;
     background-size: cover;
+    padding-top: 50vh;
 }
 
 .header-content {
-    min-height: 200px;
-    padding: 100px, 0, 150px, 0;
+    min-height: 100vh;
+    padding: 100px, 0, 150px, 0; 
 }
 
 .content {
@@ -43,6 +43,6 @@ html {
     }
 
     .header-container {
-        padding-top: 164px;
+        /* padding-top: 164px; It colides with parallax*/
     }
 }
