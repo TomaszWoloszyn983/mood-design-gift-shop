@@ -3,7 +3,6 @@ html {
 }
 
 .parallax-header {
-    color: black;
     background: url('/media/bg_image.webp');
     background-attachment: fixed;
     background-position: conter;
@@ -11,16 +10,40 @@ html {
     background-size: cover;
     padding-top: 50vh;
 }
+.parallax-header-2 {
+    background: url('/media/bg_image.webp');
+    background-attachment: fixed;
+    background-position: conter;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 5vh;
+}
 
 .header-content {
-    min-height: 100vh;
+    height: 100vh;
     padding: 100px, 0, 150px, 0; 
+}
+.header-content-2 {
+    height: 50vh;
+    padding: 100px, 0, 150px, 0; 
+}
+
+.home-page-text {
+    color: #fff;
+    font-size: large;
+}
+
+
+.header-text {
+    color: #fff;
+    background: rgba(73, 0, 15, 0.315);
 }
 
 .content {
     width: 99vw;
     /* margin-top: -20px; */
-    box-shadow: 0 0 20px -6px rgba(0, 0, 0, 0.2)
+    box-shadow: 0 0 20px -6px rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.514);
 }
 
 .content .left {
