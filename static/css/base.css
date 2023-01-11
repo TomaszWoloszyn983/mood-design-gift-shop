@@ -8,7 +8,7 @@ html {
     background-position: conter;
     background-repeat: no-repeat;
     background-size: cover;
-    padding-top: 50vh;
+    /* padding-top: 50vh; */
 }
 .parallax-header-2 {
     background: url('/media/bg_image.webp');
@@ -28,15 +28,23 @@ html {
     padding: 100px, 0, 150px, 0; 
 }
 
-.home-page-text {
+.main-title {
     color: #fff;
-    font-size: large;
+    height: 100vh;
+    transform: translate(0%, 50%);
+    background: rgba(50, 52, 32, 0.315);
 }
 
-
 .header-text {
+    text-align: center;
     color: #fff;
-    background: rgba(73, 0, 15, 0.315);
+    font-size: 2.5rem;
+} 
+
+.home-page-text {
+    text-align: center;
+    color: #fff;
+    font-size: 1.5rem;
 }
 
 .content {
@@ -63,9 +71,5 @@ html {
         right: 0;
         left: 0;
         z-index: 1030;
-    }
-
-    .header-container {
-        /* padding-top: 164px; It colides with parallax*/
     }
 }
