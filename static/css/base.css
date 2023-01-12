@@ -47,6 +47,14 @@ html {
     font-size: 1.5rem;
 }
 
+.about-us {
+    width: 100%;
+    height: fit-content;
+    padding: 1rem;
+    background: #5e514a;
+    margin: auto;
+}
+
 .content {
     width: 100vw;
     /* margin-top: -20px; */

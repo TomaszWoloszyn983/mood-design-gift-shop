@@ -134,6 +134,9 @@ Using this approach, I was able to apply the MoSCow prioritization and labels to
 - **Won't Have**: not a priority for this iteration
 
 
+## References and Credits:
+- https://www.youtube.com/watch?v=Nt70Ld0dJCM - You Tube video tutorial how to create 3D Parallax landing page effect.
+
 ## Gitpod Reminders
 
 To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
