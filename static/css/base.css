@@ -8,6 +8,7 @@ html {
     background-position: conter;
     background-repeat: no-repeat;
     background-size: cover;
+    height: 100vh;
     /* padding-top: 50vh; */
 }
 .parallax-header-2 {
@@ -20,7 +21,7 @@ html {
 }
 
 .header-content {
-    height: 100vh;
+    /* height: 100vh; */
     padding: 100px, 0, 150px, 0; 
 }
 .header-content-2 {
@@ -30,9 +31,10 @@ html {
 
 .main-title {
     color: #fff;
-    height: 100vh;
-    transform: translate(0%, 50%);
+    height: 50vh;
+    transform: translate(0%, 100%);
     background: rgba(50, 52, 32, 0.315);
+    padding-top: 1.5rem;
 }
 
 .header-text {
