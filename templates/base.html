@@ -117,15 +117,23 @@
 
         <!-- Boostrap Navbar-->
             <div>
-                <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                    <div class="col-2 col-md-2 d-inline-block mr-auto border">
-                        <img src="/media/logo.webp" class="logo-image">
-                    </div>
-                    <h1 class="logo-text col-md-4 d-none d-md-inline mr-auto border">
-                        <a href="{% url 'home' %}" class="nav-link main-logo-link">
-                            <h2 class="logo-font text-black my-0"><strong>Mood</strong> Design</h2>
-                        </a>
-                    </h1>
+                <nav class="navbar navbar-expand-lg navbar-light bg-light w-100">
+                        <!-- <div class="col left">
+                            <div class="col-2 col-md-2 d-sm-none mx-auto border">
+                                <img src="/media/logo.webp" class="logo-image">
+                            </div>
+                        </div> -->
+                        <div class="col-md-6 border">
+                                <a href="{% url 'home' %}" class="nav-link main-logo-link border">
+                                    <h2 class="logo-font d-none d-sm-block text-black my-0 border">
+                                        <img src="/media/logo.webp" class="logo-image border">
+                                        <strong>Mood</strong> Design
+                                    </h2>
+                                    <div class="col-2 col-md-2 d-sm-none mx-auto order-last border">
+                                        <img src="/media/logo.webp" class="logo-image">
+                                    </div>
+                                </a>
+                        </div>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                          <span class="navbar-toggler-icon"></span>
                     </button>
