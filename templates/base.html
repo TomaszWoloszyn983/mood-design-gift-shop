@@ -36,7 +36,7 @@
     </head>
 
     <body>
-        <header class="container-fluid fixed-top border">
+        <header class="container-fluid fixed-top px-0 border">
             <div class="row bg-white pt-lg-2 d-none d-lg-flex border">
                 <!-- Page Title -->
                 <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left border">
@@ -117,44 +117,65 @@
 
         <!-- Boostrap Navbar-->
             <div>
-                <nav class="navbar navbar-expand-lg navbar-light bg-light w-100">
+                <nav class="navbar navbar-expand-md navbar-light bg-light w-100">
                         <!-- <div class="col left">
                             <div class="col-2 col-md-2 d-sm-none mx-auto border">
                                 <img src="/media/logo.webp" class="logo-image">
                             </div>
                         </div> -->
-                        <div class="col-md-6 border">
-                                <a href="{% url 'home' %}" class="nav-link main-logo-link border">
-                                    <h2 class="logo-font d-none d-sm-block text-black my-0 border">
-                                        <img src="/media/logo.webp" class="logo-image border">
-                                        <strong>Mood</strong> Design
-                                    </h2>
-                                    <div class="col-2 col-md-2 d-sm-none mx-auto order-last border">
-                                        <img src="/media/logo.webp" class="logo-image">
-                                    </div>
-                                </a>
-                        </div>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                         <span class="navbar-toggler-icon"></span>
+                    <div class="col-8 offset-2 col-md-6 offset-md-0 border">
+                        <a href="{% url 'home' %}" class="nav-link main-logo-link border">
+                            <h2 class="logo-font d-none d-sm-block text-black my-0 border">
+                                <img src="/media/logo.webp" class="logo-image border">
+                                <strong>Mood</strong> Design
+                            </h2>
+                            <div class="col-2 col-md-2 d-sm-none px-0 mx-auto order-last border">
+                                <img src="/media/logo.webp" class="logo-image">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-2 d-md-none"></div>
+
+                    <!-- Mobile navbar dropdown button -->
+                    <button class="col-2 navbar-toggler order-first" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                         <span class="navbar-toggler-icon left"></span>
                     </button>
                   
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav mr-auto">
-                            <li class="nav-item active">
-                                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    <!-- Navbar elements -->
+                    <div class="collapse navbar-collapse col-6 mx-auto" id="navbarSupportedContent">
+                        <ul class="navbar-nav row right">
+                            <li class="nav-item mx-auto col-2 px-0 active border">
+                                <a class="nav-link mx-auto px-0" href="#">
+                                    <div class="text-center">
+                                        <div>
+                                            <i class="fa-sharp fa-solid fa-house"></i>
+                                        </div>
+                                        <p class="my-0">Home</p>
+                                    </div>
+                                </a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Shop</a>
+                            <li class="nav-item border">
+                                <a class="nav-link mx-auto px-0" href="#">
+                                    <div class="text-center">
+                                        <div><i class="fa-solid fa-basket-shopping"></i></div>
+                                        <p class="my-0">Shop</p>
+                                    </div>
+                                </a>
                             </li>
-                            <li>
-                                <a class="nav-link" href="#">Workshop</a>
+                            <li class="nav-item mx-auto col-3 px-1 border">
+                                <a class="nav-link mx-auto px-0" href="#">
+                                    <div class="text-center">
+                                        <div><i class="fa-solid fa-hammer"></i></div>
+                                        <p class="my-0">Workshop</p>
+                                    </div>
+                                </a>
                             </li>
-                            <li class="nav-item dropdown">
+                            <li class="nav-item dropdown px-0 col-3 border">
                             <!-- Account  -->
-                                <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <a class="text-black nav-link px-0" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <div class="text-center">
                                         <div><i class="fas fa-user fa-lg"></i></div>
-                                        <p class="my-0">My Account</p>
+                                        <p class="my-0">Account</p>
                                     </div>
                                 </a>
                                 <div class="dropdown-menu border-0" aria-labelledby="user-options">
@@ -170,10 +191,11 @@
                                     {% endif %}
                                 </div>
                             </li>
-                            <li>
-                                <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="">
+                            <!-- Shopping Basket -->
+                            <li class="nav-item px-0 col-2 border">
+                                <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link px-0" href="">
                                     <div class="text-center">
-                                        <div><i class="fas fa-shopping-bag fa-lg"></i></div>
+                                        <div><i class="fa-solid fa-cash-register"></i></div>
                                         <p class="my-0">
                                             {% if grand_total %}
                                                 ${{ grand_total|floatformat:2 }}
@@ -183,15 +205,6 @@
                                         </p>
                                     </div>
                                 </a>
-                            </li>
-                            <!-- Basket -->
-                            <li>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="#">Action</a>
-                                    <a class="dropdown-item" href="#">Another action</a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#">Something else here</a>
-                                </div>
                             </li>
                         </ul>
                     </div>

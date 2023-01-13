@@ -54,6 +54,19 @@ html {
     margin: auto;
 }
 
+.navbar ul {
+    margin: auto;
+    width: 50vw;
+}
+
+.navbar ul li {
+    padding: 0;
+    text-align: center;
+    margin-right: 5px;
+    width: 5vw;
+}
+
+/* Home Page */
 
 .home-page-text {
     text-align: center;
