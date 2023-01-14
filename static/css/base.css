@@ -54,12 +54,12 @@ html {
     margin: auto;
 }
 
-.navbar {}
+.navbar {
+    position: relative;
+}
 
 .navbar ul {
     display: flex;
-    /* margin: 0;
-    padding: 0; */
     width: 30vw;
 }
 
@@ -67,7 +67,20 @@ html {
     min-width: 80px;
     width: 5vw; 
     padding: 0;
-    /* margin: auto; */
+}
+.navbar ul li :hover{
+    background: rgb(90, 158, 236);
+}
+
+.navbar-collapse {
+    width: max-content;
+}
+
+.navbar-toggler {
+    cursor: pointer;
+    height: 60px;
+    padding: 0;
+    margin: auto;
 }
 
 /* Home Page */
