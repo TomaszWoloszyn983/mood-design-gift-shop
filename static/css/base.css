@@ -54,16 +54,20 @@ html {
     margin: auto;
 }
 
+.navbar {}
+
 .navbar ul {
-    margin: auto;
-    width: 50vw;
+    display: flex;
+    /* margin: 0;
+    padding: 0; */
+    width: 30vw;
 }
 
 .navbar ul li {
+    min-width: 80px;
+    width: 5vw; 
     padding: 0;
-    text-align: center;
-    margin-right: 5px;
-    width: 5vw;
+    /* margin: auto; */
 }
 
 /* Home Page */
@@ -97,6 +101,21 @@ html {
     box-sizing:border-box;
     padding: 0;
 
+}
+
+@media (min-width: 768px) {
+    .navbar ul {
+        margin: auto;
+        width: 50vw;
+    }
+    
+    .navbar ul li {
+        padding: 0;
+        text-align: center;
+        margin: 0;
+        min-width: 54px;
+        width: 5vw;
+    }
 }
 
 @media (min-width: 992px) {
