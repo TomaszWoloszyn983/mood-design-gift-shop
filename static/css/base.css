@@ -68,8 +68,8 @@ html {
     width: 5vw; 
     padding: 0;
 }
-.navbar ul li :hover{
-    background: rgb(90, 158, 236);
+.navbar ul li :hover {
+    background: #0d6efd;
 }
 
 .navbar-collapse {
@@ -89,6 +89,13 @@ html {
     text-align: center;
     color: #fff;
     font-size: 1.5rem;
+}
+
+.shop-now-btn {
+    display: flex;
+    text-align: center;
+    width: 120px;
+    height: 40px;
 }
 
 .about-us {
