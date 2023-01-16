@@ -12,7 +12,6 @@ html {
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
-    /* padding-top: 50vh; */
 }
 .parallax-header-2 {
     background: url('/media/bg_image.webp');
@@ -109,7 +108,6 @@ html {
 
 .content {
     width: 100vw;
-    /* margin-top: -20px; */
     box-shadow: 0 0 20px -6px rgba(0, 0, 0, 0.2);
     background: rgba(0, 0, 0, 0.3);
 }
@@ -121,7 +119,31 @@ html {
 .content .right {
     box-sizing:border-box;
     padding: 0;
+}
 
+/* Shop Page */
+
+.shop-page-header {
+    background: url('/media/bg_image.webp');
+    background-attachment: fixed;
+    background-position: conter;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 5vh;
+    height: 55vh;
+}
+
+.shop-page-content {
+    height: 50vh;
+    padding: 100px, 0, 150px, 0; 
+}
+
+.shop-title {
+    color: #fff;
+    height: 25vh;
+    transform: translate(0%, 100%);
+    background: rgba(50, 52, 32, 0.315);
+    padding-top: 1.5rem;
 }
 
 @media (min-width: 768px) {
