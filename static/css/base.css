@@ -5,7 +5,7 @@ html {
 
 /* Header and Navbar */
 
-.parallax-header {
+.base-header {
     background: url('/media/bg_image.webp');
     background-attachment: fixed;
     background-position: conter;
@@ -13,17 +13,8 @@ html {
     background-size: cover;
     height: 100vh;
 }
-.parallax-header-2 {
-    background: url('/media/bg_image.webp');
-    background-attachment: fixed;
-    background-position: conter;
-    background-repeat: no-repeat;
-    background-size: cover;
-    padding-top: 5vh;
-}
 
 .header-content {
-    /* height: 100vh; */
     padding: 100px, 0, 150px, 0; 
 }
 .header-content-2 {
@@ -83,6 +74,14 @@ html {
 }
 
 /* Home Page */
+.homepage-content {
+    background: url('/media/bg_image.webp');
+    background-attachment: fixed;
+    background-position: conter;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 5vh;
+}
 
 .home-page-text {
     text-align: center;
@@ -130,7 +129,7 @@ html {
     background-repeat: no-repeat;
     background-size: cover;
     padding-top: 5vh;
-    height: 55vh;
+    height: 35vh;
 }
 
 .shop-page-content {
@@ -140,10 +139,10 @@ html {
 
 .shop-title {
     color: #fff;
-    height: 25vh;
-    transform: translate(0%, 100%);
+    height: 27vh;
+    transform: translate(0%, 11%);
     background: rgba(50, 52, 32, 0.315);
-    padding-top: 1.5rem;
+    padding-top: 3.5rem;
 }
 
 @media (min-width: 768px) {

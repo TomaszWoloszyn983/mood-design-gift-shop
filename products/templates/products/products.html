@@ -19,43 +19,58 @@
     </header>
 
     <!-- Shop Page Content -->
-    <header class="parallax-content">
-        <div class="row mx-0">
-        <div class="product-container col-10 offset-1">
-            <div class="row mt-1 mb-2"></div>
-            <div class="row">
-                {% for product in products %}
-                    <div class="col-sm-6 col-md-4 col-lg-3 my-3">
-                        <div class="card h-100 border-0">
-                            <div class="card h-100">
-                                {% if product.image %}
-                                    <a href="#">
-                                        <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="product_image">
-                                    </a>
-                                {% else %}
-                                    <a href="">
-                                        <img class="card-img-top img-fluid" src="/media/no_image.jpg"  alt="no-image">
-                                    </a>
-                                {% endif %}
-                                <div class="card-body">
-                                    <p class="">{{ product.name }}</p>
-                                </div>
-                                <div class="card-footer">
-                                    <div class="row">
-                                        <div class="col">
-                                            <p class="lead text-left font-weight-bold">
-                                                {{ product.price }}
-                                            </p>
+    <header class="shop-page-content">
+        <div class="row mx-0 w-xl-80">
+            <div class="product-container col-10 offset-1">
+                <div class="row mt-1 mb-2"></div>
+                <div class="row">
+                    {% for product in products %}
+                        <div class="col-sm-6 col-md-4 col-lg-3 my-3">
+                            <div class="card h-100 border-1 rounded-5">
+                                <div class="card h-100">
+                                    {% if product.image %}
+                                        <a href="{{ product.image.url }}">
+                                            <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="product_image">
+                                        </a>
+                                    {% else %}
+                                        <a href=" url 'product' product.id ">
+                                            <img class="card-img-top img-fluid" src="/media/no_image.jpg"  alt="no-image">
+                                        </a>
+                                    {% endif %}
+                                    <div class="card-body">
+                                        <p class="">{{ product.name }}</p>
+                                    </div>
+                                    <div class="card-footer">
+                                        <div class="row">
+                                            <div class="col">
+                                                <div class="row">
+                                                    <p class="lead left text-left mx-auto d-inline font-weight-bold">
+                                                        {{ product.price }}
+                                                    </p>
+                                                    <p class=""></p>
+                                                    <!-- Default dropup button -->
+                                                    <div class="btn-group right dropup mx-auto d-inline">
+                                                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                            Dropup
+                                                        </button>
+                                                        <div class="dropdown-menu">
+                                                        <!-- Dropdown menu links -->
+                                                            <a class="dropdown-item" href="#">Add To Basket</a>
+                                                            <a class="dropdown-item" href="#">Display Details</a>
+                                                            <a class="dropdown-item" href="#">Something else here</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                {% endfor %}
+                    {% endfor %}
+                </div>
             </div>
-        </div>
-    </div> 
+        </div> 
     </header>
 
 {% endblock %}
