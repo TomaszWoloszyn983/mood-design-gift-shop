@@ -47,7 +47,6 @@
                                                     <p class="lead left text-left mx-auto d-inline font-weight-bold">
                                                         {{ product.price }}
                                                     </p>
-                                                    <p class=""></p>
                                                     <!-- Default dropup button -->
                                                     <div class="btn-group right dropup mx-auto d-inline">
                                                         <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -56,8 +55,8 @@
                                                         <div class="dropdown-menu">
                                                         <!-- Dropdown menu links -->
                                                             <a class="dropdown-item" href="#">Add To Basket</a>
-                                                            <a class="dropdown-item" href="#">Display Details</a>
-                                                            <a class="dropdown-item" href="#">Something else here</a>
+                                                            <a class="dropdown-item" href="{% url 'product_detail' product.id %}">Display Details</a>
+                                                            <a class="dropdown-item" href="#">I want to make it myself</a>
                                                         </div>
                                                     </div>
                                                 </div>
