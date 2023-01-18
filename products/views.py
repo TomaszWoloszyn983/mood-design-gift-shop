@@ -1,9 +1,10 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Product
 
+
 def all_products(request):
     """
-    A view to show all prosucts.
+    A view to show all products.
     """
     products = Product.objects.all()
 
@@ -23,3 +24,19 @@ def product_detail(request, product_id):
         'product': product,
     }
     return render(request, 'products/product_detail.html', context)
+
+
+def workshop(request):
+    """
+    A view to show the workshop template.
+
+    If workshop services will be a separate category of products
+    This function is going to return products of this category.
+    """
+    # products = Product.objects.all()
+
+    # context = {
+    #     'products': products,
+    # }
+    return render(request, 'products/workshop.html')
+    

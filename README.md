@@ -34,7 +34,7 @@ It also allows the user to register his own account what gives him an access to 
 ### New Site Users
 
 - As a new site user, I would like to  see a userfriendly home page, so that I can easily find interesting content and sections in the Page.
-- As a new site user, I would like to Create an account where i can store my personal data so that I don't have to fill up the personal data forms each time I buy something..
+- As a new site user, I would like to Create an account where I can store my personal data so that I don't have to fill up the personal data forms each time I buy something..
 - As a new site user, I would like to see contact details so that I can find more information about the shop owners.
 - As a new site user, I would like to add items to a shopping Basket, so that I can reserve an item and continue shopping.
 - As a new site user, I would like to Delete products from my shopping basket.
@@ -43,7 +43,7 @@ It also allows the user to register his own account what gives him an access to 
 - As a new site user, I would like to display the Page on mobile devices so I can buy items on a mobile phone.
 - As a new site user, I would like to use mobile side bar, so that I can use the application on small size devices.
 - As a new site user, I would like to, after adding all items to the shopping basket, to be redirected to the Payment Page so I can finalize the shopping and make a payment.
-- As a new site user, I would like to save my personal details neede for making payments, so that I can use them during my next shoppings.
+- As a new site user, I would like to save my personal details needed for making payments, so that I can use them during my next shoppings.
 ### Returning Site Users
 
 - As a returning site user, I would like to log in/out so that I can use the sites personalized functionalities as well as store and protect my personal data.
@@ -80,19 +80,27 @@ It also allows the user to register his own account what gives him an access to 
 
 ## **6. Database Design**
 
-Nothing here yet
+The Project contains following classes to describe categiries of products, Products features and also classes to describe application users profiles.
+
+```python
+class Category(models.Model):
+
+    name = models.CharField(max_length=254)
+    friendly_name = models.CharField(max_length=254, null=True, blank=True)
+```
+
 
 ```python
 class Product(models.Model):
-    # category = models.ForeignKey(
-    #     "Category", null=True, blank=True, on_delete=models.SET_NULL)
+    category = models.ForeignKey(
+        'Category', null=True, blank=True, on_delete=models.SET_NULL
+        )
+    created_on = models.DateField(default=timezone.now)
     sku = models.CharField(max_length=254, null=True, blank=True)
     name = models.CharField(max_length=254)
     description = models.TextField()
-    # has_sizes = models.BooleanField(default=False, null=True, blank=True)
+    has_sizes = models.BooleanField(default=False, null=True, blank=True)
     price = models.DecimalField(max_digits=6, decimal_places=2)
-    rating = models.DecimalField(
-        max_digits=6, decimal_places=2, null=True, blank=True)
     image_url = models.URLField(max_length=1024, null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
 
