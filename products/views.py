@@ -61,3 +61,26 @@ def add_product(request):
         'form': form,
     }
     return render(request, 'products/add_product.html', context)
+
+
+def edit_product(request, product_id):
+    """
+    A view to edit an existing product by its id.
+    """
+    up_product = get_object_or_404(Product, pk=product_id)
+    form = ProductForm(request.POST or None, instance=up_product)
+
+    if request.method == 'POST':
+        if form.is_valid():
+            form.save()
+            print("Product updated")
+            return redirect(reverse("products"))
+        else: 
+            print("\n\n\n Uodate didn't succeed")
+
+    context = {
+        'product_id': product_id,
+        'form': form,
+    }
+    return render(request, 'products/edit_product.html', context)
+ 

@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <!-- Shop Page Header -->
+    <header class="shop-page-header">
+        <div class="header-content shop-title">
+            <h2 class="text-center header-text">Update this Product</h2>
+        </div>
+    </header>
+
+    <!-- Add Product Page content -->
+    <header class="shop-page-content">
+        <div class="row mx-0 w-xl-80">
+            <div class="product-container col-10 offset-1">
+                <div class="row mt-1 mb-2"></div>
+                <div class="row">
+                    <div class="col-12 col-md-6">
+                        <form method="POST" action="{% url 'edit_product' product_id %}" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            {{ form | crispy }}
+                            <div>
+                                <div class="row">
+                                    <div class="col s12 center-align">
+                                        <button type="submit" class="btn-large light-blue darken-1">
+                                            Add Item
+                                        </button>
+                                        <button type="reset" class="waves-light red btn-large" onclick="history.go(-1)">
+                                            Cancel
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div> 
+    </header>
+
+{% endblock %}
