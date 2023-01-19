@@ -67,8 +67,8 @@ def edit_product(request, product_id):
     """
     A view to edit an existing product by its id.
     """
-    up_product = get_object_or_404(Product, pk=product_id)
-    form = ProductForm(request.POST or None, instance=up_product)
+    product = get_object_or_404(Product, pk=product_id)
+    form = ProductForm(request.POST or None, instance=product)
 
     if request.method == 'POST':
         if form.is_valid():
@@ -76,11 +76,24 @@ def edit_product(request, product_id):
             print("Product updated")
             return redirect(reverse("products"))
         else: 
-            print("\n\n\n Uodate didn't succeed")
+            print("\n\n\n Update didn't succeed")
 
     context = {
         'product_id': product_id,
         'form': form,
     }
     return render(request, 'products/edit_product.html', context)
+
+
+def delete_product(request, product_id):
+    """
+    A view to delete an existing product by its id.
+    """
+    product = get_object_or_404(Product, pk=product_id)
+    product.delete()
+
+    context = {
+        'product_id': product_id,
+    }
+    return redirect(reverse('products'))
  
