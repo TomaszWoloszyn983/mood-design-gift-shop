@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect, reverse
 from .models import Product, Category
 from .forms import ProductForm
 
@@ -51,8 +51,9 @@ def add_product(request):
         if form.is_valid():
             form.save()
             print("Product added")
+            return redirect(reverse("products"))
         else: 
-            print('bla')
+            print("\n\n\n Adding the product didn't succeed")
     else:
         form = ProductForm()
 

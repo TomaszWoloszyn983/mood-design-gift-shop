@@ -24,20 +24,20 @@
                 <div class="row mt-1 mb-2"></div>
                 <div class="row">
                     <div class="col-12 col-md-6">
-                        {% csrf_token %}
-                        <form method="POST" action="{% url add_product %}" enctype="multipart/form-data">
-                            {{ form | as_crispy_field }}
+                        <form method="POST" action="{% url 'add_product' %}" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            {{ form | crispy }}
                             <div>
                                 <div class="row">
                                     <div class="col s12 center-align">
-                                      <button type="submit" class="btn-large light-blue darken-1">
-                                        Add Item
-                                      </button>
-                                      <button type="reset" class="waves-light red btn-large" onclick="history.go(-1)">
-                                        Cancel
-                                      </button>
+                                        <button type="submit" class="btn-large light-blue darken-1">
+                                            Add Item
+                                        </button>
+                                        <button type="reset" class="waves-light red btn-large" onclick="history.go(-1)">
+                                            Cancel
+                                        </button>
                                     </div>
-                                  </div>
+                                </div>
                             </div>
                         </form>
                     </div>
