@@ -52,7 +52,7 @@
                                                         <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                             Click
                                                         </button>
-                                                        <div class="dropdown-menu">
+                                                        <div class="dropdown-menu dropdown-menu-left">
                                                         <!-- Dropdown menu links -->
                                                             <a class="dropdown-item" href="#">Add To Basket</a>
                                                             <a class="dropdown-item" href="{% url 'product_detail' product.id %}">Display Details</a>
@@ -78,7 +78,7 @@
             </div>
             {% if request.user.is_authenticated %}
                 {% if request.user.is_superuser %}
-                    <a href="" class="button fixed-button btn-primary text-decoration-none">Add Item</a>
+                    <a href="{% url 'add_product' %}" class="button fixed-button btn-primary text-decoration-none">Add Item</a>
                 {% endif %}
             {% endif %}
         </div> 

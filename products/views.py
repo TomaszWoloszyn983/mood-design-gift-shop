@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Product
+from .models import Product, Category
+from .forms import ProductForm
 
 
 def all_products(request):
@@ -40,3 +41,22 @@ def workshop(request):
     # }
     return render(request, 'products/workshop.html')
     
+
+def add_product(request):
+    """
+    A view to add the new product to database.
+    """
+    if request.method == 'POST':
+        form = ProductForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            print("Product added")
+        else: 
+            print('bla')
+    else:
+        form = ProductForm()
+
+    context = {
+        'form': form,
+    }
+    return render(request, 'products/add_product.html', context)
