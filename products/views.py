@@ -1,18 +1,43 @@
 from django.shortcuts import render, get_object_or_404, redirect, reverse
 from .models import Product, Category
 from .forms import ProductForm
+from django.db.models import Q
+from django.contrib.auth.decorators import login_required
 
 
 def all_products(request):
     """
     A view to show all products.
     """
-    products = Product.objects.all()
 
+    products = Product.objects.all()
+    category = None
+
+    if request.GET:
+        if 'category' in request.GET:
+            categories = request.GET['category'].split(',')
+            products = products.filter(category__name__in=categories)
+            categories = Category.objects.filter(name__in=categories)
+    
     context = {
         'products': products,
     }
     return render(request, 'products/products.html', context)
+
+
+def search_by_category(request, category):
+    """
+    A view to dispaly items by categories.
+    """
+    products = get_object_or_404(Product, pk=category)
+    product.delete()
+
+    context = {
+        'products': products,
+        'category': category,
+        'product_id': product_id,
+    }
+    return redirect(reverse('products'), context)
 
 
 def product_detail(request, product_id):
@@ -41,7 +66,8 @@ def workshop(request):
     # }
     return render(request, 'products/workshop.html')
     
-
+    
+@login_required
 def add_product(request):
     """
     A view to add the new product to database.
@@ -63,6 +89,7 @@ def add_product(request):
     return render(request, 'products/add_product.html', context)
 
 
+@login_required
 def edit_product(request, product_id):
     """
     A view to edit an existing product by its id.
@@ -85,6 +112,7 @@ def edit_product(request, product_id):
     return render(request, 'products/edit_product.html', context)
 
 
+@login_required
 def delete_product(request, product_id):
     """
     A view to delete an existing product by its id.
@@ -92,8 +120,9 @@ def delete_product(request, product_id):
     product = get_object_or_404(Product, pk=product_id)
     product.delete()
 
-    context = {
-        'product_id': product_id,
-    }
+
     return redirect(reverse('products'))
  
+
+
+

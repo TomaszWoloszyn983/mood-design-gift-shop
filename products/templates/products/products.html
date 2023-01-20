@@ -21,6 +21,17 @@
     <!-- Shop Page Content -->
     <header class="shop-page-content">
         <div class="row mx-0 w-xl-80">
+            <div class="dropdown show">
+                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Choose Category
+                </a>
+              
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                  <a class="dropdown-item" href="{% url 'products' %}">All Products</a>
+                  <a class="dropdown-item" href="{% url 'products' %}?category=dishes">Dishes</a>
+                  <a class="dropdown-item" href="{% url 'products' %}?category=ornaments">Ornaments</a>
+                </div>
+              </div>
             <div class="product-container col-10 offset-1">
                 <div class="row mt-1 mb-2"></div>
                 <div class="row">
