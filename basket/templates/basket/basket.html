@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <header class="shop-page-header">
+        <div class="header-content shop-title">
+            <h2 class="text-center header-text">The Mood Design Shop</h2>
+            <h4 class="text-center mt-5">Shopping Basket:</h4>
+        </div>
+    </header>
+
+    <div class="row mx-0">
+        <div class="col-12">
+            {% if basket_items %}
+                <div class="table-responsive"></div>
+            {% else %}
+                <p class="lead mb-5">The bag is empty</p>
+                <a href="{% url 'products' %}" class="btn btn-lg btn-primary">
+                    Keep Shopping
+                </a>
+            {% endif %}
+        </div>
+    </div>
+
+{% endblock %}

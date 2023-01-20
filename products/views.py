@@ -25,21 +25,6 @@ def all_products(request):
     return render(request, 'products/products.html', context)
 
 
-def search_by_category(request, category):
-    """
-    A view to dispaly items by categories.
-    """
-    products = get_object_or_404(Product, pk=category)
-    product.delete()
-
-    context = {
-        'products': products,
-        'category': category,
-        'product_id': product_id,
-    }
-    return redirect(reverse('products'), context)
-
-
 def product_detail(request, product_id):
     """
     A view to show individual prosuct details.
