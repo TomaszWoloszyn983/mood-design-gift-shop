@@ -5,15 +5,15 @@ from.models import Product, Category
 
 class ProductAdmin(admin.ModelAdmin):
     list_display = (
-        'sku',
         'name',
         'created_on',
         'category',
         'price',
+        'quantity',
         'image',
     )
 
-    ordering = ('sku',)
+    ordering = ('created_on',)
 
 class CategoryAdmin(admin.ModelAdmin):
     list_display = (
