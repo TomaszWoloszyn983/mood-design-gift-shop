@@ -21,17 +21,9 @@ def add_to_basket(request, product_id):
     basket = request.session.get('basket', {})
 
     basket[product_id] = True
+    request.session['basket'] = basket
+
+    print(request.session['basket'])
 
     return redirect(reverse('basket'))
 
-    # product = 
-
-# def delete_product(request, product_id):
-#     """
-#     A view to delete an existing product by its id.
-#     """
-#     product = get_object_or_404(Product, pk=product_id)
-#     product.delete()
-
-
-#     return redirect(reverse('products'))

@@ -20,7 +20,7 @@ class Product(models.Model):
     category = models.ForeignKey('Category', null=True, blank=True, on_delete=models.SET_NULL)
     created_on = models.DateField(default=timezone.now)
     name = models.CharField(max_length=254)
-    quantity = models.CharField(max_length=4, default='0')
+    quantity = models.IntegerField(default=0)
     description = models.TextField()
     has_sizes = models.BooleanField(default=False, null=True, blank=True)
     price = models.DecimalField(max_digits=6, decimal_places=2)
