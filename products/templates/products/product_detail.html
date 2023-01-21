@@ -43,11 +43,13 @@
                             After quantity counter would reach 0 value 
                             the product would become unavailable. </p>
                         <p>{{ product.description }}</p>
+
+                        <p>Available: {{ product.quantity }}</p>
                         
-                        <a class="d-none d-lg-block btn btn-primary" href="#">Add To Basket</a>
+                        <a class="d-none d-lg-block btn btn-primary" href="{% url 'add_to_basket' product.id %}">Add To Basket</a>
                     </div>
                     <div class="col-lg-12 d-lg-none my-3 px-sm-5 px-lg-0 order-last">
-                        <a class="btn btn-primary" href="#">Add To Basket</a>
+                        <a class="btn btn-primary" href="{% url 'add_to_basket' product.id %}">Add To Basket</a>
                     </div>
                 </div>
             </div>
