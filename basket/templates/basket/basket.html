@@ -22,8 +22,8 @@
             {% if basket_items %}
                 <div class="table-responsive"></div>
             {% else %}
-                <p class="lead mb-5">The bag is empty</p>
-                <a href="{% url 'products' %}" class="btn btn-lg btn-primary">
+                <p class="lead mb-5 text-center">Your basket is empty</p>
+                <a href="{% url 'products' %}" class="btn btn-lg btn-primary col-3 offset-7">
                     Keep Shopping
                 </a>
             {% endif %}
