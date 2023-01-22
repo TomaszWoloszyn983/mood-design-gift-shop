@@ -29,7 +29,7 @@
                                 <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="product_image">
                             </a>
                         {% else %}
-                            <a href=" url 'product_detail' product.id ">
+                            <a href="{% url 'product_detail' product.id %}">
                                 <img class="card-img-top img-fluid" src="/media/no_image.jpg"  alt="no-image">
                             </a>
                         {% endif %}
@@ -42,8 +42,6 @@
                         <p>Consider adding limited quantity to a product. 
                             After quantity counter would reach 0 value 
                             the product would become unavailable. </p>
-
-                        <P>Cliking in sorry no image i causing an Error</P>
 
                         <p>{{ product.description }}</p>
 

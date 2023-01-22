@@ -21,7 +21,47 @@
         <div class="col-12">
             {% if basket_items %}
                 <div class="table-responsive">
-                    {{ basket_items }}
+                    <table class="table table-sm table-borderless">
+                        <thead class="text-black border-bottom">
+                            <tr>
+                                <th scope="col">Product Info</th>
+                                <th scope="col">Price</th>
+                                <th scope="col">Quantity</th>
+                                <th scope="col">Subtotal</th>
+                                <th scope="col">Image</th>
+                            </tr>
+                        </thead>
+
+                        {% for item in basket_items %}
+                            <tr class="border-bottom">
+                                <td class="py-4">
+                                    <p class="mt=3">{{ item.product.name }}</p>
+                                </td>
+                                <td class="py-4">
+                                    <p class="mt=3">{{ item.product.price }}</p>
+                                </td>
+                                <td class="py-4">
+                                    <p class="mt=3">N/A</p>
+                                </td>
+                                <td class="py-4">
+                                    <p class="mt=3">N/A</p>
+                                </td>
+                                <td class="p-3 w-25">
+                                    <img class="img-fluid" src="{{ item.product.image }}" alt="basket item">
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        <tr>
+                            <td colspan="5" class="pt-5 text-center">
+                                <h4>Total: {{ total|floatformat:2 }}</h4>
+                                <h4>Delivery: {{ delivery|floatformat:2 }}</h4>
+                                <h3>Grand Total: {{ grand_total|floatformat:2 }}</h3>
+                            </td>
+                        </tr>
+                    </table>
+                    <a href="{% url 'products' %}" class="btn btn-lg btn-primary col-2 offset-5">
+                        Keep Shopping
+                    </a>
                 </div>
             {% else %}
                 <p class="lead mb-5 text-center">Your basket is empty</p>
