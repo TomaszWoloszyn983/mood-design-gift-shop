@@ -10,14 +10,14 @@ def basket_contents(request):
     product_count = 0
     basket = request.session.get('basket', {})
 
-    for item_id, is_in_basket in basket.items():
+    for item_id, units in basket.items():
         product = get_object_or_404(Product, pk=item_id)
-        in_basket = is_in_basket
-        total += product.price
-        product_count += 1
+        # in_basket = is_in_basket
+        total += units * product.price
+        product_count += units
         basket_items.append({
             'item_id': item_id,
-            'in_basket': in_basket,
+            'units': units,
             'product': product,
         })
 

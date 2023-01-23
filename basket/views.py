@@ -18,11 +18,15 @@ def add_to_basket(request, product_id):
     """
 
     print(f'Add some product by id {product_id} to the basket')
+    units = int(request.POST.get('units'))
     basket = request.session.get('basket', {})
 
-    basket[product_id] = True
-    request.session['basket'] = basket
+    if product_id in list(basket.keys()):
+        basket[product_id] += units
+    else:
+        basket[product_id] = units
 
+    request.session['basket'] = basket
     print(request.session['basket'])
 
     return redirect(reverse('basket'))
