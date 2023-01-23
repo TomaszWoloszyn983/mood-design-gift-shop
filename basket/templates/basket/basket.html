@@ -22,7 +22,7 @@
             {% if basket_items %}
                 <div class="table-responsive">
                     <table class="table table-sm table-borderless">
-                        <thead class="text-black border-bottom">
+                        <thead class="text-black border-bottom text-center">
                             <tr>
                                 <th scope="col">Product Info</th>
                                 <th scope="col">Price</th>
@@ -33,7 +33,7 @@
                         </thead>
 
                         {% for item in basket_items %}
-                            <tr class="border-bottom">
+                            <tr class="border-bottom text-center">
                                 <td class="py-4">
                                     <p class="mt=3">{{ item.product.name }}</p>
                                 </td>
@@ -41,7 +41,7 @@
                                     <p class="mt=3">{{ item.product.price }}</p>
                                 </td>
                                 <td class="py-4">
-                                    <p class="mt=3">N/A</p>
+                                    <p class="mt=3">{{ item.units }}</p>
                                 </td>
                                 <td class="py-4">
                                     <p class="mt=3">N/A</p>

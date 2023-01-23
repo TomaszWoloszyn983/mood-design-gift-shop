@@ -108,6 +108,12 @@ def delete_product(request, product_id):
 
     return redirect(reverse('products'))
  
-
+def subtract_products(request, product_id, number):
+    """
+    A view to Update product quantity when the product is 
+    added to the basket.
+    """
+    product = get_object_or_404(Product, pk=product_id)
+    product.quantity -= number
 
 
