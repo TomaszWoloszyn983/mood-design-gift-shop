@@ -10,7 +10,7 @@
 {% endblock %}
 
 {% block content %}
-    <!-- Shop Page Header -->
+    <!-- Product Detail Page Header -->
     <header class="shop-page-header">
         <div class="header-content shop-title">
             <h2 class="text-center header-text">The Mood Design Shop</h2>
@@ -18,7 +18,7 @@
         </div>
     </header>
 
-    <!-- Shop Page Content -->
+    <!-- Product Detail Page Content -->
     <header class="shop-page-content">
         <div class="row mx-0 mt-5">
             <div class="product-container col-10 offset-1">
@@ -39,33 +39,47 @@
                         <p>Adjust the size of the image. Make it smaller in -md.
                             and larger on lg+
                         </p>
-                        <p>Consider adding limited quantity to a product. 
-                            After quantity counter would reach 0 value 
-                            the product would become unavailable. </p>
+                        <p>Adding items to the basket doesn't decrease the number 
+                            of this item on stock
+                        </p>
+
+                        <p>Remember about Plus and Minus buttons commented in the template
+                            And quantity_input_script in the product/templates which isn't used
+                        </p>
 
                         <p>{{ product.description }}</p>
 
+                        {% if product.quantity == 0 %}
+                        <h2 class="text-center p-5">Product temporarily out of stock</h2>
+                        {% else %}
                         <p class="text-right">On Stock: {{ product.quantity }}</p>
 
-                        <form action="{% url 'add_to_basket' product.id %}" method="POST">
+                        <form action="{% url 'add_to_basket' product.id %} product.quantity" method="POST">
                             {% csrf_token %}
-                            <div class="form-row">
-                                <div class="col-8 offset-4">
-                                    <p>Quantity</p>
-                                    <div class="row form-group d-inline">
-                                        <span class="col-1 input-group-prepend d-inline">
-                                            <button type="button" class="btn btn-outline-secondary btn-number" data-type="minus" data-field="units">
+                            <div class="row form-row">
+                                <p class="col-12">Quantity</p>
+                                <div class="col-12 mx-auto px-0 form-group">
+                                    <div class="row  mx-auto px-0 input-group d-block">
+                                        <!-- <span class="col-2  mx-auto px-0 input-group-prepend d-inline">
+                                            <button type="button" class="decrement-qty btn btn-outline-secondary btn-number"
+                                                data-type="minus" data-field="units"
+                                                data-item_id="{{ product.id }}"
+                                                id="decrement-qty_{{ product.id }}">
                                                 <span class="fa fa-minus"></span>
                                             </button>
-                                        </span>
-                                        <input type="number" name="units" class="col-4 form-control input-number qty_input d-inline" 
+                                        </span> -->
+                                        <input type="number" name="units" class="col-6 w-50 text-center form-control input-number qty_input d-inline" 
                                             value="1" min="1", max="{{ product.quantity }}"
-                                            data.item_id="{{ product.id }}" id="id_qty_{{ product.id }}">
-                                        <span class="col-1 input-group-append d-inline">
-                                            <button type="button" class="btn btn-outline-secondary btn-number" data-type="plus" data-field="units">
+                                            data.item_id="{{ product.id }}"
+                                            id="id_qty_{{ product.id }}">
+                                        <!-- <span class="col-2 mx-auto px-0 input-group-append d-inline">
+                                            <button type="button" class="increment-qty btn btn-outline-secondary btn-number"
+                                                data-type="plus" data-field="units"
+                                                data-item_id="{{ product.id }}"
+                                                id="increment-qty_{{ product.id }}">
                                                 <span class="fa fa-plus"></span>
                                             </button>
-                                        </span>
+                                        </span> -->
                                     </div>
                                 </div>
                                 <div class="col-8 offset-4">
@@ -76,6 +90,7 @@
                                 </div>
                             </div>
                         </form>
+                        {% endif %}
                         
                         <a class="d-none d-lg-block btn btn-primary" href="#">N/A</a>
                     </div>
@@ -87,4 +102,9 @@
         </div> 
     </header>
 
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+{% include 'products/includes/quantity_input_script.html' %}
 {% endblock %}

@@ -60,13 +60,13 @@
                                                         <del>{{ product.price }}€</del>
                                                     </p>
                                                     <!-- Default dropup button -->
-                                                    <div class="btn-group right dropup mx-auto d-inline" disabled>
-                                                        <button type="button" class="btn btn-primary dropdown-toggle disabled" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <div class="btn-group right dropup mx-auto d-inline">
+                                                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                             Click
                                                         </button>
                                                         <div class="dropdown-menu dropdown-menu-left">
                                                         <!-- Dropdown menu links -->
-                                                            <a class="dropdown-item" href="#">Add To Basket</a>
+                                                            <a class="dropdown-item disabled" href="#">Add To Basket</a>
                                                             <a class="dropdown-item" href="{% url 'product_detail' product.id %}">Display Details</a>
                                                             <a class="dropdown-item text-wrap" href="#">I want to make it myself</a>
                                                             {% if request.user.is_authenticated %}

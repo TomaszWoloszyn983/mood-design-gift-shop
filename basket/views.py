@@ -20,6 +20,7 @@ def add_to_basket(request, product_id):
     print(f'Add some product by id {product_id} to the basket')
     units = int(request.POST.get('units'))
     basket = request.session.get('basket', {})
+    print(f'Basket: {basket}')
 
     if product_id in list(basket.keys()):
         basket[product_id] += units
