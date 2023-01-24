@@ -32,3 +32,24 @@ def add_to_basket(request, product_id):
 
     return redirect(reverse('basket'))
 
+
+def remove_from_basket(request, product_id):
+    """
+    A view to delete item from the shopping basket.
+    """
+
+    print(f'Remove product by id {product_id} from the basket')
+    basket = request.session.get('basket', {})
+    print(f'Basket: {basket}')
+
+    if product_id in list(basket.keys()):
+        basket[product_id] = 0
+        print('\n\n\nOption 1')
+    else:
+        basket[product_id] = 0
+        print('\n\n\nOption 2')
+
+    request.session.modified = True
+    print(f'Print session {request.session["basket"]}')
+
+    return redirect(reverse('basket'))

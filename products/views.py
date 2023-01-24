@@ -105,8 +105,8 @@ def delete_product(request, product_id):
     product = get_object_or_404(Product, pk=product_id)
     product.delete()
 
-
     return redirect(reverse('products'))
+ 
  
 def subtract_products(request, product_id, number):
     """
