@@ -37,6 +37,11 @@ def add_to_basket(request, product_id):
 def remove_from_basket(request, product_id):
     """
     A view to delete item from the shopping basket.
+
+    For reasons I don't know the else statement is always executed
+    Also the function doesn't remove the item from the basket. It 
+    only sets its value to 0 and then the template displays only 
+    items with value greater than 0.
     """
 
     print(f'Remove product with id: {product_id} from the basket')
@@ -60,6 +65,8 @@ def adjust_qty_on_stock(request, product_id):
     """
     View to Adjust products quantity on stock when the product
     is addded to the basket.
+
+    Not in use at the moment.
     """
 
     print(f'Modify the product: {product_id} quantity on stock')
@@ -70,7 +77,6 @@ def adjust_qty_on_stock(request, product_id):
 
     print(f'Modyfi the quantity of the product from {product.quantity} to {units}')
     product.quantity = units
-
 
     request.session['basket'] = basket
     print(f'Print session {request.session["basket"]}')
