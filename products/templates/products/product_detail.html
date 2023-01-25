@@ -69,6 +69,7 @@
                                             </button>
                                         </span> -->
                                         <input type="number" name="units" class="col-6 w-50 text-center form-control input-number qty_input d-inline" 
+                                            action="{% url 'adjust_qty_on_stock' product.id %}"
                                             value="1" min="1", max="{{ product.quantity }}"
                                             data.item_id="{{ product.id }}"
                                             id="id_qty_{{ product.id }}">

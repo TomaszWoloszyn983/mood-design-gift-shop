@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect, reverse
+from products.models import Product
 
 def show_basket(request):
     """
@@ -38,7 +39,7 @@ def remove_from_basket(request, product_id):
     A view to delete item from the shopping basket.
     """
 
-    print(f'Remove product by id {product_id} from the basket')
+    print(f'Remove product with id: {product_id} from the basket')
     basket = request.session.get('basket', {})
     print(f'Basket: {basket}')
 
@@ -49,7 +50,29 @@ def remove_from_basket(request, product_id):
         basket[product_id] = 0
         print('\n\n\nOption 2')
 
-    request.session.modified = True
+    request.session['basket'] = basket
+    print(f'Print session {request.session["basket"]}')
+
+    return redirect(reverse('basket'))
+
+
+def adjust_qty_on_stock(request, product_id):
+    """
+    View to Adjust products quantity on stock when the product
+    is addded to the basket.
+    """
+
+    print(f'Modify the product: {product_id} quantity on stock')
+    basket = request.session.get('basket', {})
+    units = int(request.POST.get('units'))
+    product = get_object_or_404(Product, pk=product_id)
+    print(f'Basket: {basket}')
+
+    print(f'Modyfi the quantity of the product from {product.quantity} to {units}')
+    product.quantity = units
+
+
+    request.session['basket'] = basket
     print(f'Print session {request.session["basket"]}')
 
     return redirect(reverse('basket'))
