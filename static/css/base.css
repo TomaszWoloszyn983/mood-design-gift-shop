@@ -156,6 +156,17 @@ html {
     text-decoration: none;
 }
 
+
+/* Shopping Basket Page*/
+
+.my-icon-button {
+    min-width: 50px;
+}
+.my-icon-input {
+    width: 120px;
+}
+
+
 @media (min-width: 768px) {
     .navbar ul {
         margin: auto;

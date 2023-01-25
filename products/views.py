@@ -62,6 +62,7 @@ def add_product(request):
         if form.is_valid():
             form.save()
             print("Product added")
+            # print(f'Image url {form.image.url}')
             return redirect(reverse("products"))
         else: 
             print("\n\n\n Adding the product didn't succeed")
