@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect, reverse
+from django.contrib import messages
 from products.models import Product
 
 def show_basket(request):
@@ -18,6 +19,7 @@ def add_to_basket(request, product_id):
     to be able to add the product to the basket.
     """
 
+    product = Product.objects.get(pk=product_id)
     print(f'Add some product by id {product_id} to the basket')
     units = int(request.POST.get('units'))
     basket = request.session.get('basket', {})
@@ -27,6 +29,7 @@ def add_to_basket(request, product_id):
         basket[product_id] += units
     else:
         basket[product_id] = units
+        messages.success(request, f'Added {product.name} to your shopping basket')
 
     request.session['basket'] = basket
     print(request.session['basket'])
