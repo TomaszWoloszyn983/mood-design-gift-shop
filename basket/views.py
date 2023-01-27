@@ -22,19 +22,25 @@ def add_to_basket(request, product_id):
 
     try:
         product = Product.objects.get(pk=product_id)
+        lastchar = product.name[-1]
+        print(f'{product.name} last letter is {lastchar}')
         print(f'Add some product by id {product_id} to the basket')
         units = int(request.POST.get('units'))
         basket = request.session.get('basket', {})
         print(f'Basket: {basket}')
+
         
         if product_id in list(basket.keys()):
             basket[product_id] += units
         else:
             basket[product_id] = units
-            if units > 1:
-                messages.success(request, f'Added {units} {product.name}s to your shopping basket')
-            else:
+            if units == 1:
                 messages.success(request, f'Added {units} {product.name} to your shopping basket')
+            elif lastchar == 'h':
+                messages.success(request, f'Added {units} {product.name}es to your shopping basket')
+            else:
+                messages.success(request, f'Added {units} {product.name}s to your shopping basket')
+                
         request.session['basket'] = basket
         print(request.session['basket'])
     except ValueError:
