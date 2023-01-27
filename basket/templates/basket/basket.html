@@ -39,10 +39,10 @@
                         {% if item.units is not 0 %}
                         <tr class="border-bottom text-center">
                             <!-- Product name and image -->
-                            <td class="py-0">
-                                <img class="my-0 d-inline" src="{{ item.product.image.url }}"
+                            <td class="d-xs-block d-md-inline align-top">
+                                <img class="d-xs-block d-md-inline" src="{{ item.product.image.url }}"
                                         style="width: 80px;" alt="{{ item.product.name }} image">
-                                <p class="my-0 d-inline">{{ item.product.name }}</p>
+                                <p class="d-xs-block d-md-inline align-top">{{ item.product.name }}</p>
                             </td>
                             <!-- Price -->
                             <td class="py-4">

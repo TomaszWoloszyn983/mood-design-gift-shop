@@ -167,6 +167,23 @@ html {
 }
 
 
+/* Bootstrap toasts */
+.message-container {
+    position: fixed;
+    top: 84px;
+    right: 0px;
+    z-index: 999;
+    width: 200px;
+    height: fit-content;
+}
+.custom-toast {
+    overflow: visible;
+}
+.toast-capper {
+    height: 2px;
+}
+
+
 @media (min-width: 768px) {
     .navbar ul {
         margin: auto;

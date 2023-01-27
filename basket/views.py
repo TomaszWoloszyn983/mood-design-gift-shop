@@ -29,7 +29,11 @@ def add_to_basket(request, product_id):
         basket[product_id] += units
     else:
         basket[product_id] = units
-        messages.success(request, f'Added {product.name} to your shopping basket')
+        if units > 1:
+            messages.success(request, f'Added {units} {product.name}s to your shopping basket')
+        else:
+            messages.success(request, f'Added {units} {product.name} to your shopping basket')
+            
 
     request.session['basket'] = basket
     print(request.session['basket'])
@@ -47,6 +51,7 @@ def remove_from_basket(request, product_id):
     items with value greater than 0.
     """
 
+    product = Product.objects.get(pk=product_id)
     print(f'Remove product with id: {product_id} from the basket')
     basket = request.session.get('basket', {})
     print(f'Basket: {basket}')
@@ -57,6 +62,7 @@ def remove_from_basket(request, product_id):
     else:
         basket[product_id] = 0
         print('\n\n\nOption 2')
+        messages.success(request, f'Removed {product.name}s from your shopping basket')
 
     request.session['basket'] = basket
     print(f'Print session {request.session["basket"]}')
