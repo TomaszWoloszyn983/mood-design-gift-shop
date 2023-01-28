@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.contrib import messages
 from .forms import OrderForm
+from basket.contexts import basket_contents
 
 # Create your views here.
 def checkout(request):
