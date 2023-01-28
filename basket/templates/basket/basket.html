@@ -44,7 +44,7 @@
                                 <img class="d-xs-block d-md-inline" src="{{ item.product.image.url }}"
                                         style="width: 80px;" alt="{{ item.product.name }} image">
                                 {% else %}
-                                    <img class="d-xs-block d-md-inline" src=" {{ MEDIA_URL }}no_image.jpg"
+                                    <img class="d-xs-block d-md-inline" src="{{ MEDIA_URL }}no_image.jpg"
                                         style="width: 80px;"alt="{{ product.name }}">
                                 {% endif %}
                                 <p class="d-xs-block d-md-inline align-top">{{ item.product.name }}</p>

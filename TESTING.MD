@@ -227,17 +227,8 @@ This operation causes deleteing the shopping session and removing all the produc
 
 
 The permanent solution of the problem turned out adding the following piece of code in the basket.html file:
-'''
-    {% if item.product.image %}
-        <img class="d-xs-block d-md-inline" src="{{ item.product.image.url }}"
-            style="width: 80px;" alt="{{ item.product.name }} image">
-    {% else %}
-        <img class="d-xs-block d-md-inline" src="{{ MEDIA_URL }}no_image.jpg"
-            style="width: 80px;"alt="{{ product.name }}">
-    {% endif %}
-'''
 
-```
+```html
     {% if item.product.image %}
     <img class="d-xs-block d-md-inline" src="{{ item.product.image.url }}"
             style="width: 80px;" alt="{{ item.product.name }} image">
@@ -246,7 +237,7 @@ The permanent solution of the problem turned out adding the following piece of c
             style="width: 80px;"alt="{{ product.name }}">
     {% endif %}
 ```
-This conditional statement checks wether the file contains assosiated image or not. And if the image doesn;t contain one it dispalys the default image.
+This conditional statement checks whether the file contains associated image or not. And if the image doesn;t contain one it dispalys the default image.
 
 
 ## **Unfixed Bugs**
