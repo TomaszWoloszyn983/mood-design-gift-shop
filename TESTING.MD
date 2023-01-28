@@ -220,10 +220,33 @@ ValueError: The 'image' attribute has no file associated with it.
 ![No image Error](documentation/bugs_and_errors/no_image_error03.jpg)
 ![No image Error](documentation/bugs_and_errors/no_image_error04.jpg)
 
-The only solution so far is to enter inspection/application/storage/cookies and removing session id file.
+A temporary solution is to enter inspection/application/storage/cookies and removing session id file.
 This operation causes deleteing the shopping session and removing all the product from the shopping basket.
 
 ![No image Error](documentation/bugs_and_errors/no_image_error05.jpg)
+
+
+The permanent solution of the problem turned out adding the following piece of code in the basket.html file:
+'''
+    {% if item.product.image %}
+        <img class="d-xs-block d-md-inline" src="{{ item.product.image.url }}"
+            style="width: 80px;" alt="{{ item.product.name }} image">
+    {% else %}
+        <img class="d-xs-block d-md-inline" src="{{ MEDIA_URL }}no_image.jpg"
+            style="width: 80px;"alt="{{ product.name }}">
+    {% endif %}
+'''
+
+```
+    {% if item.product.image %}
+    <img class="d-xs-block d-md-inline" src="{{ item.product.image.url }}"
+            style="width: 80px;" alt="{{ item.product.name }} image">
+    {% else %}
+        <img class="d-xs-block d-md-inline" src="{{ MEDIA_URL }}no_image.jpg"
+            style="width: 80px;"alt="{{ product.name }}">
+    {% endif %}
+```
+This conditional statement checks wether the file contains assosiated image or not. And if the image doesn;t contain one it dispalys the default image.
 
 
 ## **Unfixed Bugs**

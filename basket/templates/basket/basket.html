@@ -40,8 +40,13 @@
                         <tr class="border-bottom text-center">
                             <!-- Product name and image -->
                             <td class="d-xs-block d-md-inline align-top">
+                                {% if item.product.image %}
                                 <img class="d-xs-block d-md-inline" src="{{ item.product.image.url }}"
                                         style="width: 80px;" alt="{{ item.product.name }} image">
+                                {% else %}
+                                    <img class="d-xs-block d-md-inline" src=" {{ MEDIA_URL }}no_image.jpg"
+                                        style="width: 80px;"alt="{{ product.name }}">
+                                {% endif %}
                                 <p class="d-xs-block d-md-inline align-top">{{ item.product.name }}</p>
                             </td>
                             <!-- Price -->
