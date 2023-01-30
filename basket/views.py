@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404, redirect, reverse
+from django.shortcuts import render, get_object_or_404, HttpResponse, redirect, reverse
 from django.contrib import messages
 from products.models import Product
 
@@ -59,22 +59,16 @@ def remove_from_basket(request, product_id):
     items with value greater than 0.
     """
 
-    product = Product.objects.get(pk=product_id)
-    print(f'Remove product with id: {product_id} from the basket')
+    product = get_object_or_404(Product, pk=product_id)
     basket = request.session.get('basket', {})
-    print(f'Basket: {basket}')
 
     if product_id in list(basket.keys()):
-        basket[product_id] = 0
-        print('\n\n\nOption 1')
-    else:
-        basket[product_id] = 0
-        print('\n\n\nOption 2')
+        basket.pop(product_id)
         messages.success(request, f'Removed {product.name}s from your shopping basket')
+    else:
+        messages.success(request, f'I could not remove {product.name}s from the basket')
 
     request.session['basket'] = basket
-    print(f'Print session {request.session["basket"]}')
-
     return redirect(reverse('basket'))
 
 

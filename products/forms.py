@@ -6,7 +6,7 @@ class ProductForm(forms.ModelForm):
         model = Product
         fields = (
             "name", "category", "price",
-            "quantity", "has_sizes", 'image'
+            "quantity", 'image'
         )
 
     def __init__(self, *args, **kwargs):
