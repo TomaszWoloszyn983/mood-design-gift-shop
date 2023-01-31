@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'profiles/css/profile.css' %}">
+{% endblock %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <header class="shop-page-header">
+        <div class="header-content shop-title">
+            <h2 class="text-center header-text">The Mood Design Shop</h2>
+            <h4 class="text-center mt-5">User Profile:</h4>
+        </div>
+    </header>
+{% endblock %}
+
