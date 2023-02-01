@@ -17,8 +17,61 @@
     <header class="shop-page-header">
         <div class="header-content shop-title">
             <h2 class="text-center header-text">The Mood Design Shop</h2>
-            <h4 class="text-center mt-5">User Profile:</h4>
+            <h4 class="text-center mt-5">Welcome to your profile {{ profile }}</h4>
         </div>
     </header>
+    <div class="row mx-0">
+        <div class="col-md-1"></div>
+        <div class="col-md-4 my-3 mx-md-0">
+            <h4 class="black text-center">Default Delivery Information</h4>
+            <form class="" action="{% url 'profile' %}" method="POST" id="profile-update-form">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <button class="btn btn-primary rounded-0 text-uppercase d-block mx-auto">Update Information</button>
+            </form>
+        </div>
+        <div class="col-md-1"></div>
+        <div class="col-md-5 my-3 mx-md-0">
+            <h4 class="black text-center">Order History</h4>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Order Number</th>
+                        <th>Date</th>
+                        <th>Items</th>
+                        <th>Order Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for order in orders %}
+                        <tr>
+                            <td>
+                                <a href="#">
+                                    Wyświetl cokolwiek
+                                </a>
+                                {{ order.order_date }}
+                            </td>
+                            <td>
+                                {{ order.order_number }}
+                            </td>
+                            <td>
+                                {{ order.order_total }}
+                            </td>
+                            <td>
+                                <h5>
+                                    
+                                </h5>
+                                {{ order.order_total }}
+                            </td>
+                        </tr>
+                    {% empty %}
+                        <h5>No orders</h5>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="col-1"></div>
+    </div>
+   
 {% endblock %}
 
