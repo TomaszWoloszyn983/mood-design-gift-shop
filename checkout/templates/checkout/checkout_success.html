@@ -201,9 +201,15 @@
         </div>
         <div class="row">
 			<div class="col-12 col-lg-7 text-right">
-				<a href="{% url 'home' %}" class="btn btn-black rounded-0 my-2">
+                {% if from_profile %}
+                <a href="{% url 'profile' %}" class="btn btn-primary rounded-0 my-2">
+					Return to my Profile
+				</a>
+                {% else %}
+				<a href="{% url 'home' %}" class="btn btn-primary rounded-0 my-2">
 					Return to the Home Page
 				</a>
+                {% endif %}
 			</div>
 		</div>
     </div>

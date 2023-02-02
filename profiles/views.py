@@ -25,6 +25,7 @@ def profile(request):
     else:
         form = UserProfileForm(instance=profile)
     orders = profile.orders.all()
+    print(f'\nOrders: {orders}')
 
     context = {
         'profile': profile,
@@ -32,3 +33,19 @@ def profile(request):
         'orders': orders,
     }
     return render(request, 'profiles/profile.html', context)
+
+
+def order_history(request, order_number):
+    order = get_object_or_404(Order, order_number=order_number)
+
+    messages.info(request, (
+        f'This is a past confirmation for order number {order_number}. '
+        'A confirmation email was sent on the order date.'
+    ))
+
+    context = {
+        'order': order,
+        'from_profile': True,
+    }
+
+    return render(request, 'checkout/checkout_success.html', context)
