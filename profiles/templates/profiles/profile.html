@@ -24,7 +24,7 @@
         <div class="col-md-1"></div>
         <div class="col-md-4 my-3 mx-md-0">
             <h4 class="black text-center">Users Information</h4>
-            <h6 class="font-weight-light text-center">These are information are going to be used for delivery</h6>
+            <h6 class="font-weight-light text-center">These information are going to be used for shipping</h6>
             <form class="" action="{% url 'profile' %}" method="POST" id="profile-update-form">
                 {% csrf_token %}
                 {{ form|crispy }}
@@ -37,31 +37,25 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th>Order Number</th>
-                        <th>Date</th>
-                        <th>Items</th>
-                        <th>Order Total</th>
+                        <th class="text-left">Order Number</th>
+                        <th class="text-center">Date</th>
+                        <th class="text-right">Order Total</th>
                     </tr>
                 </thead>
                 <tbody>
                     {% for order in orders %}
                         <tr>
-                            <td>
-                                <a href="#">
-                                    Wyświetl cokolwiek
+                            <td text-left>
+                                <a href="{% url 'order_history' order.order_number %}"
+                                    title="{{ order.order_number }}">
+                                    {{ order.order_number|truncatechars:11 }}
                                 </a>
                                 {{ order.order_date }}
                             </td>
-                            <td>
-                                {{ order.order_number }}
+                            <td class="text-center">
+                                {{ order.date }}
                             </td>
-                            <td>
-                                {{ order.order_total }}
-                            </td>
-                            <td>
-                                <h5>
-                                    
-                                </h5>
+                            <td class="text-right">
                                 {{ order.order_total }}
                             </td>
                         </tr>
