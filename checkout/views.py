@@ -11,6 +11,9 @@ from profiles.models import UserProfile
 from products.models import Product
 from basket.contexts import basket_contents
 
+from django.core.mail import send_mail
+from django.template.loader import render_to_string
+
 import stripe
 import json
 
@@ -163,8 +166,9 @@ def checkout_success(request, order_number):
         Your order number is {order_number}. A confirmation \
         email will be sent to {order.email}.')
 
-    if 'bag' in request.session:
-        del request.session['bag']
+    if 'basket' in request.session:
+        del request.session['basket']
+    send_confirmation_email(order)
 
     template = 'checkout/checkout_success.html'
     context = {
@@ -172,3 +176,22 @@ def checkout_success(request, order_number):
     }
 
     return render(request, template, context)
+
+def send_confirmation_email(order):
+    """
+    Send confirmation email to the user after the transaction is completed.
+    """
+    cust_email = order.email
+    subject = render_to_string(
+        'checkout/confirmation_emails/confirmation_email_subject.txt',
+        {'order': order, 'contact_email': settings.DEFAULT_FROM_EMAIL})
+    body = render_to_string(
+        'checkout/confirmation_emails/confirmation_email_body.txt',
+        {'order': order, 'contact_email': settings.DEFAULT_FROM_EMAIL})
+
+    send_mail(
+        subject,
+        body,
+        settings.DEFAULT_FROM_EMAIL,
+        [cust_email]
+    )
