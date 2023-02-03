@@ -22,7 +22,8 @@
     <header class="shop-page-content">
         <div class="row mx-0 mt-5">
             <div class="product-container col-10 offset-1">
-                <div class="row">
+                <div class="row mb-5">
+                    <!-- Product image column -->
                     <div class="col-lg-6 offset-md-1 mw-50 order-lg-first px-sm-5 px-lg-0 d-inline mx-md-auto">
                         {% if product.image %}
                             <a href="{{ product.image.url }}">
@@ -33,33 +34,12 @@
                                 <img class="card-img-top img-fluid" src="/media/no_image.jpg"  alt="no-image">
                             </a>
                         {% endif %}
-                    </div>
-                    <div class="col-lg-3 offset-md-2 order-first order-lg-2 d-inline mx-md-auto">
-                        <h2 class="">{{ product.name }}</h2>
-                        <p>Adjust the size of the image. Make it smaller in -md.
-                            and larger on lg+
-                        </p>
-                        <p>Adding items to the basket doesn't decrease the number 
-                            of this item on stock
-                        </p>
-
-                        <p>Remember about Plus and Minus buttons commented in the template
-                            And quantity_input_script in the product/templates which isn't used
-                        </p>
-
-                        <p>{{ product.description }}</p>
-
-                        {% if product.quantity == 0 %}
-                        <h2 class="text-center p-5">Product temporarily out of stock</h2>
-                        {% else %}
-                        <p class="text-right">On Stock: {{ product.quantity }}</p>
-
                         <form action="{% url 'add_to_basket' product.id %}" method="POST">
                             {% csrf_token %}
                             <div class="row form-row">
-                                <p class="col-12">Quantity</p>
-                                <div class="col-12 mx-auto px-0 form-group">
-                                    <div class="row  mx-auto px-0 input-group d-block">
+                                <p class="col-12 text-center">Quantity</p>
+                                <div class="col-12 text-center px-0 form-group">
+                                    <div class="row mx-auto px-0 input-group d-block">
                                         <!-- <span class="col-2  mx-auto px-0 input-group-prepend d-inline">
                                             <button type="button" class="decrement-qty btn btn-outline-secondary btn-number"
                                                 data-type="minus" data-field="units"
@@ -83,20 +63,42 @@
                                         </span> -->
                                     </div>
                                 </div>
-                                <div class="col-8 offset-4">
-                                    <a class="btn btn-primary" href="{% url 'products' %}">
+                                <div class="col-sm-8 offset-sm-2 my-2 px-auto mx-auto">
+                                    <a class="btn btn-primary mx-auto" href="{% url 'products' %}">
                                         Keep Shopping
                                     </a>
-                                    <input class="btn btn-primary" type="submit" value="Add to Basket">
+                                    <input class="btn btn-primary mx-auto" type="submit" value="Add to Basket">
                                 </div>
                             </div>
                         </form>
+                    </div>
+
+                    
+
+                    <!-- Product detail column -->
+                    <div class="col-lg-3 offset-md-2 order-first order-lg-2 d-inline mx-md-auto">
+                        <h2 class="">{{ product.name }}</h2>
+                        <p>Adjust the size of the image. Make it smaller in -md.
+                            and larger on lg+
+                        </p>
+                        <p>Adding items to the basket doesn't decrease the number 
+                            of this item on stock
+                        </p>
+
+                        <p>Remember about Plus and Minus buttons commented in the template
+                            And quantity_input_script in the product/templates which isn't used
+                        </p>
+
+                        <p>{{ product.description }}</p>
+
+                        {% if product.quantity == 0 %}
+                        <h2 class="text-center p-5">Product temporarily out of stock</h2>
+                        {% else %}
+                        <p class="text-right">On Stock: {{ product.quantity }}</p>
+
+                        
                         {% endif %}
                         
-                        <a class="d-none d-lg-block btn btn-primary" href="#">N/A</a>
-                    </div>
-                    <div class="col-lg-12 d-lg-none my-3 px-sm-5 px-lg-0 order-last">
-                        <a class="btn btn-primary" href="#">N/A</a>
                     </div>
                 </div>
             </div>

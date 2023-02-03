@@ -55,9 +55,9 @@ html {
     width: 5vw; 
     padding: 0;
 }
-.navbar ul li :hover {
+/* .navbar ul li :hover {
     background: #0d6efd;
-}
+} */
 
 .navbar-collapse {
     width: max-content;
@@ -181,6 +181,12 @@ html {
 }
 .toast-capper {
     height: 2px;
+}
+
+
+/* Login logout section */
+.login-panel {
+    margin-top: 30vh;
 }
 
 

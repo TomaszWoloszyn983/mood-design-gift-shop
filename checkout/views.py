@@ -36,7 +36,6 @@ import json
 # Create your views here.
 def checkout(request):
 
-    print('\nEnter the checkout views')
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
@@ -58,7 +57,6 @@ def checkout(request):
 
         order_form = OrderForm(form_data)
         if order_form.is_valid():
-            print('\nOrder form validation positive')
             order = order_form.save()
             for item_id, item_data in basket.items():
                 try:
@@ -96,12 +94,9 @@ def checkout(request):
             currency=settings.STRIPE_CURRENCY,
         )
     
-        print('Try to prefill the checkout form')
         if request.user.is_authenticated:
-            print('Checkout form 1')
             try:
                 profile = UserProfile.objects.get(user=request.user)
-                print(f'Checkout form {profile}')
                 order_form = OrderForm(initial={
                     'full_name': profile.user.get_full_name(),
                     'email': profile.user.email,
@@ -114,10 +109,8 @@ def checkout(request):
                     'county': profile.default_county,
                 })
             except UserProfile.DoesNotExist:
-                print('Checkout form. User doesnt exist')
                 order_form = OrderForm()
         else:
-            print('Empty form')
             order_form = OrderForm()
 
 
