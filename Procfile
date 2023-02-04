@@ -1,1 +1,1 @@
-web: gunicorn mood_design_gift_shop.wsgi:application
+web: gunicorn mood_design.wsgi:application
