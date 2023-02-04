@@ -1,0 +1,1 @@
+web: gunicorn mood_design_gift_shop.wsgi:application
