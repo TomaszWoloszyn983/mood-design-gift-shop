@@ -76,6 +76,7 @@ It also allows the user to register his own account what gives him an access to 
 * Gitpod - Online integrated development environment https://www.gitpod.io/.
 * GitHub - Version control service used for storing and sharing development projects https://github.com/.
 * Heroku - a container-based cloud platform where developers can deploy their projects https://www.heroku.com/.
+* Amazon Web Services s3 - a cloud-based stporage service.
 
 
 ## **6. Database Design**
