@@ -37,11 +37,11 @@ html {
 } 
 
 .logo-image {
-    /* background: url('/media/logo.webp');
+    background: url('/media/logo.webp');
     background-attachment: fixed;
     background-position: conter;
     background-repeat: no-repeat;
-    background-size: cover; */
+    background-size: cover;
     height: 40px;
     margin: auto;
 }
