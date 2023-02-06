@@ -6,7 +6,7 @@ class ProductForm(forms.ModelForm):
         model = Product
         fields = (
             "name", "category", "price",
-            "quantity", 'image'
+            "quantity", 'image', 'description'
         )
 
     def __init__(self, *args, **kwargs):
@@ -18,14 +18,3 @@ class ProductForm(forms.ModelForm):
 
         for field_name, field in self.fields.items():
             field.widget.attrs['class'] = 'border-black rounded-0'
-
-# My version:
-        # class Meta:
-        #     model = Product
-        #     fields = (
-        #         "name", "category", "price",
-        #         "has_sizes", 'image'
-        #     )
-
-        # def __str__(self):
-        #     return self.name
