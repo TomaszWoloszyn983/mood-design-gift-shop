@@ -31,7 +31,7 @@
                             </a>
                         {% else %}
                             <a href="{% url 'product_detail' product.id %}">
-                                <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}no_image.jpg"  alt="no-image">
+                                <img class="card-img-top img-fluid" src="/media/no_image.jpg"  alt="no-image">
                             </a>
                         {% endif %}
                         <form action="{% url 'add_to_basket' product.id %}" method="POST">
