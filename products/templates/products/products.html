@@ -19,7 +19,7 @@
     </header>
 
     <!-- Shop Page Content -->
-    <header class="shop-page-content">
+    <div class="shop-page-content">
         <div class="row mx-0 w-xl-80">
             <div class="dropdown show offset-md-9 col-3">
                 <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -50,7 +50,7 @@
                                     {% else %}
                                         <a href="{% url 'product_detail' product.id %}">
                                             <img class="card-img-top img-fluid"
-                                                 src="/media/no_image.jpg"
+                                                 src="{{ MEDIA_URL }}no_image.jpg"
                                                  alt="no-image">
                                         </a>
                                     {% endif %}
@@ -99,7 +99,7 @@
                                         </a>
                                     {% else %}
                                         <a href="{% url 'product_detail' product.id %}">
-                                            <img class="card-img-top img-fluid" src="/media/no_image.jpg"  alt="no-image">
+                                            <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}no_image.jpg"  alt="no-image">
                                         </a>
                                     {% endif %}
                                     <div class="card-body">
@@ -148,6 +148,6 @@
                 {% endif %}
             {% endif %}
         </div> 
-    </header>
+    </div>
 
 {% endblock %}
