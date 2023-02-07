@@ -18,7 +18,7 @@
     </header>
 
     <!-- Add Product Page content -->
-    <header class="shop-page-content">
+    <div class="shop-page-content mb-5">
         <div class="row mx-0 w-xl-80">
             <div class="product-container col-10 offset-1">
                 <div class="row mt-1 mb-2"></div>
@@ -29,7 +29,7 @@
                             {{ form | crispy }}
                             <div>
                                 <div class="row">
-                                    <div class="col s12 center-align">
+                                    <div class="col-sm-12 center-align mb-5">
                                         <button type="submit" class="btn-large light-blue darken-1">
                                             Add Item
                                         </button>
@@ -44,6 +44,6 @@
                 </div>
             </div>
         </div> 
-    </header>
+    </div>
 
 {% endblock %}
