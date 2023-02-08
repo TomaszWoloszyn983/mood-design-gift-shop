@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load custom_filters %}
 
 {% block page_header %}
     <div class="container header-container">
@@ -77,7 +78,7 @@
                             </td>
                             <!-- Subtotal -->
                             <td class="py-4">
-                                <p class="mt-3"> {{item.units}} * {{item.product.price}} </p>
+                                <p class="mt-3"> {{ item.product.price|multiply:item.units }}E  </p>
                             </td>
                             <!-- Remove item from Basket -->
                             <td class="py-4">

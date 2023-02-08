@@ -67,6 +67,8 @@ def checkout(request):
                         quantity=item_data,
                     )
                     order_line_item.save()
+                    product.quantity -= item_data
+                    product.save()
                 except Product.DoesNotExist:
                     message.error(request, ("Product not found"
                                   "Please call us for assistance!")

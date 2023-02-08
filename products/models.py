@@ -17,12 +17,16 @@ class Category(models.Model):
 
 
 class Product(models.Model):
+    DESIGNERS = [
+        ('Ela', 'Ela'),
+        ('Lukasz', 'Lukasz')
+    ]
     category = models.ForeignKey('Category', null=True, blank=True, on_delete=models.SET_NULL)
     created_on = models.DateField(default=timezone.now)
+    designer = models.CharField(choices=DESIGNERS, max_length=10, default='Ela')
     name = models.CharField(max_length=254)
     quantity = models.IntegerField(default=0)
     description = models.TextField()
-    # has_sizes = models.BooleanField(default=False, null=True, blank=True)
     price = models.DecimalField(max_digits=6, decimal_places=2)
     image = models.ImageField(null=True, blank=True)
 

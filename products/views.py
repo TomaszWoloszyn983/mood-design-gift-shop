@@ -80,9 +80,11 @@ def edit_product(request, product_id):
     A view to edit an existing product by its id.
     """
     product = get_object_or_404(Product, pk=product_id)
-    form = ProductForm(request.POST or None, instance=product)
+    form = ProductForm(instance=product)
+    
 
     if request.method == 'POST':
+        form = ProductForm(request.POST, request.FILES, instance=product)
         if form.is_valid():
             form.save()
             print("Product updated")
