@@ -194,6 +194,11 @@ html {
     margin-top: 30vh;
 }
 
+/* Footer */
+.my-footer {
+    
+}
+
 
 @media (min-width: 768px) {
     .navbar ul {

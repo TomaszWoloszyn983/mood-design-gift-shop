@@ -153,6 +153,37 @@
         {% block content %}
         {% endblock %}
 
+        {% block footer %}
+        <div class="border row mx-0 mb-5 my-footer">
+            <div class="border col-12 text-center">Footer</div>
+
+            <!-- Contanct Details -->
+            <div class="border col-md-12">
+                <h1 class="my-footer">Contact</h1>
+                <p class="my-footer">
+                    Contact us or follow us on our social media.
+                </p>
+            </div>
+
+            <div class="border col-md-6 text-center">
+                Be up tp date with the latest news about our Shop and sign in for a newsletter.
+            </div>
+            <div class="border col-md-6 text-center">
+                Space for the newsletter form.
+            </div>
+            <div class="border col-12 text-center">Also visit out official Web Page and out social media form more information.</div>
+            <div class="border col-2 text-center mx-auto px-auto"></div>
+            <a href="#"
+                class="border col-2 text-center mx-auto px-auto">FB</a>
+            <a href="#"
+                class="border col-2 text-center mx-auto px-auto">Page</a>
+            <a href="#"
+                class="border col-2 text-center mx-auto px-auto">Insta</a>
+            <div class="border col-2 text-center mx-auto px-auto"></div>
+
+        </div>
+        {% endblock %}
+
         {% block postloadjs %}
         <script type="text/javascript">
             $('.toast').toast('show');
