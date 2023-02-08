@@ -117,5 +117,3 @@ def subtract_products(request, product_id, number):
     """
     product = get_object_or_404(Product, pk=product_id)
     product.quantity -= number
-
-
