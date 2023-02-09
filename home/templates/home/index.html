@@ -134,7 +134,24 @@
                 <div class="col-12 my-3 home-page-text">
                 {% if request.user.is_authenticated %}
                     {% if request.user.is_superuser %}
-                        <p>Admin functions</p>
+                        <p>Add Post</p>
+                        <div class="row">
+                            <div class="col-12">
+                                <form method="POST"  enctype="multipart/form-data">
+                                    {% csrf_token %}
+                                    {{ form | crispy }}
+                                    <div>
+                                        <div class="row">
+                                            <div class="col-sm-12 center-align mb-5">
+                                                <button type="submit" class="btn-large light-blue darken-1">
+                                                    Add Post
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
                     {% endif %}
                 {% endif %}
                 </div>

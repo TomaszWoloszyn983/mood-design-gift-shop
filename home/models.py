@@ -25,6 +25,8 @@ class Post(models.Model):
     body = models.TextField()
     image = models.ImageField(null=True, blank=True)
     email = models.ManyToManyField(NewsletterUser)
+    # add null=True and blank=True to email
+    # Decrease title length to, maybe 254.
 
     class Meta:
         ordering = ["-created_on"]
