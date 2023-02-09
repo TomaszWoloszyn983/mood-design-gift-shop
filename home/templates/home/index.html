@@ -23,7 +23,7 @@
         <div class="about-us row justify-content-around">
             <!-- Left side -->
             <div class="col-md-12 left d-block mx-auto">
-                <h1 class="header-text">Abuot Us</h1>
+                <h1 class="header-text">About Us</h1>
                 <div class="w-100 my-5"></div>
                 <p class="home-page-text text-justify">
                     <img src="{{ MEDIA_URL }}workshop.jpg" class="ml-3 float-right img-fluid" style="max-height: 500px;">
@@ -119,6 +119,27 @@
                     <img src="{{ MEDIA_URL }}triple_blue_bowl.jpg" class="img-fluid d-block mx-auto">
                 </div>
             </div>
+
+            <div class="row">
+                {% for post in posts %}
+                    <div class="col-12 my-3 home-page-text">
+                        <!-- Product out of stock  -->
+                        <h3>{{ post.title }}</h3>
+                        <p>{{ post.body }}</p>
+                        {% if post.image %}
+                            <img class="card-img-top img-fluid" src="{{ post.image.url }}" alt="post_image">
+                        {% endif %}
+                    </div>
+                {% endfor %}
+                <div class="col-12 my-3 home-page-text">
+                {% if request.user.is_authenticated %}
+                    {% if request.user.is_superuser %}
+                        <p>Admin functions</p>
+                    {% endif %}
+                {% endif %}
+                </div>
+            </div>
+        </div>
 
             <!-- This was moved to the base.html -->
             <!-- <div class="w-100 my-5"></div> -->

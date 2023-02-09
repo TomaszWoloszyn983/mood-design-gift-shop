@@ -7,6 +7,10 @@ class NewsletterUser(models.Model):
     email = models.EmailField(max_length=254, null=False, blank=False)
     added_on = models.DateTimeField(auto_now_add=True)
 
+    def __str__(self):
+        return self.email
+
+
 
 class Post(models.Model):
     DESIGNERS = [
