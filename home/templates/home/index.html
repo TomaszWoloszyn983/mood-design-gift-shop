@@ -120,43 +120,43 @@
                 </div>
             </div>
 
-            <div class="row">
-                {% for post in posts %}
+                <div class="row">
+                    {% for post in posts %}
+                        <div class="col-12 my-3 home-page-text">
+                            <!-- Product out of stock  -->
+                            <h3>{{ post.title }}</h3>
+                            <p>{{ post.body }}</p>
+                            {% if post.image %}
+                                <img class="card-img-top img-fluid" src="{{ post.image.url }}" alt="post_image">
+                            {% endif %}
+                        </div>
+                    {% endfor %}
                     <div class="col-12 my-3 home-page-text">
-                        <!-- Product out of stock  -->
-                        <h3>{{ post.title }}</h3>
-                        <p>{{ post.body }}</p>
-                        {% if post.image %}
-                            <img class="card-img-top img-fluid" src="{{ post.image.url }}" alt="post_image">
-                        {% endif %}
-                    </div>
-                {% endfor %}
-                <div class="col-12 my-3 home-page-text">
-                {% if request.user.is_authenticated %}
-                    {% if request.user.is_superuser %}
-                        <p>Add Post</p>
-                        <div class="row">
-                            <div class="col-12">
-                                <form method="POST"  enctype="multipart/form-data">
-                                    {% csrf_token %}
-                                    {{ form | crispy }}
-                                    <div>
-                                        <div class="row">
-                                            <div class="col-sm-12 center-align mb-5">
-                                                <button type="submit" class="btn-large light-blue darken-1">
-                                                    Add Post
-                                                </button>
+                    {% if request.user.is_authenticated %}
+                        {% if request.user.is_superuser %}
+                            <p>Add Post</p>
+                            <div class="row">
+                                <div class="col-12">
+                                    <form method="POST" action="{% url 'send_post' %}" enctype="multipart/form-data">
+                                        {% csrf_token %}
+                                        {{ form | crispy }}
+                                        <div>
+                                            <div class="row">
+                                                <div class="col-sm-12 center-align mb-5">
+                                                    <button type="submit" class="btn-large light-blue darken-1">
+                                                        Add Post
+                                                    </button>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </form>
+                                    </form>
+                                </div>
                             </div>
-                        </div>
+                        {% endif %}
                     {% endif %}
-                {% endif %}
+                    </div>
                 </div>
             </div>
-        </div>
 
             <!-- This was moved to the base.html -->
             <!-- <div class="w-100 my-5"></div> -->
@@ -170,6 +170,54 @@
             </div> -->
         </div>
     </header>
-    <!-- Event 2 -->
+<!-- Footer -->
+<div class="border row mx-0 mb-5 my-footer">
+    <div class="border col-12 text-center">Footer</div>
+
+    <!-- Contanct Details -->
+    <div class="border col-md-12">
+        <h1 class="my-footer">Contact</h1>
+        <p class="my-footer">
+            Contact us or follow us on our social media.
+        </p>
+    </div>
+
+    <!-- Newsletter -->
+    {% if request.user.is_authenticated %}
+        {% if request.user.is_superuser %}
+        {% else %}
+            <div class="border col-md-6 text-center">
+                Be up tp date with the latest news about our Shop and sign in for a newsletter.
+            </div>
+            <div class="border col-md-6 text-center">
+                <form method="POST" action="{% url 'newsletter' %}" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ newsletterForm | crispy }}
+                    <div>
+                        <div class="row">
+                            <div class="col-sm-12 center-align mb-5">
+                                <button type="submit" class="btn-large light-blue darken-1">
+                                    Send
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        {% endif %}
+    {% endif %}
+
+    <!-- Social Media -->
+    <div class="border col-12 text-center">Also visit out official Web Page and out social media form more information.</div>
+    <div class="border col-2 text-center mx-auto px-auto"></div>
+    <a href="#"
+        class="border col-2 text-center mx-auto px-auto">FB</a>
+    <a href="#"
+        class="border col-2 text-center mx-auto px-auto">Page</a>
+    <a href="#"
+        class="border col-2 text-center mx-auto px-auto">Insta</a>
+    <div class="border col-2 text-center mx-auto px-auto"></div>
+
+</div>
 
 {% endblock %}

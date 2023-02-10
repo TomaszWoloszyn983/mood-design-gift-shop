@@ -24,3 +24,11 @@ class PostForm(forms.ModelForm):
 
         # for field_name, field in self.fields.items():
         #     field.widget.attrs['class'] = 'border-black rounded-0'
+
+
+class NewsletterForm(forms.ModelForm):
+    class Meta:
+        model = NewsletterUser
+        fields = (
+            "email",
+        )
