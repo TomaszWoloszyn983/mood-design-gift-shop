@@ -142,6 +142,9 @@ Using this approach, I was able to apply the MoSCow prioritization and labels to
 ## References and Credits:
 - https://www.youtube.com/watch?v=Nt70Ld0dJCM - You Tube video tutorial how to create 3D Parallax landing page effect.
 
+- You Tube tutorial how to choose colors - https://www.youtube.com/watch?v=KMS3VwGh3HY&list=WL&index=102
+
+
 ## Gitpod Reminders
 
 To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
@@ -171,4 +174,3 @@ To log into the Heroku toolbelt CLI:
 You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
 
 ------
-
