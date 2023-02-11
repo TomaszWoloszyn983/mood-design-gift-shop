@@ -82,7 +82,6 @@ def edit_product(request, product_id):
     product = get_object_or_404(Product, pk=product_id)
     form = ProductForm(instance=product)
     
-
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES, instance=product)
         if form.is_valid():

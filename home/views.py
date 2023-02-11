@@ -3,6 +3,7 @@ from .forms import PostForm, NewsletterForm
 from .models import NewsletterUser, Post
 from django.conf import settings
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from django.core.mail import send_mail
 
 
@@ -75,6 +76,32 @@ def send_post(request):
         'newsletterForm': newsletterForm
     }
     return render(request, 'home/index.html', context)
+
+
+@login_required
+def edit_post(request, post_id):
+    """
+    A view to edit an existing post by its id.
+    Updating post doesn't resend the post to newsletter users.
+    """
+    post = get_object_or_404(Post, pk=post_id)
+    form = PostForm(instance=post)
+    
+
+    if request.method == 'POST':
+        form = PostForm(request.POST, request.FILES, instance=post)
+        if form.is_valid():
+            form.save()
+            print("Post updated")
+            return redirect(reverse("home"))
+        else: 
+            print("\n\n\n Update didn't succeed")
+
+    context = {
+        'post_id': post_id,
+        'form': form,
+    }
+    return render(request, 'home/edit_post.html', context)
 
 
 
