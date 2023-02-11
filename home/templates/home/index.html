@@ -73,14 +73,14 @@
                 {% if post.image %}
                     {% if post.image.width > post.image.height %}
                     <div class="col-12 my-3 home-page-text border-light border-top mt-2 pt-4">
-                        <h1 class="header-text">{{ forloop.counter }}. {{ post.title }}</h1>
+                        <h1 class="header-text">{{ post.title }}</h1>
                         <div class="col-md-12 mx-0">
-                            <img class="card-img-top img-fluid" src="{{ post.image.url }}" alt="post_image">
+                            <img class="card-img-top img-fluid height-50" src="{{ post.image.url }}" alt="post_image">
                         </div>
-                        <p>{{ post.body }}</p>
+                        <p class="my-post">{{ post.body }}</p>
                         {% if request.user.is_authenticated %}
                         {% if request.user.is_superuser %}
-                            <a href="{% url 'edit_post' post.id %}" class="btn btn-primary">Edit Post</a>
+                            <a href="{% url 'edit_post' post.id %}" class="btn btn-primary shop-now-btn border">Edit Post</a>
                         {% endif %}
                         {% endif %}
 
@@ -88,13 +88,13 @@
                     {% elif forloop.counter|divisibleby:"2" %}
                     <div class="col-12 my-3 home-page-text border-light border-top mt-2 pt-4">
                         <div class="row justify-content-around my-3 mx-0">
-                            <div class="col-md-6 right mx-0">
+                            <div class="col-md-4 right mx-0">
                                 <img class="card-img-top img-fluid" src="{{ post.image.url }}" alt="post_image">
                             </div>
                             <!-- Right side -->
-                            <div class="col-md-4 mx-5 order-first">
-                                <h1 class="header-text">{{ forloop.counter }}. {{ post.title }}</h1>
-                                <p class="home-page-text">
+                            <div class="col-md-6 mx-5 order-first">
+                                <h1 class="header-text">{{ post.title }}</h1>
+                                <p class="my-post">
                                     {{ post.body }}
                                 </p>
                                 <a href="{% url 'products' %}" class="btn btn-primary px-auto mx-auto shop-now-btn border">
@@ -104,7 +104,7 @@
                             <div class="col-2 my-2 order-last">
                                 {% if request.user.is_authenticated %}
                                 {% if request.user.is_superuser %}
-                                    <a href="{% url 'edit_post' post.id %}" class="btn btn-primary d-block mx-auto">Edit Post</a>
+                                    <a href="{% url 'edit_post' post.id %}" class="btn btn-primary d-block mx-auto shop-now-btn border">Edit Post</a>
                                 {% endif %}
                                 {% endif %}
                             </div>
@@ -112,12 +112,12 @@
                     </div>
                     <div class="h-10 my-5"></div>
 
-                    {% elif forloop.counter|divisibleby:"1" %}
+                    {% else %}
                     <div class="col-12 my-3 home-page-text border-light border-top mt-2 pt-4">
                         <div class="row justify-content-around my-3 mx-0">
-                            <div class="col-md-4 order-last">
-                                <h1 class="header-text">{{ forloop.counter }}. {{ post.title }}</h1>
-                                <p class="home-page-text">
+                            <div class="col-md-6 mx-5">
+                                <h1 class="header-text">{{ post.title }}</h1>
+                                <p class="my-post">
                                     {{ post.body }}
                                 </p>
                                 <a href="{% url 'products' %}" class="btn btn-primary px-auto mx-auto shop-now-btn border">
@@ -125,16 +125,16 @@
                                 </a>
                             </div>
                             <!-- Right side -->
-                            <div class="col-md-6 right">
+                            <div class="col-md-4 order-first">
                                 <img class="card-img-top img-fluid" src="{{ post.image.url }}" alt="post_image">
                             </div>
-                        </div>
-                        <div class="col-2 my-2 order-last">
-                            {% if request.user.is_authenticated %}
-                            {% if request.user.is_superuser %}
-                                <a href="{% url 'edit_post' post.id %}" class="btn btn-primary d-block mx-auto">Edit Post</a>
-                            {% endif %}
-                            {% endif %}
+                            <div class="col-2 my-2 order-last">
+                                {% if request.user.is_authenticated %}
+                                {% if request.user.is_superuser %}
+                                    <a href="{% url 'edit_post' post.id %}" class="btn btn-primary shop-now-btn border">Edit Post</a>
+                                {% endif %}
+                                {% endif %}
+                            </div>
                         </div>
                     </div>
         
@@ -145,11 +145,11 @@
                 {% else %}
                 <div class="col-12 my-3 home-page-text border-light border-top mt-2 pt-4">
                     <!-- Product out of stock  -->
-                    <h1 class="header-text">{{ forloop.counter }}. {{ post.title }}</h1>
+                    <h1 class="header-text">{{ post.title }}</h1>
                     <p>{{ post.body }}</p>
                     {% if request.user.is_authenticated %}
                         {% if request.user.is_superuser %}
-                            <a href="{% url 'edit_post' post.id %}" class="btn btn-primary">Edit Post</a>
+                            <a href="{% url 'edit_post' post.id %}" class="btn btn-primary px-auto mx-auto shop-now-btn border">Edit Post</a>
                         {% endif %}
                     {% endif %}
                 </div>
@@ -170,7 +170,7 @@
                                     <div>
                                         <div class="row">
                                             <div class="col-sm-12 center-align mb-5">
-                                                <button type="submit" class="btn-large btn-primary light-blue darken-1">
+                                                <button type="submit" class="btn btn-primary px-auto mx-auto shop-now-btn border">
                                                     Add Post
                                                 </button>
                                             </div>

@@ -92,7 +92,6 @@ html {
 }
 
 .shop-now-btn {
-    display: flex;
     text-align: center;
     width: 120px;
     height: 40px;
@@ -105,6 +104,10 @@ html {
     padding: 1rem;
     background: #5e514a;
     margin: auto;
+}
+
+.my-post {
+    background: #312a26;
 }
 
 .content {
