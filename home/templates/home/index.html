@@ -65,130 +65,124 @@
 <!-- Body Content -->
     <header class="homepage-content">
         <div class="col content">
-            <!-- Event 1 -->
+          
+            <!-- Event posts section -->
+            <div class="row">
+                {% for post in posts %}
 
-
-            <div class="w-100 my-5"></div>
-            
-            <!-- Event 2 -->
-            <div class="row justify-content-around my-3 border-top rounded-top">
-                <div class="order-md-last col-md-4 right">
-                    <h1 class="header-text">Event 2</h1>
-                    <p class="home-page-text">
-                        We have created something else and it looks even more awesome than the previous one.
-                    </p>
-                    <a href="{% url 'products' %}" class="btn btn-primary px-auto mx-auto shop-now-btn border">
-                        <p class="px-auto mx-auto">Shop now</p>
-                    </a>
-                </div>
-                <!-- Right side -->
-                <div class="col-md-6">
-                    <img src="{{ MEDIA_URL }}blue_teabags_pot.jpg" class="img-fluid d-block mx-auto">
-                </div>
-            </div>
-
-            <div class="h-10 my-5"></div>
-
-            <!-- Event 3 -->
-            <div class="row justify-content-around my-3 border-top rounded-top">
-                <div class="order-md-first col-md-4 right">
-                    <h1 class="header-text">Event 3</h1>
-                    <p class="home-page-text">
-                        Another thing
-                    </p>
-                    <a href="{% url 'products' %}" class="btn btn-primary px-auto mx-auto shop-now-btn border">
-                        <p class="px-auto mx-auto">Shop now</p>
-                    </a>
-                </div>
-                <!-- Right side -->
-                <div class="col-md-6">
-                    <img src="{{ MEDIA_URL }}triple_blue_bowl.jpg" class="img-fluid d-block mx-auto">
-                </div>
-            </div>
-                <!-- Event posts section -->
-                <div class="row">
-                    {% for post in posts %}
-                        {% if {{ image.width }} > {{ image.hight }} %}
-                        <div class="col-12 my-3 home-page-text border-light border-top mt-2 pt-4">
-                            <!-- Product out of stock  -->
-                            <h3>{{ post.title }}</h3>
-                            <p>{{ post.body }}</p>
-                            {% if post.image %}
-                                <img class="card-img-top img-fluid" src="{{ post.image.url }}" alt="post_image">
-                            {% endif %}
-                            {% if request.user.is_authenticated %}
-                                {% if request.user.is_superuser %}
-                                    <a href="{% url 'edit_post' post.id %}" class="btn btn-primary">Edit Post</a>
-                                {% endif %}
-                            {% endif %}
+                {% if post.image %}
+                    {% if post.image.width > post.image.height %}
+                    <div class="col-12 my-3 home-page-text border-light border-top mt-2 pt-4">
+                        <h1 class="header-text">{{ forloop.counter }}. {{ post.title }}</h1>
+                        <div class="col-md-12 mx-0">
+                            <img class="card-img-top img-fluid" src="{{ post.image.url }}" alt="post_image">
                         </div>
-                        {% elif {{forloop_count is even}} %}
-                        <div class="row justify-content-around my-3 border-top rounded-top">
-                            <div class="col-md-6 order-last">
-                                <img src="{{ MEDIA_URL }}green_shamrock.jpg" class="img-fluid d-block mx-auto">
-                            </div>
-                            <!-- Right side -->
-                            <div class="col-md-4 left">
-                                <h1 class="header-text">Event 1</h1>
-                                <p class="home-page-text">
-                                    We've just created a green shamrock shaped something.
-                                </p>
-                                <a href="{% url 'products' %}" class="btn btn-primary px-auto mx-auto shop-now-btn border">
-                                    <p class="px-auto mx-auto">Shop now</p>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="h-10 my-5"></div>
-                        
-                        {% elif {{forloop_count is odd}} %}
-                        <div class="row justify-content-around my-3 border-top rounded-top">
-                            <div class="order-md-last col-md-4 right">
-                                <h1 class="header-text">Event 2</h1>
-                                <p class="home-page-text">
-                                    We have created something else and it looks even more awesome than the previous one.
-                                </p>
-                                <a href="{% url 'products' %}" class="btn btn-primary px-auto mx-auto shop-now-btn border">
-                                    <p class="px-auto mx-auto">Shop now</p>
-                                </a>
-                            </div>
-                            <!-- Right side -->
-                            <div class="col-md-6">
-                                <img src="{{ MEDIA_URL }}blue_teabags_pot.jpg" class="img-fluid d-block mx-auto">
-                            </div>
-                        </div>
-            
-                        <div class="h-10 my-5"></div>
+                        <p>{{ post.body }}</p>
+                        {% if request.user.is_authenticated %}
+                        {% if request.user.is_superuser %}
+                            <a href="{% url 'edit_post' post.id %}" class="btn btn-primary">Edit Post</a>
                         {% endif %}
-                    {% endfor %}
+                        {% endif %}
 
-                    <!-- Add posts section (Admin Only) -->
-                    <div class="col-md-2"></div>
-                    <div class="col-md-8 my-3 home-page-text">
+                    </div>
+                    {% elif forloop.counter|divisibleby:"2" %}
+                    <div class="col-12 my-3 home-page-text border-light border-top mt-2 pt-4">
+                        <div class="row justify-content-around my-3 mx-0">
+                            <div class="col-md-6 right mx-0">
+                                <img class="card-img-top img-fluid" src="{{ post.image.url }}" alt="post_image">
+                            </div>
+                            <!-- Right side -->
+                            <div class="col-md-4 mx-5 order-first">
+                                <h1 class="header-text">{{ forloop.counter }}. {{ post.title }}</h1>
+                                <p class="home-page-text">
+                                    {{ post.body }}
+                                </p>
+                                <a href="{% url 'products' %}" class="btn btn-primary px-auto mx-auto shop-now-btn border">
+                                    <p class="px-auto mx-auto">Shop now</p>
+                                </a>
+                            </div>
+                            <div class="col-2 my-2 order-last">
+                                {% if request.user.is_authenticated %}
+                                {% if request.user.is_superuser %}
+                                    <a href="{% url 'edit_post' post.id %}" class="btn btn-primary d-block mx-auto">Edit Post</a>
+                                {% endif %}
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="h-10 my-5"></div>
+
+                    {% elif forloop.counter|divisibleby:"1" %}
+                    <div class="col-12 my-3 home-page-text border-light border-top mt-2 pt-4">
+                        <div class="row justify-content-around my-3 mx-0">
+                            <div class="col-md-4 order-last">
+                                <h1 class="header-text">{{ forloop.counter }}. {{ post.title }}</h1>
+                                <p class="home-page-text">
+                                    {{ post.body }}
+                                </p>
+                                <a href="{% url 'products' %}" class="btn btn-primary px-auto mx-auto shop-now-btn border">
+                                    <p class="px-auto mx-auto">Shop now</p>
+                                </a>
+                            </div>
+                            <!-- Right side -->
+                            <div class="col-md-6 right">
+                                <img class="card-img-top img-fluid" src="{{ post.image.url }}" alt="post_image">
+                            </div>
+                        </div>
+                        <div class="col-2 my-2 order-last">
+                            {% if request.user.is_authenticated %}
+                            {% if request.user.is_superuser %}
+                                <a href="{% url 'edit_post' post.id %}" class="btn btn-primary d-block mx-auto">Edit Post</a>
+                            {% endif %}
+                            {% endif %}
+                        </div>
+                    </div>
+        
+                    <div class="h-10 my-5"></div>
+                    <!-- End if forloop is even -->
+                    {% endif %}
+                <!-- End if post has image -->
+                {% else %}
+                <div class="col-12 my-3 home-page-text border-light border-top mt-2 pt-4">
+                    <!-- Product out of stock  -->
+                    <h1 class="header-text">{{ forloop.counter }}. {{ post.title }}</h1>
+                    <p>{{ post.body }}</p>
                     {% if request.user.is_authenticated %}
                         {% if request.user.is_superuser %}
-                            <p>Add Post</p>
-                            <div class="row">
-                                <div class="col-12 px-3">
-                                    <form method="POST" action="{% url 'send_post' %}" enctype="multipart/form-data">
-                                        {% csrf_token %}
-                                        {{ form | crispy }}
-                                        <div>
-                                            <div class="row">
-                                                <div class="col-sm-12 center-align mb-5">
-                                                    <button type="submit" class="btn-large btn-primary light-blue darken-1">
-                                                        Add Post
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
+                            <a href="{% url 'edit_post' post.id %}" class="btn btn-primary">Edit Post</a>
                         {% endif %}
                     {% endif %}
-                    </div>
-                    <div class="col-md-2"></div>
                 </div>
+                {% endif %}
+                {% endfor %}
+
+                <!-- Add posts section (Admin Only) -->
+                <div class="col-md-2"></div>
+                <div class="col-md-8 my-3 home-page-text">
+                {% if request.user.is_authenticated %}
+                    {% if request.user.is_superuser %}
+                        <p>Add Post</p>
+                        <div class="row">
+                            <div class="col-12 px-3">
+                                <form method="POST" action="{% url 'send_post' %}" enctype="multipart/form-data">
+                                    {% csrf_token %}
+                                    {{ form | crispy }}
+                                    <div>
+                                        <div class="row">
+                                            <div class="col-sm-12 center-align mb-5">
+                                                <button type="submit" class="btn-large btn-primary light-blue darken-1">
+                                                    Add Post
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endif %}
+                </div>
+                <div class="col-md-2"></div>
             </div>
 
             <!-- This was moved to the base.html -->
@@ -207,7 +201,7 @@
 <div class="border row mx-0 mb-5 my-footer">
     <div class="border col-12 text-center">Footer</div>
 
-    <!-- Contanct Details -->
+    <!-- Contact Details -->
     <div class="border col-md-12">
         <h1 class="my-footer">Contact</h1>
         <p class="my-footer">
