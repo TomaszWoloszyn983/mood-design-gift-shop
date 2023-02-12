@@ -14,7 +14,7 @@
     <header class="base-header">
         <div class="header-content main-title">
             <h3 class="text-center header-text">The Mood Design</h3>
-            <h2 class="text-center header-text">Welcome to our workshop</h2>
+            <h2 class="text-center header-text text-white-90">Welcome to our workshop</h2>
         </div>
     </header>
 
@@ -29,7 +29,7 @@
                 <div class="col-md-12 left d-block mx-auto">
                     <h1 class="header-text">About Us</h1>
                     <div class="w-100 my-5"></div>
-                    <p class="home-page-text text-justify">
+                    <p class="home-page-text text-justify my-post">
                         <img src="{{ MEDIA_URL }}workshop.jpg" class="ml-3 float-right img-fluid" style="max-height: 500px;">
                         <em>Inspired by the sea and landscape of Ireland</em>
                         The Mood Designs is a ceramic business based in County Mayo, 
@@ -158,10 +158,10 @@
 
                 <!-- Add posts section (Admin Only) -->
                 <div class="col-md-2"></div>
-                <div class="col-md-8 my-3 home-page-text">
+                <div class="col-md-8 my-5 home-page-text">
                 {% if request.user.is_authenticated %}
                     {% if request.user.is_superuser %}
-                        <p>Add Post</p>
+                        <h3 class="header-text">Add Post</h3>
                         <div class="row">
                             <div class="col-12 px-3">
                                 <form method="POST" action="{% url 'send_post' %}" enctype="multipart/form-data">

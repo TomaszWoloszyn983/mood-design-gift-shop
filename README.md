@@ -140,9 +140,11 @@ Using this approach, I was able to apply the MoSCow prioritization and labels to
 
 
 ## References and Credits:
-- https://www.youtube.com/watch?v=Nt70Ld0dJCM - You Tube video tutorial how to create 3D Parallax landing page effect.
+- You Tube video tutorial how to create 3D Parallax landing page effect - https://www.youtube.com/watch?v=Nt70Ld0dJCM
 
 - You Tube tutorial how to choose colors - https://www.youtube.com/watch?v=KMS3VwGh3HY&list=WL&index=102
+
+- You TUbe tutorial on sending newsletters - https://www.youtube.com/watch?v=C9rszGfDMYM
 
 
 ## Gitpod Reminders
