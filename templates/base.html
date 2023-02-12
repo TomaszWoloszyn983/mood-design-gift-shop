@@ -156,8 +156,39 @@
         {% block postloadjs %}
         <script type="text/javascript">
             $('.toast').toast('show');
+  
+        </script>
+        <script>
+            let activeLink;
+            if(location.pathname.includes("/products/")){
+                activeLink = "products";
+                console.log("\n\n activate shop")
+            }else if(location.pathname.includes("products/workshop/")){
+                activeLink = "workshop";
+                console.log("\n\n activate workshop")
+            }else if(location.pathname.includes("/profile/")){
+                activeLink = "account";
+                console.log("\n\n activate account")
+            }else if(location.pathname.includes("/logout/")){
+                activeLink = "account";
+                console.log("\n\n activate account")
+            }else if(location.pathname.includes("/login/")){
+                activeLink = "account";
+                console.log("\n\n activate account")
+            }else if(location.pathname.includes("/register/")){
+                activeLink = "account";
+                console.log("\n\n activate account")
+            }else if(location.pathname.includes("/basket/")){
+                activeLink = "basket";
+                console.log("\n\n activate basket")
+            }else{
+                activeLink = "home"
+                console.log("\n\n activate home")
+            }
+            $(`[id^="nav-item-${activeLink}"]`).removeClass("list-group-item-dark").addClass("active list-group-item-light").prop("aria-current", true);
         </script>
         {% endblock %}
 
     </body>
+
 </html>
