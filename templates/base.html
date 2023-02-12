@@ -57,15 +57,19 @@
                     <div class="col-2 d-md-none"></div>
 
                     <!-- Mobile navbar dropdown button -->
-                    <button class="col-2 navbar-toggler order-first" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <button class="col-2 navbar-toggler order-first"
+                            type="button" data-toggle="collapse"
+                            data-target="#navbarSupportedContent"
+                            aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
                          <span class="navbar-toggler-icon left"></span>
                     </button>
                   
                     <!-- Navbar elements -->
                     <div class="collapse navbar-collapse col-md-6 px-md-1 mx-auto" id="navbarSupportedContent">
                         <ul class="navbar-nav row px-md-0">
-                            <li class="nav-item mx-md-auto col-md-2 px-md-1 active border">
-                                <a class="nav-link mx-auto px-0" href="{% url 'home' %}">
+                            <li class="nav-item mx-md-auto col-md-2 px-md-1 border">
+                                <a class="nav-link mx-auto px-0" id="nav-item-home" href="{% url 'home' %}">
                                     <div class="text-center">
                                         <div>
                                             <i class="fa-sharp fa-solid fa-house"></i>
@@ -75,7 +79,7 @@
                                 </a>
                             </li>
                             <li class="nav-item mx-md-auto col-md-2 px-md-1 border">
-                                <a class="nav-link mx-auto px-0" href="{% url 'products' %}">
+                                <a class="nav-link mx-auto px-0" id="nav-item-products" href="{% url 'products' %}">
                                     <div class="text-center">
                                         <div><i class="fa-solid fa-basket-shopping"></i></div>
                                         <p class="my-0">Shop</p>
@@ -83,7 +87,7 @@
                                 </a>
                             </li>
                             <li class="nav-item mx-md-auto col-md-3 px-md-1 border">
-                                <a class="nav-link mx-auto px-0" href="{% url 'workshop' %}">
+                                <a class="nav-link mx-auto px-0" id="nav-item-workshop" href="{% url 'workshop' %}">
                                     <div class="text-center">
                                         <div><i class="fa-solid fa-hammer"></i></div>
                                         <p class="my-0">Workshop</p>
@@ -110,7 +114,8 @@
                             </li>
                             <!-- Shopping Basket -->
                             <li class="nav-item mx-md-auto col-md-2 px-md-1 border">
-                                <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link px-0" href="{% url 'basket' %}">
+                                <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link px-0"
+                                    id="nav-item-basket" href="{% url 'basket' %}">
                                     <div class="text-center">
                                         <div><i class="fa-solid fa-cash-register"></i></div>
                                         <p class="my-0">
@@ -163,20 +168,36 @@
             if(location.pathname.includes("/products/")){
                 activeLink = "products";
                 console.log("\n\n activate shop")
-            }else if(location.pathname.includes("products/workshop/")){
+            }else if(location.pathname.includes("/products/" && "/workshop/")){
                 activeLink = "workshop";
                 console.log("\n\n activate workshop")
             }else if(location.pathname.includes("/profile/")){
                 activeLink = "account";
+                $(`[id^="user-options"]`)
+                    .removeClass("list-group-item-dark")
+                    .addClass("active list-group-item-light")
+                    .prop("aria-current", true);
                 console.log("\n\n activate account")
             }else if(location.pathname.includes("/logout/")){
                 activeLink = "account";
+                $(`[id^="user-options"]`)
+                    .removeClass("list-group-item-dark")
+                    .addClass("active list-group-item-light")
+                    .prop("aria-current", true);
                 console.log("\n\n activate account")
             }else if(location.pathname.includes("/login/")){
                 activeLink = "account";
+                $(`[id^="user-options"]`)
+                    .removeClass("list-group-item-dark")
+                    .addClass("active list-group-item-light")
+                    .prop("aria-current", true);
                 console.log("\n\n activate account")
             }else if(location.pathname.includes("/register/")){
                 activeLink = "account";
+                $(`[id^="user-options"]`)
+                .removeClass("list-group-item-dark")
+                .addClass("active list-group-item-light")
+                .prop("aria-current", true);
                 console.log("\n\n activate account")
             }else if(location.pathname.includes("/basket/")){
                 activeLink = "basket";
