@@ -198,53 +198,92 @@
         </div>
     </header>
 <!-- Footer -->
-<div class="border row mx-0 mb-5 my-footer">
-    <div class="border col-12 text-center">Footer</div>
+<footer class="pb-5">
+    <div class="row mx-0 mt-3 py-2">
 
-    <!-- Contact Details -->
-    <div class="border col-md-12">
-        <h1 class="my-footer">Contact</h1>
-        <p class="my-footer">
-            Contact us or follow us on our social media.
-        </p>
-    </div>
-
-    <!-- Newsletter -->
-    {% if request.user.is_authenticated %}
-        {% if request.user.is_superuser %}
-        {% else %}
-            <div class="border col-md-6 text-center">
-                Be up tp date with the latest news about our Shop and sign in for a newsletter.
+        <!-- Contact Details -->
+        <div class="col-md-3">
+            <div class="row">
+                <h3 class="col-12 text-center">Contact:</h3>
+                <ul class="list-group mx-auto">
+                    <li class="list-group-item border-0">
+                        <i class="fa-sharp fa-solid fa-house"></i>
+                        Ellison Street</li>
+                    <li class="list-group-item border-0">
+                        <i class="fa-sharp fa-solid fa-phone-volume"></i>
+                        086 233 9318</li>
+                    <li class="list-group-item border-0">
+                        <i class="fa-sharp fa-solid fa-envelope"></i>
+                        themooddesigns@gmail.com</li>
+                    <li class="list-group-item border-0"></li>
+                </ul>
             </div>
-            <div class="border col-md-6 text-center">
+        </div>
+
+        <!-- Newsletter -->
+        <div class="col-md-6 text-center py-2">
+            {% if request.user.is_authenticated %}
+            {% if request.user.is_superuser %}
+            {% else %}
+            <h3>
+                Sign Up To Our Newsletter
+            </h3>
+            <div class="text-center py-2 px-5">
                 <form method="POST" action="{% url 'newsletter' %}" enctype="multipart/form-data">
                     {% csrf_token %}
-                    {{ newsletterForm | crispy }}
-                    <div>
-                        <div class="row">
-                            <div class="col-sm-12 center-align mb-5">
-                                <button type="submit" class="btn-large light-blue darken-1">
-                                    Send
-                                </button>
+                        {{ newsletterForm | crispy }}
+                        <div>
+                            <div class="row">
+                                <div class="col-sm-12 center-align mb-3">
+                                    <button type="submit" class="btn btn-primary shop-now-btn">
+                                        Sign Me Up
+                                    </button>
+                                </div>
                             </div>
                         </div>
-                    </div>
                 </form>
             </div>
-        {% endif %}
-    {% endif %}
+            {% endif %}
+            {% endif %}
 
-    <!-- Social Media -->
-    <div class="border col-12 text-center">Also visit out official Web Page and out social media form more information.</div>
-    <div class="border col-2 text-center mx-auto px-auto"></div>
-    <a href="#"
-        class="border col-2 text-center mx-auto px-auto">FB</a>
-    <a href="#"
-        class="border col-2 text-center mx-auto px-auto">Page</a>
-    <a href="#"
-        class="border col-2 text-center mx-auto px-auto">Insta</a>
-    <div class="border col-2 text-center mx-auto px-auto"></div>
+        </div>
 
-</div>
+                
+        <!-- Social Media -->
+        <div class="col-md-3">
+            <h3 class="col-12 text-center">Follow Our Social Media</h3>
+            <div class="row">
+                <ul class="list-group mx-auto">
+                    <li class="list-group-item border-0">
+                        <a href="https://www.themooddesigns.ie/" target="_blank"
+                        class="col-12 text-center my-auto py-auto">
+                        <img src="{{ MEDIA_URL }}md_fav.jpg"></img>
+                    </a>
+                        Official Site
+                    </li>
+                    <li class="list-group-item border-0">
+                        <a href="https://www.facebook.com/TheMoodDesigns/" target="_blank"
+                        class="col-12 text-center mx-auto px-auto">
+                        <i class="fa-brands fa-square-facebook"></i>
+                    </a>
+                        Facebook
+                    </li>
+                    <li class="list-group-item border-0">
+                        <a href="https://www.instagram.com/themooddesigns/"
+                        class="col-12 text-center mx-auto px-auto">
+                        <i class="fa-brands fa-square-instagram"></i>
+                    </a>
+                        Instagram
+                    </li>
+                    <li class="list-group-item border-0"></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Copyrights -->
+        <div class="col-12 text-center">© 2022 The Mood Designs.</div>
+            
+    </div>
+</footer>
 
 {% endblock %}
