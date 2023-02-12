@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /account/
+Disallow: /basket/
+Sitemap: https://mood-design-gift-shop.herokuapp.com/sitemap.xml
