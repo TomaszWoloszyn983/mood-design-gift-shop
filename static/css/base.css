@@ -212,7 +212,7 @@ html {
 
 /* Login logout section */
 .login-panel {
-    margin-top: 30vh;
+    margin-top: 15vh;
 }
 
 
@@ -228,6 +228,9 @@ html {
         margin: 0;
         min-width: 54px;
         width: 5vw;
+    }
+    .login-panel {
+        margin-top: 25vh;
     }
 }
 
