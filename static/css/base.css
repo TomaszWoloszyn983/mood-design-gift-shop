@@ -213,6 +213,9 @@ html {
 /* Login logout section */
 .login-panel {
     margin-top: 15vh;
+    /* margin: 0, 30px, 0, 30px; */
+    background-color: #ffffffde;
+    background-blend-mode: color-dodge;
 }
 
 

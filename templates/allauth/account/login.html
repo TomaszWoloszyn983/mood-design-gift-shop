@@ -10,61 +10,58 @@
 {% block css %}
 <style>
   body {
-    /* background-image: url("mood-design-gift-shop/media/bg_image.webp"); */
-    background: url('/media/bg_image.webp');
+    background: url('{{ MEDIA_URL }}bg_image.webp');
+    background-attachment: fixed;
+    background-position: conter;
+    background-repeat: no-repeat;
+    background-size: cover;
     margin: 0;
   }
-  form {
-    background-color: #ffffffa6;
-    background-blend-mode: color-dodge;
-  }
+
   label, .input-field>label{
     min-width: 100px;
     color: black;
-    background-color: rgba(46, 124, 52, 0.397);
   }
 </style>
 {% endblock %}
-
-<div class="login-panel text-center white-80">
-  <h1>{% trans "Sign In" %}</h1>
-  
-  {% get_providers as socialaccount_providers %}
-  
-  {% if socialaccount_providers %}
-  <p>{% blocktrans with site.name as site_name %}Please sign in with one
-  of your existing third party accounts. Or, <a href="{{ signup_url }}">sign up</a>
-  for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
-  
-  <div class="socialaccount_ballot">
-  
-    <ul class="socialaccount_providers">
-      {% include "socialaccount/snippets/provider_list.html" with process="login" %}
-    </ul>
-  
-    <div class="login-or">{% trans 'or' %}</div>
-  
+<div class="row mx-0">
+  <div class="col-md-3"></div>
+  <div class="login-panel text-center col-md-6 py-4">
+    <h1>{% trans "Sign In" %}</h1>
+    
+    {% get_providers as socialaccount_providers %}
+    
+    {% if socialaccount_providers %}
+    <p>{% blocktrans with site.name as site_name %}Please sign in with one
+    of your existing third party accounts. Or, <a href="{{ signup_url }}">sign up</a>
+    for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
+    
+    <div class="socialaccount_ballot">
+    
+      <ul class="socialaccount_providers">
+        {% include "socialaccount/snippets/provider_list.html" with process="login" %}
+      </ul>
+    
+      <div class="login-or">{% trans 'or' %}</div>
+    
+    </div>
+    
+    {% include "socialaccount/snippets/login_extra.html" %}
+    
+    {% else %}
+    <p>{% blocktrans %}If you have not created an account yet, then please
+    <a href="{{ signup_url }}" class="white primary">sign up</a> first.{% endblocktrans %}</p>
+    {% endif %}
+      <form class="login" method="POST" action="{% url 'account_login' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        {% if redirect_field_value %}
+        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+        {% endif %}
+        <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
+        <button class="primaryAction btn btn-primary" type="submit">{% trans "Sign In" %}</button>
+      </form>
   </div>
-  
-  {% include "socialaccount/snippets/login_extra.html" %}
-  
-  {% else %}
-  <p>{% blocktrans %}If you have not created an account yet, then please
-  <a href="{{ signup_url }}" class="white primary">sign up</a> first.{% endblocktrans %}</p>
-  {% endif %}
-  <div class="row mx-0">
-    <div class="col-md-2"></div>
-    <form class="login col-md-8 py-4" method="POST" action="{% url 'account_login' %}">
-      {% csrf_token %}
-      {{ form.as_p }}
-      {% if redirect_field_value %}
-      <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-      {% endif %}
-      <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
-      <button class="primaryAction btn btn-primary" type="submit">{% trans "Sign In" %}</button>
-    </form>
-  </div>
-
 </div>
 
 {% endblock %}
