@@ -73,11 +73,13 @@
                 {% if post.image %}
                     {% if post.image.width > post.image.height %}
                     <div class="col-lg-10 mx-auto my-3 home-page-text border-light border-top mt-2 pt-4">
+                        <div class="col-12 post-date">{{ post.created_on }}</div>
                         <h1 class="header-text">{{ post.title }}</h1>
                         <div class="col-lg-10 mx-auto">
                             <img class="card-img-top img-fluid height-50" src="{{ post.image.url }}" alt="post_image">
                         </div>
-                        <p class="my-post">{{ post.body }}</p>
+                        <p class="my-post">{{ post.body }} <span class="signature"> - {{ post.designer }} - </span></p>
+                        
                         {% if request.user.is_authenticated %}
                         {% if request.user.is_superuser %}
                             <a href="{% url 'edit_post' post.id %}" class="btn btn-primary shop-now-btn border">Edit Post</a>
@@ -87,6 +89,7 @@
                     </div>
                     {% elif forloop.counter|divisibleby:"2" %}
                     <div class="col-lg-10 mx-auto my-3 home-page-text border-light border-top mt-2 pt-4">
+                        <div class="col-12 post-date">{{ post.created_on }}</div>
                         <div class="row justify-content-around my-3 mx-0">
                             <div class="col-md-4 right mx-0">
                                 <img class="card-img-top img-fluid" src="{{ post.image.url }}" alt="post_image">
@@ -95,7 +98,7 @@
                             <div class="col-md-6 mx-5 order-first">
                                 <h1 class="header-text">{{ post.title }}</h1>
                                 <p class="my-post">
-                                    {{ post.body }}
+                                    {{ post.body }} <span class="signature"> - {{ post.designer }} - </span>
                                 </p>
                                 <a href="{% url 'products' %}" class="btn btn-primary px-auto mx-auto shop-now-btn border">
                                     <p class="px-auto mx-auto">Shop now</p>
@@ -114,11 +117,12 @@
 
                     {% else %}
                     <div class="col-lg-10 mx-auto my-3 home-page-text border-light border-top mt-2 pt-4">
+                        <div class="col-12 post-date">{{ post.created_on }}</div>
                         <div class="row justify-content-around my-3 mx-0">
                             <div class="col-md-6 mx-5">
                                 <h1 class="header-text">{{ post.title }}</h1>
                                 <p class="my-post">
-                                    {{ post.body }}
+                                    {{ post.body }} <span class="signature"> - {{ post.designer }} - </span>
                                 </p>
                                 <a href="{% url 'products' %}" class="btn btn-primary px-auto mx-auto shop-now-btn border">
                                     <p class="px-auto mx-auto">Shop now</p>
@@ -145,9 +149,9 @@
                 {% else %}
                 <div class="h-12 my-5"></div>
                 <div class="col-lg-10 mx-auto my-3 home-page-text border-light border-top mt-2 pt-4">
-                    <!-- Product out of stock  -->
+                    <div class="col-12 post-date">{{ post.created_on }}</div>
                     <h1 class="header-text">{{ post.title }}</h1>
-                    <p>{{ post.body }}</p>
+                    <p>{{ post.body }} <span class="signature"> - {{ post.designer }} - </span></p>
                     {% if request.user.is_authenticated %}
                         {% if request.user.is_superuser %}
                             <a href="{% url 'edit_post' post.id %}" class="btn btn-primary px-auto mx-auto shop-now-btn border">Edit Post</a>

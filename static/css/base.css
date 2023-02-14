@@ -142,6 +142,16 @@ html {
     box-sizing:border-box;
     padding: 0;
 }
+/* Events Posts */
+.post-date {
+    text-align: right;
+    font-size: small;
+}
+.signature {
+    border: 0;
+    text-align: right;
+    font-size: 1.1rem;
+}
 
 /* Shop Page */
 
