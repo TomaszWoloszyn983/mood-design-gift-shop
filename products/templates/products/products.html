@@ -36,6 +36,7 @@
                 <div class="row mt-1 mb-2"></div>
                 <div class="row">
                     {% for product in products %}
+                    {% if product.category != services %}
                         <div class="col-sm-6 col-md-4 col-lg-3 my-3" >
                             <!-- Product out of stock  -->
                             {% if product.quantity == 0 %}
@@ -144,6 +145,7 @@
                             </div>
                             {% endif %}
                         </div>
+                    {% endif %}
                     {% endfor %}
                 </div>
             </div>

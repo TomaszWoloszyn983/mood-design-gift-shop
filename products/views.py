@@ -11,7 +11,9 @@ def all_products(request):
     """
 
     products = Product.objects.all()
-    category = None
+    # excluded_category = get_object_or_404(Category, name='services')
+
+    # products = all_products.filter(excluded_category!=excluded_category)
 
     if request.GET:
         if 'category' in request.GET:
@@ -44,12 +46,24 @@ def workshop(request):
     If workshop services will be a separate category of products
     This function is going to return products of this category.
     """
-    # products = Product.objects.all()
+    category = get_object_or_404(Category, name='services')
+    print(f"\nChoosen category: {category}")
+    categories = Category.objects.all()
+    products = Product.objects.all()
+    services = products.filter(category=category)
+    print(f'Products: {products}')
+    print(f'Services: {services}')
+    for serv in services:
+        print(f'service name - {serv.name}')
+    # if request.GET:
+    #         services = products.filter(category=='services')
+    # result = list(filter(lambda x: (x % 13 == 0), my_list)) 
+    
 
-    # context = {
-    #     'products': products,
-    # }
-    return render(request, 'products/workshop.html')
+    context = {
+        'services': services,
+    }
+    return render(request, 'products/workshop.html', context)
     
     
 @login_required
