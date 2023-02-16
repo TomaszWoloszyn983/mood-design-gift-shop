@@ -19,53 +19,46 @@
     </header>
 
     <!-- Shop Page Content -->
-    <header class="shop-page-content">
+    <div class="shop-page-content">
         <div class="row mx-0 w-xl-80">
             <div class="product-container col-10 offset-1">
-                <div class="row">
-                    <p>
-                        Services: {{ services }}
-                    </p>
-                    <h3 class="col-12 text-center my-5">Ceramics is not only hobby for us,
-                        it’s a way of life that we love.
-                        We are honored to be able to spread our interpretations of
-                        Irish beauty to other craft-enthusiasts and nature lovers
-                    </h3>
-                    <h4 class="col-12 px-auto mt-5">Join our adventure and lets make some ceramics
-                        together. We are happy to share our passion with you.
-                        Clay is a amazing material to work with, can be very therapeutic
-                        and relaxing.
-                        You can join our workshops at new premises in Castlebar,
-                        where we can facilitate up to 14 people per class.
-                    </h4>
-                    {% for service in services %}
-                        <p class="col-12 ">
-                            experience something similar in Castlebar on our Valentine
-                            workshop for couple, we won't use a wheel but slab building
-                            techniques.
-                            Make a Mug each with same theme or comletly diferent design.
-                            Bring a buzz if you wish, we'll have glasses!
-                            No experience needed.
-                        </p>
-                        <!-- product card -->
-                        <div class="col-3">
-                            <div class="card h-100 border-1 rounded-5">
-                                <div class="card h-100">
-                                    {% if service.image %}
-                                        <a href="{{ service.image.url }}">
-                                            <img class="card-img-top img-fluid" src="{{ service.image.url }}" alt="product_image">
+                <h3 class="col-12 text-center my-5">Ceramics is not only hobby for us,
+                    it’s a way of life that we love.
+                    We are honored to be able to spread our interpretations of
+                    Irish beauty to other craft-enthusiasts and nature lovers
+                </h3>
+                <h4 class="col-12 px-auto mt-5">Join our adventure and lets make some ceramics
+                    together. We are happy to share our passion with you.
+                    Clay is a amazing material to work with, can be very therapeutic
+                    and relaxing.
+                    You can join our workshops at new premises in Castlebar,
+                    where we can facilitate up to 14 people per class.
+                </h4>
+                <div class="row my-5 pt-4 border-top border-secondary">
+                    {% for product in products %}
+                    {% if product.category == category %}
+                    <!-- product card -->
+                    <div class="col-md-6 col-lg-3 mb-md-3">
+                        <div class="card h-100 border-1 rounded-5">
+                            <div class="card h-100">
+                                    {% if product.image %}
+                                        <a href="{{ product.image.url }}">
+                                            <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="product_image">
                                         </a>
-                                    {% else %}
+                                        {% else %}
+                                        <a href="{% url 'product_detail' product.id %}">
+                                            <img class="card-img-top img-fluid"
+                                            src="{{ MEDIA_URL }}no_image.jpg"
+                                            alt="no-image">
+                                        </a>
                                     {% endif %}
-                                    <div class="card-body">
-                                        <p class="">{{ service.name }}</p>
-                                    </div>
+
                                     <div class="card-footer">
                                         <div class="row">
                                             <div class="col">
                                                 <div class="row">
                                                     <p class="lead left text-left mx-auto d-inline font-weight-bold">
-                                                        €{{ service.price }}
+                                                        €{{ product.price }}
                                                     </p>
                                                     <!-- Default dropup button -->
                                                     <div class="btn-group right dropup mx-auto d-inline">
@@ -73,7 +66,7 @@
                                                             Click
                                                         </button>
                                                         <div class="dropdown-menu dropdown-menu-left">
-                                                        <!-- Dropdown menu links -->
+                                                            <!-- Dropdown menu links -->
                                                             {% if request.user.is_authenticated %}
                                                                 {% if request.user.is_superuser %}
                                                                     <div class="dropdown-divider"></div>
@@ -88,12 +81,16 @@
                                 </div>
                             </div>
                         </div>
+                    <p class="col-md-6 col-lg-9 mb-3 mb-md-1">
+                        {{ product.description }}
+                    </p>
+                    <span class="col-12 my-3 border-bottom border-secondary"></span>
+                    {% endif %}
                     {% endfor %}
-
                 </div>
             </div>
         </div> 
-    </header>
+    </div>
 
 {% endblock %}
 

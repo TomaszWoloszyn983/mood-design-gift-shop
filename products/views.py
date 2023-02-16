@@ -10,26 +10,26 @@ def all_products(request):
     A view to show all products.
     """
 
+    excluded_category = get_object_or_404(Category, name='services')
+    print(f'Excluded caregory: {excluded_category}')
     products = Product.objects.all()
-    # excluded_category = get_object_or_404(Category, name='services')
-
-    # products = all_products.filter(excluded_category!=excluded_category)
 
     if request.GET:
         if 'category' in request.GET:
             categories = request.GET['category'].split(',')
             products = products.filter(category__name__in=categories)
             categories = Category.objects.filter(name__in=categories)
-    
+            
     context = {
         'products': products,
+        'excluded_category': excluded_category,
     }
     return render(request, 'products/products.html', context)
 
 
 def product_detail(request, product_id):
     """
-    A view to show individual prosuct details.
+    A view to show individual product details.
     """
     product = get_object_or_404(Product, pk=product_id)
 
@@ -47,21 +47,11 @@ def workshop(request):
     This function is going to return products of this category.
     """
     category = get_object_or_404(Category, name='services')
-    print(f"\nChoosen category: {category}")
-    categories = Category.objects.all()
     products = Product.objects.all()
-    services = products.filter(category=category)
-    print(f'Products: {products}')
-    print(f'Services: {services}')
-    for serv in services:
-        print(f'service name - {serv.name}')
-    # if request.GET:
-    #         services = products.filter(category=='services')
-    # result = list(filter(lambda x: (x % 13 == 0), my_list)) 
-    
 
     context = {
-        'services': services,
+        'products': products,
+        'category': category,
     }
     return render(request, 'products/workshop.html', context)
     
