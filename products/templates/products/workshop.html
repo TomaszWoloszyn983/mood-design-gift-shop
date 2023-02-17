@@ -57,7 +57,8 @@
                                         <div class="row">
                                             <div class="col">
                                                 <div class="row">
-                                                    <p class="lead left text-left m-auto d-inline font-weight-bold">
+                                                    <!-- Price box -->
+                                                    <p class="col-12 lead left text-center m-auto d-inline font-weight-bold">
                                                         €{{ product.price }}
                                                     </p>
                                                     <!-- Default dropup button -->
@@ -76,15 +77,32 @@
                                                         </div>
                                                         {% endif %}
                                                     {% else %}
-                                                    <a class="btn btn-primary right m-auto d-inline"
-                                                        href="{% url 'add_to_basket' product.id %}">
-                                                        Add To Basket
-                                                    </a>
-
+                                                        <!-- Add to basket box and form -->
+                                                        <div class="col-12">
+                                                            <form action="{% url 'add_to_basket' product.id %}" method="POST">
+                                                                {% csrf_token %}
+                                                                <div class="row">
+                                                                    <div class="col-5 text-center my-2 px-0 mx-auto form-group">
+                                                                        <div class="row mx-auto px-0 input-group d-block">
+                                                                            <input type="number" name="units" class="col-6 w-50 text-center form-control input-number qty_input d-inline" 
+                                                                                action="{% url 'adjust_qty_on_stock' product.id %}"
+                                                                                value="1" min="1", max="{{ product.quantity }}"
+                                                                                data.item_id="{{ product.id }}"
+                                                                                id="id_qty_{{ product.id }}">
+                                                                        </div>
+                                                                    </div>
+                                                                    
+                                                                    <div class="col-7 my-2 px-auto mx-auto">
+                                                                        <input class="btn btn-primary mx-auto" type="submit" value="Add to Basket">
+                                                                    </div>
+                                                                </div>
+                                                            </form>
+                                                        </div>
                                                     {% endif %}
                                                 </div>
                                             </div>
                                         </div>
+                                        <!-- Card footer closing -->
                                     </div>
                                 </div>
                             </div>
@@ -100,11 +118,11 @@
                     {% endfor %}
                 </div>
             </div>
-        {% if request.user.is_authenticated %}
-        {% if request.user.is_superuser %}
-            <a href="{% url 'add_product' %}" class="button fixed-button btn-success text-decoration-none">Add Item</a>
-        {% endif %}
-        {% endif %}
+            {% if request.user.is_authenticated %}
+            {% if request.user.is_superuser %}
+                <a href="{% url 'add_product' %}" class="button fixed-button btn-success text-decoration-none">Add Item</a>
+            {% endif %}
+            {% endif %}
         </div> 
     </div>
 
