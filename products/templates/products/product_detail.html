@@ -14,17 +14,16 @@
     <header class="shop-page-header">
         <div class="header-content shop-title">
             <h2 class="text-center header-text">The Mood Design Shop</h2>
-            <h4 class="text-center mt-5">{{ product.name }}</h4>
         </div>
     </header>
 
     <!-- Product Detail Page Content -->
-    <header class="shop-page-content">
+    <div class="shop-page-content">
         <div class="row mx-0 mt-5">
             <div class="product-container col-10 offset-1">
                 <div class="row mb-5">
                     <!-- Product image column -->
-                    <div class="col-lg-6 offset-md-1 mw-50 order-lg-first px-sm-5 px-lg-0 d-inline mx-md-auto">
+                    <div class="col-md-7 col-lg-6 offset-lg-1 mw-50 order-md-first px-sm-5 px-lg-0 d-inline mx-md-auto">
                         {% if product.image %}
                             <a href="{{ product.image.url }}">
                                 <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="product_image">
@@ -37,7 +36,7 @@
 
                         {% if product.quantity == 0 %}
                         <!-- Product OUT of Stock -->
-                            <div class="col-sm-8 offset-sm-2 my-2 px-auto mx-auto">
+                            <div class="row my-2 px-auto mx-auto">
                                 <a class="btn btn-primary mx-auto" href="{% url 'products' %}">
                                     Keep Shopping
                                 </a>
@@ -51,27 +50,11 @@
                                     <p class="col-12 text-center">Quantity</p>
                                     <div class="col-12 text-center px-0 form-group">
                                         <div class="row mx-auto px-0 input-group d-block">
-                                            <!-- <span class="col-2  mx-auto px-0 input-group-prepend d-inline">
-                                                <button type="button" class="decrement-qty btn btn-outline-secondary btn-number"
-                                                    data-type="minus" data-field="units"
-                                                    data-item_id="{{ product.id }}"
-                                                    id="decrement-qty_{{ product.id }}">
-                                                    <span class="fa fa-minus"></span>
-                                                </button>
-                                            </span> -->
                                             <input type="number" name="units" class="col-6 w-50 text-center form-control input-number qty_input d-inline" 
                                                 action="{% url 'adjust_qty_on_stock' product.id %}"
                                                 value="1" min="1", max="{{ product.quantity }}"
                                                 data.item_id="{{ product.id }}"
                                                 id="id_qty_{{ product.id }}">
-                                            <!-- <span class="col-2 mx-auto px-0 input-group-append d-inline">
-                                                <button type="button" class="increment-qty btn btn-outline-secondary btn-number"
-                                                    data-type="plus" data-field="units"
-                                                    data-item_id="{{ product.id }}"
-                                                    id="increment-qty_{{ product.id }}">
-                                                    <span class="fa fa-plus"></span>
-                                                </button>
-                                            </span> -->
                                         </div>
                                     </div>
                                     
@@ -88,7 +71,7 @@
                     </div>
 
                     <!-- Product detail column -->
-                    <div class="col-lg-3 offset-md-2 order-first order-lg-2 d-inline mx-md-auto">
+                    <div class="col-md-5 order-first order-md-2 d-inline mx-md-auto">
                         <h2 class="">{{ product.name }}</h2>
                         <small class="text-muted">Design by {{ product.designer }}</small>
                         <p>Adjust the size of the image. Make it smaller in -md.
@@ -113,7 +96,7 @@
                 </div>
             </div>
         </div> 
-    </header>
+    </div>
 
 {% endblock %}
 

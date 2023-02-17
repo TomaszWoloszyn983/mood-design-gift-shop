@@ -37,18 +37,14 @@ html {
     text-align: center;
     color: #fff;
     font-size: 2.5rem;
-    text-decoration: underline; 
-    text-decoration-thickness: 1px;
+    padding-top: 5vh;
+    /* text-decoration: underline; 
+    text-decoration-thickness: 1px; */
     line-height: 1.4;
 
 } 
 
 .logo-image {
-    /* background: url('/media/logo.webp');
-    background-attachment: fixed;
-    background-position: conter;
-    background-repeat: no-repeat;
-    background-size: cover; */
     height: 40px;
     margin: auto;
 }
@@ -76,8 +72,6 @@ html {
     color: white;
     transition: color .2s ease-in-out, box-shadow .1s ease-in-out;
 }
-
-
 
 .navbar-collapse {
     width: max-content;
@@ -192,6 +186,11 @@ html {
     text-decoration: none;
 }
 
+.my-dropdown-button {
+    max-width: 150px !important; 
+    overflow: hidden;
+}
+
 
 /* Shopping Basket Page*/
 
@@ -200,6 +199,11 @@ html {
 }
 .my-icon-input {
     width: 120px;
+}
+
+.table td, .table th {
+    padding: 8px 0px 8px 0px;
+    vertical-align: middle;
 }
 
 
