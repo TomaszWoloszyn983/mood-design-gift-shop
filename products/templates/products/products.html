@@ -151,7 +151,7 @@
             </div>
             {% if request.user.is_authenticated %}
                 {% if request.user.is_superuser %}
-                    <a href="{% url 'add_product' %}" class="button fixed-button btn-primary text-decoration-none">Add Item</a>
+                    <a href="{% url 'add_product' %}" class="button fixed-button btn-success text-decoration-none">Add Item</a>
                 {% endif %}
             {% endif %}
         </div> 

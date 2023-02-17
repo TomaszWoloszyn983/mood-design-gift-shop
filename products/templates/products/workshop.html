@@ -38,7 +38,7 @@
                     {% for product in products %}
                     {% if product.category == category %}
                     <!-- product card -->
-                    <div class="col-md-6 col-lg-3 mb-md-3">
+                    <div class="col-md-5 mb-md-3">
                         <div class="card h-100 border-1 rounded-5">
                             <div class="card h-100">
                                     {% if product.image %}
@@ -57,23 +57,31 @@
                                         <div class="row">
                                             <div class="col">
                                                 <div class="row">
-                                                    <p class="lead left text-left mx-auto d-inline font-weight-bold">
+                                                    <p class="lead left text-left m-auto d-inline font-weight-bold">
                                                         €{{ product.price }}
                                                     </p>
                                                     <!-- Default dropup button -->
-                                                    <div class="btn-group right dropup mx-auto d-inline">
-                                                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                            Click
-                                                        </button>
-                                                        <div class="dropdown-menu dropdown-menu-left">
+                                                    {% if request.user.is_authenticated %}
+                                                        {% if request.user.is_superuser %}
+                                                        <div class="btn-group right dropup mx-auto d-inline">
+                                                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                            Options
+                                                            </button>
+                                                            <div class="dropdown-menu dropdown-menu-left">
                                                             <!-- Dropdown menu links -->
-                                                            {% if request.user.is_authenticated %}
-                                                                {% if request.user.is_superuser %}
-                                                                    <div class="dropdown-divider"></div>
-                                                                {% endif %}
-                                                            {% endif %}
+                                                                <div class="dropdown-divider"></div>
+                                                                <a class="dropdown-item" href="{% url 'edit_service' product.id %}">Edit Item (Admin Only)</a>
+                                                                <a class="dropdown-item btn-danger" href="{% url 'delete_service' product.id %}">Delete Item (Admin Only)</a>
+                                                            </div>
                                                         </div>
-                                                    </div>
+                                                        {% endif %}
+                                                    {% else %}
+                                                    <a class="btn btn-primary right m-auto d-inline"
+                                                        href="{% url 'add_to_basket' product.id %}">
+                                                        Add To Basket
+                                                    </a>
+
+                                                    {% endif %}
                                                 </div>
                                             </div>
                                         </div>
@@ -81,14 +89,22 @@
                                 </div>
                             </div>
                         </div>
-                    <p class="col-md-6 col-lg-9 mb-3 mb-md-1">
-                        {{ product.description }}
-                    </p>
-                    <span class="col-12 my-3 border-bottom border-secondary"></span>
+                        <div class="col-md-7 mb-3 mb-md-1 mt-4 mt-md-0">
+                            <h5 class="text-center">{{ product.name }}</h5>
+                            <p>
+                                {{ product.description }}
+                            </p>
+                        </div>
+                        <span class="col-12 my-3 border-bottom border-secondary"></span>
                     {% endif %}
                     {% endfor %}
                 </div>
             </div>
+        {% if request.user.is_authenticated %}
+        {% if request.user.is_superuser %}
+            <a href="{% url 'add_product' %}" class="button fixed-button btn-success text-decoration-none">Add Item</a>
+        {% endif %}
+        {% endif %}
         </div> 
     </div>
 

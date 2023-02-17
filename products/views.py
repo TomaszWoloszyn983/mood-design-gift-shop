@@ -3,15 +3,17 @@ from .models import Product, Category
 from .forms import ProductForm
 from django.db.models import Q
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 
 
 def all_products(request):
     """
-    A view to show all products.
+    A view to show all products except of the products marked
+    with services category.
+    Services are displayed in the workshop section.
     """
 
     excluded_category = get_object_or_404(Category, name='services')
-    print(f'Excluded caregory: {excluded_category}')
     products = Product.objects.all()
 
     if request.GET:
@@ -43,11 +45,10 @@ def workshop(request):
     """
     A view to show the workshop template.
 
-    If workshop services will be a separate category of products
-    This function is going to return products of this category.
+    This functions returns only products market with services category.
     """
     category = get_object_or_404(Category, name='services')
-    products = Product.objects.all()
+    products = Product.objects.all().order_by('-created_on')
 
     context = {
         'products': products,
@@ -65,10 +66,10 @@ def add_product(request):
         form = ProductForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            print("Product added")
+            messages.success(request, f'Item successfully added.')
             return redirect(reverse("products"))
         else: 
-            print("\n\n\n Adding the product didn't succeed")
+            messages.error(request, f'A problem occured! I could not update this item')
     else:
         form = ProductForm()
 
@@ -90,10 +91,10 @@ def edit_product(request, product_id):
         form = ProductForm(request.POST, request.FILES, instance=product)
         if form.is_valid():
             form.save()
-            print("Product updated")
+            messages.success(request, f'Item {product.name} successfully updated')
             return redirect(reverse("products"))
         else: 
-            print("\n\n\n Update didn't succeed")
+            messages.error(request, f'A problem occured! I could not update this item')
 
     context = {
         'product_id': product_id,
@@ -109,14 +110,42 @@ def delete_product(request, product_id):
     """
     product = get_object_or_404(Product, pk=product_id)
     product.delete()
+    messages.success(request, f'Item {product.name} successfully deleted')
 
     return redirect(reverse('products'))
  
  
-def subtract_products(request, product_id, number):
+@login_required
+def edit_service(request, product_id):
     """
-    A view to Update product quantity when the product is 
-    added to the basket.
+    A view to edit an existing product by its id.
     """
     product = get_object_or_404(Product, pk=product_id)
-    product.quantity -= number
+    form = ProductForm(instance=product)
+    
+    if request.method == 'POST':
+        form = ProductForm(request.POST, request.FILES, instance=product)
+        if form.is_valid():
+            form.save()
+            messages.success(request, f'Item {product.name} successfully updated')
+            return redirect(reverse("workshop"))
+        else: 
+            print("\n\n\nService  Update didn't succeed")
+
+    context = {
+        'product_id': product_id,
+        'form': form,
+    }
+    return render(request, 'products/edit_product.html', context)
+
+
+@login_required
+def delete_service(request, product_id):
+    """
+    A view to delete an existing product by its id.
+    """
+    product = get_object_or_404(Product, pk=product_id)
+    product.delete()
+    messages.success(request, f'Item {product.name} successfully deleted')
+
+    return redirect(reverse('workshop'))
