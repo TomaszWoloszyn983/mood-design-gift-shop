@@ -77,11 +77,12 @@ It also allows the user to register his own account what gives him an access to 
 * GitHub - Version control service used for storing and sharing development projects https://github.com/.
 * Heroku - a container-based cloud platform where developers can deploy their projects https://www.heroku.com/.
 * Amazon Web Services s3 - a cloud-based stporage service.
+* Stripe - a suite of APIs powering online payment processing and commerce solutions for internet businesses.
 
 
 ## **6. Database Design**
 
-The Project contains following classes to describe categiries of products, Products features and also classes to describe application users profiles.
+The Project contains following classes to describe categories of products, Products features and also classes to describe application users profiles.
 
 ```python
 class Category(models.Model):
@@ -93,8 +94,13 @@ class Category(models.Model):
 
 ```python
 class Product(models.Model):
+ DESIGNERS = [
+        ('Ela', 'Ela'),
+        ('Lukasz', 'Lukasz')
+    ]
     category = models.ForeignKey('Category', null=True, blank=True, on_delete=models.SET_NULL)
     created_on = models.DateField(default=timezone.now)
+    designer = models.CharField(choices=DESIGNERS, max_length=10, default='Ela')
     name = models.CharField(max_length=254)
     quantity = models.IntegerField(default=0)
     description = models.TextField()
@@ -105,8 +111,77 @@ class Product(models.Model):
         return self.name
 ```
 
-Consider adding a basic screenshot of your Projects Board.
+```python
+class UserProfile(models.Model):
 
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    default_phone_number = models.CharField(max_length=20, null=False, blank=False)
+    default_street_address1 = models.CharField(max_length=80, null=False, blank=False)
+    default_street_address2 = models.CharField(max_length=80, null=True, blank=True)
+    default_town_or_city = models.CharField(max_length=40, null=False, blank=False)
+    default_postcode = models.CharField(max_length=20, null=True, blank=True)
+    default_county = models.CharField(max_length=80, null=True, blank=True)
+    default_country = CountryField(blank_label='Country *', null=False, blank=False)
+```
+
+```python
+def create_or_update_user_profile(sender, instance, created, **kwargs):
+
+    if created:
+        UserProfile.objects.create(user=instance)
+
+    instance.userprofile.save()
+```
+
+```python
+class Order(models.Model):
+    order_number = models.CharField(max_length=32, null=False, editable=False)
+    user_profile = models.ForeignKey(UserProfile, on_delete=models.SET_NULL,
+                                     null=True, blank=True, related_name='orders')
+    full_name = models.CharField(max_length=50, null=False, blank=False)
+    email = models.EmailField(max_length=254, null=False, blank=False)
+    phone_number = models.CharField(max_length=20, null=False, blank=False)
+    country = CountryField(blank_label='Country *', null=False, blank=False)
+    postcode = models.CharField(max_length=20, null=True, blank=True)
+    town_or_city = models.CharField(max_length=40, null=False, blank=False)
+    street_address1 = models.CharField(max_length=80, null=False, blank=False)
+    street_address2 = models.CharField(max_length=80, null=True, blank=True)
+    county = models.CharField(max_length=80, null=True, blank=True)
+    date = models.DateTimeField(auto_now_add=True)
+    delivery_cost = models.DecimalField(max_digits=6, decimal_places=2, null=False, default=0)
+    order_total = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)
+    grand_total = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)
+```
+
+```python
+class OrderLineItem(models.Model):
+    order = models.ForeignKey(Order, null=False, blank=False, on_delete=models.CASCADE, related_name='lineitems')
+    product = models.ForeignKey(Product, null=False, blank=False, on_delete=models.CASCADE)
+    quantity = models.IntegerField(null=False, blank=False, default=0)
+    lineitem_total = models.DecimalField(max_digits=6, decimal_places=2, null=False, blank=False, editable=False)
+```
+
+```python 
+class NewsletterUser(models.Model):
+    email = models.EmailField(max_length=254, null=False, blank=False)
+    added_on = models.DateTimeField(auto_now_add=True)
+```
+
+```python
+class Post(models.Model):
+    DESIGNERS = [
+        ('Ela', 'Ela'),
+        ('Lukasz', 'Lukasz')
+    ]
+
+    title = models.TextField()
+    designer = models.CharField(choices=DESIGNERS, max_length=10, default='Ela')
+    created_on = models.DateTimeField(auto_now_add=True)
+    updated_on = models.DateTimeField(auto_now=True)
+    body = models.TextField()
+    image = models.ImageField(null=True, blank=True)
+    email = models.ManyToManyField(NewsletterUser)
+```
 
 ## **7. GitHub Issues**
 
@@ -118,13 +193,13 @@ It also helped with milestone iterations on a weekly basis.
 
 Consider adding a screenshot of your Open and Closed Issues.
 
-- [Open Issues](https://github.com/TomaszWoloszyn983/boutique-ado-walkthrough-project/issues)
+- [Open Issues](https://github.com/TomaszWoloszyn983/mood-design-gift-shop/issues?q=is%3Aopen+is%3Aissue)
 
     ![screenshot](documentation/gh-issues-open.png)
 
-- [Closed Issues](https://github.com/TomaszWoloszyn983/boutique-ado-walkthrough-project/issues?q=is%3Aissue+is%3Aclosed)
+- [Closed Issues](https://github.com/TomaszWoloszyn983/mood-design-gift-shop/issues?q=is%3Aissue+is%3Aclosed)
 
-    ![screenshot](documentation/gh-issues-closed.png)
+    ![screenshot](documentation/images/project_board03.jpg)
 
 ### MoSCoW Prioritization
 
