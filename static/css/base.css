@@ -4,7 +4,6 @@ html {
 
 
 /* Header and Navbar */
-
 .base-header {
     background: url('/media/bg_image.webp');
     background-attachment: fixed;
@@ -24,11 +23,8 @@ html {
 
 .main-title {
     color: #fff;
-    /* height: 50vh; */
     height: 67vh;
-    /* transform: translate(0%, 100%); */
     transform: translate(0%, 50%);
-    /* background: rgba(50, 52, 32, 0.315); */
     background:linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
     padding-top: 12rem;
 }
@@ -38,8 +34,6 @@ html {
     color: #fff;
     font-size: 2.5rem;
     padding-top: 5vh;
-    /* text-decoration: underline; 
-    text-decoration-thickness: 1px; */
     line-height: 1.4;
 
 } 
@@ -47,6 +41,7 @@ html {
 .logo-image {
     height: 40px;
     margin: auto;
+    padding-left: 15px;
 }
 
 
@@ -82,6 +77,18 @@ html {
     height: 60px;
     padding: 0;
     margin: auto;
+}
+
+#nav1
+{  
+    background-color:#F00; /*whichever you want*/
+    opacity: 0.5; 
+    filter:(opacity=50);       
+}
+
+.nav-active {
+    background-color: #80888a4d;
+
 }
 
 /* Home Page */
@@ -261,7 +268,7 @@ html {
         z-index: 1030;
     }
 }
-/* I was trying to add morgin on the extra large size screen but it didnt work */
+/* I was trying to add margin on the extra large size screen but it didnt work */
 @media (min-width: 1200px) {
     .fixed-top-desktop-only {
         position: fixed;

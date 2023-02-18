@@ -40,14 +40,14 @@
     <body>
         <header class="container-fluid fixed-top px-0 border">
             <!-- Boostrap Navbar-->
-            <nav class="navbar navbar-expand-md row navbar-light bg-light border">
-                <div class="col-10 col-lg-6 mx-0 px-0">
+            <nav class="navbar navbar-expand-md row navbar-light bg-light border-md-0 py-0 my-0">
+                <div class="col-10 col-md-6 text-center text-md-left mx-0 px-0">
                     <a href="{% url 'home' %}" class="nav-link main-logo-link py-0">
                         <div class="logo-font my-0">
                             <div class="row">
                                 <div class="col-2 logo-image mb-2 d-none d-md-block">
                                     <img src="{{ MEDIA_URL }}logo.webp"
-                                    class="mx-auto logo-image"
+                                    class="right logo-image"
                                     alt="Navbar image">
                                 </div>
                                 <h1 class="col-10">
@@ -60,7 +60,7 @@
                 <!-- <div class="col-2 d-md-none"></div> -->
 
                 <!-- Mobile navbar dropdown button -->
-                <button class="col-2 navbar-toggler order-first"
+                <button class="col-2 navbar-toggler order-first nav1"
                         type="button" data-toggle="collapse"
                         data-target="#navbarSupportedContent"
                         aria-controls="navbarSupportedContent"
@@ -69,7 +69,7 @@
                 </button>
             
                 <!-- Navbar elements -->
-                <div class="collapse navbar-collapse col-md-6 px-0 mx-0 border-top" id="navbarSupportedContent">
+                <div class="collapse navbar-collapse col-md-6 px-0 mx-0" id="navbarSupportedContent">
                     <ul class="navbar-nav row px-0">
                         <li class="nav-item mx-md-auto col-md-2 px-md-1">
                             <a class="nav-link mx-auto px-0" id="nav-item-home" href="{% url 'home' %}">
@@ -117,7 +117,7 @@
                         </li>
                         <!-- Shopping Basket -->
                         <li class="nav-item mx-md-auto col-md-2 px-md-1">
-                            <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link px-0"
+                            <a class="{% if grand_total %}text-primary font-weight-bold{% else %}text-black{% endif %} nav-link px-0"
                                 id="nav-item-basket" href="{% url 'basket' %}">
                                 <div class="text-center">
                                     <div><i class="fa-solid fa-cash-register"></i></div>
@@ -170,35 +170,35 @@
             if(location.pathname.includes("/products/")){
                 activeLink = "products";
                 console.log("\n\n activate shop")
-            }else if(location.pathname.includes("/products/" && "/workshop/")){
+            }else if(location.pathname.includes("/products/workshop/")){
                 activeLink = "workshop";
                 console.log("\n\n activate workshop")
             }else if(location.pathname.includes("/profile/")){
                 activeLink = "account";
                 $(`[id^="user-options"]`)
                     .removeClass("list-group-item-dark")
-                    .addClass("active list-group-item-light")
+                    .addClass("nav-active list-group-item-light")
                     .prop("aria-current", true);
                 console.log("\n\n activate account")
             }else if(location.pathname.includes("/logout/")){
                 activeLink = "account";
                 $(`[id^="user-options"]`)
                     .removeClass("list-group-item-dark")
-                    .addClass("active list-group-item-light")
+                    .addClass("nav-active list-group-item-light")
                     .prop("aria-current", true);
                 console.log("\n\n activate account")
             }else if(location.pathname.includes("/login/")){
                 activeLink = "account";
                 $(`[id^="user-options"]`)
                     .removeClass("list-group-item-dark")
-                    .addClass("active list-group-item-light")
+                    .addClass("nav-active list-group-item-light")
                     .prop("aria-current", true);
                 console.log("\n\n activate account")
             }else if(location.pathname.includes("/register/")){
                 activeLink = "account";
                 $(`[id^="user-options"]`)
                 .removeClass("list-group-item-dark")
-                .addClass("active list-group-item-light")
+                .addClass("nav-active list-group-item-light")
                 .prop("aria-current", true);
                 console.log("\n\n activate account")
             }else if(location.pathname.includes("/basket/")){
@@ -208,7 +208,7 @@
                 activeLink = "home"
                 console.log("\n\n activate home")
             }
-            $(`[id^="nav-item-${activeLink}"]`).removeClass("list-group-item-dark").addClass("active list-group-item-light").prop("aria-current", true);
+            $(`[id^="nav-item-${activeLink}"]`).removeClass("list-group-item-dark").addClass("nav-active list-group-item-light").prop("aria-current", true);
         </script>
         {% endblock %}
 
