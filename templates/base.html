@@ -39,99 +39,101 @@
 
     <body>
         <header class="container-fluid fixed-top px-0 border">
-           
             <!-- Boostrap Navbar-->
-            <div>
-                <nav class="navbar navbar-expand-md navbar-light bg-light py-0 my-0 w-100">
-                    <div class="col-8 offset-2 col-md-6 offset-md-0">
-                        <a href="{% url 'home' %}" class="nav-link main-logo-link py-0">
-                            <h1 class="logo-font d-none d-sm-block my-0">
-                                <img src="{{ MEDIA_URL }}logo.webp" class="logo-image mb-2" alt="Navbar image">
-                                <strong>Mood</strong> Design
-                            </h1>
-                            <div class="col-2 col-md-2 d-sm-none px-0 mx-auto order-last border">
-                                <img src="{{ MEDIA_URL }}logo.webp" class="logo-image">
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-2 d-md-none"></div>
-
-                    <!-- Mobile navbar dropdown button -->
-                    <button class="col-2 navbar-toggler order-first"
-                            type="button" data-toggle="collapse"
-                            data-target="#navbarSupportedContent"
-                            aria-controls="navbarSupportedContent"
-                            aria-expanded="false" aria-label="Toggle navigation">
-                         <span class="navbar-toggler-icon left"></span>
-                    </button>
-                  
-                    <!-- Navbar elements -->
-                    <div class="collapse navbar-collapse col-md-6 px-md-1 mx-auto" id="navbarSupportedContent">
-                        <ul class="navbar-nav row px-md-0">
-                            <li class="nav-item mx-md-auto col-md-2 px-md-1">
-                                <a class="nav-link mx-auto px-0" id="nav-item-home" href="{% url 'home' %}">
-                                    <div class="text-center">
-                                        <div>
-                                            <i class="fa-sharp fa-solid fa-house"></i>
-                                        </div>
-                                        <p class="my-0 mx-auto">Home</p>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="nav-item mx-md-auto col-md-2 px-md-1 my-navbar-tiles">
-                                <a class="nav-link mx-auto px-0" id="nav-item-products" href="{% url 'products' %}">
-                                    <div class="text-center">
-                                        <div><i class="fa-solid fa-basket-shopping"></i></div>
-                                        <p class="my-0">Shop</p>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="nav-item mx-md-auto col-md-3 px-md-1">
-                                <a class="nav-link mx-auto px-0" id="nav-item-workshop" href="{% url 'workshop' %}">
-                                    <div class="text-center">
-                                        <div><i class="fa-solid fa-hammer"></i></div>
-                                        <p class="my-0">Workshop</p>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="nav-item dropdown mx-md-auto col-md-3 px-md-1">
-                            <!-- Account  -->
-                                <a class="text-black nav-link px-0" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <div class="text-center">
-                                        <div><i class="fas fa-user fa-lg"></i></div>
-                                        <p class="my-0">Account</p>
-                                    </div>
-                                </a>
-                                <div class="dropdown-menu border-1 border-info" aria-labelledby="user-options">
-                                    {% if request.user.is_authenticated %}
-                                        <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
-                                        <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
-                                    {% else %}
-                                        <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
-                                        <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
-                                    {% endif %}
+            <nav class="navbar navbar-expand-md row navbar-light bg-light border">
+                <div class="col-10 col-lg-6 mx-0 px-0">
+                    <a href="{% url 'home' %}" class="nav-link main-logo-link py-0">
+                        <div class="logo-font my-0">
+                            <div class="row">
+                                <div class="col-2 logo-image mb-2 d-none d-md-block">
+                                    <img src="{{ MEDIA_URL }}logo.webp"
+                                    class="mx-auto logo-image"
+                                    alt="Navbar image">
                                 </div>
-                            </li>
-                            <!-- Shopping Basket -->
-                            <li class="nav-item mx-md-auto col-md-2 px-md-1">
-                                <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link px-0"
-                                    id="nav-item-basket" href="{% url 'basket' %}">
-                                    <div class="text-center">
-                                        <div><i class="fa-solid fa-cash-register"></i></div>
-                                        <p class="my-0">
-                                            {% if grand_total %}
-                                                ${{ grand_total|floatformat:2 }}
-                                            {% else %}
-                                                $0.00
-                                            {% endif %}
-                                        </p>
+                                <h1 class="col-10">
+                                    <strong>Mood</strong> Designs
+                                </h1>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- <div class="col-2 d-md-none"></div> -->
+
+                <!-- Mobile navbar dropdown button -->
+                <button class="col-2 navbar-toggler order-first"
+                        type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon left"></span>
+                </button>
+            
+                <!-- Navbar elements -->
+                <div class="collapse navbar-collapse col-md-6 px-0 mx-0 border-top" id="navbarSupportedContent">
+                    <ul class="navbar-nav row px-0">
+                        <li class="nav-item mx-md-auto col-md-2 px-md-1">
+                            <a class="nav-link mx-auto px-0" id="nav-item-home" href="{% url 'home' %}">
+                                <div class="text-center">
+                                    <div>
+                                        <i class="fa-sharp fa-solid fa-house"></i>
                                     </div>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-            </div>
+                                    <p class="my-0 mx-auto">Home</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="nav-item mx-md-auto col-md-2 px-md-1 my-navbar-tiles">
+                            <a class="nav-link mx-auto px-0" id="nav-item-products" href="{% url 'products' %}">
+                                <div class="text-center">
+                                    <div><i class="fa-solid fa-basket-shopping"></i></div>
+                                    <p class="my-0">Shop</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="nav-item mx-md-auto col-md-3 px-md-1">
+                            <a class="nav-link mx-auto px-0" id="nav-item-workshop" href="{% url 'workshop' %}">
+                                <div class="text-center">
+                                    <div><i class="fa-solid fa-hammer"></i></div>
+                                    <p class="my-0">Workshop</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown mx-md-auto col-md-3 px-md-1">
+                        <!-- Account  -->
+                            <a class="text-black nav-link px-0" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <div class="text-center">
+                                    <div><i class="fas fa-user fa-lg"></i></div>
+                                    <p class="my-0">Account</p>
+                                </div>
+                            </a>
+                            <div class="dropdown-menu border-1 border-info" aria-labelledby="user-options">
+                                {% if request.user.is_authenticated %}
+                                    <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
+                                    <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                                {% else %}
+                                    <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+                                    <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                                {% endif %}
+                            </div>
+                        </li>
+                        <!-- Shopping Basket -->
+                        <li class="nav-item mx-md-auto col-md-2 px-md-1">
+                            <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link px-0"
+                                id="nav-item-basket" href="{% url 'basket' %}">
+                                <div class="text-center">
+                                    <div><i class="fa-solid fa-cash-register"></i></div>
+                                    <p class="my-0">
+                                        {% if grand_total %}
+                                            ${{ grand_total|floatformat:2 }}
+                                        {% else %}
+                                            $0.00
+                                        {% endif %}
+                                    </p>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
         </header>
 
         {% if messages %}

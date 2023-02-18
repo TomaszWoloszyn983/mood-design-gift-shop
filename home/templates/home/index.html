@@ -25,7 +25,6 @@
         <!-- History Section -->
         <div class="d-block mx-auto border-0">
             <div class="about-us row justify-content-around border-0">
-                <!-- Left side -->
                 <div class="col-md-12 left d-block mx-auto">
                     <h1 class="header-text">About Us</h1>
                     <div class="w-100 my-5"></div>
@@ -96,13 +95,10 @@
                             </div>
                             <!-- Right side -->
                             <div class="col-md-6 mx-5 order-first">
-                                <h1 class="header-text">{{ post.title }}</h1>
+                                <h1 class="">{{ post.title }}</h1>
                                 <p class="my-post">
                                     {{ post.body }} <span class="signature"> - {{ post.designer }} - </span>
                                 </p>
-                                <a href="{% url 'products' %}" class="btn btn-primary px-auto mx-auto shop-now-btn border">
-                                    <p class="px-auto mx-auto">Shop now</p>
-                                </a>
                             </div>
                             <div class="col-2 my-2 order-last">
                                 {% if request.user.is_authenticated %}
@@ -120,13 +116,10 @@
                         <div class="col-12 post-date">{{ post.created_on }}</div>
                         <div class="row justify-content-around my-3 mx-0">
                             <div class="col-md-6 mx-5">
-                                <h1 class="header-text">{{ post.title }}</h1>
+                                <h1 class="">{{ post.title }}</h1>
                                 <p class="my-post">
                                     {{ post.body }} <span class="signature"> - {{ post.designer }} - </span>
                                 </p>
-                                <a href="{% url 'products' %}" class="btn btn-primary px-auto mx-auto shop-now-btn border">
-                                    <p class="px-auto mx-auto">Shop now</p>
-                                </a>
                             </div>
                             <!-- Right side -->
                             <div class="col-md-4 order-first">
