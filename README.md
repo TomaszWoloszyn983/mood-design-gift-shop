@@ -4,10 +4,12 @@
 
 ## 1. Overview.
 
-Portfolio Project 5.
-The subject of the project is e-commenrce web page application dedicated to Mood Designs Gift Shop that design and produce handmade, ceramic goods. 
+The subject of the project is e-commerce web page application dedicated to Mood Designs Gift Shop that designs and produces handmade, ceramic goods inspired by West Irish folk art and rich natural values of West Ireland the route Wild Atlantic Way. 
 
-The application allowes users to find Mood Designs goods, add them to basket and make on-line payments.
+The purpose of the application is providing user easy way to present the shops offer and to inform users about new products, offers and news about the Mood Designs team and events taking place within its society. The informations can be easily find on the Home Page or they can be sent do user email in form of Newsletter.
+
+The application allowes users to search Mood Designs products, to buy them and to make secured on-line payments using Credit or Debit cards.
+It also allows users to create their profile account to save and store theirs shipping and payment details as well as store theirs orders history.
 
 
 ## Contents:
@@ -18,7 +20,12 @@ The application allowes users to find Mood Designs goods, add them to basket and
     * [Navigation Bar](#navigation-bar)
     * [Posts](#post)
     * [Footer](#footer)
+    * [Shop Page]()
+    * [Workshop Page]()
+    * [Account Page]()
     * [Register, Login/logout]()
+    * [Basket Page]()
+    * [Checkout Page]()
 4. [Future Features](#4-future-features)
 5. [Technologies Used](#5-technologies-used)
 6. [Database Design](#6-database-design)
@@ -82,6 +89,44 @@ All sections are clearly and simply arranged inside the navigation bar which all
 ### Footer 
 ![Footer](documentation/images/footer.jpg)
 
+### Shop Page
+
+Shop Page displays the list of products available in the Shop
+
+![Shop Page](documentation/images/shop_page.jpg)
+
+Each product panel contains a dropdown option button which allows the user to open the products detail page or to add the product to his shopping basket.
+
+![Product options](documentation/images/guest_product_dropdown_btn.jpg)
+
+In case of an out os stock product Add To Basket button is not available.
+
+### Product Details Page
+
+This section displays more information about the product. SUch as product description quantity of the product on Stock and the Price.
+
+It also allows to choose the number of products and add them to the Shopping Basket.
+
+![Product Details](documentation/images/product_detail_page.jpg)
+
+Out of Stock products are not able to be added to the SHopping Basket.
+
+![Product Details](documentation/images/outofstock_productdetail_page.jpg)
+
+
+
+### Workshop Page
+![Workshop Page]()
+
+### Account Page
+![Account Page](documentation/images/profile_page.jpg)
+
+### Register, login/logout Pages
+![Basket Page]()
+
+### Checkout
+![Checkout Page]()
+
 ## **5. Technologies used:**
 
 * Python - an interpreted, object-oriented, high-level programming language https://www.python.org/.
@@ -108,7 +153,6 @@ class Category(models.Model):
     name = models.CharField(max_length=254)
     friendly_name = models.CharField(max_length=254, null=True, blank=True)
 ```
-
 
 ```python
 class Product(models.Model):
