@@ -26,6 +26,7 @@ It also allows users to create their profile account to save and store theirs sh
     * [Register, Login/logout]()
     * [Basket Page]()
     * [Checkout Page]()
+4. [Admins Functions]()
 4. [Future Features](#4-future-features)
 5. [Technologies Used](#5-technologies-used)
 6. [Database Design](#6-database-design)
@@ -109,23 +110,59 @@ It also allows to choose the number of products and add them to the Shopping Bas
 
 ![Product Details](documentation/images/product_detail_page.jpg)
 
-Out of Stock products are not able to be added to the SHopping Basket.
+Out of Stock products can not be added to the Shopping Basket.
 
 ![Product Details](documentation/images/outofstock_productdetail_page.jpg)
 
 
 
 ### Workshop Page
-![Workshop Page]()
+
+This section contains workshop activities and events organised by the Mood Designs team. 
+Users can get familiar with the events and also they can buy reservations to participate in the activities.
+
+![Workshop Page](documentation/images/workshop_page.jpg)
 
 ### Account Page
+
+Account section allows users to sign up and create the users account where they can save and securly store their personal information. 
+This section is made of two main subsections:
+
+#### My Profile
+
+Where the registered and loged in user can display and manage his informations:
+This section also stores user order history.
+
 ![Account Page](documentation/images/profile_page.jpg)
 
-### Register, login/logout Pages
-![Basket Page]()
+#### Register, login/logout Pages
 
-### Checkout
-![Checkout Page]()
+The second Account Page subsection where the user can create an account, Login or logout.
+
+![Account Page](documentation/images/signup.jpg)
+
+![Account Page](documentation/images/login.jpg)
+
+![Account Page](documentation/images/signout.jpg)
+
+Everytime the user is informed about being signed in or signed out.
+
+![Account Page](documentation/images/signedup.jpg)
+![Account Page](documentation/images/signedout.jpg)
+
+### Shopping Basket
+
+In the Shopping Basket Page the user can see all the products currently added. The user can also check the total price and modify the number of each products in the basket.
+
+![Shopping Basket](documentation/images/basket_page.jpg)
+
+### Checkout Page
+![Checkout Page](documentation/images/checkout_page.jpg)
+
+### Summary Page
+![Summary Page](documentation/images/summary.jpg)
+
+## **5. Admins Functions:**
 
 ## **5. Technologies used:**
 
@@ -139,8 +176,8 @@ Out of Stock products are not able to be added to the SHopping Basket.
 * Gitpod - Online integrated development environment https://www.gitpod.io/.
 * GitHub - Version control service used for storing and sharing development projects https://github.com/.
 * Heroku - a container-based cloud platform where developers can deploy their projects https://www.heroku.com/.
-* Amazon Web Services s3 - a cloud-based stporage service.
-* Stripe - a suite of APIs powering online payment processing and commerce solutions for internet businesses.
+* Amazon Web Services s3 - a cloud-based stporage service. https://aws.amazon.com/
+* Stripe - a suite of APIs powering online payment processing and commerce solutions for internet businesses. https://stripe.com/
 
 
 ## **6. Database Design**

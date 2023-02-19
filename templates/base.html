@@ -170,7 +170,7 @@
             if(location.pathname.includes("/products/")){
                 activeLink = "products";
                 console.log("\n\n activate shop")
-            }else if(location.pathname.includes("/workshop/products")){
+            }else if(location.pathname.includes("/workshop/")){
                 activeLink = "workshop";
                 console.log("\n\n activate workshop")
             }else if(location.pathname.includes("/profile/")){
@@ -194,7 +194,7 @@
                     .addClass("nav-active list-group-item-light")
                     .prop("aria-current", true);
                 console.log("\n\n activate account")
-            }else if(location.pathname.includes("/register/")){
+            }else if(location.pathname.includes("/signup/")){
                 activeLink = "account";
                 $(`[id^="user-options"]`)
                 .removeClass("list-group-item-dark")
