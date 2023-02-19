@@ -29,7 +29,10 @@
                     <h1 class="header-text">About Us</h1>
                     <div class="w-100 my-5"></div>
                     <p class="home-page-text text-justify my-post">
-                        <img src="{{ MEDIA_URL }}mood_shop.jpg" class="ml-3 float-right img-fluid" style="max-height: 300px;">
+                        <img src="{{ MEDIA_URL }}mood_shop.jpg"
+                            class="ml-3 float-right img-fluid"
+                            style="max-height: 300px;"
+                            alt="About Us section image">
                         <em>Inspired by the sea and landscape of Ireland</em>
                         The Mood Designs is a ceramic business based in County Mayo, 
                         in the west of Ireland. Run by a couple Ella and Lukasz Szczerbak, 
@@ -68,90 +71,93 @@
             <!-- Event posts section -->
             <div class="row">
                 {% for post in posts %}
+                {% if forloop.counter <= 5 %}
 
-                {% if post.image %}
-                    {% if post.image.width > post.image.height %}
+                    {% if post.image %}
+                        {% if post.image.width > post.image.height %}
+                        <div class="col-lg-10 mx-auto my-3 home-page-text border-light border-top mt-2 pt-4">
+                            <div class="col-12 post-date">{{ post.created_on }}</div>
+                            <h1 class="header-text">{{ post.title }}</h1>
+                            <div class="col-lg-10 mx-auto">
+                                <img class="card-img-top img-fluid height-50" src="{{ post.image.url }}" alt="post_image">
+                            </div>
+                            <p class="my-post">{{ post.body }} <span class="signature"> - {{ post.designer }} - </span></p>
+                            
+                            {% if request.user.is_authenticated %}
+                            {% if request.user.is_superuser %}
+                                <a href="{% url 'edit_post' post.id %}" class="btn btn-primary shop-now-btn border">Edit Post</a>
+                            {% endif %}
+                            {% endif %}
+
+                        </div>
+                        {% elif forloop.counter|divisibleby:"2" %}
+                        <div class="col-lg-10 mx-auto my-3 home-page-text border-light border-top mt-2 pt-4">
+                            <div class="col-12 post-date">{{ post.created_on }}</div>
+                            <div class="row justify-content-around my-3 mx-0">
+                                <div class="col-md-4 right mx-0">
+                                    <img class="card-img-top img-fluid" src="{{ post.image.url }}" alt="post_image">
+                                </div>
+                                <!-- Right side -->
+                                <div class="col-md-6 mx-5 order-first">
+                                    <h1 class="">{{ post.title }}</h1>
+                                    <p class="my-post">
+                                        {{ post.body }} <span class="signature"> - {{ post.designer }} - </span>
+                                    </p>
+                                </div>
+                                <div class="col-2 my-2 order-last">
+                                    {% if request.user.is_authenticated %}
+                                    {% if request.user.is_superuser %}
+                                        <a href="{% url 'edit_post' post.id %}" class="btn btn-primary d-block mx-auto shop-now-btn border">Edit Post</a>
+                                    {% endif %}
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="h-10 my-5"></div>
+
+                        {% else %}
+                        <div class="col-lg-10 mx-auto my-3 home-page-text border-light border-top mt-2 pt-4">
+                            <div class="col-12 post-date">{{ post.created_on }}</div>
+                            <div class="row justify-content-around my-3 mx-0">
+                                <div class="col-md-6 mx-5">
+                                    <h1 class="">{{ post.title }}</h1>
+                                    <p class="my-post">
+                                        {{ post.body }} <span class="signature"> - {{ post.designer }} - </span>
+                                    </p>
+                                </div>
+                                <!-- Right side -->
+                                <div class="col-md-4 order-first">
+                                    <img class="card-img-top img-fluid" src="{{ post.image.url }}" alt="post_image">
+                                </div>
+                                <div class="col-2 my-2 order-last">
+                                    {% if request.user.is_authenticated %}
+                                    {% if request.user.is_superuser %}
+                                        <a href="{% url 'edit_post' post.id %}" class="btn btn-primary shop-now-btn border">Edit Post</a>
+                                    {% endif %}
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+            
+                        <div class="h-10 my-5"></div>
+                        <!-- End if forloop is even -->
+                        {% endif %}
+                    <!-- End if post has image -->
+                    {% else %}
+                    <div class="h-12 my-5"></div>
                     <div class="col-lg-10 mx-auto my-3 home-page-text border-light border-top mt-2 pt-4">
                         <div class="col-12 post-date">{{ post.created_on }}</div>
                         <h1 class="header-text">{{ post.title }}</h1>
-                        <div class="col-lg-10 mx-auto">
-                            <img class="card-img-top img-fluid height-50" src="{{ post.image.url }}" alt="post_image">
-                        </div>
-                        <p class="my-post">{{ post.body }} <span class="signature"> - {{ post.designer }} - </span></p>
-                        
+                        <p>{{ post.body }} <span class="signature"> - {{ post.designer }} - </span></p>
                         {% if request.user.is_authenticated %}
-                        {% if request.user.is_superuser %}
-                            <a href="{% url 'edit_post' post.id %}" class="btn btn-primary shop-now-btn border">Edit Post</a>
+                            {% if request.user.is_superuser %}
+                                <a href="{% url 'edit_post' post.id %}" class="btn btn-primary px-auto mx-auto shop-now-btn border">Edit Post</a>
+                            {% endif %}
                         {% endif %}
-                        {% endif %}
-
                     </div>
-                    {% elif forloop.counter|divisibleby:"2" %}
-                    <div class="col-lg-10 mx-auto my-3 home-page-text border-light border-top mt-2 pt-4">
-                        <div class="col-12 post-date">{{ post.created_on }}</div>
-                        <div class="row justify-content-around my-3 mx-0">
-                            <div class="col-md-4 right mx-0">
-                                <img class="card-img-top img-fluid" src="{{ post.image.url }}" alt="post_image">
-                            </div>
-                            <!-- Right side -->
-                            <div class="col-md-6 mx-5 order-first">
-                                <h1 class="">{{ post.title }}</h1>
-                                <p class="my-post">
-                                    {{ post.body }} <span class="signature"> - {{ post.designer }} - </span>
-                                </p>
-                            </div>
-                            <div class="col-2 my-2 order-last">
-                                {% if request.user.is_authenticated %}
-                                {% if request.user.is_superuser %}
-                                    <a href="{% url 'edit_post' post.id %}" class="btn btn-primary d-block mx-auto shop-now-btn border">Edit Post</a>
-                                {% endif %}
-                                {% endif %}
-                            </div>
-                        </div>
-                    </div>
-                    <div class="h-10 my-5"></div>
-
-                    {% else %}
-                    <div class="col-lg-10 mx-auto my-3 home-page-text border-light border-top mt-2 pt-4">
-                        <div class="col-12 post-date">{{ post.created_on }}</div>
-                        <div class="row justify-content-around my-3 mx-0">
-                            <div class="col-md-6 mx-5">
-                                <h1 class="">{{ post.title }}</h1>
-                                <p class="my-post">
-                                    {{ post.body }} <span class="signature"> - {{ post.designer }} - </span>
-                                </p>
-                            </div>
-                            <!-- Right side -->
-                            <div class="col-md-4 order-first">
-                                <img class="card-img-top img-fluid" src="{{ post.image.url }}" alt="post_image">
-                            </div>
-                            <div class="col-2 my-2 order-last">
-                                {% if request.user.is_authenticated %}
-                                {% if request.user.is_superuser %}
-                                    <a href="{% url 'edit_post' post.id %}" class="btn btn-primary shop-now-btn border">Edit Post</a>
-                                {% endif %}
-                                {% endif %}
-                            </div>
-                        </div>
-                    </div>
-        
-                    <div class="h-10 my-5"></div>
-                    <!-- End if forloop is even -->
+                    <div class="h-12 my-5"></div>
                     {% endif %}
-                <!-- End if post has image -->
-                {% else %}
-                <div class="h-12 my-5"></div>
-                <div class="col-lg-10 mx-auto my-3 home-page-text border-light border-top mt-2 pt-4">
-                    <div class="col-12 post-date">{{ post.created_on }}</div>
-                    <h1 class="header-text">{{ post.title }}</h1>
-                    <p>{{ post.body }} <span class="signature"> - {{ post.designer }} - </span></p>
-                    {% if request.user.is_authenticated %}
-                        {% if request.user.is_superuser %}
-                            <a href="{% url 'edit_post' post.id %}" class="btn btn-primary px-auto mx-auto shop-now-btn border">Edit Post</a>
-                        {% endif %}
-                    {% endif %}
-                </div>
-                <div class="h-12 my-5"></div>
+                <!-- End Posts loop and if loop counter < 5 conditional -->
                 {% endif %}
                 {% endfor %}
 
@@ -249,7 +255,7 @@
                     <li class="list-group-item border-0">
                         <a href="https://www.themooddesigns.ie/" target="_blank"
                             class="col-12 text-center my-auto py-auto">
-                        <img src="{{ MEDIA_URL }}md_fav.jpg"></img>
+                        <img src="{{ MEDIA_URL }}md_fav.jpg" alt="Navbar webpage icon">
                     </a>
                         Official Site
                     </li>
@@ -274,7 +280,6 @@
 
         <!-- Copyrights -->
         <div class="col-12 text-center">© 2022 The Mood Designs.</div>
-            
     </div>
 </footer>
 

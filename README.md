@@ -1,8 +1,10 @@
 # The Mood Desing Gift Shop
 
+![Am I Responsive](documentation/images/amiresponsive.jpg)
+
 ## 1. Overview.
 
-Portfolio Project 4.
+Portfolio Project 5.
 The subject of the project is the web shopping list application. 
 This is a very simple and easy to use application that offers users a few basic functionalities, such as creating multiple shopping lists managing those lists and adding items to the lists, updating them or deleting them from the lists. 
 It also allows the user to register his own account what gives him an access to application functionalities.
@@ -11,22 +13,21 @@ It also allows the user to register his own account what gives him an access to 
 ## Contents:
 1. [Project Overview](#1-overview)
 2. [User Stories](#2-user-stories)
-5. [Technologies Used](#5-technologies-used)
-6. [Database Design](#6-database-design)
-7. [Github Issues](#7-github-issues)
-<!-- 3. [Features](#3-features)
+3. [Features](#3-features)
     * [Home Page](#home-page)
     * [List Page](#lists-page)
     * [Shopping List View](#shopping-list-page)
     * [Add Item](#add-item)
     * [Edit Item](#edit-item)
     * [Register, Login/logout](#register-loginlogout-pages)
-    * [List class](#list-class)
-    * [Item Class](#item-class)
 4. [Future Features](#4-future-features)
-6. [Testing](#6-testing)
-7. [Deployment](#8-deployment)
-8. [References and Credits](#9-references-and-credits) -->
+5. [Technologies Used](#5-technologies-used)
+6. [Database Design](#6-database-design)
+7. [Deploymanet](#7-deployment)
+8. [Testing](#8-testing)
+
+
+8. [References and Credits](#references-and-credits)
 
 
 ## **2. User Stories:**
@@ -63,6 +64,21 @@ It also allows the user to register his own account what gives him an access to 
 - As a site administrator, I should be able to Edit itemsfor sale and save changes to the database
 - As a site administrator, I should be able to Delete items from the database, so that They can not be available on sale any more.
 
+## **4. Features. **
+### Home Page
+![Home Page](documentation/images/home_page.jpg)
+
+### Navigation Bar
+
+![Desctop Navbar](documentation/images/desctop_navbar.jpg)
+
+![Mobile Navbar](documentation/images/mobile_navbar.jpg)
+
+### ** Post ** 
+![Post](documentation/images/homepage_post.jpg)
+
+### ** Footer ** 
+![Footer](documentation/images/footer.jpg)
 
 ## **5. Technologies used:**
 
@@ -183,7 +199,11 @@ class Post(models.Model):
     email = models.ManyToManyField(NewsletterUser)
 ```
 
-## **7. GitHub Issues**
+## ** 7. Deployment **
+
+## ** 8. Testing **
+
+## ** 9. GitHub Issues**
 
 ![Project Board](documentation/images/project_board_01.jpg)
 
@@ -219,7 +239,7 @@ Using this approach, I was able to apply the MoSCow prioritization and labels to
 
 - You Tube tutorial how to choose colors - https://www.youtube.com/watch?v=KMS3VwGh3HY&list=WL&index=102
 
-- You TUbe tutorial on sending newsletters - https://www.youtube.com/watch?v=C9rszGfDMYM
+- You Tube tutorial on sending newsletters - https://www.youtube.com/watch?v=C9rszGfDMYM
 
 
 ## Gitpod Reminders

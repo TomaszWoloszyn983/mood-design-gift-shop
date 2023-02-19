@@ -161,10 +161,10 @@
         {% endblock %}
 
         {% block postloadjs %}
-        <script type="text/javascript">
+        <script>
             $('.toast').toast('show');
-  
         </script>
+        
         <script>
             let activeLink;
             if(location.pathname.includes("/products/")){
@@ -211,7 +211,5 @@
             $(`[id^="nav-item-${activeLink}"]`).removeClass("list-group-item-dark").addClass("nav-active list-group-item-light").prop("aria-current", true);
         </script>
         {% endblock %}
-
     </body>
-
 </html>

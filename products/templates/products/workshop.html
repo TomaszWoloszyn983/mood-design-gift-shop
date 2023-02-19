@@ -79,9 +79,10 @@
                                                             <form action="{% url 'add_to_basket' product.id %}" method="POST">
                                                                 {% csrf_token %}
                                                                 <div class="row">
-                                                                    <div class="col-5 text-center my-2 px-0 mx-auto form-group">
+                                                                    <div class="col-5 text-center my-2 px-0 mx-lg-auto form-group">
                                                                         <div class="row mx-auto px-0 input-group d-block">
-                                                                            <input type="number" name="units" class="col-6 w-50 text-center form-control input-number qty_input d-inline" 
+                                                                            <input type="number" name="units"
+                                                                                class="col-6 w-50 text-center px-0 form-control input-number qty_input d-inline" 
                                                                                 action="{% url 'adjust_qty_on_stock' product.id %}"
                                                                                 value="1" min="1", max="{{ product.quantity }}"
                                                                                 data.item_id="{{ product.id }}"
@@ -90,7 +91,7 @@
                                                                     </div>
                                                                     
                                                                     <div class="col-7 my-2 px-auto mx-auto">
-                                                                        <input class="btn btn-primary mx-auto" type="submit" value="Add to Basket">
+                                                                        <input class="btn btn-primary mx-auto px-2" type="submit" value="Add to Basket">
                                                                     </div>
                                                                 </div>
                                                             </form>
