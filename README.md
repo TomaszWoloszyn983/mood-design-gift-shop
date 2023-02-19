@@ -5,9 +5,9 @@
 ## 1. Overview.
 
 Portfolio Project 5.
-The subject of the project is the web shopping list application. 
-This is a very simple and easy to use application that offers users a few basic functionalities, such as creating multiple shopping lists managing those lists and adding items to the lists, updating them or deleting them from the lists. 
-It also allows the user to register his own account what gives him an access to application functionalities.
+The subject of the project is e-commenrce web page application dedicated to Mood Designs Gift Shop that design and produce handmade, ceramic goods. 
+
+The application allowes users to find Mood Designs goods, add them to basket and make on-line payments.
 
 
 ## Contents:
@@ -15,11 +15,10 @@ It also allows the user to register his own account what gives him an access to 
 2. [User Stories](#2-user-stories)
 3. [Features](#3-features)
     * [Home Page](#home-page)
-    * [List Page](#lists-page)
-    * [Shopping List View](#shopping-list-page)
-    * [Add Item](#add-item)
-    * [Edit Item](#edit-item)
-    * [Register, Login/logout](#register-loginlogout-pages)
+    * [Navigation Bar](#navigation-bar)
+    * [Posts](#post)
+    * [Footer](#footer)
+    * [Register, Login/logout]()
 4. [Future Features](#4-future-features)
 5. [Technologies Used](#5-technologies-used)
 6. [Database Design](#6-database-design)
@@ -65,19 +64,22 @@ It also allows the user to register his own account what gives him an access to 
 - As a site administrator, I should be able to Delete items from the database, so that They can not be available on sale any more.
 
 ## **4. Features. **
+
 ### Home Page
 ![Home Page](documentation/images/home_page.jpg)
 
 ### Navigation Bar
 
+All sections are clearly and simply arranged inside the navigation bar which allows for an easy access to applications section depending on whether the user is logged in or not.
+
 ![Desctop Navbar](documentation/images/desctop_navbar.jpg)
 
 ![Mobile Navbar](documentation/images/mobile_navbar.jpg)
 
-### ** Post ** 
+### Post 
 ![Post](documentation/images/homepage_post.jpg)
 
-### ** Footer ** 
+### Footer 
 ![Footer](documentation/images/footer.jpg)
 
 ## **5. Technologies used:**
