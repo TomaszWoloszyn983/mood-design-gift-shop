@@ -376,9 +376,9 @@ class Post(models.Model):
     email = models.ManyToManyField(NewsletterUser)
 ```
 
-## ** 9. Deployment **
+## **9. Deployment.**
 
-## ** 10. Testing **
+## **10. Testing.**
 
 The Application is fully responsive and the applications code was tested using:
 * Nu Html Checker for html code https://validator.w3.org/nu/.
@@ -389,7 +389,7 @@ The Application is fully responsive and the applications code was tested using:
 There were no issues detected by most of the test, although there where some errors implemented with add-ons.
 More details about testings and unfixed issues are available in the dedicated testing section [here](TESTING.md).
 
-## ** 11. GitHub Issues**
+## **11. GitHub Issues.**
 
 ![Project Board](documentation/images/project_board_01.jpg)
 
@@ -407,7 +407,7 @@ Consider adding a screenshot of your Open and Closed Issues.
 
     ![screenshot](documentation/images/project_board03.jpg)
 
-### MoSCoW Prioritization
+### **MoSCoW Prioritization**
 
 I've decomposed my Epics into stories prior to prioritizing and implementing them.
 Using this approach, I was able to apply the MoSCow prioritization and labels to my user stories within the Issues tab.
@@ -420,7 +420,7 @@ Using this approach, I was able to apply the MoSCow prioritization and labels to
 - **Won't Have**: not a priority for this iteration
 
 
-## References and Credits:
+## **References and Credits:**
 - You Tube video tutorial how to create 3D Parallax landing page effect - https://www.youtube.com/watch?v=Nt70Ld0dJCM
 
 - You Tube tutorial how to choose colors - https://www.youtube.com/watch?v=KMS3VwGh3HY&list=WL&index=102
