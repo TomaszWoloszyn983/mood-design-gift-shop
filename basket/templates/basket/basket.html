@@ -61,10 +61,13 @@
                                                 <input type="number" name="units" class="col-6 w-50 text-center form-control input-number qty_input my-icon-input d-inline align-bottom" 
                                                     style="min-width: 70px;"
                                                     value="{{ item.units }}" min="1", max="{{ item.product.quantity }}"
-                                                    data.item_id="{{ product.id }}"
-                                                    id="id_qty_{{ product.id }}">
+                                                    data.item_id="{{ item.product.id }}"
+                                                    id="id_qty_{{ item.product.id }}"
+                                                    aria-label="qty">
+                                                <label for="id_qty_{{ item.product.id }}"></label>
                                                 <!-- <input class="my-icon-button" style="min-width: 70px;" type="submit" value="Edit"> -->
-                                                <button href="#" class="mx-0 btn btn-success align-bottom" type="submit">
+                                                <button href="#" class="mx-0 btn btn-success align-bottom" type="submit"
+                                                        aria-label="qty-submit-btn">
                                                     <i class="fa-sharp fa-solid fa-pen"></i>
                                                 </button>
                                             </div>
@@ -78,7 +81,8 @@
                             </td>
                             <!-- Remove item from Basket -->
                             <td class="">
-                                <a href="{% url 'remove_from_basket' item.product.id %}" class="mx-3 btn btn-danger">
+                                <a href="{% url 'remove_from_basket' item.product.id %}" class="mx-3 btn btn-danger"
+                                    aria-label="del-btn">
                                     <i class="fa-solid fa-trash-can fa-lg"></i>
                                 </a>
                             </td>
