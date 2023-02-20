@@ -71,7 +71,7 @@ It also allows users to create their profile account to save and store theirs sh
 - As a site administrator, I should be able to Edit itemsfor sale and save changes to the database
 - As a site administrator, I should be able to Delete items from the database, so that They can not be available on sale any more.
 
-## **4. Features. **
+## **4. Features.**
 
 ### Home Page
 ![Home Page](documentation/images/home_page.jpg)
@@ -152,17 +152,77 @@ Everytime the user is informed about being signed in or signed out.
 
 ### Shopping Basket
 
-In the Shopping Basket Page the user can see all the products currently added. The user can also check the total price and modify the number of each products in the basket.
+In the Shopping Basket Page the user can see all the products currently added to buy. The user can also check the total price and delete product or modify the number of each products in the basket.
 
 ![Shopping Basket](documentation/images/basket_page.jpg)
 
+After overviewing the order the user can be moved to the payment by choosing "Go To Checkout" button.
+
 ### Checkout Page
+
+In the Checkout Page user can make a payment for the order. 
+
+The page contains a form that the user has to fill up to provide all the informations required for shipping and billing.
+
+After filling up the form and clicking the Complete Order button the payment will be verified and proceded. 
+Also a confirmation email will be sent do the email address provided by the user.
+
 ![Checkout Page](documentation/images/checkout_page.jpg)
 
 ### Summary Page
+
+The Summary Page is displayed after the order is succesfully completed.
+It contains all information provided by the user. SUch as orders details, shipping details, orders value and delivery costs.
+
 ![Summary Page](documentation/images/summary.jpg)
 
 ## **5. Admins Functions:**
+
+Admin users have access to a set of additional functions that allow to provide better level of communication between the Page admins and Customers:
+
+### Adding and Editing Posts on the Home Page:
+
+Users authenticated as Admin users can post information on the Home Page. TO do this he can user a post form displayed in the bottom of the page.
+
+![Home Page Post](documentation/images/add_post.jpg)
+
+The form contains fields such as post title, author, content but also a list of Newsletters users that can be authomatically informed about publishing the post by sending them a Newsletter.
+
+After filling up the form the post is displayed on the top of the Posts section and it's visible to the users.
+
+![Home Page Post](documentation/images/post_guest.jpg)
+
+The admin has an option to edit the posts content at any time.
+
+![Home Page Post](documentation/images/post_admin.jpg)
+
+### Adding new products to the Shop Page.
+
+Add product button is displayed in the right-bottom corner of the Shop Page. After cicking it the admin user is redirected to the Add Product Form.
+
+![Add Product](documentation/images/add_item_button.jpg)
+
+The form contains fields for products name, name of the designer, products category, price and the products quantity available in stock.
+Also productts image and description can be added.
+If the product for any reason doesn't have an image, a default image will be displayed.
+
+![Add Product](documentation/images/add_product.jpg)
+
+After filling up the form the item is getting visible on the shop page and it is available for customers ot buy. Also an information for admin will be displayed.
+
+![Add Product](documentation/images/add_success.jpg)
+
+Admin user can modify the products informations or delete the product from the shop at any time.
+
+![Add Product](documentation/images/admin_functions.jpg)
+
+### Adding new products to the Shop Page.
+
+The situation with adding Event to the Workshop section look very similarly to adding and managing shop products.
+
+The Add Item button is displayed on the bottom-right corner of the Workshop Page. After clicking the button and filling up the form a new Event is added to the Page.
+
+![Add Workshop Item](documentation/images/add_service.jpg)
 
 ## **5. Technologies used:**
 

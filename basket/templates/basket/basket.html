@@ -37,15 +37,15 @@
                         {% if item.units is not 0 %}
                         <tr class="border-bottom text-center">
                             <!-- Product name and image -->
-                            <td class="d-xs-block d-md-inline mx-0">
+                            <td class="d-xs-block d-md-block px-md-1 mx-0 text-md-left">
                                 {% if item.product.image %}
                                 <img class="d-xs-block d-md-inline" src="{{ item.product.image.url }}"
                                         style="width: 80px;" alt="{{ item.product.name }} image">
                                 {% else %}
-                                    <img class="d-xs-block d-md-inline" src="{{ MEDIA_URL }}no_image.jpg"
-                                        style="width: 80px;"alt="{{ product.name }}">
+                                <img class="d-xs-block d-md-inline" src="{{ MEDIA_URL }}no_image.jpg"
+                                    style="width: 80px;"alt="{{ product.name }}">
                                 {% endif %}
-                                <p class="d-xs-block d-md-inline">{{ item.product.name }}</p>
+                                <p class="d-xs-block d-md-inline text-center mx-auto pl-3">{{ item.product.name }}</p>
                             </td>
                             <!-- Price -->
                             <td class="">
@@ -93,11 +93,14 @@
                             </td>
                         </tr>
                     </table>
-                    <a href="{% url 'products' %}" class="btn btn-lg btn-primary col-3 offset-2">
+                </div>
+                <div class="text-center">
+
+                    <a href="{% url 'products' %}" class="btn btn-primary checkout-btn">
                         Keep Shopping
                     </a>
-                    <a href="{% url 'checkout' %}" class="btn btn-lg btn-primary col-3 offset-2">
-                        Go to the Checkout
+                    <a href="{% url 'checkout' %}" class="btn btn-primary checkout-btn">
+                        Go To Checkout
                     </a>
                 </div>
             {% else %}

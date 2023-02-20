@@ -62,7 +62,6 @@ html {
   
 }
 .navbar li :hover {
-    /* background: #54b3d6; */
     background: #2986ff;
     color: white;
     transition: color .2s ease-in-out, box-shadow .1s ease-in-out;
@@ -77,13 +76,6 @@ html {
     height: 60px;
     padding: 0;
     margin: auto;
-}
-
-#nav1
-{  
-    background-color:#F00; /*whichever you want*/
-    opacity: 0.5; 
-    filter:(opacity=50);       
 }
 
 .nav-active {
@@ -111,6 +103,12 @@ html {
     text-align: center;
     width: 120px;
     height: 40px;
+    border: #fff;
+}
+.checkout-btn {
+    text-align: center;
+    width: 120px;
+    height: 60px;
     border: #fff;
 }
 
