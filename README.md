@@ -30,7 +30,7 @@ It also allows users to create their profile account to save and store theirs sh
 4. [Future Features](#4-future-features)
 5. [Technologies Used](#5-technologies-used)
 6. [Database Design](#6-database-design)
-7. [Deploymanet](#7-deployment)
+7. [Deployment](#7-deployment)
 8. [Testing](#8-testing)
 
 
@@ -74,25 +74,37 @@ It also allows users to create their profile account to save and store theirs sh
 ## **4. Features.**
 
 ### Home Page
+
+Home Page contains informations about the Mood Designs history and lastest news and events organized by the Mood Designs team.
+
 ![Home Page](documentation/images/home_page.jpg)
 
 ### Navigation Bar
 
-All sections are clearly and simply arranged inside the navigation bar which allows for an easy access to applications section depending on whether the user is logged in or not.
+All sections are clearly and simply arranged inside the navigation bar which allows for an easy access to applications sections.
 
 ![Desctop Navbar](documentation/images/desctop_navbar.jpg)
 
 ![Mobile Navbar](documentation/images/mobile_navbar.jpg)
 
 ### Post 
+
+Post section displays news and events taking place in the Mood Designs workshop.
+This section can be updated by the admin users.
+
 ![Post](documentation/images/homepage_post.jpg)
 
 ### Footer 
+
+Footer contains The Mood Designs address, social media links and contact details.
+It also contains an input field where the user can sign up to newsletter.
+
 ![Footer](documentation/images/footer.jpg)
 
 ### Shop Page
 
-Shop Page displays the list of products available in the Shop
+Shop Page displays the list of products available in the Shop.
+From here users can add product to the shopping basket.
 
 ![Shop Page](documentation/images/shop_page.jpg)
 
@@ -100,7 +112,7 @@ Each product panel contains a dropdown option button which allows the user to op
 
 ![Product options](documentation/images/guest_product_dropdown_btn.jpg)
 
-In case of an out os stock product Add To Basket button is not available.
+In case of an out of stock product Add To Basket button is not available.
 
 ### Product Details Page
 
@@ -113,7 +125,6 @@ It also allows to choose the number of products and add them to the Shopping Bas
 Out of Stock products can not be added to the Shopping Basket.
 
 ![Product Details](documentation/images/outofstock_productdetail_page.jpg)
-
 
 
 ### Workshop Page
@@ -152,7 +163,7 @@ Everytime the user is informed about being signed in or signed out.
 
 ### Shopping Basket
 
-In the Shopping Basket Page the user can see all the products currently added to buy. The user can also check the total price and delete product or modify the number of each products in the basket.
+In the Shopping Basket Page the user can see all the products currently added to bthe shopping basket. The user can also check the total price and delete product or modify the number of each products in the basket.
 
 ![Shopping Basket](documentation/images/basket_page.jpg)
 
@@ -224,7 +235,10 @@ The Add Item button is displayed on the bottom-right corner of the Workshop Page
 
 ![Add Workshop Item](documentation/images/add_service.jpg)
 
-## **5. Technologies used:**
+## **6. Future Features.**
+
+
+## **7. Technologies used:**
 
 * Python - an interpreted, object-oriented, high-level programming language https://www.python.org/.
 * Django - Framework facilitating building full stack web application https://www.djangoproject.com/.
@@ -240,9 +254,13 @@ The Add Item button is displayed on the bottom-right corner of the Workshop Page
 * Stripe - a suite of APIs powering online payment processing and commerce solutions for internet businesses. https://stripe.com/
 
 
-## **6. Database Design**
+## **8. Database Design**
 
 The Project contains following classes to describe categories of products, Products features and also classes to describe application users profiles.
+
+
+### Category
+Defines the product category
 
 ```python
 class Category(models.Model):
@@ -250,6 +268,9 @@ class Category(models.Model):
     name = models.CharField(max_length=254)
     friendly_name = models.CharField(max_length=254, null=True, blank=True)
 ```
+
+### Product
+Defines product features, such as name, category, price, quantity on stock.
 
 ```python
 class Product(models.Model):
@@ -269,6 +290,9 @@ class Product(models.Model):
     def __str__(self):
         return self.name
 ```
+
+### User Profile
+Defines Profile data of a registered user, such as name, address or phone number.
 
 ```python
 class UserProfile(models.Model):
@@ -291,6 +315,9 @@ def create_or_update_user_profile(sender, instance, created, **kwargs):
 
     instance.userprofile.save()
 ```
+
+### Order
+Defines Orders features such as order number, user, shipping and billing data, date or delivery costs.
 
 ```python
 class Order(models.Model):
@@ -320,11 +347,18 @@ class OrderLineItem(models.Model):
     lineitem_total = models.DecimalField(max_digits=6, decimal_places=2, null=False, blank=False, editable=False)
 ```
 
+### Newsletter User
+Defines Newslatter user. And it stores the email, address the user and the subscription date.
+
 ```python 
 class NewsletterUser(models.Model):
     email = models.EmailField(max_length=254, null=False, blank=False)
     added_on = models.DateTimeField(auto_now_add=True)
 ```
+
+### Post
+Defines the features of Post that admin users can publish on the Home Page and send them as a Newsletter to Newsletter Users.
+It contains fields such as posts title, publishing date, author/designer, image and content and also a list of email addresses of newsletter users.
 
 ```python
 class Post(models.Model):
@@ -342,11 +376,20 @@ class Post(models.Model):
     email = models.ManyToManyField(NewsletterUser)
 ```
 
-## ** 7. Deployment **
+## ** 9. Deployment **
 
-## ** 8. Testing **
+## ** 10. Testing **
 
-## ** 9. GitHub Issues**
+The Application is fully responsive and the applications code was tested using:
+* Nu Html Checker for html code https://validator.w3.org/nu/.
+* W3C CSS Validator for css code https://jigsaw.w3.org/css-validator/.
+* Jshint for Java Script code https://jshint.com/.
+* CI Python Linter for Python code https://pep8ci.herokuapp.com/.
+
+There were no issues detected by most of the test, although there where some errors implemented with add-ons.
+More details about testings and unfixed issues are available in the dedicated testing section [here](TESTING.md).
+
+## ** 11. GitHub Issues**
 
 ![Project Board](documentation/images/project_board_01.jpg)
 
