@@ -21,7 +21,7 @@ def profile(request):
         else:
             messages.error(request,
                            ('Some of yout input data are not valid.'
-                           'Please try again'))
+                            'Please try again'))
     else:
         form = UserProfileForm(instance=profile)
     orders = profile.orders.all()

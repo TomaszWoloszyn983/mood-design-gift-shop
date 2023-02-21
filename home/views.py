@@ -7,7 +7,6 @@ from django.contrib.auth.decorators import login_required
 from django.core.mail import send_mail
 
 
-
 def index(request):
     """ Returns the index page """
 
@@ -23,13 +22,13 @@ def index(request):
             form.save()
             print("Post published 1")
             form = PostForm()
-        else: 
+        else:
             print("\n\n Adding post didn't succeed 1")
     else:
         form = PostForm()
 
     context = {
-        'posts' : posts,
+        'posts': posts,
         'form': form,
         'newsletterForm': newsletterForm
     }
@@ -65,13 +64,13 @@ def send_post(request):
                 send_newsletter(user, post_title, post_content)
 
             form = PostForm()
-        else: 
+        else:
             messages.success(request, f'Adding post did not succeed')
     else:
         form = PostForm()
-    
+
     context = {
-        'posts' : posts,
+        'posts': posts,
         'form': form,
         'newsletterForm': newsletterForm
     }
@@ -86,7 +85,6 @@ def edit_post(request, post_id):
     """
     post = get_object_or_404(Post, pk=post_id)
     form = PostForm(instance=post)
-    
 
     if request.method == 'POST':
         form = PostForm(request.POST, request.FILES, instance=post)
@@ -94,7 +92,7 @@ def edit_post(request, post_id):
             form.save()
             print("Post updated")
             return redirect(reverse("home"))
-        else: 
+        else:
             print("\n\n\n Update didn't succeed")
 
     context = {
@@ -102,7 +100,6 @@ def edit_post(request, post_id):
         'form': form,
     }
     return render(request, 'home/edit_post.html', context)
-
 
 
 def newsletter(request):
@@ -122,7 +119,8 @@ def newsletter(request):
         if form.is_valid():
             user_email = form.cleaned_data.get('email')
             form.save()
-            messages.success(request, f'Thank you. \nNewsletter sent to: {user_email}')
+            messages.success(request, f'Thank you. '
+                             f'\nNewsletter sent to: {user_email}')
 
             # Sending welcome message
             subject = "Mood Designs Newsletter"
@@ -133,18 +131,17 @@ def newsletter(request):
                 \n\n   Kind regards Ela nad Lukasz."""
             send_newsletter(user_email, subject, content)
             form = NewsletterForm()
-        else: 
+        else:
             messages.error(request, f'I could not register this user.')
     else:
         form = NewsletterForm()
 
     context = {
-        'posts' : posts,
+        'posts': posts,
         'form': form,
         'newsletterForm': newsletterForm
     }
     return render(request, 'home/index.html', context)
-
 
 
 def send_newsletter(email, subject, content):

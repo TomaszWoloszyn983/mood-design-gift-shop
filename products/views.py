@@ -21,7 +21,7 @@ def all_products(request):
             categories = request.GET['category'].split(',')
             products = products.filter(category__name__in=categories)
             categories = Category.objects.filter(name__in=categories)
-            
+
     context = {
         'products': products,
         'excluded_category': excluded_category,
@@ -55,8 +55,8 @@ def workshop(request):
         'category': category,
     }
     return render(request, 'products/workshop.html', context)
-    
-    
+
+
 @login_required
 def add_product(request):
     """
@@ -68,8 +68,9 @@ def add_product(request):
             form.save()
             messages.success(request, f'Item successfully added.')
             return redirect(reverse("products"))
-        else: 
-            messages.error(request, f'A problem occured! I could not update this item')
+        else:
+            messages.error(request, f'A problem occured! '
+                           f'I could not update this item')
     else:
         form = ProductForm()
 
@@ -86,15 +87,17 @@ def edit_product(request, product_id):
     """
     product = get_object_or_404(Product, pk=product_id)
     form = ProductForm(instance=product)
-    
+
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES, instance=product)
         if form.is_valid():
             form.save()
-            messages.success(request, f'Item {product.name} successfully updated')
+            messages.success(request, f'Item {product.name} '
+                             f'successfully updated')
             return redirect(reverse("products"))
-        else: 
-            messages.error(request, f'A problem occured! I could not update this item')
+        else:
+            messages.error(request, f'A problem occured! '
+                           f'I could not update this item')
 
     context = {
         'product_id': product_id,
@@ -113,8 +116,8 @@ def delete_product(request, product_id):
     messages.success(request, f'Item {product.name} successfully deleted')
 
     return redirect(reverse('products'))
- 
- 
+
+
 @login_required
 def edit_service(request, product_id):
     """
@@ -122,14 +125,15 @@ def edit_service(request, product_id):
     """
     product = get_object_or_404(Product, pk=product_id)
     form = ProductForm(instance=product)
-    
+
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES, instance=product)
         if form.is_valid():
             form.save()
-            messages.success(request, f'Item {product.name} successfully updated')
+            messages.success(request, f'Item {product.name} '
+                             f'successfully updated')
             return redirect(reverse("workshop"))
-        else: 
+        else:
             print("\n\n\nService  Update didn't succeed")
 
     context = {
