@@ -35,8 +35,11 @@ html {
     font-size: 2.5rem;
     padding-top: 5vh;
     line-height: 1.4;
-
 } 
+
+.logo-text {
+    font-size: 2.6rem;
+}
 
 .logo-image {
     height: 40px;
