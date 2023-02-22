@@ -7,18 +7,10 @@ html {
 .base-header {
     background: url('/media/bg_image.webp');
     background-attachment: fixed;
-    background-position: conter;
+    /* background-position: center; */
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
-}
-
-.header-content {
-    padding: 100px, 0, 150px, 0; 
-}
-.header-content-2 {
-    height: 50vh;
-    padding: 100px, 0, 150px, 0; 
 }
 
 .main-title {
@@ -26,7 +18,7 @@ html {
     height: 67vh;
     transform: translate(0%, 50%);
     background:linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
-    padding-top: 12rem;
+    padding-top: 9rem;
 }
 
 .header-text {
@@ -92,7 +84,7 @@ html {
 .homepage-content {
     background: url('/media/bg_image.webp');
     background-attachment: fixed;
-    background-position: conter;
+    /* background-position: center; */
     background-repeat: no-repeat;
     background-size: cover;
     padding-top: 5px;
@@ -163,7 +155,7 @@ html {
 .shop-page-header {
     background: url('/media/bg_image.webp');
     background-attachment: fixed;
-    background-position: conter;
+    background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     padding-top: 5vh;
@@ -172,7 +164,7 @@ html {
 
 .shop-page-content {
     height: 50vh;
-    padding: 100px, 0, 150px, 0; 
+    padding-top: 15px;
 }
 
 .shop-title {
