@@ -165,7 +165,7 @@
                 <div class="offset-md-2 col-md-8 mx-md-auto my-5 home-page-text">
                 {% if request.user.is_authenticated %}
                     {% if request.user.is_superuser %}
-                        <h3 class="header-text">Add Post</h3>
+                        <h2 class="header-text">Add Post</h2>
                         <div class="row">
                             <div class="col-12 px-3">
                                 <form method="POST" action="{% url 'send_post' %}" enctype="multipart/form-data">
@@ -254,21 +254,24 @@
                 <ul class="list-group mx-auto">
                     <li class="list-group-item border-0">
                         <a href="https://www.themooddesigns.ie/" target="_blank"
-                            class="col-12 text-center my-auto py-auto">
+                            class="col-12 text-center my-auto py-auto"
+                            aria-label="Official Site">
                         <img src="{{ MEDIA_URL }}md_fav.jpg" alt="Navbar webpage icon">
                     </a>
                         Official Site
                     </li>
                     <li class="list-group-item border-0">
                         <a href="https://www.facebook.com/TheMoodDesigns/" target="_blank"
-                            class="col-12 text-center mx-auto px-auto">
+                            class="col-12 text-center mx-auto px-auto"
+                            aria-label="Facebook">
                         <i class="fa-brands fa-square-facebook"></i>
                     </a>
                         Facebook
                     </li>
                     <li class="list-group-item border-0">
                         <a href="https://www.instagram.com/themooddesigns/"
-                            class="col-12 text-center mx-auto px-auto">
+                            class="col-12 text-center mx-auto px-auto"
+                            aria-label="Instagram">
                         <i class="fa-brands fa-square-instagram"></i>
                     </a>
                         Instagram

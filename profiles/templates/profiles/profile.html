@@ -17,14 +17,14 @@
     <header class="shop-page-header">
         <div class="header-content shop-title">
             <h2 class="text-center header-text">The Mood Design Shop</h2>
-            <h4 class="text-center mt-5">Welcome to your profile {{ profile }}</h4>
+            <h3 class="text-center mt-5">Welcome to your profile {{ profile }}</h3>
         </div>
     </header>
     <div class="row mx-0">
         <div class="col-md-1"></div>
         <div class="col-md-4 my-3 mx-md-0">
             <h4 class="black text-center">Users Information</h4>
-            <h6 class="font-weight-light text-center">These information are going to be used for shipping</h6>
+            <h5 class="font-weight-light text-center">These information are going to be used for shipping</h5>
             <form class="" action="{% url 'profile' %}" method="POST" id="profile-update-form">
                 {% csrf_token %}
                 {{ form|crispy }}

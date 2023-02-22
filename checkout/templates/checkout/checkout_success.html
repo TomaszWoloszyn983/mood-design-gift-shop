@@ -17,9 +17,8 @@
     <header class="shop-page-header">
         <div class="header-content shop-title">
             <h2 class="text-center header-text">The Mood Design Shop</h2>
-            <h4 class="text-center mt-5">Shopping Basket:</h4>
+            <h3 class="text-center mt-5">Shopping Basket:</h3>
             <p class="text-center">The table isn't responsive in small sizes screens</p>
-            <p class="text-center">Empty input causes an error</p>
         </div>
     </header>
 
@@ -75,7 +74,7 @@
                             </p>
                         </div>
                         <div class="col-12 col-md-8 text-md-right">
-                            <p class="small mb-0">{{ item.quantity }} @ E{{ item.product.price }} each</p>
+                            <p class="small mb-0">{{ item.quantity }} @ €{{ item.product.price }} each</p>
                         </div>
                     </div>
                     {% endfor %}
