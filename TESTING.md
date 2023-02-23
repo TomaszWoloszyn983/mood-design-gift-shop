@@ -31,44 +31,67 @@
 
         Link to the test: https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fmood-design-gift-shop.herokuapp.com%2Fproducts%2Fworkshop%2F
 
-    - Product Details Page
+    - Product Details Page:
+
+        Inspect item with default image, out od stock item and normal item.
 
         ![html_validation]()
 
         Link to the test: 
 
-       Link to the test: 
+    - Add Product Page:
+    
+        ![html_validation](documentation/testing/nu_addproduct.jpg)
+
+        Link to the test: 
+
+    - Edit Product Page:
+    
+        ![html_validation](documentation/testing/nu_editproduct.jpg)
+
+        Link to the test: 
 
     - My Profile Page:
 
-        No error detected.
-
         ![html_validation]()
 
         Link to the test: 
-
-    The rest of the html Templates show no errors no matter how the input was applied.
 
     - Basket Page:
 
         ![html_validation](documentation/testing/nu_basket.jpg)
 
-        Link to the test: 
+        Link to the test: https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fmood-design-gift-shop.herokuapp.com%2Fbasket%2F#l148c7
+    
+    - Checkout Page:
+
+        ![html_validation](documentation/testing/nu_checkout.jpg)
+
+        Link to the test: https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fmood-design-gift-shop.herokuapp.com%2Fcheckout%2F#l148c7
 
     - Checkout Success Page:
 
         ![html_validation](documentation/testing/nu_checkout_success.jpg)
 
-
-        Link to the test: 
+        Link to the test: https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fmood-design-gift-shop.herokuapp.com%2Fcheckout%2Fcheckout_success%2F69A91F635FB5451E8FC3946D7E970A66#l148c7
 
     - Register Page:
 
-        Link to the test: 
+        ![html_validation](documentation/testing/nu_signup.jpg)
+
+        Link to the test: https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fmood-design-gift-shop.herokuapp.com%2Faccounts%2Fsignup%2F#l148c7
+
+    - Login Page:
+
+        ![html_validation](documentation/testing/nu_login.jpg)
+
+        Link to the test: https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fmood-design-gift-shop.herokuapp.com%2Faccounts%2Flogin%2F#l148c7
 
     - Logout Page:
 
-        Link to the test: 
+        ![html_validation](documentation/testing/nu_logout.jpg)
+
+        Link to the test: https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fmood-design-gift-shop.herokuapp.com%2Faccounts%2Flogout%2F#l148c7
 
         
 
@@ -92,26 +115,81 @@
 
      No error detected when passing the following file through the CI Python Linter:
 
-    - views.py:
+    - mood_design views.py:
 
         ![python_validation]()
 
-    - admin.py 
+    - mood_design urls.py:
 
-        ![python_validation]()
+        ![python_validation](documentation/testing/lin_mood_urls.jpg)
 
-    - forms.py
+   - home views.py:
 
-        ![python_validation]()
+        ![python_validation](documentation/testing/lin_home_views.jpg)
 
-    - models.py
+    - home forms.py:
 
-        ![python_validation]()
+        ![python_validation](documentation/testing/lin_home_forms.jpg)
 
-    - list/urls.py
+    - home urls.py:
 
-        ![python_validation]()
+        ![python_validation](documentation/testing/lin_home_urls.jpg)
 
-    - shopping/urls.py
+    - products views.py:
 
-        ![python_validation]()
+        ![python_validation](documentation/testing/lin_products_views.jpg)
+
+    - products forms.py:
+
+        ![python_validation](documentation/testing/lin_product_forms.jpg)
+
+    - products urls.py:
+
+        ![python_validation](documentation/testing/lin_product_urls.jpg)
+
+    - products admin.py:
+
+        ![python_validation](documentation/testing/lin_product_admin.jpg)
+
+    - profiles views.py:
+
+        ![python_validation](documentation/testing/lin_profiles_views.jpg)
+
+    - profiles forms.py:
+
+        ![python_validation](documentation/testing/lin_profiles_forms.jpg)
+
+    - profiles urls.py:
+
+        ![python_validation](documentation/testing/lin_profiles_urls.jpg)
+
+    - profiles views.py:
+
+        ![python_validation](documentation/testing/lin_profiles_views.jpg)
+
+    - basket views.py:
+
+        ![python_validation](documentation/testing/lin_basket_views.jpg)
+
+    - basket context.py:
+
+        ![python_validation](documentation/testing/lin_basket_context.jpg)
+
+    - checkout views.py:
+
+        ![python_validation](documentation/testing/lin_checkout_views.jpg)
+
+    - checkout forms.py:
+
+        ![python_validation](documentation/testing/lin_checkout_forms.jpg)
+
+    - checkout urls.py:
+
+        Add checkout.urls
+
+        ![python_validation](documentation/testing/lin_checkout_urls.jpg)
+
+    - checkout admin.py:
+
+        ![python_validation](documentation/testing/lin_checkout_admin.jpg)
+   
