@@ -49,9 +49,8 @@
                                 <div class="row form-row">
                                     <div class="col-12 text-center px-0 form-group">
                                         <div class="row mx-auto px-0 input-group d-block">
-                                            <label class="col-12">Quantity</label>
+                                            <label class="col-12" id="id_qty_{{ product.id }}">Quantity</label>
                                             <input type="number" name="units" class="col-6 w-50 text-center form-control input-number qty_input d-inline" 
-                                                action="{% url 'adjust_qty_on_stock' product.id %}"
                                                 value="1" min="1" max="{{ product.quantity }}"
                                                 id="id_qty_{{ product.id }}">
                                                 <!-- 
@@ -78,7 +77,7 @@
 
                     <!-- Product detail column -->
                     <div class="col-md-5 order-first order-md-2 d-inline mx-md-auto">
-                        <h2 class="">{{ product.name }}</h2>
+                        <h2>{{ product.name }}</h2>
                         <small class="text-muted">Design by {{ product.designer }}</small>
 
                         <p>{{ product.description }}</p>
