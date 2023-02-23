@@ -21,13 +21,13 @@
 
     - Shop Page:
 
-        ![html_validation](documentation/images/testing/html_login_error.jpg)
+        ![html_validation](documentation/testing/nu_shop.jpg)
 
         Link to the test: https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fmood-design-gift-shop.herokuapp.com%2Fproducts%2F
 
     - Workshop Page:
 
-        ![html_validation]()
+        ![html_validation](documentation/testing/nu_workshop.jpg)
 
         Link to the test: https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fmood-design-gift-shop.herokuapp.com%2Fproducts%2Fworkshop%2F
 
@@ -43,7 +43,7 @@
     
         ![html_validation](documentation/testing/nu_addproduct.jpg)
 
-        Link to the test: 
+        Link to the test: https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fmood-design-gift-shop.herokuapp.com%2Fproducts%2Fadd_product%2F#l148c7
 
     - Edit Product Page:
     

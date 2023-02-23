@@ -1,4 +1,4 @@
-# The Mood Desing Gift Shop
+# The Mood Designs Gift Shop
 
 ![Am I Responsive](documentation/images/amiresponsive.jpg)
 
