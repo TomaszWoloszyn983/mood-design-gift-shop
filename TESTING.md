@@ -15,7 +15,7 @@
 
     - Home Page:
 
-        ![html_validation]()
+        ![html_validation](documentation/testing/nu_home.jpg)
 
         Link to the test: https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fmood-design-gift-shop.herokuapp.com%2F
 
@@ -49,13 +49,16 @@
 
     The rest of the html Templates show no errors no matter how the input was applied.
 
-    - Home Page:
+    - Basket Page:
 
-        ![html_validation]()
+        ![html_validation](documentation/testing/nu_basket.jpg)
 
         Link to the test: 
 
-    - About Page:
+    - Checkout Success Page:
+
+        ![html_validation](documentation/testing/nu_checkout_success.jpg)
+
 
         Link to the test: 
 
