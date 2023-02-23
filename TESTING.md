@@ -10,57 +10,42 @@
 
 - ### **HTML**
 
-    An error was detected during validation testings with use of [W3C validator](https://validator.w3.org/nu/).
+    Html code validation tests were made using Nu Html Checker on Google Chrome browser in incognito mode.
+    No errors were detected during the tests.
 
-    According to the tests the error comes from material_forms and it is implemented form django_material add-on. 
-    This generates: "Attribute for not allowed on element span at this point" Error. 
-    The same error occures in a few other templates.
-
-
-    - Edit List Page:
+    - Home Page:
 
         ![html_validation]()
 
-        ![html_validation]()
+        Link to the test: https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fmood-design-gift-shop.herokuapp.com%2F
 
-    - Edit Item Page:
+    - Shop Page:
 
         ![html_validation](documentation/images/testing/html_login_error.jpg)
 
-        ![html_validation]()
+        Link to the test: https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fmood-design-gift-shop.herokuapp.com%2Fproducts%2F
 
-    - Login Page:
-
-        ![html_validation]()
+    - Workshop Page:
 
         ![html_validation]()
 
-    - Items Page
+        Link to the test: https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fmood-design-gift-shop.herokuapp.com%2Fproducts%2Fworkshop%2F
 
-        In some cases the test shows slightly different results depending on the input method: 
-
-        If we enter data with Check by address the validator shows the error mentioned above:
+    - Product Details Page
 
         ![html_validation]()
 
-        ![html_validation]()
+        Link to the test: 
 
-        Check by text-input doesn't show any errors or warnings in this template.
+       Link to the test: 
 
-        ![html_validation]()
+    - My Profile Page:
 
-    - Lists Page:
-
-        The situation looks similarly in the lists_html template. 
-
-        Check by address:
+        No error detected.
 
         ![html_validation]()
 
-        Check by text-input:
-
-        ![html_validation]()
-
+        Link to the test: 
 
     The rest of the html Templates show no errors no matter how the input was applied.
 
@@ -68,19 +53,19 @@
 
         ![html_validation]()
 
-        ![html_validation]()
+        Link to the test: 
 
     - About Page:
 
-        ![html_validation]()
+        Link to the test: 
 
     - Register Page:
 
-        ![html_validation]()
+        Link to the test: 
 
     - Logout Page:
 
-        ![html_validation]()
+        Link to the test: 
 
         
 
