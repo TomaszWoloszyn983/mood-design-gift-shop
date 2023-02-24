@@ -127,15 +127,15 @@
                                                                     <form action="{% url 'add_to_basket' product.id %}" method="POST">
                                                                         {% csrf_token %}
                                                                         <div class="row">
-                                                                            <div class="dropdown-item col-12 text-center mb-0">
-                                                                                <input class="btn btn-white py-0 mx-auto text-center" type="submit" value="Add to Basket">
-                                                                            </div>
                                                                             <div class="col-12 text-center mb-2 px-0 mx-auto form-group">
                                                                                 <div class="row mx-auto px-0 input-group d-block">
                                                                                     <input type="number" name="units" class="col-6 w-50 text-center form-control input-number qty_input d-inline" 
-                                                                                        value="1" min="1" max="{{ product.quantity }}"
-                                                                                        id="id_qty_{{ product.id }}">
+                                                                                    value="1" min="1" max="{{ product.quantity }}"
+                                                                                    id="id_qty_{{ product.id }}">
                                                                                 </div>
+                                                                            </div>
+                                                                            <div class="dropdown-item col-12 text-center mb-0">
+                                                                                <input class="btn btn-white py-0 mx-auto text-center" type="submit" value="Add to Basket">
                                                                             </div>
                                                                         </div>
                                                                     </form>

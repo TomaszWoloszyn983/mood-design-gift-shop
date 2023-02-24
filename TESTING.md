@@ -263,7 +263,7 @@ Expected result:
 * A new product should appear on the page
 
 
-![Manual testing]()
+![Add Product]()
 
 ### Edit Product
 
@@ -278,7 +278,7 @@ Expected result:
 * A confirmation toast box should be displayed
 * The products detail should be updated.
 
-![Manual testing]()
+![Edit Product]()
 
 ### Deleting Product
 
@@ -292,47 +292,62 @@ Expected result:
 * A confirmation toast box should be displayed
 * The products should disapear from the Shop Page.
 
-![Manual testing]()
+![Delete Product]()
 
 ### Register an account
 
-![Manual testing]()
+![Register]()
 
 ### Update an account
 
-![Manual testing]()
+![Update account]()
 
 ### Login
 
-![Manual testing]()
+![Login]()
 
 ### Log out
 
-![Manual testing]()
+![Log out]()
 
 ### Add product to the shopping basket
 
-![Manual testing]()
+![Add product]()
 
 ### Update Product in the basket.
 
-![Manual testing]()
+![Update Product]()
 
 ### Remove Product from the basket
 
-![Manual testing]()
+![Remove Product]()
 
 ### Make a payment at the Checkout Page
 
-![Manual testing]()
+![Payment]()
 
 ### Sign up to the Newsletter
 
-![Manual testing]()
+![Newsletter]()
 
 ### Publish a Post
 
-![Manual testing]()
+![Publish a Post]()
+
+### Edit Post
+
+A function available only for user registered as admin.
+
+Steps:
+* Go to the Home Page
+* Fill up the form places on the bottom of the page.
+* Submit the form.
+
+Expected result:
+* A confirmation toast box should be displayed
+* The new Post should appear in the Home Page.
+
+![Edit Post]()
 
 ### Update products quantity on stock
 
