@@ -45,7 +45,7 @@
                                         <a href="{{ product.image.url }}">
                                             <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="product_image">
                                         </a>
-                                        {% else %}
+                                    {% else %}
                                         <a href="{% url 'product_detail' product.id %}">
                                             <img class="card-img-top img-fluid"
                                             src="{{ MEDIA_URL }}no_image.jpg"
@@ -78,10 +78,10 @@
                                                         </div>
                                                         {% else %}
                                                             {% if product.quantity == 0 %}
-                                                                <div class="col-12">
+                                                                <div class="col-5 m-auto pt-3 text-center">
                                                                     <p class="font-weight-bolder">Sold Out</p>
                                                                 </div>
-                                                                <div class="col-7 my-2 px-auto mx-auto">
+                                                                <div class="col-7 my-2 text-center">
                                                                     <button class="btn btn-primary mx-auto px-2 disabled">Add to Basket</button>
                                                                 </div>
                                                             {% else %}
@@ -89,7 +89,7 @@
                                                                     <form action="{% url 'add_to_basket' product.id %}" method="POST">
                                                                         {% csrf_token %}
                                                                         <div class="row">
-                                                                            <div class="col-5 text-center my-2 px-0 mx-lg-auto form-group">
+                                                                            <div class="col-12 col-sm-5 text-center my-2 px-0 mx-lg-auto form-group">
                                                                                 <div class="row mx-auto px-0 input-group d-block">
                                                                                     <input type="number" name="units"
                                                                                         class="col-6 w-50 text-center px-0 form-control input-number qty_input d-inline" 
@@ -101,7 +101,7 @@
                                                                                 </div>
                                                                             </div>
                                                                             
-                                                                            <div class="col-7 my-2 px-auto mx-auto">
+                                                                            <div class="col-12 col-sm-7 m-auto text-center">
                                                                                 <input class="btn btn-primary mx-auto px-2" type="submit" value="Add to Basket">
                                                                             </div>
                                                                         </div>
