@@ -32,6 +32,8 @@ It also allows users to create their profile account to save and store theirs sh
 6. [Database Design](#6-database-design)
 7. [Deployment](#7-deployment)
 8. [Testing](#8-testing)
+    * [Responsiveness](#re)
+    * [Html code validations](#10-testing)
 
 
 8. [References and Credits](#references-and-credits)

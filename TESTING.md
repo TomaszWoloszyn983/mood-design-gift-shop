@@ -6,6 +6,33 @@
 
 ![Am I Responsive](documentation/testing/amiresponsive02.jpg)
 
+ No problem with responsiveness or any sort of visual issues were detected during testing the application on different popular browsers, such Google Chrome, Microsoft Edge, Avast Browser or Netbox Browser.
+
+### Google Chrome:
+
+ ![Google Chrome](documentation/testing/resp_chrome.jpg)
+
+ ![Google Chrome](documentation/testing/resp_chrome_xs.jpg)
+
+### Avast Browser:
+
+ ![Google Chrome](documentation/testing/resp_avast.jpg)
+
+ ![Google Chrome](documentation/testing/resp_avast_xs.jpg)
+
+### Microsoft Edge:
+
+ ![Google Chrome](documentation/testing/resp_edge.jpg)
+
+ ![Google Chrome](documentation/testing/resp_edge_xs.jpg)
+
+### Netbox Browser:
+
+ ![Google Chrome](documentation/testing/resp_netbox.jpg)
+
+ ![Google Chrome](documentation/testing/resp_netbox_xs.jpg)
+
+
 ## **Code Validator Testing**
 
 - ### **HTML**
@@ -131,7 +158,7 @@
 
     * Also a function activating navbar tiles, nested in a JS block of code in the base.html file  doesn't contain any errors:
 
-        ![js_validation](documentation/testing/w3c_base.jpg)
+        ![js_validation](documentation/testing/jshint_base_navbaractivation.jpg)
 
 - ### **PYTHON**
 
@@ -215,3 +242,101 @@
 
         ![python_validation](documentation/testing/lin_checkout_admin.jpg)
    
+## Manual Testing
+
+Testing all the applications functionalities.
+
+![Manual testing]()
+
+### Add Product
+
+A function available only for user registered as admin.
+
+Steps:
+* Go to the Shop Page
+* Click "Add Item" button
+* Fill up all the required fields. 
+* Add an image of the product otherwise a default image will be added to the product.
+
+Expected result:
+* A confirmation toast box should be displayed
+* A new product should appear on the page
+
+
+![Manual testing]()
+
+### Edit Product
+
+A function available only for user registered as admin.
+
+Steps:
+* Go to the Shop Page
+* Expand the Click menu and choose "Edit Item" option.
+* Fill up all the required fields. 
+
+Expected result:
+* A confirmation toast box should be displayed
+* The products detail should be updated.
+
+![Manual testing]()
+
+### Deleting Product
+
+A function available only for user registered as admin.
+
+Steps:
+* Go to the Shop Page
+* Expand the Click menu and choose "Delete Item" option.
+
+Expected result:
+* A confirmation toast box should be displayed
+* The products should disapear from the Shop Page.
+
+![Manual testing]()
+
+### Register an account
+
+![Manual testing]()
+
+### Update an account
+
+![Manual testing]()
+
+### Login
+
+![Manual testing]()
+
+### Log out
+
+![Manual testing]()
+
+### Add product to the shopping basket
+
+![Manual testing]()
+
+### Update Product in the basket.
+
+![Manual testing]()
+
+### Remove Product from the basket
+
+![Manual testing]()
+
+### Make a payment at the Checkout Page
+
+![Manual testing]()
+
+### Sign up to the Newsletter
+
+![Manual testing]()
+
+### Publish a Post
+
+![Manual testing]()
+
+### Update products quantity on stock
+
+    After the payment is made the number of products available on stock should be immediately updated, which means that the number of units sold in the recent transaction should be subtracted.
+
+![Manual testing]()
+
