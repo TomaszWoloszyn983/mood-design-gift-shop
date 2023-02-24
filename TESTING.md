@@ -114,14 +114,24 @@
 - ### **CSS**
     * No errors were detected when passing through the [jigsaw.w3 validator](https://jigsaw.w3.org/css-validator). 
 
-         ![css_validation]()
+    - base.css file
+
+        ![css_validation](documentation/testing/w3c_base.jpg)
+    
+    - checkout.css file
+
+        ![css_validation](documentation/testing/w3c_checkout.jpg)   
     
 
 - ### **JAVASCRIPT**
    
     * No errors were detected when passing through the jshint validator.
 
-         ![js_validation]()
+        ![js_validation](documentation/testing/jshint_checkout_stripe.jpg)
+
+    * Also a function activating navbar tiles, nested in a JS block of code in the base.html file  doesn't contain any errors:
+
+        ![js_validation](documentation/testing/w3c_base.jpg)
 
 - ### **PYTHON**
 
