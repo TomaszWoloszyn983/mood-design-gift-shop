@@ -33,11 +33,23 @@
 
     - Product Details Page:
 
-        Inspect item with default image, out od stock item and normal item.
+        Product on stock details Page.
 
-        ![html_validation]()
+        ![html_validation](documentation/testing/nu_detail_on_stock.jpg)
 
-        Link to the test: 
+        Link to the test: https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fmood-design-gift-shop.herokuapp.com%2Fproducts%2Fproduct%2F9%2F#l148c7
+
+        Out of Stock products details.
+
+        ![html_validation](documentation/testing/nu_detail_out_of_stock.jpg)
+
+        Link to the test: https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fmood-design-gift-shop.herokuapp.com%2Fproducts%2Fproduct%2F5%2F#l148c7
+
+        No image (default image) Products details Page.
+
+        ![html_validation](documentation/testing/nu_detail_default_image.jpg)
+
+        Link to the test: https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fmood-design-gift-shop.herokuapp.com%2Fproducts%2Fproduct%2F7%2F#l148c7
 
     - Add Product Page:
     
@@ -117,13 +129,13 @@
 
     - mood_design views.py:
 
-        ![python_validation]()
+        ![python_validation](documentation/testing/lin_mood_views.jpg)
 
     - mood_design urls.py:
 
         ![python_validation](documentation/testing/lin_mood_urls.jpg)
 
-   - home views.py:
+    - home views.py:
 
         ![python_validation](documentation/testing/lin_home_views.jpg)
 
