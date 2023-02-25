@@ -264,7 +264,7 @@ Steps:
 
 Expected result:
 * A confirmation toast box should be displayed
-* A new product should appear on the page
+* A new product (Ceramic Shamrock) should appear on the page
     ![Add Product](documentation/testing/add_product02.jpg)
 
 
@@ -357,7 +357,7 @@ Steps:
 Expected result:
 * A confirmation toast box should be displayed
     ![Update account](documentation/testing/display_profile04.jpg)
-* Ofter refreshing the page the user details should be still displayed.
+* After refreshing the page the user details should be still displayed.
 
 
 ### Log out
@@ -393,7 +393,7 @@ Expected result:
 * After clicking "Add to Basket" button the product will be added to the basket and the Basket tab in the Navigation Bar will display the Total Price of the order.
     ![Add product](documentation/testing/add_to_basket08.jpg)
 * A confirmation toast box should be displayed and the user will be redirected to the Shop Page.
-* All the product added to the Shopping Basket will be dispalyed in the Basket Page.
+* All the product added to the Shopping Basket will be displayed in the Basket Page.
     ![Add product](documentation/testing/add_to_basket07.jpg)
 
 Errors:
@@ -453,7 +453,7 @@ Expected result:
 * An orders confirmation email should be sent to the users email address.
     ![Payment](documentation/testing/checkout06_conf_email.jpg)
     ![Payment](documentation/testing/checkout07_conf_email.jpg)
-* THe order should be added to the Orders History section.
+* The order should be added to the Orders History section.
     ![Payment](documentation/testing/checkout04.jpg)
 
 
@@ -483,20 +483,20 @@ Steps:
 * Go to the Home Page
 * Fill up the form places on the bottom of the page.
     ![Publish a Post](documentation/testing/add_post01.jpg)
-* Optionaly the Post can be sent as Newsletter to choosen emails.
+* Optionally the Post can be sent as Newsletter to chosen emails.
 * Submit the form.
 
 Expected result:
 * A confirmation toast box should be displayed
 * The new Post should appear in the Home Page.
     ![Publish a Post](documentation/testing/add_post03.jpg)
-* If any email was choosen in the form a Newsletter with the Post is sent to chosen emails.
+* If any email was chosen in the form a Newsletter with the Post is sent to chosen emails.
     ![Publish a Post](documentation/testing/add_post04.jpg) 
 
 
 ### Edit Post
 
-This function available only for user registered as admin.
+This function is available only for users registered as admin.
 
 Steps:
 * Go to the Home Page
@@ -516,12 +516,16 @@ Expected result:
 
 After the payment is made the quantity of products available on stock should be immediately updated, which means that the number of units sold in the recent transaction should be subtracted.
 
-Note. The number of units available on stock is updated after the payment is made. Not after the product is added to the basket.
+Products quantity before making a sale.
 
 ![Manual testing](documentation/testing/add_to_basket02.jpg)
 
+Products in the shopping basket.
+
 ![Manual testing](documentation/testing/update_basket01.jpg)
+
+Products quantity after the sale is finished.
 
 ![Manual testing](documentation/testing/checkout05.jpg)
 
-
+Note. The number of units available on stock is updated after the payment is made. Not after the product is added to the basket.
