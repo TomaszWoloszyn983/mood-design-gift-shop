@@ -242,11 +242,13 @@
 
         ![python_validation](documentation/testing/lin_checkout_admin.jpg)
    
+
 ## Manual Testing
 
 Testing all the applications functionalities.
 
 ![Manual testing]()
+
 
 ### Add Product
 
@@ -256,14 +258,15 @@ Steps:
 * Go to the Shop Page
 * Click "Add Item" button
 * Fill up all the required fields. 
+    ![Add Product](documentation/testing/add_product01.jpg)
 * Add an image of the product otherwise a default image will be added to the product.
+    ![Add Product](documentation/testing/add_product03.jpg)
 
 Expected result:
 * A confirmation toast box should be displayed
 * A new product should appear on the page
+    ![Add Product](documentation/testing/add_product02.jpg)
 
-
-![Add Product]()
 
 ### Edit Product
 
@@ -272,13 +275,16 @@ This function available only for user registered as admin.
 Steps:
 * Go to the Shop Page
 * Expand the Click menu and choose "Edit Item" option.
+    ![Edit Product](documentation/testing/edit_product01.jpg)
 * Fill up all the required fields. 
+    ![Edit Product](documentation/testing/edit_product02.jpg)
 
 Expected result:
 * A confirmation toast box should be displayed
+    ![Edit Product](documentation/testing/edit_product03.jpg)
 * The products detail should be updated.
+    ![Edit Product](documentation/testing/edit_product04.jpg)
 
-![Edit Product]()
 
 ### Deleting Product
 
@@ -287,27 +293,37 @@ This function available only for user registered as admin.
 Steps:
 * Go to the Shop Page
 * Expand the Click menu and choose "Delete Item" option.
+    ![Delete Product](documentation/testing/delete_product01.jpg)
 
 Expected result:
 * A confirmation toast box should be displayed
 * The products should disapear from the Shop Page.
+    ![Delete Product](documentation/testing/delete_product02.jpg)
 
-![Delete Product]()
+
 
 ### Register an account
 
 This function available for every user.
 
 Steps:
-* Expand the "Account" tab in the Page Navigation Bar and choose "Register" option.
+* Expand the "Account" tab in the Page Navigation Bar and choose "Register" 
+option.
+    ![Register](documentation/testing/register01.jpg)
 * Fill up the form and submit it by clicking "Sign Up" button.
+    ![Register](documentation/testing/register02.jpg)
 
 Expected result:
 * A info box should display an information that the confirmation email was sent to the user.
+    ![Register](documentation/testing/register03.jpg)
 * An email with the verification link should be posted to the users inbox.
+    ![Register](documentation/testing/register04.jpg)
+    ![Register](documentation/testing/register05.jpg)
 * Clicking the link should verify the new user and Information box should be displayed.
+    ![Register](documentation/testing/register06.jpg)
+    ![Register](documentation/testing/register07.jpg)
 
-![Register]()
+
 
 ### Login
 
@@ -315,13 +331,18 @@ This function is available only for registered user.
 
 Steps:
 * Expand the "Account" tab in the Page Navigation Bar and choose "Login" option.
-* Enter Fill up the form and submit it.
+* Fill up the form and submit it.
+    ![Login](documentation/testing/login01.jpg)
 
 Expected result:
 * A confirmation toast box should be displayed
+    ![Login](documentation/testing/login02.jpg)
 * A new option "My Profile" option should be available in the "Account" tab in the navigation bar.
+    ![Login](documentation/testing/display_profile01.jpg)
+* Also the form in the Checkout Page since now should be prefilled.
+    ![Login](documentation/testing/register08.jpg)
 
-![Login]()
+
 
 ### Update an account
 
@@ -329,13 +350,15 @@ This function is available only for logged in users.
 
 Steps:
 * Expand the "Account" tab in the Page Navigation Bar and choose "My Profile" option.
+    ![Update account](documentation/testing/display_profile01.jpg)
 * Fill up the form and submit it by clicking the "Update Information" button.
+    ![Update account](documentation/testing/display_profile03.jpg)
 
 Expected result:
 * A confirmation toast box should be displayed
-* Ofter refreshing the page the Information should be still displayed.
+    ![Update account](documentation/testing/display_profile04.jpg)
+* Ofter refreshing the page the user details should be still displayed.
 
-![Update account]()
 
 ### Log out
 
@@ -344,12 +367,15 @@ This function is available only for logged in users.
 Steps:
 * Expand the "Account" tab in the Page Navigation Bar and choose "Logout" option.
 * Submit you choice by clicking "Sign Out" button.
+    ![Log out](documentation/testing/logout01.jpg)
 
 Expected result:
 * A confirmation toast box should be displayed
+    ![Log out](documentation/testing/logout02.jpg)
 * "My Profile" tab should not be accessible in the "Account" tab. And only basic option should be displayed.
+    ![Log out](documentation/testing/logout04.jpg)
 
-![Log out]()
+
 
 ### Add product to the shopping basket
 
@@ -359,29 +385,77 @@ It allows the user to add product to the shopping basket where the products can 
 Steps:
 * Go to the shop page or to the workshop page.
 * In the shop page expand the "Click" button and choose the quantity then click "Add to Basket" option or choose "Display Details" to see more details about the product.
+    ![Add product](documentation/testing/add_to_basket01.jpg)
 * The product can be added to the basket from the Product Detail Page also.
+    ![Add product](documentation/testing/add_to_basket02.jpg)
 
 Expected result:
-* After clicking "add to basket" button the product will be added to the basket and the Basket tab in the Navigation Bar will display the Total Price of the order.
+* After clicking "Add to Basket" button the product will be added to the basket and the Basket tab in the Navigation Bar will display the Total Price of the order.
+    ![Add product](documentation/testing/add_to_basket08.jpg)
 * A confirmation toast box should be displayed and the user will be redirected to the Shop Page.
-* All the product added to the Shopping Basket will be dispalyed in the 
+* All the product added to the Shopping Basket will be dispalyed in the Basket Page.
+    ![Add product](documentation/testing/add_to_basket07.jpg)
 
 Errors:
-* An error occured when the user is trying to submit an empty value. This problem was handled programatically using try/catch block inside the add_to_basket() function in the basket/views.py.
+* An error occured when a user is trying to submit an empty value.
+    ![Add product](documentation/testing/add_to_basket_04_error.jpg)
+This problem was handled programatically using try/catch block inside the add_to_basket() function in the basket/views.py.
+    ![Add product](documentation/testing/add_to_basket_05_error.jpg)
 
-![Add product]()
+
 
 ### Update Product in the basket.
 
-![Update Product]()
+Steps:
+* Click the Basket Icon displayed in the Navigation Bar go to the Basket Page.
+    ![Update Product](documentation/testing/update_basket01.jpg)
+* Enter demanded value in the Quantity column.
+* Submit clicking green button.
+
+Expected result:
+* A confirmation toast box should be displayed
+* Number in the Quantity box should be updated.
+* The Total Price of the Order ahould also be updated immediately.
+    ![Update Product](documentation/testing/update_basket02.jpg)
+
+
 
 ### Remove Product from the basket
 
-![Remove Product]()
+Steps:
+* Click the Basket Icon displayed in the Navigation Bar go to the Basket Page.
+    ![Remove Product](documentation/testing/update_basket01.jpg)
+* Click the red button in the Remove Item column.
+
+Expected result:
+* A confirmation toast box should be displayed
+* The product should be remnoved from the basket.
+* The Total Price of the Order ahould also be updated immediately.
+    ![Remove Product](documentation/testing/update_basket03.jpg)
+
 
 ### Make a payment at the Checkout Page
 
-![Payment]()
+Steps:
+* Go to the Basket Page. If there are any products added a "Go To Checkout" button should be displayed.
+* Click "Go To Checkout" button to go to the Checkout Page and fill up the 
+form.
+    ![Payment](documentation/testing/checkout01_logged.jpg)
+* Click "Complete Order" button to submit.
+
+Expected result:
+* A confirmation toast box should be displayed.
+* Order Summary Page should be displayed.
+    ![Payment](documentation/testing/checkout02.jpg)
+* The Basket should be emptied.
+* Products quantity values should have been updated as well.
+    ![Payment](documentation/testing/checkout05.jpg)
+* An orders confirmation email should be sent to the users email address.
+    ![Payment](documentation/testing/checkout06_conf_email.jpg)
+    ![Payment](documentation/testing/checkout07_conf_email.jpg)
+* THe order should be added to the Orders History section.
+    ![Payment](documentation/testing/checkout04.jpg)
+
 
 ### Sign up to the Newsletter
 
@@ -399,7 +473,6 @@ Expected result:
     ![Newsletter](documentation/testing/subscribe03.jpg)
 * A confiramtion email should be sent to the entered email address.
     ![Newsletter](documentation/testing/subscribe06.jpg)
-
 
 
 ### Publish a Post
@@ -443,5 +516,12 @@ Expected result:
 
 After the payment is made the quantity of products available on stock should be immediately updated, which means that the number of units sold in the recent transaction should be subtracted.
 
-![Manual testing]()
+Note. The number of units available on stock is updated after the payment is made. Not after the product is added to the basket.
+
+![Manual testing](documentation/testing/add_to_basket02.jpg)
+
+![Manual testing](documentation/testing/update_basket01.jpg)
+
+![Manual testing](documentation/testing/checkout05.jpg)
+
 

@@ -39,7 +39,7 @@ def add_to_basket(request, product_id):
     except ValueError:
         messages.error(request, f'The quantity value was incorrect.'
                                 f'\nPlease enter a numeric value')
-    return redirect(reverse('products'))
+    return redirect(reverse('basket'))
 
 
 def remove_from_basket(request, product_id):
