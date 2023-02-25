@@ -319,19 +319,55 @@ Steps:
 
 Expected result:
 * A confirmation toast box should be displayed
-* The products should disapear from the Shop Page.
+* A new option "My Profile" option should be available in the "Account" tab in the navigation bar.
 
 ![Login]()
 
 ### Update an account
 
+This function is available only for logged in users.
+
+Steps:
+* Expand the "Account" tab in the Page Navigation Bar and choose "My Profile" option.
+* Fill up the form and submit it by clicking the "Update Information" button.
+
+Expected result:
+* A confirmation toast box should be displayed
+* Ofter refreshing the page the Information should be still displayed.
+
 ![Update account]()
 
 ### Log out
 
+This function is available only for logged in users.
+
+Steps:
+* Expand the "Account" tab in the Page Navigation Bar and choose "Logout" option.
+* Submit you choice by clicking "Sign Out" button.
+
+Expected result:
+* A confirmation toast box should be displayed
+* "My Profile" tab should not be accessible in the "Account" tab. And only basic option should be displayed.
+
 ![Log out]()
 
 ### Add product to the shopping basket
+
+This function is available to all user: loged in as well as not loged in users.
+It allows the user to add product to the shopping basket where the products can be updated, deleted from basket or proceded to the chechout.
+
+Steps:
+* Go to the shop page or to the workshop page.
+* In the shop page expand the "Click" button and choose the quantity then click "Add to Basket" option or choose "Display Details" to see more details about the product.
+* The product can be added to the basket from the Product Detail Page also.
+
+Expected result:
+* After clicking "add to basket" button the product will be added to the basket and the Basket tab in the Navigation Bar will display the Total Price of the order.
+* A confirmation toast box should be displayed and the user will be redirected to the Shop Page.
+* All the product added to the Shopping Basket will be dispalyed in the 
+
+Errors:
+* An error occured when the user is trying to submit an empty value. This problem was handled programatically using try/catch block inside the add_to_basket() function in the basket/views.py.
 
 ![Add product]()
 

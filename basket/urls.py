@@ -7,6 +7,4 @@ urlpatterns = [
          views.add_to_basket, name='add_to_basket'),
     path('remove_from_basket/<product_id>/',
          views.remove_from_basket, name='remove_from_basket'),
-    path('on_stock/<int:product_id>/',
-         views.adjust_qty_on_stock, name='adjust_qty_on_stock'),
 ]

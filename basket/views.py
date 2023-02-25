@@ -18,11 +18,8 @@ def add_to_basket(request, product_id):
     try:
         product = Product.objects.get(pk=product_id)
         lastchar = product.name[-1]
-        print(f'{product.name} last letter is {lastchar}')
-        print(f'Add some product by id {product_id} to the basket')
         units = int(request.POST.get('units'))
         basket = request.session.get('basket', {})
-        print(f'Basket: {basket}')
 
         if product_id in list(basket.keys()):
             basket[product_id] += units
@@ -39,11 +36,10 @@ def add_to_basket(request, product_id):
                                           f'your shopping basket')
 
         request.session['basket'] = basket
-        print(request.session['basket'])
     except ValueError:
-        messages.error(request, f'Write a correct number')
-
-    return redirect(reverse('basket'))
+        messages.error(request, f'The quantity value was incorrect.'
+                                f'\nPlease enter a numeric value')
+    return redirect(reverse('products'))
 
 
 def remove_from_basket(request, product_id):
@@ -68,28 +64,4 @@ def remove_from_basket(request, product_id):
                                   f'from the basket')
 
     request.session['basket'] = basket
-    return redirect(reverse('basket'))
-
-
-def adjust_qty_on_stock(request, product_id):
-    """
-    View to Adjust products quantity on stock when the product
-    is addded to the basket.
-
-    Not in use at the moment.
-    """
-
-    print(f'Modify the product: {product_id} quantity on stock')
-    basket = request.session.get('basket', {})
-    units = int(request.POST.get('units'))
-    product = get_object_or_404(Product, pk=product_id)
-    print(f'Basket: {basket}')
-
-    print(f'Modyfi the quantity of the product '
-          f'from {product.quantity} to {units}')
-    product.quantity = units
-
-    request.session['basket'] = basket
-    print(f'Print session {request.session["basket"]}')
-
     return redirect(reverse('basket'))

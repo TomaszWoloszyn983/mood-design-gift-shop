@@ -177,6 +177,10 @@
                 activeLink = "products";
             }else if(location.pathname.includes("/workshop/")){
                 activeLink = "workshop";
+            }else if(location.pathname.includes("/checkout/")){
+                activeLink = "basket";
+            }else if(location.pathname.includes("/checkout_success/")){
+                activeLink = "basket";
             }else if(location.pathname.includes("/profile/")){
                 activeLink = "account";
                 $(`[id^="user-options"]`)
