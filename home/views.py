@@ -65,7 +65,7 @@ def send_post(request):
 
             form = PostForm()
         else:
-            messages.success(request, f'Adding post did not succeed')
+            messages.error(request, f'Adding post did not succeed')
     else:
         form = PostForm()
 
@@ -90,10 +90,10 @@ def edit_post(request, post_id):
         form = PostForm(request.POST, request.FILES, instance=post)
         if form.is_valid():
             form.save()
-            print("Post updated")
+            messages.success(request, f'Post successfully updated')
             return redirect(reverse("home"))
         else:
-            print("\n\n\n Update didn't succeed")
+            messages.error(request, f'Updating the post did not succeed')
 
     context = {
         'post_id': post_id,

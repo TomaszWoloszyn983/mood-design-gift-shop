@@ -250,7 +250,7 @@ Testing all the applications functionalities.
 
 ### Add Product
 
-A function available only for user registered as admin.
+This function available only for user registered as admin.
 
 Steps:
 * Go to the Shop Page
@@ -267,7 +267,7 @@ Expected result:
 
 ### Edit Product
 
-A function available only for user registered as admin.
+This function available only for user registered as admin.
 
 Steps:
 * Go to the Shop Page
@@ -282,7 +282,7 @@ Expected result:
 
 ### Deleting Product
 
-A function available only for user registered as admin.
+This function available only for user registered as admin.
 
 Steps:
 * Go to the Shop Page
@@ -296,15 +296,36 @@ Expected result:
 
 ### Register an account
 
+This function available for every user.
+
+Steps:
+* Expand the "Account" tab in the Page Navigation Bar and choose "Register" option.
+* Fill up the form and submit it by clicking "Sign Up" button.
+
+Expected result:
+* A info box should display an information that the confirmation email was sent to the user.
+* An email with the verification link should be posted to the users inbox.
+* Clicking the link should verify the new user and Information box should be displayed.
+
 ![Register]()
+
+### Login
+
+This function is available only for registered user.
+
+Steps:
+* Expand the "Account" tab in the Page Navigation Bar and choose "Login" option.
+* Enter Fill up the form and submit it.
+
+Expected result:
+* A confirmation toast box should be displayed
+* The products should disapear from the Shop Page.
+
+![Login]()
 
 ### Update an account
 
 ![Update account]()
-
-### Login
-
-![Login]()
 
 ### Log out
 
@@ -328,30 +349,63 @@ Expected result:
 
 ### Sign up to the Newsletter
 
-![Newsletter]()
+Every non-admin user can sign-in to Newsletter by going to the Home Page footer, filling up and submitting the form.
+
+Steps:
+* Go to the footer on the Home Page.
+    ![Newsletter](documentation/testing/subscribe01.jpg)
+* Enter your email in the "Sign Up To Our Newsletter" diagram.
+    ![Newsletter](documentation/testing/subscribe02.jpg)
+* Submit the form by clicking "Sign Me Up" button.
+
+Expected result:
+* A confirmation toast box should be displayed
+    ![Newsletter](documentation/testing/subscribe03.jpg)
+* A confiramtion email should be sent to the entered email address.
+    ![Newsletter](documentation/testing/subscribe06.jpg)
+
+
 
 ### Publish a Post
 
-![Publish a Post]()
-
-### Edit Post
-
-A function available only for user registered as admin.
+This function available only for user registered as admin.
 
 Steps:
 * Go to the Home Page
 * Fill up the form places on the bottom of the page.
+    ![Publish a Post](documentation/testing/add_post01.jpg)
+* Optionaly the Post can be sent as Newsletter to choosen emails.
 * Submit the form.
 
 Expected result:
 * A confirmation toast box should be displayed
 * The new Post should appear in the Home Page.
+    ![Publish a Post](documentation/testing/add_post03.jpg)
+* If any email was choosen in the form a Newsletter with the Post is sent to chosen emails.
+    ![Publish a Post](documentation/testing/add_post04.jpg) 
 
-![Edit Post]()
+
+### Edit Post
+
+This function available only for user registered as admin.
+
+Steps:
+* Go to the Home Page
+    ![Edit Post](documentation/testing/edit_post00.jpg)
+* Fill up the form places on the bottom of the page.
+    ![Edit Post](documentation/testing/edit_post01.jpg)
+* Submit the form.
+
+Expected result:
+* A confirmation toast box should be displayed
+    ![Edit Post](documentation/testing/edit_post04.jpg)
+* The new Post should appear in the Home Page.
+    ![Edit Post](documentation/testing/edit_post05.jpg)
+
 
 ### Update products quantity on stock
 
-    After the payment is made the number of products available on stock should be immediately updated, which means that the number of units sold in the recent transaction should be subtracted.
+After the payment is made the quantity of products available on stock should be immediately updated, which means that the number of units sold in the recent transaction should be subtracted.
 
 ![Manual testing]()
 
