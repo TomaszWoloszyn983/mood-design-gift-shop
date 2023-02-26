@@ -85,12 +85,24 @@ def edit_post(request, post_id):
     """
     post = get_object_or_404(Post, pk=post_id)
     form = PostForm(instance=post)
+    users = NewsletterUser.objects.all()
+    newsletterForm = NewsletterForm()
 
     if request.method == 'POST':
         form = PostForm(request.POST, request.FILES, instance=post)
         if form.is_valid():
             form.save()
             messages.success(request, f'Post successfully updated')
+
+            # send the post to newsletter users
+            post_title = form.cleaned_data.get('title')
+            post_content = form.cleaned_data.get('body')
+            marked_emails = form.cleaned_data.get('email')
+
+            for user in marked_emails:
+                print(f'Sending post {post_title} to {user}')
+                send_newsletter(user, post_title, post_content)
+
             return redirect(reverse("home"))
         else:
             messages.error(request, f'Updating the post did not succeed')

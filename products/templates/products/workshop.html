@@ -69,7 +69,7 @@
                                                     {% if request.user.is_authenticated %}
                                                         {% if request.user.is_superuser %}
                                                         <div class="btn-group right dropup mx-auto d-inline">
-                                                            <a href="{% url 'edit_service' product.id %" type="button" class="btn btn-primary">
+                                                            <a href="{% url 'edit_service' product.id %}" type="button" class="btn btn-primary">
                                                                 Edit Item
                                                             </a>
                                                               <a href="{% url 'delete_service' product.id %}" type="button" class="btn btn-danger">

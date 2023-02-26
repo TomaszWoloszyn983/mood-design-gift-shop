@@ -66,8 +66,8 @@ It also allows users to create their profile account to save and store theirs sh
 
 - As a site administrator, I should be able to create a superuser account so that I can get access to function only available for sellers.
 - As a site administrator, I should be able to add new items to the database, so that I can add new items for sale and save then in the database
-- As a site administrator, I should be able to Edit itemsfor sale and save changes to the database
-- As a site administrator, I should be able to Delete items from the database, so that They can not be available on sale any more.
+- As a site administrator, I should be able to Edit items for sale and save changes to the database.
+- As a site administrator, I should be able to Delete items from the database, so that they can not be available on sale any more.
 
 ## **3. Features.**
 
@@ -235,7 +235,9 @@ The Add Item button is displayed on the bottom-right corner of the Workshop Page
 
 ## **5. Future Features.**
 
-
+* Log in using Social Media account
+* User Feedback
+* Delete Account function
 
 ## **6. Technologies used:**
 
@@ -454,9 +456,6 @@ More details about testings and unfixed issues are available in the dedicated te
 
 There, I used my own **User Story Template** to manage user stories.
 
-It also helped with milestone iterations on a weekly basis.
-
-Consider adding a screenshot of your Open and Closed Issues.
 
 - [Open Issues](https://github.com/TomaszWoloszyn983/mood-design-gift-shop/issues?q=is%3Aopen+is%3Aissue)
 
@@ -479,7 +478,7 @@ Using this approach, I was able to apply the MoSCow prioritization and labels to
 - **Won't Have**: not a priority for this iteration
 
 
-## **11References and Credits:**
+## **11. References and Credits:**
 - You Tube video tutorial how to create 3D Parallax landing page effect - https://www.youtube.com/watch?v=Nt70Ld0dJCM
 
 - You Tube tutorial how to choose colors - https://www.youtube.com/watch?v=KMS3VwGh3HY&list=WL&index=102

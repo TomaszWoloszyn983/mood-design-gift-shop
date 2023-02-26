@@ -62,6 +62,10 @@ def add_product(request):
     """
     A view to add the new product to database.
     """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
+
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES)
         if form.is_valid():
@@ -85,6 +89,10 @@ def edit_product(request, product_id):
     """
     A view to edit an existing product by its id.
     """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
+
     product = get_object_or_404(Product, pk=product_id)
     form = ProductForm(instance=product)
 
@@ -111,6 +119,10 @@ def delete_product(request, product_id):
     """
     A view to delete an existing product by its id.
     """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
+
     product = get_object_or_404(Product, pk=product_id)
     product.delete()
     messages.success(request, f'Item {product.name} successfully deleted')
@@ -123,6 +135,10 @@ def edit_service(request, product_id):
     """
     A view to edit an existing product by its id.
     """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store admin can do that.')
+        return redirect(reverse('home'))
+
     product = get_object_or_404(Product, pk=product_id)
     form = ProductForm(instance=product)
 
@@ -131,10 +147,10 @@ def edit_service(request, product_id):
         if form.is_valid():
             form.save()
             messages.success(request, f'Item {product.name} '
-                             f'successfully updated')
+                             f'successfully updated.')
             return redirect(reverse("workshop"))
         else:
-            print("\n\n\nService  Update didn't succeed")
+            messages.error(request, f"Service update didn't succeed")
 
     context = {
         'product_id': product_id,
@@ -148,6 +164,10 @@ def delete_service(request, product_id):
     """
     A view to delete an existing product by its id.
     """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
+
     product = get_object_or_404(Product, pk=product_id)
     product.delete()
     messages.success(request, f'Item {product.name} successfully deleted')
