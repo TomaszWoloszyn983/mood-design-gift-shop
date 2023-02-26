@@ -20,23 +20,19 @@ It also allows users to create their profile account to save and store theirs sh
     * [Navigation Bar](#navigation-bar)
     * [Posts](#post)
     * [Footer](#footer)
-    * [Shop Page]()
-    * [Workshop Page]()
-    * [Account Page]()
-    * [Register, Login/logout]()
-    * [Basket Page]()
-    * [Checkout Page]()
-4. [Admins Functions]()
-4. [Future Features](#4-future-features)
-5. [Technologies Used](#5-technologies-used)
-6. [Database Design](#6-database-design)
-7. [Deployment](#7-deployment)
-8. [Testing](#8-testing)
-    * [Responsiveness](#re)
-    * [Html code validations](#10-testing)
-
-
-8. [References and Credits](#references-and-credits)
+    * [Shop Page](#shop-page)
+    * [Workshop Page](#workshop-page)
+    * [Account Page](#account-page)
+    * [Register, Login/logout](#register-loginlogout-pages)
+    * [Basket Page](#shopping-basket)
+    * [Checkout Page](#checkout-page)
+4. [Admin Functions](#4-admin-functions)
+4. [Future Features](#5-future-features)
+5. [Technologies Used](#6-technologies-used)
+6. [Database Design](#7-database-design)
+7. [Deployment](#8-deployment)
+8. [Testing](#9-testing)
+8. [References and Credits](#11references-and-credits)
 
 
 ## **2. User Stories:**
@@ -73,7 +69,7 @@ It also allows users to create their profile account to save and store theirs sh
 - As a site administrator, I should be able to Edit itemsfor sale and save changes to the database
 - As a site administrator, I should be able to Delete items from the database, so that They can not be available on sale any more.
 
-## **4. Features.**
+## **3. Features.**
 
 ### Home Page
 
@@ -189,7 +185,7 @@ It contains all information provided by the user. SUch as orders details, shippi
 
 ![Summary Page](documentation/images/summary.jpg)
 
-## **5. Admins Functions:**
+## **4. Admin Functions:**
 
 Admin users have access to a set of additional functions that allow to provide better level of communication between the Page admins and Customers:
 
@@ -237,10 +233,11 @@ The Add Item button is displayed on the bottom-right corner of the Workshop Page
 
 ![Add Workshop Item](documentation/images/add_service.jpg)
 
-## **6. Future Features.**
+## **5. Future Features.**
 
 
-## **7. Technologies used:**
+
+## **6. Technologies used:**
 
 * Python - an interpreted, object-oriented, high-level programming language https://www.python.org/.
 * Django - Framework facilitating building full stack web application https://www.djangoproject.com/.
@@ -256,7 +253,7 @@ The Add Item button is displayed on the bottom-right corner of the Workshop Page
 * Stripe - a suite of APIs powering online payment processing and commerce solutions for internet businesses. https://stripe.com/
 
 
-## **8. Database Design**
+## **7. Database Design**
 
 The Project contains following classes to describe categories of products, Products features and also classes to describe application users profiles.
 
@@ -378,9 +375,69 @@ class Post(models.Model):
     email = models.ManyToManyField(NewsletterUser)
 ```
 
-## **9. Deployment.**
+## **8. Deployment.**
 
-## **10. Testing.**
+The live deployed application can be found on [Heroku](https://mood-design-gift-shop.herokuapp.com/).
+
+### Heroku Deployment
+
+This project uses [Heroku](https://www.heroku.com), a platform as a service (PaaS) that enables developers to build, run, and operate applications entirely in the cloud.
+
+Deployment steps are as follows, after account setup:
+
+- Select *New* in the top-right corner of your Heroku Dashboard, and select *Create new app* from the dropdown menu.
+- Your app name must be unique, and then choose a region closest to you (EU or USA), and finally, select *Create App*.
+- From the new app *Settings*, click *Reveal Config Vars*, and set the following key/value pairs:
+  - `CLOUDINARY_URL` (insert your own Cloudinary API key here)
+  - `DATABASE_URL` (this comes from the **Resources** tab, you can get your own Postgres Database using the Free Hobby Tier)
+  - `SECRET_KEY` (this can be any random secret key)
+  - `PORT` (8000)
+
+Heroku needs two additional files in order to deploy properly.
+- requirements.txt
+- Procfile
+
+You can install this project's requirements (where applicable) using: `pip3 install -r requirements.txt`.
+If you have your own packages that have been installed, then the requirements file needs updated using: `pip3 freeze --local > requirements.txt`
+
+The Procfile can be created with the following command: `echo web: gunicorn shoppinglist.wsgi > Procfile`
+
+For Heroku deployment, follow these steps to connect your GitHub repository to the newly created app:
+
+Either:
+- Select "Automatic Deployment" from the Heroku app.
+
+Or:
+- In the Terminal/CLI, connect to Heroku using this command: `heroku login -i`
+- Set the remote for Heroku: `heroku git:remote -a <app_name>` (replace app_name with your app, without the angle-brackets)
+- After performing the standard Git `add`, `commit`, and `push` to GitHub, you can now type: `git push heroku main`
+
+The frontend terminal should now be connected and deployed to Heroku.
+
+### Local Deployment
+
+*Gitpod* IDE was used to write the code for this project.
+
+You can clone the repository by following these steps:
+
+1. Go to the [GitHub repository](https://github.com/TomaszWoloszyn983/mood-design-gift-shop) 
+2. Locate the Code button above the list of files and click it 
+3. Select if you prefer to clone using HTTPS, SSH, or GitHub CLI and click the copy button to copy the URL to your clipboard
+4. Open Git Bash or Terminal
+5. Change the current working directory to the one where you want the cloned directory
+6. In your IDE Terminal, type the following command to clone my repository:
+	- `git clone https://github.com/TomaszWoloszyn983/mood-design-gift-shop.git`
+7. Press Enter to create your local clone.
+
+You can install this project's requirements (where applicable) using: `pip3 install -r requirements.txt`.
+
+You will need to create a new file called `env.py`, and include the same environment variables listed above for Heroku deployment steps.
+
+Alternatively, if using Gitpod, you can click below to create your own workspace using this repository.
+
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/TomaszWoloszyn983/mood-design-gift-shop)
+
+## **9. Testing.**
 
 The Application is fully responsive and the applications code was tested using:
 * Nu Html Checker for html code https://validator.w3.org/nu/.
@@ -391,7 +448,7 @@ The Application is fully responsive and the applications code was tested using:
 There were no issues detected by most of the test, although there where some errors implemented with add-ons.
 More details about testings and unfixed issues are available in the dedicated testing section [here](TESTING.md).
 
-## **11. GitHub Issues.**
+## **10. GitHub Issues.**
 
 ![Project Board](documentation/images/project_board_01.jpg)
 
@@ -422,40 +479,9 @@ Using this approach, I was able to apply the MoSCow prioritization and labels to
 - **Won't Have**: not a priority for this iteration
 
 
-## **References and Credits:**
+## **11References and Credits:**
 - You Tube video tutorial how to create 3D Parallax landing page effect - https://www.youtube.com/watch?v=Nt70Ld0dJCM
 
 - You Tube tutorial how to choose colors - https://www.youtube.com/watch?v=KMS3VwGh3HY&list=WL&index=102
 
 - You Tube tutorial on sending newsletters - https://www.youtube.com/watch?v=C9rszGfDMYM
-
-
-## Gitpod Reminders
-
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
-
-`python3 -m http.server`
-
-A blue button should appear to click: _Make Public_,
-
-Another blue button should appear to click: _Open Browser_.
-
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
-
-A blue button should appear to click: _Make Public_,
-
-Another blue button should appear to click: _Open Browser_.
-
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
-
-To log into the Heroku toolbelt CLI:
-
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
-
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
-
-------

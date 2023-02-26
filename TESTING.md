@@ -247,9 +247,6 @@
 
 Testing all the applications functionalities.
 
-![Manual testing]()
-
-
 ### Add Product
 
 This function available only for user registered as admin.
