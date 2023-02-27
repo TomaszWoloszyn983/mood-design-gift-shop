@@ -54,7 +54,8 @@ html {
     color: #2986ff;
   
 }
-.navbar li :hover {
+.navbar li:not([data-toggle='dropdown']):hover,
+.dropdown-menu .dropdown-item:hover {
     background: #2986ff;
     color: white;
     transition: color .2s ease-in-out, box-shadow .1s ease-in-out;

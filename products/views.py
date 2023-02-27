@@ -102,6 +102,7 @@ def edit_product(request, product_id):
             form.save()
             messages.success(request, f'Item {product.name} '
                              f'successfully updated')
+            
             return redirect(reverse("products"))
         else:
             messages.error(request, f'A problem occured! '
@@ -110,6 +111,7 @@ def edit_product(request, product_id):
     context = {
         'product_id': product_id,
         'form': form,
+        'is_workshop': False,
     }
     return render(request, 'products/edit_product.html', context)
 
@@ -146,8 +148,8 @@ def edit_service(request, product_id):
         form = ProductForm(request.POST, request.FILES, instance=product)
         if form.is_valid():
             form.save()
-            messages.success(request, f'Item {product.name} '
-                             f'successfully updated.')
+            messages.success(request, f'Item workshop {product.name} '
+                             f'successfully updated .')
             return redirect(reverse("workshop"))
         else:
             messages.error(request, f"Service update didn't succeed")
@@ -155,6 +157,7 @@ def edit_service(request, product_id):
     context = {
         'product_id': product_id,
         'form': form,
+        'is_workshop': True,
     }
     return render(request, 'products/edit_product.html', context)
 

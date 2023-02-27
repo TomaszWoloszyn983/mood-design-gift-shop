@@ -17,7 +17,8 @@ class Post(models.Model):
     ]
 
     title = models.TextField(max_length=150)
-    designer = models.CharField(choices=DESIGNERS, max_length=10, default='Ela')
+    designer = models.CharField(
+        choices=DESIGNERS, max_length=10, default='Ela')
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
     body = models.TextField()

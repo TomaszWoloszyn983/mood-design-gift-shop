@@ -173,10 +173,11 @@
         
         <script>
             let activeLink;
-            if(location.pathname.includes("/products/")){
-                activeLink = "products";
-            }else if(location.pathname.includes("/workshop/")){
+            
+            if(location.pathname.includes("/workshop/")){
                 activeLink = "workshop";
+            }else if(location.pathname.includes("/products/")){
+                activeLink = "products";
             }else if(location.pathname.includes("/checkout/")){
                 activeLink = "basket";
             }else if(location.pathname.includes("/checkout_success/")){
