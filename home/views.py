@@ -140,7 +140,7 @@ def newsletter(request):
                 \nNow you will be always up to date
                 with the latest
                 \nevents, promotion and our new products
-                \n\n   Kind regards Ela nad Lukasz."""
+                \n\n   Kind regards Ela and Lukasz."""
             send_newsletter(user_email, subject, content)
             form = NewsletterForm()
         else:

@@ -60,6 +60,10 @@ html {
     color: white;
     transition: color .2s ease-in-out, box-shadow .1s ease-in-out;
 }
+.navbar li :hover{
+    color: white;
+    transition: color .2s ease-in-out, box-shadow .1s ease-in-out;
+}
 
 .navbar-collapse {
     width: max-content;
@@ -107,7 +111,7 @@ html {
 .about-us {
     width: 100%;
     height: fit-content;
-    /* padding: 1rem; */
+    padding: 1rem;
     background: rgba(0, 0, 0, 0.5);
     margin: auto;
     line-height: 1.3;
@@ -154,7 +158,7 @@ html {
     background-repeat: no-repeat;
     background-size: cover;
     padding-top: 5vh;
-    height: 35vh;
+    height: 40vh;
 }
 
 .shop-page-content {
@@ -164,10 +168,14 @@ html {
 
 .shop-title {
     color: #fff;
-    height: 29vh;
+    height: 33.5vh;
     transform: translate(0%, 4%);
     background: rgba(50, 52, 32, 0.315);
     padding-top: 3.5rem;
+}
+
+textarea#id_title, textarea#id_body {
+    height: 100px;
 }
 
 .fixed-button {

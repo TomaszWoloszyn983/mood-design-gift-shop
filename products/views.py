@@ -102,7 +102,7 @@ def edit_product(request, product_id):
             form.save()
             messages.success(request, f'Item {product.name} '
                              f'successfully updated')
-            
+
             return redirect(reverse("products"))
         else:
             messages.error(request, f'A problem occured! '

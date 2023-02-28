@@ -27,12 +27,13 @@ It also allows users to create their profile account to save and store theirs sh
     * [Basket Page](#shopping-basket)
     * [Checkout Page](#checkout-page)
 4. [Admin Functions](#4-admin-functions)
-4. [Future Features](#5-future-features)
-5. [Technologies Used](#6-technologies-used)
-6. [Database Design](#7-database-design)
-7. [Deployment](#8-deployment)
-8. [Testing](#9-testing)
-8. [References and Credits](#11references-and-credits)
+5. [Color Scheme]()
+5. [Future Features](#5-future-features)
+6. [Technologies Used](#6-technologies-used)
+7. [Database Design](#7-database-design)
+8. [Deployment](#8-deployment)
+9. [Testing](#9-testing)
+11. [References and Credits](#11references-and-credits)
 
 
 ## **2. User Stories:**
@@ -181,7 +182,7 @@ Also a confirmation email will be sent do the email address provided by the user
 ### Summary Page
 
 The Summary Page is displayed after the order is succesfully completed.
-It contains all information provided by the user. SUch as orders details, shipping details, orders value and delivery costs.
+It contains all information provided by the user. Such as orders details, shipping details, orders value and delivery costs.
 
 ![Summary Page](documentation/images/summary.jpg)
 
@@ -191,7 +192,7 @@ Admin users have access to a set of additional functions that allow to provide b
 
 ### Adding and Editing Posts on the Home Page:
 
-Users authenticated as Admin users can post information on the Home Page. TO do this he can user a post form displayed in the bottom of the page.
+Users authenticated as Admin users can post information on the Home Page. To do this he can user a post form displayed in the bottom of the page.
 
 ![Home Page Post](documentation/images/add_post.jpg)
 
@@ -201,9 +202,11 @@ After filling up the form the post is displayed on the top of the Posts section 
 
 ![Home Page Post](documentation/images/post_guest.jpg)
 
-The admin has an option to edit the posts content at any time.
+The admin is able to edit the posts content at any time.
 
 ![Home Page Post](documentation/images/post_admin.jpg)
+
+However deleting Posts can be made only throughout the admin panel.
 
 ### Adding new products to the Shop Page.
 
@@ -227,17 +230,28 @@ Admin user can modify the products informations or delete the product from the s
 
 ### Adding new products to the Shop Page.
 
-The situation with adding Event to the Workshop section look very similarly to adding and managing shop products.
+The situation with adding Event to the Workshop section looks very similarly to adding and managing shop products.
 
 The Add Item button is displayed on the bottom-right corner of the Workshop Page. After clicking the button and filling up the form a new Event is added to the Page.
 
 ![Add Workshop Item](documentation/images/add_service.jpg)
+
 
 ## **5. Future Features.**
 
 * Log in using Social Media account
 * User Feedback
 * Delete Account function
+
+
+## **5. Colour Scheme**
+
+Explain your colours and the colour scheme.
+
+- `#000000` used for primary text.
+- `#2986ff` user for header text, buttons and navbar hover effect.
+- `#80888a4d` used for navbar active button.
+
 
 ## **6. Technologies used:**
 
@@ -248,9 +262,14 @@ The Add Item button is displayed on the bottom-right corner of the Workshop Page
 * Javascript - High-level programming language https://www.javascript.com/.
 * HTML5 - Markup language used to make webpages https://html.com/html5/.
 * CSS3 - A language used to style HTML and XHTML documents presentations in web development.
+* CSS Flexbox and CSS Grid - used for an enhanced responsive layout.
 * Gitpod - Online integrated development environment https://www.gitpod.io/.
 * GitHub - Version control service used for storing and sharing development projects https://github.com/.
+* GitHub Pages - Used for hosting the deployed front-end site.
 * Heroku - a container-based cloud platform where developers can deploy their projects https://www.heroku.com/.
+* Markdown Builder by Tim Nelson https://traveltimn.github.io/markdown-builder used to help generate the Markdown files.
+* PostgreSQL - used as the relational database management https://www.postgresql.org.
+* ElephantSQL - used as the Postgres database https://www.elephantsql.com.
 * Amazon Web Services s3 - a cloud-based stporage service. https://aws.amazon.com/
 * Stripe - a suite of APIs powering online payment processing and commerce solutions for internet businesses. https://stripe.com/
 
@@ -377,6 +396,7 @@ class Post(models.Model):
     email = models.ManyToManyField(NewsletterUser)
 ```
 
+
 ## **8. Deployment.**
 
 The live deployed application can be found on [Heroku](https://mood-design-gift-shop.herokuapp.com/).
@@ -384,6 +404,187 @@ The live deployed application can be found on [Heroku](https://mood-design-gift-
 ### Heroku Deployment
 
 This project uses [Heroku](https://www.heroku.com), a platform as a service (PaaS) that enables developers to build, run, and operate applications entirely in the cloud.
+
+### ElephantSQL Database
+
+This project uses [ElephantSQL](https://www.elephantsql.com) for the PostgreSQL Database.
+
+To obtain your own Postgres Database, sign-up with your GitHub account, then follow these steps:
+- Click **Create New Instance** to start a new database.
+- Provide a name (this is commonly the name of the project: mood-design-gift-shop).
+- Select the **Tiny Turtle (Free)** plan.
+- You can leave the **Tags** blank.
+- Select the **Region** and **Data Center** closest to you.
+- Once created, click on the new database name, where you can view the database URL and Password.
+
+### Amazon AWS
+
+This project uses [AWS](https://aws.amazon.com) to store media and static files online, due to the fact that Heroku doesn't persist this type of data.
+
+Once you've created an AWS account and logged-in, follow these series of steps to get your project connected.
+Make sure you're on the **AWS Management Console** page.
+
+#### S3 Bucket
+
+- Search for **S3**.
+- Create a new bucket, give it a name (matching your Heroku app name), and choose the region closest to you.
+- Uncheck **Block all public access**, and acknowledge that the bucket will be public (required for it to work on Heroku).
+- From **Object Ownership**, make sure to have **ACLs enabled**, and **Bucket owner preferred** selected.
+- From the **Properties** tab, turn on static website hosting, and type `index.html` and `error.html` in their respective fields, then click **Save**.
+- From the **Permissions** tab, paste in the following CORS configuration:
+
+	```shell
+	[
+		{
+			"AllowedHeaders": [
+				"Authorization"
+			],
+			"AllowedMethods": [
+				"GET"
+			],
+			"AllowedOrigins": [
+				"*"
+			],
+			"ExposeHeaders": []
+		}
+	]
+	```
+
+- Copy your **ARN** string.
+- From the **Bucket Policy** tab, select the **Policy Generator** link, and use the following steps:
+	- Policy Type: **S3 Bucket Policy**
+	- Effect: **Allow**
+	- Principal: `*`
+	- Actions: **GetObject**
+	- Amazon Resource Name (ARN): **paste-your-ARN-here**
+	- Click **Add Statement**
+	- Click **Generate Policy**
+	- Copy the entire Policy, and paste it into the **Bucket Policy Editor**
+
+		```shell
+		{
+			"Id": "Policy1234567890",
+			"Version": "2012-10-17",
+			"Statement": [
+				{
+					"Sid": "Stmt1234567890",
+					"Action": [
+						"s3:GetObject"
+					],
+					"Effect": "Allow",
+					"Resource": "arn:aws:s3:::your-bucket-name/*"
+					"Principal": "*",
+				}
+			]
+		}
+		```
+
+	- Before you click "Save", add `/*` to the end of the Resource key in the Bucket Policy Editor (like above).
+	- Click **Save**.
+- From the **Access Control List (ACL)** section, click "Edit" and enable **List** for **Everyone (public access)**, and accept the warning box.
+	- If the edit button is disabled, you need to change the **Object Ownership** section above to **ACLs enabled** (mentioned above).
+
+#### IAM
+
+Back on the AWS Services Menu, search for and open **IAM** (Identity and Access Management).
+Once on the IAM page, follow these steps:
+
+- From **User Groups**, click **Create New Group**.
+	- Suggested Name: `group-mood-design-gift-shop` (group + the project name)
+- Tags are optional, but you must click it to get to the **review policy** page.
+- From **User Groups**, select your newly created group, and go to the **Permissions** tab.
+- Open the **Add Permissions** dropdown, and click **Attach Policies**.
+- Select the policy, then click **Add Permissions** at the bottom when finished.
+- From the **JSON** tab, select the **Import Managed Policy** link.
+	- Search for **S3**, select the `AmazonS3FullAccess` policy, and then **Import**.
+	- You'll need your ARN from the S3 Bucket copied again, which is pasted into "Resources" key on the Policy.
+
+		```shell
+		{
+			"Version": "2012-10-17",
+			"Statement": [
+				{
+					"Effect": "Allow",
+					"Action": "s3:*",
+					"Resource": [
+						"arn:aws:s3:::your-bucket-name",
+						"arn:aws:s3:::your-bucket-name/*"
+					]
+				}
+			]
+		}
+		```
+	
+	- Click **Review Policy**.
+	- Suggested Name: `policy-mood-design-gift-shop` (policy + the project name)
+	- Provide a description:
+		- "Access to S3 Bucket for mood-design-gift-shop static files."
+	- Click **Create Policy**.
+- From **User Groups**, click your "group-mood-design-gift-shop".
+- Click **Attach Policy**.
+- Search for the policy you've just created ("policy-mood-design-gift-shop") and select it, then **Attach Policy**.
+- From **User Groups**, click **Add User**.
+	- Suggested Name: `user-mood-design-gift-shop` (user + the project name)
+- For "Select AWS Access Type", select **Programmatic Access**.
+- Select the group to add your new user to: `group-mood-design-gift-shop`
+- Tags are optional, but you must click it to get to the **review user** page.
+- Click **Create User** once done.
+- You should see a button to **Download .csv**, so click it to save a copy on your system.
+	- **IMPORTANT**: once you pass this page, you cannot come back to download it again, so do it immediately!
+	- This contains the user's **Access key ID** and **Secret access key**.
+	- `AWS_ACCESS_KEY_ID` = **Access key ID**
+	- `AWS_SECRET_ACCESS_KEY` = **Secret access key**
+
+#### Final AWS Setup
+
+- If Heroku Config Vars has `DISABLE_COLLECTSTATIC` still, this can be removed now, so that AWS will handle the static files.
+- Back within **S3**, create a new folder called: `media`.
+- Select any existing media images for your project to prepare them for being uploaded into the new folder.
+- Under **Manage Public Permissions**, select **Grant public read access to this object(s)**.
+- No further settings are required, so click **Upload**.
+
+### Stripe API
+
+This project uses [Stripe](https://stripe.com) to handle the ecommerce payments.
+
+Once you've created a Stripe account and logged-in, follow these series of steps to get your project connected.
+
+- From your Stripe dashboard, click to expand the "Get your test API keys".
+- You'll have two keys here:
+	- `STRIPE_PUBLIC_KEY` = Publishable Key (starts with **pk**)
+	- `STRIPE_SECRET_KEY` = Secret Key (starts with **sk**)
+
+As a backup, in case users prematurely close the purchase-order page during payment, we can include Stripe Webhooks.
+
+- From your Stripe dashboard, click **Developers**, and select **Webhooks**.
+- From there, click **Add Endpoint**.
+	- `https://mood-design-gift-shop.herokuapp.com/checkout/wh/`
+- Click **receive all events**.
+- Click **Add Endpoint** to complete the process.
+- You'll have a new key here:
+	- `STRIPE_WH_SECRET` = Signing Secret (Wehbook) Key (starts with **wh**)
+
+### Gmail API
+
+This project uses [Gmail](https://mail.google.com) to handle sending emails to users for account verification and purchase order confirmations.
+
+Once you've created a Gmail (Google) account and logged-in, follow these series of steps to get your project connected.
+
+- Click on the **Account Settings** (cog icon) in the top-right corner of Gmail.
+- Click on the **Accounts and Import** tab.
+- Within the section called "Change account settings", click on the link for **Other Google Account settings**.
+- From this new page, select **Security** on the left.
+- Select **2-Step Verification** to turn it on. (verify your password and account)
+- Once verified, select **Turn On** for 2FA.
+- Navigate back to the **Security** page, and you'll see a new option called **App passwords**.
+- This might prompt you once again to confirm your password and account.
+- Select **Mail** for the app type.
+- Select **Other (Custom name)** for the device type.
+	- Any custom name, such as "Django" or mood-design-gift-shop
+- You'll be provided with a 16-character password (API key).
+	- Save this somewhere locally, as you cannot access this key again later!
+	- `EMAIL_HOST_PASS` = your new 16-character API key
+	- `EMAIL_HOST_USER` = your own personal Gmail email address (`you@gmail.com`)
 
 Deployment steps are as follows, after account setup:
 
@@ -394,6 +595,7 @@ Deployment steps are as follows, after account setup:
   - `DATABASE_URL` (this comes from the **Resources** tab, you can get your own Postgres Database using the Free Hobby Tier)
   - `SECRET_KEY` (this can be any random secret key)
   - `PORT` (8000)
+  - !!! Dodaj stripa oraz pozostałem zmienne z Heroku !!!
 
 Heroku needs two additional files in order to deploy properly.
 - requirements.txt
@@ -450,7 +652,19 @@ The Application is fully responsive and the applications code was tested using:
 There were no issues detected by most of the test, although there where some errors implemented with add-ons.
 More details about testings and unfixed issues are available in the dedicated testing section [here](TESTING.md).
 
-## **10. GitHub Issues.**
+
+## **10. Agile Development Process**
+
+### GitHub Projects
+
+!!! Dodaj nowego screena !!!
+
+[GitHub Projects](https://github.com/TomaszWoloszyn983/mood-design-gift-shop/projects) served as an Agile tool for this project.
+It isn't a specialized tool, but with the right tags and project creation/issue assignments, it can be made to work.
+
+Through it, user stories, issues, and milestone tasks were planned, then tracked on a weekly basis using the basic Kanban board.
+
+- [Open Issues](https://github.com/TomaszWoloszyn983/mood-design-gift-shop/issues?q=is%3Aopen+is%3Aissue)
 
 ![Project Board](documentation/images/project_board_01.jpg)
 
@@ -477,6 +691,82 @@ Using this approach, I was able to apply the MoSCow prioritization and labels to
 - **Could Have**: has small impact if left out (*20% of stories*)
 - **Won't Have**: not a priority for this iteration
 
+## **10. Search Engine Optimization (SEO) & Social Media Marketing**
+
+### Keywords
+
+I've identified some appropriate keywords to align with my site, that should help users
+when searching online to find my page easily from a search engine.
+This included a series of the following keyword types
+
+- Short-tail (head terms) keywords
+- Long-tail keywords
+
+I also played around with [Word Tracker](https://www.wordtracker.com) a bit
+to check the frequency of some of my site's primary keywords (only until the free trial expired).
+
+### Sitemap
+
+I've used [XML-Sitemaps](https://www.xml-sitemaps.com) to generate a sitemap.xml file.
+This was generated using my deployed site URL: https://mood-design-gift-shop.herokuapp.com
+
+After it finished crawling the entire site, it created a
+[sitemap.xml](sitemap.xml) which I've downloaded and included in the repository.
+
+### Robots
+
+I've created the [robots.txt](robots.txt) file at the root-level.
+Inside, I've included the default settings:
+
+```
+User-agent: *
+Disallow:
+Sitemap: https://mood-design-gift-shop.herokuapp.com/sitemap.xml
+```
+
+Further links for future implementation:
+- [Google search console](https://search.google.com/search-console)
+- [Creating and submitting a sitemap](https://developers.google.com/search/docs/advanced/sitemaps/build-sitemap)
+- [Managing your sitemaps and using sitemaps reports](https://support.google.com/webmasters/answer/7451001)
+- [Testing the robots.txt file](https://support.google.com/webmasters/answer/6062598)
+
+### Social Media Marketing
+
+Creating a strong social base (with participation) and linking that to the business site can help drive sales.
+Using more popular providers with a wider user base, such as Facebook, typically maximizes site views.
+
+I've created a mockup Facebook business account using the
+[Balsamiq template](https://code-institute-org.github.io/5P-Assessments-Handbook/files/Facebook_Mockups.zip)
+provided by Code Institute.
+
+![screenshot](documentation/mockup-facebook.png)
+
+### Newsletter Marketing
+
+I have incorporate a newsletter sign-up form on my application, to allow users to supply their
+email address if they are interested in learning more. 
+
+Option 1 (MailChimp):
+- Sign up for a Mailchimp account
+- This allows up to 2,500 subscription email sends per month
+- Incorporate the code and scripts into your project like in the CI lessons.
+
+Option 2 (Django):
+- Create a custom newsletter app in your project, with a custom model.
+- This method satisfies two assessment criteria:
+    - include a newsletter
+    - one of your custom models
+- It doesn't need anything except the "email" on the model.
+- Example:
+    ```python
+    class Newsletter(models.Model):
+    email = models.EmailField(null=False, blank=False)
+
+    def __str__(self):
+        return self.email
+    ```
+- Consider using the same `send_mail()` functionality used on the `webhook_handler.py` file.
+    - You can trigger an email sent out to subscribed users when new products are added to the site!
 
 ## **11. References and Credits:**
 - You Tube video tutorial how to create 3D Parallax landing page effect - https://www.youtube.com/watch?v=Nt70Ld0dJCM
@@ -484,3 +774,20 @@ Using this approach, I was able to apply the MoSCow prioritization and labels to
 - You Tube tutorial how to choose colors - https://www.youtube.com/watch?v=KMS3VwGh3HY&list=WL&index=102
 
 - You Tube tutorial on sending newsletters - https://www.youtube.com/watch?v=C9rszGfDMYM
+
+## Credits
+
+### Media 
+Link to mood designs images.
+
+
+## **12. Acknowledgements:**
+
+Use this space to provide attribution to any supports that helped, encouraged, or supported you throughout the development stages of this project.
+A few examples have been provided below to give you some ideas.
+
+- I would like to thank my Code Institute mentor, [John/Jane Doe](https://github.com/username) for their support throughout the development of this project.
+- I would like to thank the [Code Institute](https://codeinstitute.net) tutor team for their assistance with troubleshooting and debugging some project issues.
+- I would like to thank the [Code Institute Slack community](https://code-institute-room.slack.com) for the moral support; it kept me going during periods of self doubt and imposter syndrome.
+- I would like to thank my spouse/partner (John/Jane), for believing in me, and allowing me to make this transition into software development.
+- I would like to thank my employer, for supporting me in my career development change towards becoming a software developer.
