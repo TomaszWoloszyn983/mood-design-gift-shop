@@ -401,9 +401,6 @@ class Post(models.Model):
 
 The live deployed application can be found on [Heroku](https://mood-design-gift-shop.herokuapp.com/).
 
-### Heroku Deployment
-
-This project uses [Heroku](https://www.heroku.com), a platform as a service (PaaS) that enables developers to build, run, and operate applications entirely in the cloud.
 
 ### ElephantSQL Database
 
@@ -554,15 +551,6 @@ Once you've created a Stripe account and logged-in, follow these series of steps
 	- `STRIPE_PUBLIC_KEY` = Publishable Key (starts with **pk**)
 	- `STRIPE_SECRET_KEY` = Secret Key (starts with **sk**)
 
-As a backup, in case users prematurely close the purchase-order page during payment, we can include Stripe Webhooks.
-
-- From your Stripe dashboard, click **Developers**, and select **Webhooks**.
-- From there, click **Add Endpoint**.
-	- `https://mood-design-gift-shop.herokuapp.com/checkout/wh/`
-- Click **receive all events**.
-- Click **Add Endpoint** to complete the process.
-- You'll have a new key here:
-	- `STRIPE_WH_SECRET` = Signing Secret (Wehbook) Key (starts with **wh**)
 
 ### Gmail API
 
@@ -586,16 +574,29 @@ Once you've created a Gmail (Google) account and logged-in, follow these series 
 	- `EMAIL_HOST_PASS` = your new 16-character API key
 	- `EMAIL_HOST_USER` = your own personal Gmail email address (`you@gmail.com`)
 
+### Heroku Deployment
+
+This project uses [Heroku](https://www.heroku.com), a platform as a service (PaaS) that enables developers to build, run, and operate applications entirely in the cloud.
+
 Deployment steps are as follows, after account setup:
 
 - Select *New* in the top-right corner of your Heroku Dashboard, and select *Create new app* from the dropdown menu.
 - Your app name must be unique, and then choose a region closest to you (EU or USA), and finally, select *Create App*.
 - From the new app *Settings*, click *Reveal Config Vars*, and set the following key/value pairs:
-  - `CLOUDINARY_URL` (insert your own Cloudinary API key here)
-  - `DATABASE_URL` (this comes from the **Resources** tab, you can get your own Postgres Database using the Free Hobby Tier)
-  - `SECRET_KEY` (this can be any random secret key)
-  - `PORT` (8000)
-  - !!! Dodaj stripa oraz pozostałem zmienne z Heroku !!!
+
+    | Key | Value |
+    | --- | --- |
+    | `AWS_ACCESS_KEY_ID` | insert your own AWS Access Key ID key here |
+    | `AWS_SECRET_ACCESS_KEY` | insert your own AWS Secret Access key here |
+    | `DATABASE_URL` | insert your own ElephantSQL database URL here |
+    | `DISABLE_COLLECTSTATIC` | 1 (*this is temporary, and can be removed for the final deployment*) |
+    | `EMAIL_HOST_PASS` | insert your own Gmail API key here |
+    | `EMAIL_HOST_USER` | insert your own Gmail email address here |
+    | `SECRET_KEY` | this can be any random secret key |
+    | `STRIPE_PUBLIC_KEY` | insert your own Stripe Public API key here |
+    | `STRIPE_SECRET_KEY` | insert your own Stripe Secret API key here |
+    | `STRIPE_WH_SECRET` | insert your own Stripe Webhook API key here |
+    | `USE_AWS` | True |
 
 Heroku needs two additional files in order to deploy properly.
 - requirements.txt
@@ -637,9 +638,71 @@ You can install this project's requirements (where applicable) using: `pip3 inst
 
 You will need to create a new file called `env.py`, and include the same environment variables listed above for Heroku deployment steps.
 
+Sample `env.py` file:
+
+```python
+import os
+
+os.environ.setdefault("AWS_ACCESS_KEY_ID", "insert your own AWS Access Key ID key here")
+os.environ.setdefault("AWS_SECRET_ACCESS_KEY", "insert your own AWS Secret Access key here")
+os.environ.setdefault("DATABASE_URL", "insert your own ElephantSQL database URL here")
+os.environ.setdefault("EMAIL_HOST_PASS", "insert your own Gmail API key here")
+os.environ.setdefault("EMAIL_HOST_USER", "insert your own Gmail email address here")
+os.environ.setdefault("SECRET_KEY", "this can be any random secret key")
+os.environ.setdefault("STRIPE_PUBLIC_KEY", "insert your own Stripe Public API key here")
+os.environ.setdefault("STRIPE_SECRET_KEY", "insert your own Stripe Secret API key here")
+
+
+# local environment only (do not include these in production/deployment!)
+os.environ.setdefault("DEBUG", "True")
+```
+
+Once the project is cloned or forked, in order to run it locally, you'll need to follow these steps:
+- Start the Django app: `python3 manage.py runserver`
+- Stop the app once it's loaded: `CTRL+C` or `⌘+C` (Mac)
+- Make any necessary migrations: `python3 manage.py makemigrations`
+- Migrate the data to the database: `python3 manage.py migrate`
+- Create a superuser: `python3 manage.py createsuperuser`
+- Load fixtures (if applicable): `python3 manage.py loaddata file-name.json` (repeat for each file)
+- Everything should be ready now, so run the Django app again: `python3 manage.py runserver`
+
+If you'd like to backup your database models, use the following command for each model you'd like to create a fixture for:
+- `python3 manage.py dumpdata your-model > your-model.json`
+- *repeat this action for each model you wish to backup*
+
+#### Cloning
+
+You can clone the repository by following these steps:
+
+1. Go to the [GitHub repository](https://github.com/TomaszWoloszyn983/mood-design-gift-shop) 
+2. Locate the Code button above the list of files and click it 
+3. Select if you prefer to clone using HTTPS, SSH, or GitHub CLI and click the copy button to copy the URL to your clipboard
+4. Open Git Bash or Terminal
+5. Change the current working directory to the one where you want the cloned directory
+6. In your IDE Terminal, type the following command to clone my repository:
+	- `git clone https://github.com/TomaszWoloszyn983/mood-design-gift-shop.git`
+7. Press Enter to create your local clone.
+
+
 Alternatively, if using Gitpod, you can click below to create your own workspace using this repository.
 
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/TomaszWoloszyn983/mood-design-gift-shop)
+
+
+
+#### Forking
+
+By forking the GitHub Repository, we make a copy of the original repository on our GitHub account to view and/or make changes without affecting the original owner's repository.
+You can fork this repository by using the following steps:
+
+1. Log in to GitHub and locate the [GitHub Repository](https://github.com/TomaszWoloszyn983/mood-design-gift-shop)
+2. At the top of the Repository (not top of page) just above the "Settings" Button on the menu, locate the "Fork" Button.
+3. Once clicked, you should now have a copy of the original repository in your own GitHub account!
+
+### Local VS Deployment
+
+Use this space to discuss any differences between the local version you've developed, and the live deployment site on Heroku.
+
 
 ## **9. Testing.**
 
