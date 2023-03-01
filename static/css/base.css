@@ -9,11 +9,13 @@ html {
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
+    min-height: 550px;
     height: 100vh;
 }
 
 .main-title {
     color: #fff;
+    min-height: 370px;
     height: 67vh;
     transform: translate(0%, 50%);
     background:linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
@@ -158,6 +160,7 @@ html {
     background-repeat: no-repeat;
     background-size: cover;
     padding-top: 5vh;
+    min-height: 275px;
     height: 40vh;
 }
 
@@ -168,6 +171,7 @@ html {
 
 .shop-title {
     color: #fff;
+    min-height: 250px;
     height: 33.5vh;
     transform: translate(0%, 4%);
     background: rgba(50, 52, 32, 0.315);

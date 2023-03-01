@@ -214,7 +214,7 @@ It contains all information provided by the user. Such as orders details, shippi
 
 Admin users have access to a set of additional functions that allow to provide better level of communication between the Page admins and Customers:
 
-### Adding and Editing Posts on the Home Page:
+### Adding and editing Posts in the Home Page:
 
 Users authenticated as Admin users can post information on the Home Page. To do this he can user a post form displayed in the bottom of the page.
 
@@ -244,7 +244,7 @@ If the product for any reason doesn't have an image, a default image will be dis
 
 ![Add Product](documentation/images/add_product.jpg)
 
-After filling up the form the item is getting visible on the shop page and it is available for customers ot buy. Also an information for admin will be displayed.
+After filling up the form the item is getting visible on the shop page and it is available for customers to buy. Also an information for admin will be displayed.
 
 ![Add Product](documentation/images/add_success.jpg)
 
@@ -252,7 +252,7 @@ Admin user can modify the products informations or delete the product from the s
 
 ![Add Product](documentation/images/admin_functions.jpg)
 
-### Adding new products to the Workhop Page.
+### Adding new products to the Workshop Page.
 
 The situation with adding Event to the Workshop section looks very similarly to adding and managing shop products.
 
@@ -263,9 +263,9 @@ The Add Item button is displayed on the bottom-right corner of the Workshop Page
 
 ## **5. Future Features.**
 
-* Log in using Social Media account
+* Log in using Social Media account.
 * User Feedback and opinions.
-* Delete Account function
+* Delete Account function.
 
 
 ## **5. Colour Scheme**
@@ -275,6 +275,8 @@ Explain your colours and the colour scheme.
 - `#000000` used for primary text.
 - `#2986ff` user for header text, buttons and navbar hover effect.
 - `#80888a4d` used for navbar active buttons.
+- `#DC4C64` danger elements such as removing or deleting items and error messages.
+- `#14A44D` add item button, success messages.
 
 
 ## **6. Technologies used:**
@@ -300,7 +302,7 @@ Explain your colours and the colour scheme.
 
 ## **7. Database Design**
 
-The Project contains following classes to describe categories of products, Products features and also classes to describe application users profiles.
+The Project contains following classes to describe categories of products, Products features and also classes to describe application users profiles, newsletter users, Orders, Posts in the Home Page.
 
 
 ### Category
@@ -680,10 +682,6 @@ os.environ.setdefault("EMAIL_HOST_USER", "insert your own Gmail email address he
 os.environ.setdefault("SECRET_KEY", "this can be any random secret key")
 os.environ.setdefault("STRIPE_PUBLIC_KEY", "insert your own Stripe Public API key here")
 os.environ.setdefault("STRIPE_SECRET_KEY", "insert your own Stripe Secret API key here")
-
-
-# local environment only (do not include these in production/deployment!)
-os.environ.setdefault("DEBUG", "True")
 ```
 
 Once the project is cloned or forked, in order to run it locally, you'll need to follow these steps:
@@ -771,6 +769,7 @@ Using this approach, I was able to apply the MoSCow prioritization and labels to
 - **Should Have**: adds significant value, but not vital (*the rest ~20% of stories*)
 - **Could Have**: has small impact if left out (*20% of stories*)
 - **Won't Have**: not a priority for this iteration
+- **Future Features**: Features and unctionalities intended for future implementations.
 
 ## **11. Search Engine Optimization (SEO) & Social Media Marketing**
 
@@ -837,7 +836,13 @@ More information [Here](#newsletter).
 
 - You Tube tutorial on sending newsletters - https://www.youtube.com/watch?v=C9rszGfDMYM
 
-- How to create a nice login form  - https://www.youtube.com/watch?v=2lbiRNNnAx8&t=1s
+- How to create a nice login form  - https://www.youtube.com/watch?v=ylFLVBbB9AM
+
+- You Utbe tutorial how to create Paralax landing page using Bootstrap - https://www.youtube.com/watch?v=fu_shslaI14
+
+- Tutorial on Css Selector - https://www.youtube.com/watch?v=l1mER1bV0N0
+
+- Tutorial on Stripe Payments - https://www.youtube.com/watch?v=r64QE2d1jGc
 
 ### Credits
 
