@@ -20,6 +20,7 @@ It also allows users to create their profile account to save and store theirs sh
     * [Navigation Bar](#navigation-bar)
     * [Posts](#post)
     * [Footer](#footer)
+    * [Newsletter](#newsletter)
     * [Shop Page](#shop-page)
     * [Workshop Page](#workshop-page)
     * [Account Page](#account-page)
@@ -27,13 +28,22 @@ It also allows users to create their profile account to save and store theirs sh
     * [Basket Page](#shopping-basket)
     * [Checkout Page](#checkout-page)
 4. [Admin Functions](#4-admin-functions)
-5. [Color Scheme]()
+5. [Color Scheme](#5-colour-scheme)
 5. [Future Features](#5-future-features)
 6. [Technologies Used](#6-technologies-used)
 7. [Database Design](#7-database-design)
 8. [Deployment](#8-deployment)
+    * [Heroku Deployment](#heroku-deployment)
+    * [Local Deployment](#local-deployment)
 9. [Testing](#9-testing)
-11. [References and Credits](#11references-and-credits)
+10. [Agile Development Process](#10-agile-development-process)
+11. [Search Engine Optimization](#11-search-engine-optimization-seo--social-media-marketing)
+    * [Keywirds](#keywords)
+    * [Robot](#robots)
+    * [Sitemap](#sitemap)
+12. [Social Media Marketing](#12-social-media-marketing)
+13. [Newsletter Marketing](#13-newsletter-marketing)
+14. [References and Credits](#14-references-and-credits)
 
 
 ## **2. User Stories:**
@@ -99,6 +109,20 @@ Footer contains The Mood Designs address, social media links and contact details
 It also contains an input field where the user can sign up to newsletter.
 
 ![Footer](documentation/images/footer.jpg)
+
+### Newsletter
+
+The application provides a function of sending Newsletter to user who want to receive such form of being informed about news and latest events. 
+
+To sign up for a newsletter the user need to go to the Footer section in the Home Page and enter its email address in the input field. 
+
+![Newsletter](documentation/images/newsletter01.jpg)
+
+A confirmation email will be sent to the user straight away.
+
+![Newsletter](documentation/images/newsletter03.jpg)
+
+And the user will be added to Newsletter Users list. 
 
 ### Shop Page
 
@@ -228,7 +252,7 @@ Admin user can modify the products informations or delete the product from the s
 
 ![Add Product](documentation/images/admin_functions.jpg)
 
-### Adding new products to the Shop Page.
+### Adding new products to the Workhop Page.
 
 The situation with adding Event to the Workshop section looks very similarly to adding and managing shop products.
 
@@ -240,7 +264,7 @@ The Add Item button is displayed on the bottom-right corner of the Workshop Page
 ## **5. Future Features.**
 
 * Log in using Social Media account
-* User Feedback
+* User Feedback and opinions.
 * Delete Account function
 
 
@@ -250,7 +274,7 @@ Explain your colours and the colour scheme.
 
 - `#000000` used for primary text.
 - `#2986ff` user for header text, buttons and navbar hover effect.
-- `#80888a4d` used for navbar active button.
+- `#80888a4d` used for navbar active buttons.
 
 
 ## **6. Technologies used:**
@@ -361,10 +385,15 @@ class Order(models.Model):
 
 ```python
 class OrderLineItem(models.Model):
-    order = models.ForeignKey(Order, null=False, blank=False, on_delete=models.CASCADE, related_name='lineitems')
-    product = models.ForeignKey(Product, null=False, blank=False, on_delete=models.CASCADE)
+    order = models.ForeignKey(
+        Order, null=False, blank=False, on_delete=models.CASCADE
+        related_name='lineitems')
+    product = models.ForeignKey(
+        Product, null=False, blank=False, on_delete=models.CASCADE)
     quantity = models.IntegerField(null=False, blank=False, default=0)
-    lineitem_total = models.DecimalField(max_digits=6, decimal_places=2, null=False, blank=False, editable=False)
+    lineitem_total = models.DecimalField(
+        max_digits=6, decimal_places=2, null=False, blank=False
+        editable=False)
 ```
 
 ### Newsletter User
@@ -754,7 +783,7 @@ Using this approach, I was able to apply the MoSCow prioritization and labels to
 - **Could Have**: has small impact if left out (*20% of stories*)
 - **Won't Have**: not a priority for this iteration
 
-## **10. Search Engine Optimization (SEO) & Social Media Marketing**
+## **11. Search Engine Optimization (SEO) & Social Media Marketing**
 
 ### Keywords
 
@@ -783,7 +812,8 @@ Inside, I've included the default settings:
 
 ```
 User-agent: *
-Disallow:
+Disallow: /account/
+Disallow: /basket/
 Sitemap: https://mood-design-gift-shop.herokuapp.com/sitemap.xml
 ```
 
@@ -793,58 +823,38 @@ Further links for future implementation:
 - [Managing your sitemaps and using sitemaps reports](https://support.google.com/webmasters/answer/7451001)
 - [Testing the robots.txt file](https://support.google.com/webmasters/answer/6062598)
 
-### Social Media Marketing
+## **12. Social Media Marketing**
 
 Creating a strong social base (with participation) and linking that to the business site can help drive sales.
 Using more popular providers with a wider user base, such as Facebook, typically maximizes site views.
 
-I've created a mockup Facebook business account using the
-[Balsamiq template](https://code-institute-org.github.io/5P-Assessments-Handbook/files/Facebook_Mockups.zip)
-provided by Code Institute.
 
-![screenshot](documentation/mockup-facebook.png)
+The link to Facebook page is available here - [Mood Designs Facebook Page](https://www.facebook.com/profile.php?id=100090776198805)
 
-### Newsletter Marketing
+
+![screenshot](documentation/images/facebook_page.jpg)
+
+## **13. Newsletter Marketing**
 
 I have incorporate a newsletter sign-up form on my application, to allow users to supply their
 email address if they are interested in learning more. 
 
-Option 1 (MailChimp):
-- Sign up for a Mailchimp account
-- This allows up to 2,500 subscription email sends per month
-- Incorporate the code and scripts into your project like in the CI lessons.
+More information [Here](#newsletter).
 
-Option 2 (Django):
-- Create a custom newsletter app in your project, with a custom model.
-- This method satisfies two assessment criteria:
-    - include a newsletter
-    - one of your custom models
-- It doesn't need anything except the "email" on the model.
-- Example:
-    ```python
-    class Newsletter(models.Model):
-    email = models.EmailField(null=False, blank=False)
-
-    def __str__(self):
-        return self.email
-    ```
-- Consider using the same `send_mail()` functionality used on the `webhook_handler.py` file.
-    - You can trigger an email sent out to subscribed users when new products are added to the site!
-
-## **11. References and Credits:**
+## **14. References and Credits:**
 - You Tube video tutorial how to create 3D Parallax landing page effect - https://www.youtube.com/watch?v=Nt70Ld0dJCM
 
 - You Tube tutorial how to choose colors - https://www.youtube.com/watch?v=KMS3VwGh3HY&list=WL&index=102
 
 - You Tube tutorial on sending newsletters - https://www.youtube.com/watch?v=C9rszGfDMYM
 
-## Credits
+### Credits
 
 ### Media 
 Link to mood designs images.
 
 
-## **12. Acknowledgements:**
+###
 
 Use this space to provide attribution to any supports that helped, encouraged, or supported you throughout the development stages of this project.
 A few examples have been provided below to give you some ideas.
