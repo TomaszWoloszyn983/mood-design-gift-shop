@@ -33,6 +33,14 @@
  ![Google Chrome](documentation/testing/resp_netbox_xs.jpg)
 
 
+### Mobile-size divices
+
+Although the Page is working fine on most of the mobile devices such as tablets and mobile phones. Some visual issues are possible in very small screen sizes and horizontal screen position:
+![Layout issue](documentation/bugs_and_errors/layout_issue01.jpg)
+
+However the issues do not significantly affect the accessibility to application features, **it is recommended to use the vertical screen position on mobile divices.** 
+
+
 ## **Code Validator Testing**
 
 - ### **HTML**
@@ -427,7 +435,7 @@ Steps:
 Expected result:
 * A confirmation toast box should be displayed
 * The product should be remnoved from the basket.
-* The Total Price of the Order ahould also be updated immediately.
+* The Total Price of the Order should also be updated immediately.
     ![Remove Product](documentation/testing/update_basket03.jpg)
 
 
