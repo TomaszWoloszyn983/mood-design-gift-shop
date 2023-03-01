@@ -38,8 +38,8 @@ It also allows users to create their profile account to save and store theirs sh
 9. [Testing](#9-testing)
 10. [Agile Development Process](#10-agile-development-process)
 11. [Search Engine Optimization](#11-search-engine-optimization-seo--social-media-marketing)
-    * [Keywirds](#keywords)
-    * [Robot](#robots)
+    * [Keywords](#keywords)
+    * [Robots](#robots)
     * [Sitemap](#sitemap)
 12. [Social Media Marketing](#12-social-media-marketing)
 13. [Newsletter Marketing](#13-newsletter-marketing)
@@ -728,10 +728,6 @@ You can fork this repository by using the following steps:
 2. At the top of the Repository (not top of page) just above the "Settings" Button on the menu, locate the "Fork" Button.
 3. Once clicked, you should now have a copy of the original repository in your own GitHub account!
 
-### Local VS Deployment
-
-Use this space to discuss any differences between the local version you've developed, and the live deployment site on Heroku.
-
 
 ## **9. Testing.**
 
@@ -741,15 +737,14 @@ The Application is fully responsive and the applications code was tested using:
 * Jshint for Java Script code https://jshint.com/.
 * CI Python Linter for Python code https://pep8ci.herokuapp.com/.
 
-There were no issues detected by most of the test, although there where some errors implemented with add-ons.
-More details about testings and unfixed issues are available in the dedicated testing section [here](TESTING.md).
+There were no issues detected by most of the test.
+More details about testings are available in the dedicated testing section [here](TESTING.md).
 
 
 ## **10. Agile Development Process**
 
 ### GitHub Projects
 
-!!! Dodaj nowego screena !!!
 
 [GitHub Projects](https://github.com/TomaszWoloszyn983/mood-design-gift-shop/projects) served as an Agile tool for this project.
 It isn't a specialized tool, but with the right tags and project creation/issue assignments, it can be made to work.
@@ -758,18 +753,12 @@ Through it, user stories, issues, and milestone tasks were planned, then tracked
 
 - [Open Issues](https://github.com/TomaszWoloszyn983/mood-design-gift-shop/issues?q=is%3Aopen+is%3Aissue)
 
-![Project Board](documentation/images/project_board_01.jpg)
+    ![Project Board](documentation/images/project_board_01.jpg)
 
-There, I used my own **User Story Template** to manage user stories.
-
-
-- [Open Issues](https://github.com/TomaszWoloszyn983/mood-design-gift-shop/issues?q=is%3Aopen+is%3Aissue)
-
-    ![screenshot](documentation/gh-issues-open.png)
 
 - [Closed Issues](https://github.com/TomaszWoloszyn983/mood-design-gift-shop/issues?q=is%3Aissue+is%3Aclosed)
 
-    ![screenshot](documentation/images/project_board03.jpg)
+    ![screenshot](documentation/images/agile_close.jpg)
 
 ### **MoSCoW Prioritization**
 
@@ -848,13 +837,26 @@ More information [Here](#newsletter).
 
 - You Tube tutorial on sending newsletters - https://www.youtube.com/watch?v=C9rszGfDMYM
 
+- How to create a nice login form  - https://www.youtube.com/watch?v=2lbiRNNnAx8&t=1s
+
 ### Credits
 
 ### Media 
-Link to mood designs images.
+
+All images and materials used at this project are  were taken from official Mood Designs web page and their Facebook page with knowledge and consent of the copyrights owners.
+
+Link to mood designs images: 
+
+https://www.themooddesigns.ie/
+https://www.themooddesigns.ie/shop
+https://www.themooddesigns.ie/ceramic-workshops
+https://www.themooddesigns.ie/wholesale
+https://www.themooddesigns.ie/process
+https://www.facebook.com/photo.php?fbid=592945419511605&set=pb.100063884567594.-2207520000.&type=3
+https://www.facebook.com/photo.php?fbid=592945416178272&set=pb.100063884567594.-2207520000.&type=3
 
 
-###
+### Acknowledgements
 
 Use this space to provide attribution to any supports that helped, encouraged, or supported you throughout the development stages of this project.
 A few examples have been provided below to give you some ideas.
