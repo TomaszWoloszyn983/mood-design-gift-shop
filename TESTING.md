@@ -96,13 +96,11 @@ However the issues do not significantly affect the accessibility to application 
     
         ![html_validation](documentation/testing/nu_editproduct.jpg)
 
-        Link to the test: 
+        Link to the test: https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fmood-design-gift-shop.herokuapp.com%2Fproducts%2Fedit_product%2F9%2F#l148c7
 
     - My Profile Page:
 
-        ![html_validation]()
-
-        Link to the test: 
+        ![html_validation](documentation/testing/nu_myprofile.jpg)
 
     - Basket Page:
 
@@ -159,8 +157,11 @@ However the issues do not significantly affect the accessibility to application 
     
 
 - ### **JAVASCRIPT**
+
+
    
-    * No errors were detected when passing through the jshint validator.
+    * I have used the recommended [JShint Validator](https://jshint.com) to validate all of my JS files.
+    No errors were detected when passing through the jshint validator.
 
         ![js_validation](documentation/testing/jshint_checkout_stripe.jpg)
 

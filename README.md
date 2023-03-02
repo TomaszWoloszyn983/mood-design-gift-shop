@@ -840,9 +840,9 @@ More information [Here](#newsletter).
 
 - Tutorial on Stripe Payments - https://www.youtube.com/watch?v=r64QE2d1jGc
 
-### **Media **
+### **Media**
 
-All images and materials used at this project belong to Mood Designs and were taken from official Mood Designs web page and their Facebook page with knowledge and consent of the copyrights owners.
+All images and materials used at this project belong to Mood Designs and were taken from the official Mood Designs web page and their Facebook page with knowledge and consent of the copyrights owners.
 
 Link to mood designs images: 
 
@@ -856,9 +856,6 @@ https://www.facebook.com/photo.php?fbid=592945416178272&set=pb.100063884567594.-
 
 
 ### **Acknowledgements**
-
-Use this space to provide attribution to any supports that helped, encouraged, or supported you throughout the development stages of this project.
-A few examples have been provided below to give you some ideas.
 
 - I would like to thank my Code Institute mentor Tim Nelson for his support throughout the development of this project.
 - I would like to thank the [Code Institute](https://codeinstitute.net) tutor team and the whole Code Institute team for their assistance with troubleshooting and debugging some project issues.
