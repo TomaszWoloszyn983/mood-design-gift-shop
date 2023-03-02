@@ -1,8 +1,8 @@
-# The Mood Designs Gift Shop
+# **The Mood Designs Gift Shop**
 
 ![Am I Responsive](documentation/images/amiresponsive.jpg)
 
-## 1. Overview.
+## **1. Overview.**
 
 The subject of the project is e-commerce web page application dedicated to Mood Designs Gift Shop that designs and produces handmade, ceramic goods inspired by West Irish folk art and rich natural values of West Ireland the route Wild Atlantic Way. 
 
@@ -12,7 +12,7 @@ The application allowes users to search Mood Designs products, to buy them and t
 It also allows users to create their profile account to save and store theirs shipping and payment details as well as store theirs orders history.
 
 
-## Contents:
+## **Contents:**
 1. [Project Overview](#1-overview)
 2. [User Stories](#2-user-stories)
 3. [Features](#3-features)
@@ -150,14 +150,14 @@ Out of Stock products can not be added to the Shopping Basket.
 ![Product Details](documentation/images/outofstock_productdetail_page.jpg)
 
 
-### Workshop Page
+### **Workshop Page**
 
 This section contains workshop activities and events organised by the Mood Designs team. 
 Users can get familiar with the events and also they can buy reservations to participate in the activities.
 
 ![Workshop Page](documentation/images/workshop_page.jpg)
 
-### Account Page
+### **Account Page**
 
 Account section allows users to sign up and create the users account where they can save and securly store their personal information. 
 This section is made of two main subsections:
@@ -184,7 +184,7 @@ Everytime the user is informed about being signed in or signed out.
 ![Account Page](documentation/images/signedup.jpg)
 ![Account Page](documentation/images/signedout.jpg)
 
-### Shopping Basket
+### **Shopping Basket**
 
 In the Shopping Basket Page the user can see all the products currently added to bthe shopping basket. The user can also check the total price and delete product or modify the number of each products in the basket.
 
@@ -192,7 +192,7 @@ In the Shopping Basket Page the user can see all the products currently added to
 
 After overviewing the order the user can be moved to the payment by choosing "Go To Checkout" button.
 
-### Checkout Page
+### **Checkout Page**
 
 In the Checkout Page user can make a payment for the order. 
 
@@ -203,7 +203,7 @@ Also a confirmation email will be sent do the email address provided by the user
 
 ![Checkout Page](documentation/images/checkout_page.jpg)
 
-### Summary Page
+### **Summary Page**
 
 The Summary Page is displayed after the order is succesfully completed.
 It contains all information provided by the user. Such as orders details, shipping details, orders value and delivery costs.
@@ -214,7 +214,7 @@ It contains all information provided by the user. Such as orders details, shippi
 
 Admin users have access to a set of additional functions that allow to provide better level of communication between the Page admins and Customers:
 
-### Adding and editing Posts in the Home Page:
+### **Adding and editing Posts in the Home Page:**
 
 Users authenticated as Admin users can post information on the Home Page. To do this he can user a post form displayed in the bottom of the page.
 
@@ -232,7 +232,7 @@ The admin is able to edit the posts content at any time.
 
 However deleting Posts can be made only throughout the admin panel.
 
-### Adding new products to the Shop Page.
+### **Adding new products to the Shop Page.**
 
 Add product button is displayed in the right-bottom corner of the Shop Page. After cicking it the admin user is redirected to the Add Product Form.
 
@@ -252,7 +252,7 @@ Admin user can modify the products informations or delete the product from the s
 
 ![Add Product](documentation/images/admin_functions.jpg)
 
-### Adding new products to the Workshop Page.
+### **Adding new products to the Workshop Page.**
 
 The situation with adding Event to the Workshop section looks very similarly to adding and managing shop products.
 
@@ -263,14 +263,17 @@ The Add Item button is displayed on the bottom-right corner of the Workshop Page
 
 ## **5. Future Features.**
 
+Features and functionalities that have not been inplemented at this stage, but they are planned to be implemented in the future.
+
 * Log in using Social Media account.
 * User Feedback and opinions.
 * Delete Account function.
+* Adding profile photos to the side navigation bar.
 
 
 ## **5. Colour Scheme**
 
-Explain your colours and the colour scheme.
+Colors used in this project:
 
 - `#000000` used for primary text.
 - `#2986ff` user for header text, buttons and navbar hover effect.
@@ -305,7 +308,7 @@ Explain your colours and the colour scheme.
 The Project contains following classes to describe categories of products, Products features and also classes to describe application users profiles, newsletter users, Orders, Posts in the Home Page.
 
 
-### Category
+### **Category**
 Defines the product category
 
 ```python
@@ -315,7 +318,7 @@ class Category(models.Model):
     friendly_name = models.CharField(max_length=254, null=True, blank=True)
 ```
 
-### Product
+### **Product**
 Defines product features, such as name, category, price, quantity on stock.
 
 ```python
@@ -337,7 +340,7 @@ class Product(models.Model):
         return self.name
 ```
 
-### User Profile
+### **User Profile**
 Defines Profile data of a registered user, such as name, address or phone number.
 
 ```python
@@ -362,7 +365,7 @@ def create_or_update_user_profile(sender, instance, created, **kwargs):
     instance.userprofile.save()
 ```
 
-### Order
+### **Order**
 Defines Orders features such as order number, user, shipping and billing data, date or delivery costs.
 
 ```python
@@ -398,7 +401,7 @@ class OrderLineItem(models.Model):
         editable=False)
 ```
 
-### Newsletter User
+### **Newsletter User**
 Defines Newslatter user. And it stores the email, address the user and the subscription date.
 
 ```python 
@@ -407,9 +410,9 @@ class NewsletterUser(models.Model):
     added_on = models.DateTimeField(auto_now_add=True)
 ```
 
-### Post
-Defines the features of Post that admin users can publish on the Home Page and send them as a Newsletter to Newsletter Users.
-It contains fields such as posts title, publishing date, author/designer, image and content and also a list of email addresses of newsletter users.
+### **Post**
+Posts can be published on the Home Page by the admin to inform guests users about the news about the Shop. Posts can be also automatically sent to Newsletter users to chosen by the admin.
+The class contains fields such as posts title, publishing date, author/designer, image and content and also a list of email addresses of newsletter users.
 
 ```python
 class Post(models.Model):
@@ -430,10 +433,10 @@ class Post(models.Model):
 
 ## **8. Deployment.**
 
-The live deployed application can be found on [Heroku](https://mood-design-gift-shop.herokuapp.com/).
+The live deployed application can be found [Here](https://mood-design-gift-shop.herokuapp.com/).
 
 
-### ElephantSQL Database
+### **ElephantSQL Database**
 
 This project uses [ElephantSQL](https://www.elephantsql.com) for the PostgreSQL Database.
 
@@ -445,14 +448,14 @@ To obtain your own Postgres Database, sign-up with your GitHub account, then fol
 - Select the **Region** and **Data Center** closest to you.
 - Once created, click on the new database name, where you can view the database URL and Password.
 
-### Amazon AWS
+### **Amazon AWS**
 
 This project uses [AWS](https://aws.amazon.com) to store media and static files online, due to the fact that Heroku doesn't persist this type of data.
 
 Once you've created an AWS account and logged-in, follow these series of steps to get your project connected.
 Make sure you're on the **AWS Management Console** page.
 
-#### S3 Bucket
+#### **S3 Bucket**
 
 - Search for **S3**.
 - Create a new bucket, give it a name (matching your Heroku app name), and choose the region closest to you.
@@ -512,7 +515,7 @@ Make sure you're on the **AWS Management Console** page.
 - From the **Access Control List (ACL)** section, click "Edit" and enable **List** for **Everyone (public access)**, and accept the warning box.
 	- If the edit button is disabled, you need to change the **Object Ownership** section above to **ACLs enabled** (mentioned above).
 
-#### IAM
+#### **IAM**
 
 Back on the AWS Services Menu, search for and open **IAM** (Identity and Access Management).
 Once on the IAM page, follow these steps:
@@ -563,7 +566,7 @@ Once on the IAM page, follow these steps:
 	- `AWS_ACCESS_KEY_ID` = **Access key ID**
 	- `AWS_SECRET_ACCESS_KEY` = **Secret access key**
 
-#### Final AWS Setup
+#### **Final AWS Setup**
 
 - If Heroku Config Vars has `DISABLE_COLLECTSTATIC` still, this can be removed now, so that AWS will handle the static files.
 - Back within **S3**, create a new folder called: `media`.
@@ -571,7 +574,7 @@ Once on the IAM page, follow these steps:
 - Under **Manage Public Permissions**, select **Grant public read access to this object(s)**.
 - No further settings are required, so click **Upload**.
 
-### Stripe API
+### **Stripe API**
 
 This project uses [Stripe](https://stripe.com) to handle the ecommerce payments.
 
@@ -583,7 +586,7 @@ Once you've created a Stripe account and logged-in, follow these series of steps
 	- `STRIPE_SECRET_KEY` = Secret Key (starts with **sk**)
 
 
-### Gmail API
+### **Gmail API**
 
 This project uses [Gmail](https://mail.google.com) to handle sending emails to users for account verification and purchase order confirmations.
 
@@ -605,7 +608,7 @@ Once you've created a Gmail (Google) account and logged-in, follow these series 
 	- `EMAIL_HOST_PASS` = your new 16-character API key
 	- `EMAIL_HOST_USER` = your own personal Gmail email address (`you@gmail.com`)
 
-### Heroku Deployment
+### **Heroku Deployment**
 
 This project uses [Heroku](https://www.heroku.com), a platform as a service (PaaS) that enables developers to build, run, and operate applications entirely in the cloud.
 
@@ -650,7 +653,7 @@ Or:
 
 The frontend terminal should now be connected and deployed to Heroku.
 
-### Local Deployment
+### **Local Deployment**
 
 *Gitpod* IDE was used to write the code for this project.
 
@@ -697,7 +700,7 @@ If you'd like to backup your database models, use the following command for each
 - `python3 manage.py dumpdata your-model > your-model.json`
 - *repeat this action for each model you wish to backup*
 
-#### Cloning
+#### **Cloning**
 
 You can clone the repository by following these steps:
 
@@ -717,7 +720,7 @@ Alternatively, if using Gitpod, you can click below to create your own workspace
 
 
 
-#### Forking
+#### **Forking**
 
 By forking the GitHub Repository, we make a copy of the original repository on our GitHub account to view and/or make changes without affecting the original owner's repository.
 You can fork this repository by using the following steps:
@@ -735,13 +738,13 @@ The Application is fully responsive and the applications code was tested using:
 * Jshint for Java Script code https://jshint.com/.
 * CI Python Linter for Python code https://pep8ci.herokuapp.com/.
 
-There were no issues detected by most of the test.
-More details about testings are available in the dedicated testing section [here](TESTING.md).
+There were no issues detected by the most of the tests.
+More details about testings process and methods are available in the dedicated testing section [here](TESTING.md).
 
 
 ## **10. Agile Development Process**
 
-### GitHub Projects
+### **GitHub Projects**
 
 
 [GitHub Projects](https://github.com/TomaszWoloszyn983/mood-design-gift-shop/projects) served as an Agile tool for this project.
@@ -775,15 +778,9 @@ Using this approach, I was able to apply the MoSCow prioritization and labels to
 
 ### Keywords
 
-I've identified some appropriate keywords to align with my site, that should help users
-when searching online to find my page easily from a search engine.
-This included a series of the following keyword types
+I've identified some appropriate keywords to align with my site, that should help users when searching online to find my page easily from a search engine.
 
-- Short-tail (head terms) keywords
-- Long-tail keywords
-
-I also played around with [Word Tracker](https://www.wordtracker.com) a bit
-to check the frequency of some of my site's primary keywords (only until the free trial expired).
+Keywords: mood, design, gift, shop, application, page
 
 ### Sitemap
 
@@ -824,8 +821,7 @@ The link to Facebook page is available here - [Mood Designs Facebook Page](https
 
 ## **13. Newsletter Marketing**
 
-I have incorporate a newsletter sign-up form on my application, to allow users to supply their
-email address if they are interested in learning more. 
+I have incorporated a newsletter sign-up form to my application, to allow users to supply their email address if they are interested in learning more. 
 
 More information [Here](#newsletter).
 
@@ -844,11 +840,9 @@ More information [Here](#newsletter).
 
 - Tutorial on Stripe Payments - https://www.youtube.com/watch?v=r64QE2d1jGc
 
-### Credits
+### **Media **
 
-### Media 
-
-All images and materials used at this project are  were taken from official Mood Designs web page and their Facebook page with knowledge and consent of the copyrights owners.
+All images and materials used at this project belong to Mood Designs and were taken from official Mood Designs web page and their Facebook page with knowledge and consent of the copyrights owners.
 
 Link to mood designs images: 
 
@@ -861,13 +855,12 @@ https://www.facebook.com/photo.php?fbid=592945419511605&set=pb.100063884567594.-
 https://www.facebook.com/photo.php?fbid=592945416178272&set=pb.100063884567594.-2207520000.&type=3
 
 
-### Acknowledgements
+### **Acknowledgements**
 
 Use this space to provide attribution to any supports that helped, encouraged, or supported you throughout the development stages of this project.
 A few examples have been provided below to give you some ideas.
 
-- I would like to thank my Code Institute mentor, [John/Jane Doe](https://github.com/username) for their support throughout the development of this project.
-- I would like to thank the [Code Institute](https://codeinstitute.net) tutor team for their assistance with troubleshooting and debugging some project issues.
-- I would like to thank the [Code Institute Slack community](https://code-institute-room.slack.com) for the moral support; it kept me going during periods of self doubt and imposter syndrome.
-- I would like to thank my spouse/partner (John/Jane), for believing in me, and allowing me to make this transition into software development.
-- I would like to thank my employer, for supporting me in my career development change towards becoming a software developer.
+- I would like to thank my Code Institute mentor Tim Nelson for his support throughout the development of this project.
+- I would like to thank the [Code Institute](https://codeinstitute.net) tutor team and the whole Code Institute team for their assistance with troubleshooting and debugging some project issues.
+- I would like to thank my wife Marlena, for believing in me, and allowing me to make this transition into software development.
+
