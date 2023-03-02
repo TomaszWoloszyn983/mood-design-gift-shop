@@ -140,10 +140,6 @@ However the issues do not significantly affect the accessibility to application 
 
         
 
-
-    * Link to the validation testing for my Html file:
-
-
 - ### **CSS**
     * No errors were detected when passing through the [jigsaw.w3 validator](https://jigsaw.w3.org/css-validator). 
 
@@ -252,13 +248,18 @@ However the issues do not significantly affect the accessibility to application 
         ![python_validation](documentation/testing/lin_checkout_admin.jpg)
    
 
-## Manual Testing
+## **Manual Testing**
 
 Testing all the applications functionalities.
 
-### Add Product
+### **Add Product**
 
-This function available only for user registered as admin.
+This function is available only for user registered as admin.
+If an user logged in as regular user tries to access this function a warning message is displayed.
+![Admin access only](documentation/testing/admin_only.jpg)
+
+If any non-admin user tries to access this function he is redirected to the Sign In Page where he can Log in.
+![Admin access only](documentation/testing/admin_only.jpg)
 
 Steps:
 * Go to the Shop Page
@@ -273,10 +274,26 @@ Expected result:
 * A new product (Ceramic Shamrock) should appear on the page
     ![Add Product](documentation/testing/add_product02.jpg)
 
+Although entering negative values is accepted by the application,
 
-### Edit Product
+![Negative Value](documentation/testing/negative_value_workshop.jpg)
+
+assigning a negative value to the products quantity will result with displaying the product as "Out Of Stock".
+
+![Negative Value](documentation/testing/negative_value_workshop03.jpg)
+
+![Negative Value](documentation/testing/negative_value_shop.jpg)
+
+The quantity can be changed anytime by the admin user.
+
+### **Edit Product**
 
 This function available only for user registered as admin.
+If an user logged in as regular user tries to access this function a warning message is displayed.
+![Admin access only](documentation/testing/admin_only.jpg)
+
+If any non-admin user tries to access this function he is redirected to the Sign In Page where he can Log in.
+![Admin access only](documentation/testing/admin_only.jpg)
 
 Steps:
 * Go to the Shop Page
@@ -289,12 +306,26 @@ Expected result:
 * A confirmation toast box should be displayed
     ![Edit Product](documentation/testing/edit_product03.jpg)
 * The products detail should be updated.
-    ![Edit Product](documentation/testing/edit_product04.jpg)
+
+Although entering negative values is accepted by the application,
+
+![Negative Value](documentation/testing/negative_value_workshop.jpg)
+
+assigning a negative value to the products quantity will result with displaying the product as "Out Of Stock".
+
+![Negative Value](documentation/testing/negative_value_workshop03.jpg)
+
+The quantity can be changed anytime by the admin user.
 
 
-### Deleting Product
+### **Deleting Product**
 
 This function available only for user registered as admin.
+If an user logged in as regular user tries to access this function a warning message is displayed.
+![Admin access only](documentation/testing/admin_only.jpg)
+
+If any non-admin user tries to access this function he is redirected to the Sign In Page where he can Log in.
+![Admin access only](documentation/testing/admin_only.jpg)
 
 Steps:
 * Go to the Shop Page
@@ -308,7 +339,7 @@ Expected result:
 
 
 
-### Register an account
+### **Register an account**
 
 This function available for every user.
 
@@ -318,6 +349,8 @@ option.
     ![Register](documentation/testing/register01.jpg)
 * Fill up the form and submit it by clicking "Sign Up" button.
     ![Register](documentation/testing/register02.jpg)
+  Not entering values in to the required fields results with displaying a warning message.
+    ![Sign up warning](documentation/testing/empty_signup.jpg)
 
 Expected result:
 * A info box should display an information that the confirmation email was sent to the user.
@@ -331,7 +364,7 @@ Expected result:
 
 
 
-### Login
+### **Login**
 
 This function is available only for registered user.
 
@@ -339,6 +372,8 @@ Steps:
 * Expand the "Account" tab in the Page Navigation Bar and choose "Login" option.
 * Fill up the form and submit it.
     ![Login](documentation/testing/login01.jpg)
+  Not entering values in to the required fields results with displaying a warning message.
+    ![Sign up warning](documentation/testing/empty_login.jpg)
 
 Expected result:
 * A confirmation toast box should be displayed
@@ -350,7 +385,7 @@ Expected result:
 
 
 
-### Update an account
+### **Update an account**
 
 This function is available only for logged in users.
 
@@ -366,7 +401,7 @@ Expected result:
 * After refreshing the page the user details should be still displayed.
 
 
-### Log out
+### **Log out**
 
 This function is available only for logged in users.
 
@@ -383,7 +418,7 @@ Expected result:
 
 
 
-### Add product to the shopping basket
+### **Add product to the shopping basket**
 
 This function is available to all user: loged in as well as not loged in users.
 It allows the user to add product to the shopping basket where the products can be updated, deleted from basket or proceded to the chechout.
@@ -403,14 +438,22 @@ Expected result:
     ![Add product](documentation/testing/add_to_basket07.jpg)
 
 Errors:
+
+In case of entering incorrect values, such as 0 or value greater the the quantity of the products available on stock a suitable warning message will be displayed
+    ![Wrong value](documentation/testing/wrong_value_shop04.jpg)
+    ![Wrong value](documentation/testing/wrong_value_shop03.jpg)
+
 * An error occured when a user is trying to submit an empty value.
+
     ![Add product](documentation/testing/add_to_basket_04_error.jpg)
-This problem was handled programatically using try/catch block inside the add_to_basket() function in the basket/views.py.
+    ![Wrong value](documentation/testing/wrong_value_shop05.jpg)
+    
+This problem was handled programmatically using try/catch block inside the add_to_basket() function in the basket/views.py.
     ![Add product](documentation/testing/add_to_basket_05_error.jpg)
 
 
 
-### Update Product in the basket.
+### **Update Product in the basket.**
 
 Steps:
 * Click the Basket Icon displayed in the Navigation Bar go to the Basket Page.
@@ -424,9 +467,11 @@ Expected result:
 * The Total Price of the Order ahould also be updated immediately.
     ![Update Product](documentation/testing/update_basket02.jpg)
 
+In case of entering incorrect values, such as 0 or value greater the the quantity of the products available on stock a suitable warning message will be displayed
+    ![Wrong value](documentation/testing/wrong_value_shop04.jpg)
+    ![Wrong value](documentation/testing/wrong_value_shop03.jpg)
 
-
-### Remove Product from the basket
+### **Remove Product from the basket**
 
 Steps:
 * Click the Basket Icon displayed in the Navigation Bar go to the Basket Page.
@@ -440,7 +485,7 @@ Expected result:
     ![Remove Product](documentation/testing/update_basket03.jpg)
 
 
-### Make a payment at the Checkout Page
+### **Make a payment at the Checkout Page**
 
 Steps:
 * Go to the Basket Page. If there are any products added a "Go To Checkout" button should be displayed.
@@ -463,7 +508,7 @@ Expected result:
     ![Payment](documentation/testing/checkout04.jpg)
 
 
-### Sign up to the Newsletter
+### **Sign up to the Newsletter**
 
 Every non-admin user can sign-in to Newsletter by going to the Home Page footer, filling up and submitting the form.
 
@@ -480,8 +525,11 @@ Expected result:
 * A confiramtion email should be sent to the entered email address.
     ![Newsletter](documentation/testing/subscribe06.jpg)
 
+In case of entering incorrect value a suitable warning message will be displayed.
+    ![Wrong value](documentation/testing/nletter_empty.jpg)
+    ![Wrong value](documentation/testing/nletter_incorrect.jpg)
 
-### Publish a Post
+### **Publish a Post**
 
 This function available only for user registered as admin.
 
@@ -498,9 +546,11 @@ Expected result:
     ![Publish a Post](documentation/testing/add_post03.jpg)
 * If any email was chosen in the form a Newsletter with the Post is sent to chosen emails.
     ![Publish a Post](documentation/testing/add_post04.jpg) 
+* In case of sending an empty Post or a post that doesn't contain required values a warning message will be displayed.
+    ![Publish a Post](documentation/testing/empty_value_post.jpg) 
 
 
-### Edit Post
+### **Edit Post**
 
 This function is available only for users registered as admin.
 
@@ -518,7 +568,7 @@ Expected result:
     ![Edit Post](documentation/testing/edit_post05.jpg)
 
 
-### Update products quantity on stock
+### **Update products quantity on stock**
 
 After the payment is made the quantity of products available on stock should be immediately updated, which means that the number of units sold in the recent transaction should be subtracted.
 

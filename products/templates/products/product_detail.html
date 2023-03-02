@@ -34,7 +34,7 @@
                             </a>
                         {% endif %}
 
-                        {% if product.quantity == 0 %}
+                        {% if product.quantity <= 0 %}
                         <!-- Product OUT of Stock -->
                             <div class="row my-2 px-auto mx-auto">
                                 <a class="btn btn-primary mx-auto" href="{% url 'products' %}">
@@ -82,7 +82,7 @@
 
                         <p>{{ product.description }}</p>
 
-                        {% if product.quantity == 0 %}
+                        {% if product.quantity <= 0 %}
                         <h2 class="text-center p-5">Product temporarily out of stock</h2>
                         {% else %}
                         <div class="row">
