@@ -13,4 +13,3 @@ class NewsletterUserAdmin(admin.ModelAdmin):
 
 admin.site.register(NewsletterUser)
 admin.site.register(Post)
-

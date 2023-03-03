@@ -13,7 +13,6 @@ def basket_contents(request):
 
     for item_id, units in basket.items():
         product = get_object_or_404(Product, pk=item_id)
-        # in_basket = is_in_basket
         total += units * product.price
         product_count += units
         basket_items.append({

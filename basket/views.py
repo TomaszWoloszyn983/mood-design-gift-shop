@@ -45,11 +45,6 @@ def add_to_basket(request, product_id):
 def remove_from_basket(request, product_id):
     """
     A view to delete item from the shopping basket.
-
-    For reasons I don't know the else statement is always executed
-    Also the function doesn't remove the item from the basket. It
-    only sets its value to 0 and then the template displays only
-    items with value greater than 0.
     """
 
     product = get_object_or_404(Product, pk=product_id)

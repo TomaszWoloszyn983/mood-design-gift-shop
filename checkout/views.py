@@ -25,7 +25,6 @@ def checkout(request):
 
     if request.method == 'POST':
         basket = request.session.get('basket', {})
-        print('checkout POST method')
 
         form_data = {
             'full_name': request.POST['full_name'],

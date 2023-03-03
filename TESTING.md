@@ -48,12 +48,12 @@ Checking the behaviour of navbars dropdown elements on different sizes and scree
 * Small Mobile size, vertical position:
 
     ![Layout issue](documentation/testing/resp_mobile_navbar.jpg)
-* Small Mobile size, expanded menu:
-    ![Layout issue](documentation/testing/resp_mobile_navbar_hor.jpg)
 * Small Mobile size, horizontal position:
+    ![Layout issue](documentation/testing/resp_mobile_navbar_hor.jpg)
+* Small Mobile size, expanded menu:
     ![Layout issue](documentation/testing/resp_mobile_navbar_hor2.jpg)
 
-Navbars responsivenes and all elements accessibility is correct.
+Navbars responsivenes and all its elements accessibility is correct.
 
 ## **Code Validator Testing**
 

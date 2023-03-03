@@ -26,7 +26,6 @@ def profile(request):
     else:
         form = UserProfileForm(instance=profile)
     orders = profile.orders.all()
-    print(f'\nOrders: {orders}')
 
     context = {
         'profile': profile,

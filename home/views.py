@@ -16,14 +16,12 @@ def index(request):
     newsletterForm = NewsletterForm()
 
     if request.method == 'POST':
-        print('\nHeloo from index')
         form = PostForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            print("Post published 1")
             form = PostForm()
         else:
-            print("\n\n Adding post didn't succeed 1")
+            messages.error(request, f'Adding post did not succeed')
     else:
         form = PostForm()
 
@@ -48,7 +46,6 @@ def send_post(request):
     newsletterForm = NewsletterForm()
 
     if request.method == 'POST':
-        print('\nHeloo from send post')
         form = PostForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
@@ -60,7 +57,6 @@ def send_post(request):
             marked_emails = form.cleaned_data.get('email')
 
             for user in marked_emails:
-                print(f'Sending post {post_title} to {user}')
                 send_newsletter(user, post_title, post_content)
 
             form = PostForm()
@@ -100,7 +96,6 @@ def edit_post(request, post_id):
             marked_emails = form.cleaned_data.get('email')
 
             for user in marked_emails:
-                print(f'Sending post {post_title} to {user}')
                 send_newsletter(user, post_title, post_content)
 
             return redirect(reverse("home"))
@@ -120,7 +115,6 @@ def newsletter(request):
     Publishes the post on the Home Page.
     Displays refreshed Home Page.
     """
-    # I'm not sure if all this is needed here
     posts = Post.objects.all()
     users = NewsletterUser.objects.all()
     newsletterForm = NewsletterForm()

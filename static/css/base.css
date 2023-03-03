@@ -19,7 +19,6 @@ html {
     height: 67vh;
     transform: translate(0%, 50%);
     background:linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
-    padding-top: 9rem;
 }
 
 .header-text {
@@ -39,18 +38,17 @@ html {
     height: 50px;
 }
 
-
 .navbar {
     position: relative;
 }
 
 .navbar ul {
     display: flex;
-    width: 30vw;
+    width: 12vw;
 }
 
 .navbar ul li {
-    min-width: 80px;
+    min-width: 85px;
     width: 5vw; 
     padding: 0;
     color: #2986ff;
@@ -83,6 +81,7 @@ html {
 .dropdown-menu.show {
     display: inline-flex;
 }
+
 
 /* Home Page */
 .homepage-content {
@@ -142,6 +141,7 @@ html {
     padding: 0;
 }
 
+
 /* Events Posts */
 .post-date {
     text-align: right;
@@ -152,6 +152,7 @@ html {
     text-align: right;
     font-size: 1.1rem;
 }
+
 
 /* Shop Page */
 .shop-page-header {
@@ -204,10 +205,10 @@ textarea#id_title, textarea#id_body {
 
 
 /* Shopping Basket Page*/
-
 .my-icon-button {
     min-width: 50px;
 }
+
 .my-icon-input {
     width: 120px;
 }
@@ -244,6 +245,10 @@ textarea#id_title, textarea#id_body {
 
 
 @media (min-width: 768px) {
+    .main-title {
+        padding-top: 9rem;
+    }
+
     .navbar ul {
         margin: auto;
         width: 50vw;
@@ -273,6 +278,7 @@ textarea#id_title, textarea#id_body {
         z-index: 1030;
     }
 }
+
 @media (min-width: 1200px) {
     .fixed-top-desktop-only {
         position: fixed;
