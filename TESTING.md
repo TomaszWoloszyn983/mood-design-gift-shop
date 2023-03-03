@@ -40,6 +40,20 @@ Although the Page is working fine on most of the mobile devices such as tablets 
 
 However the issues do not significantly affect the accessibility to application features, **it is recommended to use the vertical screen position on mobile divices.** 
 
+### Navbar Responsiveness Testing
+Checking the behaviour of navbars dropdown elements on different sizes and screen positions.
+
+* Screensize medium and large:
+    ![Layout issue](documentation/testing/resp_navbar.jpg)
+* Small Mobile size, vertical position:
+
+    ![Layout issue](documentation/testing/resp_mobile_navbar.jpg)
+* Small Mobile size, expanded menu:
+    ![Layout issue](documentation/testing/resp_mobile_navbar_hor.jpg)
+* Small Mobile size, horizontal position:
+    ![Layout issue](documentation/testing/resp_mobile_navbar_hor2.jpg)
+
+Navbars responsivenes and all elements accessibility is correct.
 
 ## **Code Validator Testing**
 
