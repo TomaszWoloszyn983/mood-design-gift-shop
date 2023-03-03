@@ -259,7 +259,7 @@ If an user logged in as regular user tries to access this function a warning mes
 ![Admin access only](documentation/testing/admin_only.jpg)
 
 If any non-admin user tries to access this function he is redirected to the Sign In Page where he can Log in.
-![Admin access only](documentation/testing/admin_only.jpg)
+![Admin access only](documentation/testing/login_error.jpg)
 
 Steps:
 * Go to the Shop Page

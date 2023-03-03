@@ -54,7 +54,6 @@ html {
     width: 5vw; 
     padding: 0;
     color: #2986ff;
-  
 }
 .navbar li:not([data-toggle='dropdown']):hover,
 .dropdown-menu .dropdown-item:hover {
@@ -80,6 +79,9 @@ html {
 
 .nav-active {
     background-color: #80888a4d;
+}
+.dropdown-menu.show {
+    display: inline-flex;
 }
 
 /* Home Page */
@@ -120,7 +122,6 @@ html {
 }
 
 .my-post {
-    /* background: #312a26; */
     margin-top: 25px;
     background:linear-gradient(0deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0))
 }
@@ -140,6 +141,7 @@ html {
     box-sizing:border-box;
     padding: 0;
 }
+
 /* Events Posts */
 .post-date {
     text-align: right;
@@ -152,7 +154,6 @@ html {
 }
 
 /* Shop Page */
-
 .shop-page-header {
     background: url('/media/bg_image.webp');
     background-attachment: fixed;
@@ -237,7 +238,6 @@ textarea#id_title, textarea#id_body {
 /* Login logout section */
 .login-panel {
     margin-top: 15vh;
-    /* margin: 0, 30px, 0, 30px; */
     background-color: #ffffffde;
     background-blend-mode: color-dodge;
 }
@@ -256,6 +256,9 @@ textarea#id_title, textarea#id_body {
         min-width: 54px;
         width: 5vw;
     }
+    .dropdown-menu.show {
+        display: block;
+    }
     .login-panel {
         margin-top: 25vh;
     }
@@ -270,7 +273,6 @@ textarea#id_title, textarea#id_body {
         z-index: 1030;
     }
 }
-/* I was trying to add margin on the extra large size screen but it didnt work */
 @media (min-width: 1200px) {
     .fixed-top-desktop-only {
         position: fixed;
