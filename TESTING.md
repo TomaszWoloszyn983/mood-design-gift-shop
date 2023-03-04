@@ -288,17 +288,13 @@ Expected result:
 * A new product (Ceramic Shamrock) should appear on the page
     ![Add Product](documentation/testing/add_product02.jpg)
 
-Although entering negative values is accepted by the application,
+The application is protected from attempts of inserting negative values.
+An attampt of entering a negative value either in the price input box or quantity input box will result with displaying an error message.
 
-![Negative Value](documentation/testing/negative_value_workshop.jpg)
+![Negative Value](documentation/testing/negative01.jpg)
 
-assigning a negative value to the products quantity will result with displaying the product as "Out Of Stock".
+![Negative Value](documentation/testing/negative02.jpg)
 
-![Negative Value](documentation/testing/negative_value_workshop03.jpg)
-
-![Negative Value](documentation/testing/negative_value_shop.jpg)
-
-The quantity can be changed anytime by the admin user.
 
 ### **Edit Product**
 
@@ -321,15 +317,12 @@ Expected result:
     ![Edit Product](documentation/testing/edit_product03.jpg)
 * The products detail should be updated.
 
-Although entering negative values is accepted by the application,
+The application is protected from attempts of inserting negative values.
+An attampt of entering a negative value either in the price input box or quantity input box will result with displaying an error message.
 
-![Negative Value](documentation/testing/negative_value_workshop.jpg)
+![Negative Value](documentation/testing/negative01.jpg)
 
-assigning a negative value to the products quantity will result with displaying the product as "Out Of Stock".
-
-![Negative Value](documentation/testing/negative_value_workshop03.jpg)
-
-The quantity can be changed anytime by the admin user.
+![Negative Value](documentation/testing/negative02.jpg)
 
 
 ### **Deleting Product**
