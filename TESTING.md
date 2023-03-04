@@ -98,7 +98,7 @@ Navbars responsivenes and all its elements accessibility is correct.
 
         ![html_validation](documentation/testing/nu_detail_default_image.jpg)
 
-        Link to the test: https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fmood-design-gift-shop.herokuapp.com%2Fproducts%2Fproduct%2F7%2F#l148c7
+        Link to the test: https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fmood-design-gift-shop.herokuapp.com%2Fproducts%2Fproduct%2F19%2F#l148c7
 
     - Add Product Page:
     
@@ -302,8 +302,9 @@ Expected result:
 * A new product (Ceramic Shamrock) should appear on the page
     ![Add Product](documentation/testing/add_product02.jpg)
 
-Entering a negative input value test.
-An attempt of entering a negative value either in the price input box or the quantity input box should result with displaying an error message.
+Typing a negative input value test.
+
+An attempt of typing a negative value either in the price input box or the quantity input box should result with displaying an error message.
 
 ![Negative Value](documentation/testing/negative01.jpg)
 
@@ -317,7 +318,7 @@ If an user logged in as regular user tries to access this function a warning mes
 ![Admin access only](documentation/testing/admin_only.jpg)
 
 If any non-admin user tries to access this function he is redirected to the Sign In Page where he can Log in.
-![Admin access only](documentation/testing/admin_only.jpg)
+![Admin access only](documentation/testing/login_error.jpg)
 
 Steps:
 * Go to the Shop Page
@@ -331,8 +332,9 @@ Expected result:
     ![Edit Product](documentation/testing/edit_product03.jpg)
 * The products detail should be updated.
 
-Entering a negative input value test.
-An attempt of entering a negative value either in the price input box or the quantity input box should result with displaying an error message.
+Typing a negative input value test.
+
+An attempt of typing a negative value either in the price input box or the quantity input box should result with displaying an error message.
 
 ![Negative Value](documentation/testing/negative01.jpg)
 
@@ -346,7 +348,7 @@ If an user logged in as regular user tries to access this function a warning mes
 ![Admin access only](documentation/testing/admin_only.jpg)
 
 If any non-admin user tries to access this function he is redirected to the Sign In Page where he can Log in.
-![Admin access only](documentation/testing/admin_only.jpg)
+![Admin access only](documentation/testing/login_error.jpg)
 
 Steps:
 * Go to the Shop Page
@@ -419,7 +421,7 @@ Steps:
 Expected result:
 * A confirmation toast box should be displayed
     ![Update account](documentation/testing/display_profile04.jpg)
-* After refreshing the page the user details should be still displayed.
+* After refreshing the page the new user details should be still displayed.
 
 
 ### **Log out**
@@ -441,8 +443,8 @@ Expected result:
 
 ### **Add product to the shopping basket**
 
-This function is available to all user: loged in as well as not loged in users.
-It allows the user to add product to the shopping basket where the products can be updated, deleted from basket or proceded to the chechout.
+This function is available to all users: loged in as well as not loged in users.
+It allows the user to add product to the shopping basket where the products can be updated, deleted from basket or proceeded to the checkout.
 
 Steps:
 * Go to the shop page or to the workshop page.
@@ -460,9 +462,10 @@ Expected result:
 
 Errors:
 
-In case of entering incorrect values, such as 0 or value greater the the quantity of the products available on stock a suitable warning message will be displayed
-    ![Wrong value](documentation/testing/wrong_value_shop04.jpg)
-    ![Wrong value](documentation/testing/wrong_value_shop03.jpg)
+In case of entering incorrect values, such as 0 or value greater the the quantity of the products available on stock a suitable warning message will be displayed.
+
+![Wrong value](documentation/testing/wrong_value_shop04.jpg)
+![Wrong value](documentation/testing/wrong_value_shop03.jpg)
 
 * An error occured when a user is trying to submit an empty value.
 
@@ -483,14 +486,15 @@ Steps:
 * Submit clicking green button.
 
 Expected result:
-* A confirmation toast box should be displayed
+* A confirmation toast box should be displayed.
 * Number in the Quantity box should be updated.
 * The Total Price of the Order ahould also be updated immediately.
     ![Update Product](documentation/testing/update_basket02.jpg)
 
-In case of entering incorrect values, such as 0 or value greater the the quantity of the products available on stock a suitable warning message will be displayed
-    ![Wrong value](documentation/testing/wrong_value_shop04.jpg)
-    ![Wrong value](documentation/testing/wrong_value_shop03.jpg)
+In case of entering incorrect values, such as 0 or value greater the the quantity of the products available on stock a suitable warning message will be displayed.
+
+![Wrong value](documentation/testing/wrong_value_shop04.jpg)
+![Wrong value](documentation/testing/wrong_value_shop03.jpg)
 
 ### **Remove Product from the basket**
 
@@ -500,7 +504,7 @@ Steps:
 * Click the red button in the Remove Item column.
 
 Expected result:
-* A confirmation toast box should be displayed
+* A confirmation toast box should be displayed.
 * The product should be remnoved from the basket.
 * The Total Price of the Order should also be updated immediately.
     ![Remove Product](documentation/testing/update_basket03.jpg)

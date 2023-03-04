@@ -78,8 +78,11 @@ html {
 .nav-active {
     background-color: #80888a4d;
 }
-.dropdown-menu.show {
+/* .dropdown-menu.show {
     display: inline-flex;
+} */
+.my-dropdown-menu.show {
+    display: inline-flex !important;
 }
 
 
@@ -261,8 +264,8 @@ textarea#id_title, textarea#id_body {
         min-width: 54px;
         width: 5vw;
     }
-    .dropdown-menu.show {
-        display: block;
+    .my-dropdown-menu.show {
+        display: block !important;
     }
     .login-panel {
         margin-top: 25vh;

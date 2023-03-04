@@ -139,7 +139,7 @@ In case of an out of stock product Add To Basket button is not available.
 
 ### Product Details Page
 
-This section displays more information about the product. SUch as product description quantity of the product on Stock and the Price.
+This section displays more information about the product. Such as product description quantity of the product on Stock and the Price.
 
 It also allows to choose the number of products and add them to the Shopping Basket.
 
@@ -164,7 +164,7 @@ This section is made of two main subsections:
 
 #### My Profile
 
-Where the registered and loged in user can display and manage his informations:
+Where the registered and loged in user can display and manage his informations.
 This section also stores user order history.
 
 ![Account Page](documentation/images/profile_page.jpg)
@@ -186,7 +186,7 @@ Everytime the user is informed about being signed in or signed out.
 
 ### **Shopping Basket**
 
-In the Shopping Basket Page the user can see all the products currently added to bthe shopping basket. The user can also check the total price and delete product or modify the number of each products in the basket.
+In the Shopping Basket Page the user can see all the products currently added to the shopping basket. The user can also check the total price and delete product or modify the number of each products in the basket.
 
 ![Shopping Basket](documentation/images/basket_page.jpg)
 
@@ -198,7 +198,7 @@ In the Checkout Page user can make a payment for the order.
 
 The page contains a form that the user has to fill up to provide all the informations required for shipping and billing.
 
-After filling up the form and clicking the Complete Order button the payment will be verified and proceded. 
+After filling up the form and clicking the Complete Order button the payment will be verified and proceeded. 
 Also a confirmation email will be sent do the email address provided by the user.
 
 ![Checkout Page](documentation/images/checkout_page.jpg)
@@ -216,13 +216,17 @@ Admin users have access to a set of additional functions that allow to provide b
 
 ### **Adding and editing Posts in the Home Page:**
 
-Users authenticated as Admin users can post information on the Home Page. To do this he can user a post form displayed in the bottom of the page.
+Users authenticated as Admin users can post information on the Home Page. To do this he can use a post form displayed in the bottom of the page.
 
 ![Home Page Post](documentation/images/add_post.jpg)
 
-The form contains fields such as post title, author, content but also a list of Newsletters users that can be authomatically informed about publishing the post by sending them a Newsletter.
+The form contains fields such as post title, author, content but also a list of Newsletters users that can be automatically informed about publishing the post by sending them a Newsletter.
 
 After filling up the form the post is displayed on the top of the Posts section and it's visible to the users.
+
+To prevent overextending the Home Page only the last five posts are displayed in the page.
+
+Post can only be **deleted in the admin panel** by the superuser.
 
 ![Home Page Post](documentation/images/post_guest.jpg)
 
@@ -263,7 +267,7 @@ The Add Item button is displayed on the bottom-right corner of the Workshop Page
 
 ## **5. Future Features.**
 
-Features and functionalities that have not been inplemented at this stage, but they are planned to be implemented in the future.
+Features and functionalities that have not been implemented at this stage, but they are planned to be implemented in the future.
 
 * Log in using Social Media account.
 * User Feedback and opinions.
@@ -402,7 +406,7 @@ class OrderLineItem(models.Model):
 ```
 
 ### **Newsletter User**
-Defines Newslatter user. And it stores the email, address the user and the subscription date.
+Defines Newsletter user. And it stores the email, address the user and the subscription date.
 
 ```python 
 class NewsletterUser(models.Model):
@@ -411,7 +415,7 @@ class NewsletterUser(models.Model):
 ```
 
 ### **Post**
-Posts can be published on the Home Page by the admin to inform guests users about the news about the Shop. Posts can be also automatically sent to Newsletter users to chosen by the admin.
+Posts can be published in the Home Page by the admin to inform guests users about the news about the Shop. Posts can be also automatically sent to Newsletter users to chosen by the admin.
 The class contains fields such as posts title, publishing date, author/designer, image and content and also a list of email addresses of newsletter users.
 
 ```python
@@ -865,5 +869,5 @@ https://www.facebook.com/photo.php?fbid=592945416178272&set=pb.100063884567594.-
 
 - I would like to thank my Code Institute mentor Tim Nelson for his support throughout the development of this project.
 - I would like to thank the [Code Institute](https://codeinstitute.net) tutor team and the whole Code Institute team for their assistance with troubleshooting and debugging some project issues.
+- I would like to thank Ela nad Lukasz Szczerbak - the owners of the Mood Design shop for inspiration and support.
 - I would like to thank my wife Marlena, for believing in me, and allowing me to make this transition into software development.
-

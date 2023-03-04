@@ -140,7 +140,7 @@
                                                                         </div>
                                                                     </form>
 
-                                                                <a class="dropdown-item" href="{% url 'product_detail' product.id %}">Display Details</a>
+                                                                <a class="dropdown-item d-block" href="{% url 'product_detail' product.id %}">Display Details</a>
                                                                 {% if request.user.is_authenticated %}
                                                                     {% if request.user.is_superuser %}
                                                                         <a class="dropdown-item" href="{% url 'edit_product' product.id %}">Edit Item</a>
