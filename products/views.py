@@ -62,19 +62,23 @@ def add_product(request):
     """
     A view to add the new product to database.
     """
+    print('Enter add product')
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))
 
     if request.method == 'POST':
+        print('Enter POST')
         try:
             form = ProductForm(request.POST, request.FILES)
+            print('Enter try')
+            price = float(request.POST.get("price"))
+            quantity = int(request.POST.get("quantity"))
+            print(f'Enter form validation. Price = {price}, Q-ty = {quantity}')
+            if price < 0 or quantity < 0:
+                print('Enter if')
+                raise ValueError('Negative Value Error!')
             if form.is_valid():
-                price = int(request.POST.get("price"))
-                print(f'Price is {price}. Type of {type(price)}')
-                if price < 0:
-                    print('\nError if starts')
-                    raise ValueError('Price should be a positive number')
                 form.save()
                 messages.success(request, f'Item successfully added.')
                 return redirect(reverse("products"))
@@ -82,7 +86,9 @@ def add_product(request):
                 messages.error(request, f'A problem occured! '
                                f'I could not update this item')
         except ValueError as e:
-            messages.error(request, f'Price can not be negative')    
+            messages.error(request, f'Some of your input boxes '
+                           'contain negative values. '
+                           'Please enter a positive value.')
     else:
         form = ProductForm()
 
@@ -107,15 +113,19 @@ def edit_product(request, product_id):
 
     if request.method == 'POST':
         price = float(request.POST.get("price"))
+        quantity = int(request.POST.get("quantity"))
         print(f'Enter the POST. Price = {price}')
         try:
             form = ProductForm(request.POST, request.FILES, instance=product)
             print('Enter the try')
             if form.is_valid():
                 print(f'Price is {price}. Type of {type(price)}')
-                if price < 0:
+
+                print(f'Enter form validation. Price = {price},'
+                      ' Q-ty = {quantity}')
+                if price < 0 or quantity < 0:
                     print('\nError if starts')
-                    raise ValueError('Price should be a positive number')
+                    raise ValueError('Negative value error')
                 form.save()
                 messages.success(request, f'Item {product.name} '
                                  f'successfully updated')
@@ -124,7 +134,9 @@ def edit_product(request, product_id):
                 messages.error(request, f'A problem occured! '
                                f'I could not update this item')
         except ValueError as e:
-            messages.error(request, f'Price can not be negative')  
+            messages.error(request, f'Some of your input boxes '
+                           'contain negative values. '
+                           'Please enter a positive value.')
 
     context = {
         'product_id': product_id,
