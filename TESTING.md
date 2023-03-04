@@ -203,6 +203,10 @@ Navbars responsivenes and all its elements accessibility is correct.
 
         ![python_validation](documentation/testing/lin_home_urls.jpg)
 
+    - home models.py:
+
+        ![python_validation](documentation/testing/lin_home_models.jpg)
+
     - products views.py:
 
         ![python_validation](documentation/testing/lin_products_views.jpg)
@@ -219,6 +223,10 @@ Navbars responsivenes and all its elements accessibility is correct.
 
         ![python_validation](documentation/testing/lin_product_admin.jpg)
 
+    - products models.py:
+
+        ![python_validation](documentation/testing/lin_product_models.jpg)
+
     - profiles views.py:
 
         ![python_validation](documentation/testing/lin_profiles_views.jpg)
@@ -234,6 +242,10 @@ Navbars responsivenes and all its elements accessibility is correct.
     - profiles views.py:
 
         ![python_validation](documentation/testing/lin_profiles_views.jpg)
+    
+    - profile models.py:
+
+        ![python_validation](documentation/testing/lin_profile_models.jpg)
 
     - basket views.py:
 
@@ -253,13 +265,15 @@ Navbars responsivenes and all its elements accessibility is correct.
 
     - checkout urls.py:
 
-        Add checkout.urls
-
         ![python_validation](documentation/testing/lin_checkout_urls.jpg)
 
     - checkout admin.py:
 
         ![python_validation](documentation/testing/lin_checkout_admin.jpg)
+
+    - checkout models.py:
+
+        ![python_validation](documentation/testing/lin_check_models.jpg)
    
 
 ## **Manual Testing**
@@ -288,8 +302,8 @@ Expected result:
 * A new product (Ceramic Shamrock) should appear on the page
     ![Add Product](documentation/testing/add_product02.jpg)
 
-The application is protected from attempts of inserting negative values.
-An attampt of entering a negative value either in the price input box or quantity input box will result with displaying an error message.
+Entering a negative input value test.
+An attempt of entering a negative value either in the price input box or the quantity input box should result with displaying an error message.
 
 ![Negative Value](documentation/testing/negative01.jpg)
 
@@ -317,8 +331,8 @@ Expected result:
     ![Edit Product](documentation/testing/edit_product03.jpg)
 * The products detail should be updated.
 
-The application is protected from attempts of inserting negative values.
-An attampt of entering a negative value either in the price input box or quantity input box will result with displaying an error message.
+Entering a negative input value test.
+An attempt of entering a negative value either in the price input box or the quantity input box should result with displaying an error message.
 
 ![Negative Value](documentation/testing/negative01.jpg)
 

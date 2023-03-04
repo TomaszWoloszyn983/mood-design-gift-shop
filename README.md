@@ -761,6 +761,10 @@ Through it, user stories, issues, and milestone tasks were planned, then tracked
 
     ![screenshot](documentation/images/agile_close.jpg)
 
+- [Milestones](https://github.com/TomaszWoloszyn983/mood-design-gift-shop/milestones?state=closed)
+
+    ![Milesones](documentation/images/milestones.jpg)
+
 ### **MoSCoW Prioritization**
 
 I've decomposed my Epics into stories prior to prioritizing and implementing them.
@@ -773,6 +777,8 @@ Using this approach, I was able to apply the MoSCow prioritization and labels to
 - **Could Have**: has small impact if left out (*20% of stories*)
 - **Won't Have**: not a priority for this iteration
 - **Future Features**: Features and unctionalities intended for future implementations.
+
+![Labels](documentation/images/labels.jpg)
 
 ## **11. Search Engine Optimization (SEO) & Social Media Marketing**
 

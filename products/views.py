@@ -62,21 +62,16 @@ def add_product(request):
     """
     A view to add the new product to database.
     """
-    print('Enter add product')
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))
 
     if request.method == 'POST':
-        print('Enter POST')
         try:
             form = ProductForm(request.POST, request.FILES)
-            print('Enter try')
             price = float(request.POST.get("price"))
             quantity = int(request.POST.get("quantity"))
-            print(f'Enter form validation. Price = {price}, Q-ty = {quantity}')
             if price < 0 or quantity < 0:
-                print('Enter if')
                 raise ValueError('Negative Value Error!')
             if form.is_valid():
                 form.save()
@@ -103,7 +98,6 @@ def edit_product(request, product_id):
     """
     A view to edit an existing product by its id.
     """
-    print('Enter the edit product')
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))
@@ -114,17 +108,10 @@ def edit_product(request, product_id):
     if request.method == 'POST':
         price = float(request.POST.get("price"))
         quantity = int(request.POST.get("quantity"))
-        print(f'Enter the POST. Price = {price}')
         try:
             form = ProductForm(request.POST, request.FILES, instance=product)
-            print('Enter the try')
             if form.is_valid():
-                print(f'Price is {price}. Type of {type(price)}')
-
-                print(f'Enter form validation. Price = {price},'
-                      ' Q-ty = {quantity}')
                 if price < 0 or quantity < 0:
-                    print('\nError if starts')
                     raise ValueError('Negative value error')
                 form.save()
                 messages.success(request, f'Item {product.name} '
@@ -165,7 +152,7 @@ def delete_product(request, product_id):
 @login_required
 def edit_service(request, product_id):
     """
-    A view to edit an existing product by its id.
+    A view to edit an existing workshop product by its id.
     """
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store admin can do that.')
@@ -175,14 +162,23 @@ def edit_service(request, product_id):
     form = ProductForm(instance=product)
 
     if request.method == 'POST':
+        price = float(request.POST.get("price"))
+        quantity = int(request.POST.get("quantity"))
         form = ProductForm(request.POST, request.FILES, instance=product)
-        if form.is_valid():
-            form.save()
-            messages.success(request, f'Item workshop {product.name} '
-                             f'successfully updated .')
-            return redirect(reverse("workshop"))
-        else:
-            messages.error(request, f"Service update didn't succeed")
+        try:
+            if form.is_valid():
+                if price < 0 or quantity < 0:
+                    raise ValueError('Negative value error')
+                form.save()
+                messages.success(request, f'Item workshop {product.name} '
+                                 f'successfully updated .')
+                return redirect(reverse("workshop"))
+            else:
+                messages.error(request, f"Service update didn't succeed")
+        except ValueError as e:
+            messages.error(request, f'Some of your input boxes '
+                           'contain negative values. '
+                           'Please enter a positive value.')
 
     context = {
         'product_id': product_id,
@@ -195,7 +191,7 @@ def edit_service(request, product_id):
 @login_required
 def delete_service(request, product_id):
     """
-    A view to delete an existing product by its id.
+    A view to delete an existing workshop product by its id.
     """
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
