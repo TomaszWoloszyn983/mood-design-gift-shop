@@ -67,14 +67,22 @@ def add_product(request):
         return redirect(reverse('home'))
 
     if request.method == 'POST':
-        form = ProductForm(request.POST, request.FILES)
-        if form.is_valid():
-            form.save()
-            messages.success(request, f'Item successfully added.')
-            return redirect(reverse("products"))
-        else:
-            messages.error(request, f'A problem occured! '
-                           f'I could not update this item')
+        try:
+            form = ProductForm(request.POST, request.FILES)
+            if form.is_valid():
+                price = int(request.POST.get("price"))
+                print(f'Price is {price}. Type of {type(price)}')
+                if price < 0:
+                    print('\nError if starts')
+                    raise ValueError('Price should be a positive number')
+                form.save()
+                messages.success(request, f'Item successfully added.')
+                return redirect(reverse("products"))
+            else:
+                messages.error(request, f'A problem occured! '
+                               f'I could not update this item')
+        except ValueError as e:
+            messages.error(request, f'Price can not be negative')    
     else:
         form = ProductForm()
 
@@ -89,6 +97,7 @@ def edit_product(request, product_id):
     """
     A view to edit an existing product by its id.
     """
+    print('Enter the edit product')
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))
@@ -97,16 +106,25 @@ def edit_product(request, product_id):
     form = ProductForm(instance=product)
 
     if request.method == 'POST':
-        form = ProductForm(request.POST, request.FILES, instance=product)
-        if form.is_valid():
-            form.save()
-            messages.success(request, f'Item {product.name} '
-                             f'successfully updated')
-
-            return redirect(reverse("products"))
-        else:
-            messages.error(request, f'A problem occured! '
-                           f'I could not update this item')
+        price = float(request.POST.get("price"))
+        print(f'Enter the POST. Price = {price}')
+        try:
+            form = ProductForm(request.POST, request.FILES, instance=product)
+            print('Enter the try')
+            if form.is_valid():
+                print(f'Price is {price}. Type of {type(price)}')
+                if price < 0:
+                    print('\nError if starts')
+                    raise ValueError('Price should be a positive number')
+                form.save()
+                messages.success(request, f'Item {product.name} '
+                                 f'successfully updated')
+                return redirect(reverse("products"))
+            else:
+                messages.error(request, f'A problem occured! '
+                               f'I could not update this item')
+        except ValueError as e:
+            messages.error(request, f'Price can not be negative')  
 
     context = {
         'product_id': product_id,
