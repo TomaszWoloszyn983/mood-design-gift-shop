@@ -4,12 +4,12 @@
 
 ## **1. Overview.**
 
-The subject of the project is e-commerce web page application dedicated to Mood Designs Gift Shop that designs and produces handmade, ceramic goods inspired by West Irish folk art and rich natural values of West Ireland the route Wild Atlantic Way. 
+The subject of the project is an e-commerce web page application dedicated to Mood Designs Gift Shop that designs and produces handmade, ceramic goods inspired by West Irish folk art and rich natural values of West Ireland along the route Wild Atlantic Way. 
 
-The purpose of the application is providing user easy way to present the shops offer and to inform users about new products, offers and news about the Mood Designs team and events taking place within its society. The informations can be easily find on the Home Page or they can be sent do user email in form of Newsletter.
+The purpose of the application is to provide an user easy way to present the shop's offer and to inform users about new products, offers and news about the Mood Designs team and events taking place within its society. The information can be easily found on the Home Page or they can be sent do user email in form of Newsletter.
 
-The application allowes users to search Mood Designs products, to buy them and to make secured on-line payments using Credit or Debit cards.
-It also allows users to create their profile account to save and store theirs shipping and payment details as well as store theirs orders history.
+The application allows users to search Mood Designs products, to buy them and to make secured on-line payments using Credit or Debit cards.
+It also allows users to create their profile account to save and store their shipping and payment details as well as store their orders history.
 
 
 ## **Contents:**
@@ -50,32 +50,32 @@ It also allows users to create their profile account to save and store theirs sh
 
 ### New Site Users
 
-- As a new site user, I would like to  see a userfriendly home page, so that I can easily find interesting content and sections in the Page.
+- As a new site user, I would like to  see a user-friendly home page, so that I can easily find interesting content and sections in the Page.
 - As a new site user, I would like to Create an account where I can store my personal data so that I don't have to fill up the personal data forms each time I buy something..
 - As a new site user, I would like to see contact details so that I can find more information about the shop owners.
 - As a new site user, I would like to add items to a shopping Basket, so that I can reserve an item and continue shopping.
 - As a new site user, I would like to Delete products from my shopping basket.
 - As a new site user, I would like to display the shopping basket so that I can see all reserved items.
-- As a new site user, I would like to display single item detail page so that I can get more information about the product.
+- As a new site user, I would like to display a single item detail page so that I can get more information about the product.
 - As a new site user, I would like to display the Page on mobile devices so I can buy items on a mobile phone.
-- As a new site user, I would like to use mobile side bar, so that I can use the application on small size devices.
+- As a new site user, I would like to use a mobile sidebar, so that I can use the application on small size devices.
 - As a new site user, I would like to, after adding all items to the shopping basket, to be redirected to the Payment Page so I can finalize the shopping and make a payment.
 - As a new site user, I would like to save my personal details needed for making payments, so that I can use them during my next shoppings.
 ### Returning Site Users
 
-- As a returning site user, I would like to log in/out so that I can use the sites personalized functionalities as well as store and protect my personal data.
+- As a returning site user, I would like to log in/out so that I can use the site's personalized functionalities as well as store and protect my personal data.
 - As a returning site user, I would like to sign up to a newsletter to keep up to date with deals and events
 - As a returning site user, I would like to Edit my account details so that my profile is up to date.
 - As a returning site user, I would like to delete my account so that I can remove my account if I no longer use it.
 - As a returning site user, I would like to see if I am logged in or not.
-- As a returning site user, I would like to informed by email about actions taken place in the page, so that my account is better secured.
+- As a returning site user, I would like to be informed by email about actions taken place in the page, so that my account is better secured.
 - As a returning site user, I would like to publish my feedback in the page, so that I can share my experience with other users
 - As a returning site user, I would like to  Log in with Social media so that I can use my already existing account.
 - As a returning site user, I would like to see my previous orders list and payment history .
 
 ### Site Admin
 
-- As a site administrator, I should be able to create a superuser account so that I can get access to function only available for sellers.
+- As a site administrator, I should be able to create a superuser account so that I can get access to functions only available for sellers.
 - As a site administrator, I should be able to add new items to the database, so that I can add new items for sale and save then in the database
 - As a site administrator, I should be able to Edit items for sale and save changes to the database.
 - As a site administrator, I should be able to Delete items from the database, so that they can not be available on sale any more.
@@ -84,13 +84,13 @@ It also allows users to create their profile account to save and store theirs sh
 
 ### Home Page
 
-Home Page contains informations about the Mood Designs history and lastest news and events organized by the Mood Designs team.
+Home Page contains information about the Mood Designs history and latest news and events organized by the Mood Designs team.
 
 ![Home Page](documentation/images/home_page.jpg)
 
 ### Navigation Bar
 
-All sections are clearly and simply arranged inside the navigation bar which allows for an easy access to applications sections.
+All sections are clearly and simply arranged inside the navigation bar which allows for easy access to application's sections.
 
 ![Desctop Navbar](documentation/images/desctop_navbar.jpg)
 
@@ -106,15 +106,15 @@ This section can be updated by the admin users.
 ### Footer 
 
 Footer contains The Mood Designs address, social media links and contact details.
-It also contains an input field where the user can sign up to newsletter.
+It also contains an input field where the user can sign up to the newsletter.
 
 ![Footer](documentation/images/footer.jpg)
 
 ### Newsletter
 
-The application provides a function of sending Newsletter to user who want to receive such form of being informed about news and latest events. 
+The application provides a function of sending Newsletter to users who want to receive such a form of being informed about news and latest events. 
 
-To sign up for a newsletter the user need to go to the Footer section in the Home Page and enter its email address in the input field. 
+To sign up for a newsletter the user needs to go to the Footer section in the Home Page and enter its email address in the input field. 
 
 ![Newsletter](documentation/images/newsletter01.jpg)
 
@@ -127,7 +127,7 @@ And the user will be added to Newsletter Users list.
 ### Shop Page
 
 Shop Page displays the list of products available in the Shop.
-From here users can add product to the shopping basket.
+From here users can add products to the shopping basket.
 
 ![Shop Page](documentation/images/shop_page.jpg)
 
@@ -135,13 +135,13 @@ Each product panel contains a dropdown option button which allows the user to op
 
 ![Product options](documentation/images/guest_product_dropdown_btn.jpg)
 
-In case of an out of stock product Add To Basket button is not available.
+In case of an out of stock product, Add To Basket button is not available.
 
 ### Product Details Page
 
 This section displays more information about the product. Such as product description quantity of the product on Stock and the Price.
 
-It also allows to choose the number of products and add them to the Shopping Basket.
+It also allows you to choose the number of products and add them to the Shopping Basket.
 
 ![Product Details](documentation/images/product_detail_page.jpg)
 
@@ -152,19 +152,19 @@ Out of Stock products can not be added to the Shopping Basket.
 
 ### **Workshop Page**
 
-This section contains workshop activities and events organised by the Mood Designs team. 
+This section contains workshop activities and events organized by the Mood Designs team. 
 Users can get familiar with the events and also they can buy reservations to participate in the activities.
 
 ![Workshop Page](documentation/images/workshop_page.jpg)
 
 ### **Account Page**
 
-Account section allows users to sign up and create the users account where they can save and securly store their personal information. 
+Account section allows users to sign up and create the users account where they can save and securely store their personal information. 
 This section is made of two main subsections:
 
 #### My Profile
 
-Where the registered and loged in user can display and manage his informations.
+Where the registered and logged in user can display and manage his information.
 This section also stores user order history.
 
 ![Account Page](documentation/images/profile_page.jpg)
@@ -186,26 +186,26 @@ Everytime the user is informed about being signed in or signed out.
 
 ### **Shopping Basket**
 
-In the Shopping Basket Page the user can see all the products currently added to the shopping basket. The user can also check the total price and delete product or modify the number of each products in the basket.
+In the Shopping Basket Page the user can see all the products currently added to the shopping basket. The user can also check the total price and delete products or modify the number of each product in the basket.
 
 ![Shopping Basket](documentation/images/basket_page.jpg)
 
-After overviewing the order the user can be moved to the payment by choosing "Go To Checkout" button.
+After overviewing the order the user can be moved to the payment by choosing the "Go To Checkout" button.
 
 ### **Checkout Page**
 
 In the Checkout Page user can make a payment for the order. 
 
-The page contains a form that the user has to fill up to provide all the informations required for shipping and billing.
+The page contains a form that the user has to fill up to provide all the information required for shipping and billing.
 
 After filling up the form and clicking the Complete Order button the payment will be verified and proceeded. 
-Also a confirmation email will be sent do the email address provided by the user.
+Also a confirmation email will be sent to the email address provided by the user.
 
 ![Checkout Page](documentation/images/checkout_page.jpg)
 
 ### **Summary Page**
 
-The Summary Page is displayed after the order is succesfully completed.
+The Summary Page is displayed after the order is successfully completed.
 It contains all information provided by the user. Such as orders details, shipping details, orders value and delivery costs.
 
 ![Summary Page](documentation/images/summary.jpg)
@@ -238,27 +238,27 @@ However deleting Posts can be made only throughout the admin panel.
 
 ### **Adding new products to the Shop Page.**
 
-Add product button is displayed in the right-bottom corner of the Shop Page. After cicking it the admin user is redirected to the Add Product Form.
+Add product button is displayed in the right-bottom corner of the Shop Page. After clicking it the admin user is redirected to the Add Product Form.
 
 ![Add Product](documentation/images/add_item_button.jpg)
 
-The form contains fields for products name, name of the designer, products category, price and the products quantity available in stock.
-Also productts image and description can be added.
+The form contains fields for product name, name of the designer, product category, price and the product quantity available in stock.
+Also products image and description can be added.
 If the product for any reason doesn't have an image, a default image will be displayed.
 
 ![Add Product](documentation/images/add_product.jpg)
 
-After filling up the form the item is getting visible on the shop page and it is available for customers to buy. Also an information for admin will be displayed.
+After filling up the form the item is getting visible on the shop page and it is available for customers to buy. Also information for admin will be displayed.
 
 ![Add Product](documentation/images/add_success.jpg)
 
-Admin user can modify the products informations or delete the product from the shop at any time.
+Admin users can modify the products information or delete the product from the shop at any time.
 
 ![Add Product](documentation/images/admin_functions.jpg)
 
 ### **Adding new products to the Workshop Page.**
 
-The situation with adding Event to the Workshop section looks very similarly to adding and managing shop products.
+The situation with adding Event to the Workshop section looks very similar to adding and managing shop products.
 
 The Add Item button is displayed on the bottom-right corner of the Workshop Page. After clicking the button and filling up the form a new Event is added to the Page.
 
@@ -269,7 +269,7 @@ The Add Item button is displayed on the bottom-right corner of the Workshop Page
 
 Features and functionalities that have not been implemented at this stage, but they are planned to be implemented in the future.
 
-* Log in using Social Media account.
+* Log in using a Social Media account.
 * User Feedback and opinions.
 * Delete Account function.
 * Adding profile photos to the side navigation bar.
@@ -291,9 +291,9 @@ Colors used in this project:
 * Python - an interpreted, object-oriented, high-level programming language https://www.python.org/.
 * Django - Framework facilitating building full stack web application https://www.djangoproject.com/.
 * Django allauth - an authentication module that allows account authentication, registration and management https://django-allauth.readthedocs.io/en/latest/.
-* Bootstrap - Powerful, extensible, and feature-packed frontend framework that allows buiding fast and responsive websites: https://getbootstrap.com/.
+* Bootstrap - Powerful, extensible, and feature-packed frontend framework that allows building fast and responsive websites: https://getbootstrap.com/.
 * Javascript - High-level programming language https://www.javascript.com/.
-* HTML5 - Markup language used to make webpages https://html.com/html5/.
+* HTML5 - Markup language used to make web pages https://html.com/html5/.
 * CSS3 - A language used to style HTML and XHTML documents presentations in web development.
 * CSS Flexbox and CSS Grid - used for an enhanced responsive layout.
 * Gitpod - Online integrated development environment https://www.gitpod.io/.
@@ -303,7 +303,7 @@ Colors used in this project:
 * Markdown Builder by Tim Nelson https://traveltimn.github.io/markdown-builder used to help generate the Markdown files.
 * PostgreSQL - used as the relational database management https://www.postgresql.org.
 * ElephantSQL - used as the Postgres database https://www.elephantsql.com.
-* Amazon Web Services s3 - a cloud-based stporage service. https://aws.amazon.com/
+* Amazon Web Services s3 - a cloud-based storage service. https://aws.amazon.com/
 * Stripe - a suite of APIs powering online payment processing and commerce solutions for internet businesses. https://stripe.com/
 
 
@@ -415,7 +415,7 @@ class NewsletterUser(models.Model):
 ```
 
 ### **Post**
-Posts can be published in the Home Page by the admin to inform guests users about the news about the Shop. Posts can be also automatically sent to Newsletter users to chosen by the admin.
+Posts can be published in the Home Page by the admin to inform guests users about the news about the Shop. Posts can also be automatically sent to Newsletter users to be chosen by the admin.
 The class contains fields such as posts title, publishing date, author/designer, image and content and also a list of email addresses of newsletter users.
 
 ```python
@@ -532,7 +532,7 @@ Once on the IAM page, follow these steps:
 - Select the policy, then click **Add Permissions** at the bottom when finished.
 - From the **JSON** tab, select the **Import Managed Policy** link.
 	- Search for **S3**, select the `AmazonS3FullAccess` policy, and then **Import**.
-	- You'll need your ARN from the S3 Bucket copied again, which is pasted into "Resources" key on the Policy.
+	- You'll need your ARN from the S3 Bucket copied again, which is pasted into the "Resources" key on the Policy.
 
 		```shell
 		{
@@ -572,7 +572,7 @@ Once on the IAM page, follow these steps:
 
 #### **Final AWS Setup**
 
-- If Heroku Config Vars has `DISABLE_COLLECTSTATIC` still, this can be removed now, so that AWS will handle the static files.
+- If Heroku Config Vars still havehas `DISABLE_COLLECTSTATIC` still, this can be removed now, so that AWS will handle the static files.
 - Back within **S3**, create a new folder called: `media`.
 - Select any existing media images for your project to prepare them for being uploaded into the new folder.
 - Under **Manage Public Permissions**, select **Grant public read access to this object(s)**.
@@ -742,8 +742,8 @@ The Application is fully responsive and the applications code was tested using:
 * Jshint for Java Script code https://jshint.com/.
 * CI Python Linter for Python code https://pep8ci.herokuapp.com/.
 
-There were no issues detected by the most of the tests.
-More details about testings process and methods are available in the dedicated testing section [here](TESTING.md).
+There were no issues detected by most of the tests.
+More details about the testing process and methods are available in the dedicated testing section [here](TESTING.md).
 
 
 ## **10. Agile Development Process**
@@ -767,20 +767,20 @@ Through it, user stories, issues, and milestone tasks were planned, then tracked
 
 - [Milestones](https://github.com/TomaszWoloszyn983/mood-design-gift-shop/milestones?state=closed)
 
-    ![Milesones](documentation/images/milestones.jpg)
+    ![Milestones](documentation/images/milestones.jpg)
 
 ### **MoSCoW Prioritization**
 
 I've decomposed my Epics into stories prior to prioritizing and implementing them.
 Using this approach, I was able to apply the MoSCow prioritization and labels to my user stories within the Issues tab.
 
-![moscov prioritization](documentation/images/moscow_prioritization.jpg)
+![moscow prioritization](documentation/images/moscow_prioritization.jpg)
 
 - **Must Have**: guaranteed to be delivered (*max 60% of stories*)
 - **Should Have**: adds significant value, but not vital (*the rest ~20% of stories*)
 - **Could Have**: has small impact if left out (*20% of stories*)
 - **Won't Have**: not a priority for this iteration
-- **Future Features**: Features and unctionalities intended for future implementations.
+- **Future Features**: Features and functionalities intended for future implementations.
 
 ![Labels](documentation/images/labels.jpg)
 
@@ -788,7 +788,7 @@ Using this approach, I was able to apply the MoSCow prioritization and labels to
 
 ### Keywords
 
-I've identified some appropriate keywords to align with my site, that should help users when searching online to find my page easily from a search engine.
+I've identified some appropriate keywords to align with my site that should help users when searching online to find my page easily from a search engine.
 
 Keywords: mood, design, gift, shop, application, page
 
@@ -844,7 +844,7 @@ More information [Here](#newsletter).
 
 - How to create a nice login form  - https://www.youtube.com/watch?v=ylFLVBbB9AM
 
-- You Utbe tutorial how to create Paralax landing page using Bootstrap - https://www.youtube.com/watch?v=fu_shslaI14
+- You Tube tutorial on how to create a Parallax landing page using Bootstrap - https://www.youtube.com/watch?v=fu_shslaI14
 
 - Tutorial on Css Selector - https://www.youtube.com/watch?v=l1mER1bV0N0
 
@@ -854,7 +854,7 @@ More information [Here](#newsletter).
 
 All images and materials used at this project belong to Mood Designs and were taken from the official Mood Designs web page and their Facebook page with knowledge and consent of the copyrights owners.
 
-Link to mood designs images: 
+Link to Mood Designs images: 
 
 https://www.themooddesigns.ie/
 https://www.themooddesigns.ie/shop
@@ -869,5 +869,5 @@ https://www.facebook.com/photo.php?fbid=592945416178272&set=pb.100063884567594.-
 
 - I would like to thank my Code Institute mentor Tim Nelson for his support throughout the development of this project.
 - I would like to thank the [Code Institute](https://codeinstitute.net) tutor team and the whole Code Institute team for their assistance with troubleshooting and debugging some project issues.
-- I would like to thank Ela nad Lukasz Szczerbak - the owners of the Mood Design shop for inspiration and support.
+- I would like to thank Ela and Lukasz Szczerbak - the owners of the Mood Design shop for inspiration and support.
 - I would like to thank my wife Marlena, for believing in me, and allowing me to make this transition into software development.

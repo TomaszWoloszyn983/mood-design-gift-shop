@@ -2,7 +2,7 @@
 
 
 ##  **Responsiveness**
-- The project was responsive tested on https://ui.dev/amiresponsive and it is responsive for every type of devices such as desktop computers, laptops, tablets and smart phones.
+- The project was responsive tested on https://ui.dev/amiresponsive and it is responsive for every type of devices such as desktop computers, laptops, tablets and smartphones.
 
 ![Am I Responsive](documentation/testing/amiresponsive02.jpg)
 
@@ -33,17 +33,17 @@
  ![Google Chrome](documentation/testing/resp_netbox_xs.jpg)
 
 
-### Mobile-size divices
+### Mobile-size devices
 
 Although the Page is working fine on most of the mobile devices such as tablets and mobile phones. Some visual issues are possible in very small screen sizes and horizontal screen position:
 ![Layout issue](documentation/bugs_and_errors/layout_issue01.jpg)
 
-However the issues do not significantly affect the accessibility to application features, **it is recommended to use the vertical screen position on mobile divices.** 
+However the issues do not significantly affect the accessibility to application features, **it is recommended to use the vertical screen position on mobile devices.** 
 
 ### Navbar Responsiveness Testing
-Checking the behaviour of navbars dropdown elements on different sizes and screen positions.
+Checking the behavior of navbars dropdown elements on different sizes and screen positions.
 
-* Screensize medium and large:
+* Screen size medium and large:
     ![Layout issue](documentation/testing/resp_navbar.jpg)
 * Small Mobile size, vertical position:
 
@@ -53,7 +53,7 @@ Checking the behaviour of navbars dropdown elements on different sizes and scree
 * Small Mobile size, expanded menu:
     ![Layout issue](documentation/testing/resp_mobile_navbar_hor2.jpg)
 
-Navbars responsivenes and all its elements accessibility is correct.
+Navbar's responsiveness and all its elements accessibility is correct.
 
 ## **Code Validator Testing**
 
@@ -282,8 +282,8 @@ Testing all the applications functionalities.
 
 ### **Add Product**
 
-This function is available only for user registered as admin.
-If an user logged in as regular user tries to access this function a warning message is displayed.
+This function is available only for users registered as admin.
+If a user logged in as a regular user tries to access this function a warning message is displayed.
 ![Admin access only](documentation/testing/admin_only.jpg)
 
 If any non-admin user tries to access this function he is redirected to the Sign In Page where he can Log in.
@@ -304,7 +304,7 @@ Expected result:
 
 Typing a negative input value test.
 
-An attempt of typing a negative value either in the price input box or the quantity input box should result with displaying an error message.
+An attempt of typing a negative value either in the price input box or the quantity input box should result in displaying an error message.
 
 ![Negative Value](documentation/testing/negative01.jpg)
 
@@ -313,8 +313,8 @@ An attempt of typing a negative value either in the price input box or the quant
 
 ### **Edit Product**
 
-This function available only for user registered as admin.
-If an user logged in as regular user tries to access this function a warning message is displayed.
+This function is available only for users registered as admin.
+If a user logged in as a regular user tries to access this function a warning message is displayed.
 ![Admin access only](documentation/testing/admin_only.jpg)
 
 If any non-admin user tries to access this function he is redirected to the Sign In Page where he can Log in.
@@ -322,7 +322,7 @@ If any non-admin user tries to access this function he is redirected to the Sign
 
 Steps:
 * Go to the Shop Page
-* Expand the Click menu and choose "Edit Item" option.
+* Expand the Click menu and choose the "Edit Item" option.
     ![Edit Product](documentation/testing/edit_product01.jpg)
 * Fill up all the required fields. 
     ![Edit Product](documentation/testing/edit_product02.jpg)
@@ -330,11 +330,11 @@ Steps:
 Expected result:
 * A confirmation toast box should be displayed
     ![Edit Product](documentation/testing/edit_product03.jpg)
-* The products detail should be updated.
+* The product's details should be updated.
 
 Typing a negative input value test.
 
-An attempt of typing a negative value either in the price input box or the quantity input box should result with displaying an error message.
+An attempt of typing a negative value either in the price input box or the quantity input box should result in displaying an error message.
 
 ![Negative Value](documentation/testing/negative01.jpg)
 
@@ -343,8 +343,8 @@ An attempt of typing a negative value either in the price input box or the quant
 
 ### **Deleting Product**
 
-This function available only for user registered as admin.
-If an user logged in as regular user tries to access this function a warning message is displayed.
+This function is available only for users registered as admin.
+If a user logged in as a regular user tries to access this function a warning message is displayed.
 ![Admin access only](documentation/testing/admin_only.jpg)
 
 If any non-admin user tries to access this function he is redirected to the Sign In Page where he can Log in.
@@ -352,36 +352,36 @@ If any non-admin user tries to access this function he is redirected to the Sign
 
 Steps:
 * Go to the Shop Page
-* Expand the Click menu and choose "Delete Item" option.
+* Expand the Click menu and choose the "Delete Item" option.
     ![Delete Product](documentation/testing/delete_product01.jpg)
 
 Expected result:
 * A confirmation toast box should be displayed
-* The products should disapear from the Shop Page.
+* The products should disappear from the Shop Page.
     ![Delete Product](documentation/testing/delete_product02.jpg)
 
 
 
 ### **Register an account**
 
-This function available for every user.
+This function is available for every user.
 
 Steps:
 * Expand the "Account" tab in the Page Navigation Bar and choose "Register" 
 option.
     ![Register](documentation/testing/register01.jpg)
-* Fill up the form and submit it by clicking "Sign Up" button.
+* Fill up the form and submit it by clicking the "Sign Up" button.
     ![Register](documentation/testing/register02.jpg)
-  Not entering values in to the required fields results with displaying a warning message.
+  Not entering values into the required fields results in displaying a warning message.
     ![Sign up warning](documentation/testing/empty_signup.jpg)
 
 Expected result:
-* A info box should display an information that the confirmation email was sent to the user.
+* An info box should display information that the confirmation email was sent to the user.
     ![Register](documentation/testing/register03.jpg)
-* An email with the verification link should be posted to the users inbox.
+* An email with the verification link should be posted to the user's inbox.
     ![Register](documentation/testing/register04.jpg)
     ![Register](documentation/testing/register05.jpg)
-* Clicking the link should verify the new user and Information box should be displayed.
+* Clicking the link should verify the new user and the information box should be displayed.
     ![Register](documentation/testing/register06.jpg)
     ![Register](documentation/testing/register07.jpg)
 
@@ -389,13 +389,13 @@ Expected result:
 
 ### **Login**
 
-This function is available only for registered user.
+This function is available only for registered users.
 
 Steps:
-* Expand the "Account" tab in the Page Navigation Bar and choose "Login" option.
+* Expand the "Account" tab in the Page Navigation Bar and choose the "Login" option.
 * Fill up the form and submit it.
     ![Login](documentation/testing/login01.jpg)
-  Not entering values in to the required fields results with displaying a warning message.
+  Not entering values into the required fields results in displaying a warning message.
     ![Sign up warning](documentation/testing/empty_login.jpg)
 
 Expected result:
@@ -403,7 +403,7 @@ Expected result:
     ![Login](documentation/testing/login02.jpg)
 * A new option "My Profile" option should be available in the "Account" tab in the navigation bar.
     ![Login](documentation/testing/display_profile01.jpg)
-* Also the form in the Checkout Page since now should be prefilled.
+* Also the form in the Checkout Page now should be prefilled.
     ![Login](documentation/testing/register08.jpg)
 
 
@@ -429,22 +429,22 @@ Expected result:
 This function is available only for logged in users.
 
 Steps:
-* Expand the "Account" tab in the Page Navigation Bar and choose "Logout" option.
-* Submit you choice by clicking "Sign Out" button.
+* Expand the "Account" tab in the Page Navigation Bar and choose the "Logout" option.
+* Submit your choice by clicking "Sign Out" button.
     ![Log out](documentation/testing/logout01.jpg)
 
 Expected result:
 * A confirmation toast box should be displayed
     ![Log out](documentation/testing/logout02.jpg)
-* "My Profile" tab should not be accessible in the "Account" tab. And only basic option should be displayed.
+* "My Profile" tab should not be accessible in the "Account" tab. And only basic options should be displayed.
     ![Log out](documentation/testing/logout04.jpg)
 
 
 
 ### **Add product to the shopping basket**
 
-This function is available to all users: loged in as well as not loged in users.
-It allows the user to add product to the shopping basket where the products can be updated, deleted from basket or proceeded to the checkout.
+This function is available to all users: logged in as well as not logged in users.
+It allows the user to add products to the shopping basket where the products can be updated, deleted from the basket or proceeded to the checkout.
 
 Steps:
 * Go to the shop page or to the workshop page.
@@ -454,15 +454,15 @@ Steps:
     ![Add product](documentation/testing/add_to_basket02.jpg)
 
 Expected result:
-* After clicking "Add to Basket" button the product will be added to the basket and the Basket tab in the Navigation Bar will display the Total Price of the order.
+* After clicking the "Add to Basket" button the product will be added to the basket and the Basket tab in the Navigation Bar will display the Total Price of the order.
     ![Add product](documentation/testing/add_to_basket08.jpg)
 * A confirmation toast box should be displayed and the user will be redirected to the Shop Page.
-* All the product added to the Shopping Basket will be displayed in the Basket Page.
+* All the products added to the Shopping Basket will be displayed in the Basket Page.
     ![Add product](documentation/testing/add_to_basket07.jpg)
 
 Errors:
 
-In case of entering incorrect values, such as 0 or value greater the the quantity of the products available on stock a suitable warning message will be displayed.
+In case of entering incorrect values, such as 0 or value greater than the quantity of the products available on stock a suitable warning message will be displayed.
 
 ![Wrong value](documentation/testing/wrong_value_shop04.jpg)
 ![Wrong value](documentation/testing/wrong_value_shop03.jpg)
@@ -480,18 +480,18 @@ This problem was handled programmatically using try/catch block inside the add_t
 ### **Update Product in the basket.**
 
 Steps:
-* Click the Basket Icon displayed in the Navigation Bar go to the Basket Page.
+* Click the Basket Icon displayed in the Navigation Bar and go to the Basket Page.
     ![Update Product](documentation/testing/update_basket01.jpg)
-* Enter demanded value in the Quantity column.
-* Submit clicking green button.
+* Enter the demanded value in the Quantity column.
+* Submit clicking the green button.
 
 Expected result:
 * A confirmation toast box should be displayed.
 * Number in the Quantity box should be updated.
-* The Total Price of the Order ahould also be updated immediately.
+* The Total Price of the Order should also be updated immediately.
     ![Update Product](documentation/testing/update_basket02.jpg)
 
-In case of entering incorrect values, such as 0 or value greater the the quantity of the products available on stock a suitable warning message will be displayed.
+In case of entering incorrect values, such as 0 or value greater than the quantity of the products available on stock a suitable warning message will be displayed.
 
 ![Wrong value](documentation/testing/wrong_value_shop04.jpg)
 ![Wrong value](documentation/testing/wrong_value_shop03.jpg)
@@ -499,13 +499,13 @@ In case of entering incorrect values, such as 0 or value greater the the quantit
 ### **Remove Product from the basket**
 
 Steps:
-* Click the Basket Icon displayed in the Navigation Bar go to the Basket Page.
+* Click the Basket Icon displayed in the Navigation Bar and go to the Basket Page.
     ![Remove Product](documentation/testing/update_basket01.jpg)
 * Click the red button in the Remove Item column.
 
 Expected result:
 * A confirmation toast box should be displayed.
-* The product should be remnoved from the basket.
+* The product should be removed from the basket.
 * The Total Price of the Order should also be updated immediately.
     ![Remove Product](documentation/testing/update_basket03.jpg)
 
@@ -514,7 +514,7 @@ Expected result:
 
 Steps:
 * Go to the Basket Page. If there are any products added a "Go To Checkout" button should be displayed.
-* Click "Go To Checkout" button to go to the Checkout Page and fill up the 
+* Click the "Go To Checkout" button to go to the Checkout Page and fill up the 
 form.
     ![Payment](documentation/testing/checkout01_logged.jpg)
 * Click "Complete Order" button to submit.
@@ -524,9 +524,9 @@ Expected result:
 * Order Summary Page should be displayed.
     ![Payment](documentation/testing/checkout02.jpg)
 * The Basket should be emptied.
-* Products quantity values should have been updated as well.
+* Product quantity values should have been updated as well.
     ![Payment](documentation/testing/checkout05.jpg)
-* An orders confirmation email should be sent to the users email address.
+* An order confirmation email should be sent to the user's email address.
     ![Payment](documentation/testing/checkout06_conf_email.jpg)
     ![Payment](documentation/testing/checkout07_conf_email.jpg)
 * The order should be added to the Orders History section.
@@ -542,21 +542,21 @@ Steps:
     ![Newsletter](documentation/testing/subscribe01.jpg)
 * Enter your email in the "Sign Up To Our Newsletter" diagram.
     ![Newsletter](documentation/testing/subscribe02.jpg)
-* Submit the form by clicking "Sign Me Up" button.
+* Submit the form by clicking the "Sign Me Up" button.
 
 Expected result:
 * A confirmation toast box should be displayed
     ![Newsletter](documentation/testing/subscribe03.jpg)
-* A confiramtion email should be sent to the entered email address.
+* A confirmation email should be sent to the entered email address.
     ![Newsletter](documentation/testing/subscribe06.jpg)
 
-In case of entering incorrect value a suitable warning message will be displayed.
+In case of entering an incorrect value a suitable warning message will be displayed.
     ![Wrong value](documentation/testing/nletter_empty.jpg)
     ![Wrong value](documentation/testing/nletter_incorrect.jpg)
 
 ### **Publish a Post**
 
-This function available only for user registered as admin.
+This function is available only for users registered as admin.
 
 Steps:
 * Go to the Home Page
@@ -597,7 +597,7 @@ Expected result:
 
 After the payment is made the quantity of products available on stock should be immediately updated, which means that the number of units sold in the recent transaction should be subtracted.
 
-Products quantity before making a sale.
+Product quantity before making a sale.
 
 ![Manual testing](documentation/testing/add_to_basket02.jpg)
 
@@ -605,7 +605,7 @@ Products in the shopping basket.
 
 ![Manual testing](documentation/testing/update_basket01.jpg)
 
-Products quantity after the sale is finished.
+Product quantity after the sale is finished.
 
 ![Manual testing](documentation/testing/checkout05.jpg)
 
